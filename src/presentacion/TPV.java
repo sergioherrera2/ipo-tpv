@@ -99,22 +99,22 @@ public class TPV extends JFrame {
 		pnlControl = new pnlControl();
 		pnlControl.setMinimumSize(new Dimension(246, 99));
 		pnlSuperior.add(pnlControl);
-		
+
 		tbpCentral = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tbpCentral, BorderLayout.CENTER);
-		
-		pnlPedidos = new JPanel();
+
+		pnlPedidos = new pnlPedidos();
 		tbpCentral.addTab("Pedidos", null, pnlPedidos, null);
-		
-		pnlOfertas = new JPanel();
+
+		pnlOfertas = new pnlOfertas();
 		tbpCentral.addTab("Ofertas", null, pnlOfertas, null);
-		
+
 		pnlProductos = new JPanel();
 		tbpCentral.addTab("Productos", null, pnlProductos, null);
-		
+
 		pnlClientes = new JPanel();
 		tbpCentral.addTab("Clientes", null, pnlClientes, null);
-		
+
 		pnlCallejero = new JPanel();
 		tbpCentral.addTab("Callejero", null, pnlCallejero, null);
 	}

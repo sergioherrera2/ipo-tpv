@@ -1,3 +1,11 @@
+09/12/18
+
+TPV v0.3
+- pnlOfertas first version
+
+TPV v0.2
+- pnlPedidos first version
+
 07/12/18
 
 TPV v0.1

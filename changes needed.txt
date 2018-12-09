@@ -1,0 +1,5 @@
+pnlOfertas:
+-- Absolute Layout no reescala, aunque es el único que me permite crear una interfaz acorde al diseño preliminar.
+
+pnlPedidos:
+-- No encuentro forma de colocar todo igual que en el diseño con otros layouts.
