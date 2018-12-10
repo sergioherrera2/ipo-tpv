@@ -56,6 +56,12 @@ public class pnlPedidos extends JPanel {
 		pnlTablaPedidos = new JPanel();
 		add(pnlTablaPedidos, BorderLayout.NORTH);
 		pnlTablaPedidos.setBorder(new TitledBorder(null, "Pedidos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagLayout gbl_pnlTablaPedidos = new GridBagLayout();
+		gbl_pnlTablaPedidos.columnWidths = new int[]{760, 111, 0};
+		gbl_pnlTablaPedidos.rowHeights = new int[]{112, 0};
+		gbl_pnlTablaPedidos.columnWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlTablaPedidos.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		pnlTablaPedidos.setLayout(gbl_pnlTablaPedidos);
 		
 		tblPedidos = new JTable();
 		tblPedidos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -87,10 +93,20 @@ public class pnlPedidos extends JPanel {
 		tblPedidos.getColumnModel().getColumn(6).setPreferredWidth(95);
 		tblPedidos.getColumnModel().getColumn(7).setPreferredWidth(87);
 		tblPedidos.getColumnModel().getColumn(8).setPreferredWidth(122);
-		pnlTablaPedidos.add(tblPedidos);
+		GridBagConstraints gbc_tblPedidos = new GridBagConstraints();
+		gbc_tblPedidos.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tblPedidos.anchor = GridBagConstraints.NORTH;
+		gbc_tblPedidos.insets = new Insets(0, 0, 0, 5);
+		gbc_tblPedidos.gridx = 0;
+		gbc_tblPedidos.gridy = 0;
+		pnlTablaPedidos.add(tblPedidos, gbc_tblPedidos);
 		
 		pnlBotones = new JPanel();
-		pnlTablaPedidos.add(pnlBotones);
+		GridBagConstraints gbc_pnlBotones = new GridBagConstraints();
+		gbc_pnlBotones.anchor = GridBagConstraints.WEST;
+		gbc_pnlBotones.gridx = 1;
+		gbc_pnlBotones.gridy = 0;
+		pnlTablaPedidos.add(pnlBotones, gbc_pnlBotones);
 		pnlBotones.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		btnNuevoPedido = new JButton("Nuevo pedido");
@@ -108,6 +124,12 @@ public class pnlPedidos extends JPanel {
 		pnlProductos = new JPanel();
 		add(pnlProductos, BorderLayout.WEST);
 		pnlProductos.setBorder(new TitledBorder(null, "Productos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		GridBagLayout gbl_pnlProductos = new GridBagLayout();
+		gbl_pnlProductos.columnWidths = new int[]{366, 37, 44, 0};
+		gbl_pnlProductos.rowHeights = new int[]{64, 0, 4, 50, 0};
+		gbl_pnlProductos.columnWeights = new double[]{1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlProductos.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		pnlProductos.setLayout(gbl_pnlProductos);
 		
 		tblProductos = new JTable();
 		tblProductos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -131,21 +153,42 @@ public class pnlPedidos extends JPanel {
 		});
 		tblProductos.getColumnModel().getColumn(0).setPreferredWidth(122);
 		tblProductos.getColumnModel().getColumn(3).setPreferredWidth(94);
-		pnlProductos.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		tblProductos.setCellSelectionEnabled(true);
-		pnlProductos.add(tblProductos);
-		
-		btnImprimirTicket = new JButton("Imprimir ticket");
-		pnlProductos.add(btnImprimirTicket);
+		GridBagConstraints gbc_tblProductos = new GridBagConstraints();
+		gbc_tblProductos.gridheight = 4;
+		gbc_tblProductos.anchor = GridBagConstraints.NORTHWEST;
+		gbc_tblProductos.insets = new Insets(0, 0, 0, 5);
+		gbc_tblProductos.gridx = 0;
+		gbc_tblProductos.gridy = 0;
+		pnlProductos.add(tblProductos, gbc_tblProductos);
 		
 		lblTotal = new JLabel("Total:");
 		lblTotal.setFont(new Font("Tahoma", Font.BOLD, 13));
-		pnlProductos.add(lblTotal);
+		GridBagConstraints gbc_lblTotal = new GridBagConstraints();
+		gbc_lblTotal.anchor = GridBagConstraints.WEST;
+		gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
+		gbc_lblTotal.gridx = 1;
+		gbc_lblTotal.gridy = 2;
+		pnlProductos.add(lblTotal, gbc_lblTotal);
 		
 		label = new JLabel("44.50\u20AC");
 		label.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label.setForeground(Color.RED);
-		pnlProductos.add(label);
+		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.insets = new Insets(0, 0, 5, 0);
+		gbc_label.anchor = GridBagConstraints.EAST;
+		gbc_label.gridx = 2;
+		gbc_label.gridy = 2;
+		pnlProductos.add(label, gbc_label);
+		
+		btnImprimirTicket = new JButton("Imprimir ticket");
+		GridBagConstraints gbc_btnImprimirTicket = new GridBagConstraints();
+		gbc_btnImprimirTicket.fill = GridBagConstraints.VERTICAL;
+		gbc_btnImprimirTicket.gridwidth = 2;
+		gbc_btnImprimirTicket.anchor = GridBagConstraints.WEST;
+		gbc_btnImprimirTicket.gridx = 1;
+		gbc_btnImprimirTicket.gridy = 3;
+		pnlProductos.add(btnImprimirTicket, gbc_btnImprimirTicket);
 		
 		pnlCliente = new JPanel();
 		pnlCliente.setBorder(new TitledBorder(null, "Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, null));

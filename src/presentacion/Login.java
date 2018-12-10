@@ -91,9 +91,9 @@ public class Login extends JFrame {
 		panel.setBorder(new TitledBorder(null, "Login", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[] { 0, 238, 91, 111, 0 };
+		gbl_panel.columnWidths = new int[] { 0, 238, 91, 111, 0, 0 };
 		gbl_panel.rowHeights = new int[] { 0, 41, 36, 48, 0, 0 };
-		gbl_panel.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
+		gbl_panel.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
 		gbl_panel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
@@ -118,7 +118,7 @@ public class Login extends JFrame {
 		
 		txtIdentificacion = new JTextField();
 		GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
-		gbc_txtIdentificacion.insets = new Insets(0, 0, 5, 0);
+		gbc_txtIdentificacion.insets = new Insets(0, 0, 5, 5);
 		gbc_txtIdentificacion.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtIdentificacion.gridx = 3;
 		gbc_txtIdentificacion.gridy = 2;
@@ -134,7 +134,7 @@ public class Login extends JFrame {
 		
 		pwdContraseña = new JPasswordField();
 		GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
-		gbc_pwdContraseña.insets = new Insets(0, 0, 5, 0);
+		gbc_pwdContraseña.insets = new Insets(0, 0, 5, 5);
 		gbc_pwdContraseña.fill = GridBagConstraints.HORIZONTAL;
 		gbc_pwdContraseña.gridx = 3;
 		gbc_pwdContraseña.gridy = 3;
