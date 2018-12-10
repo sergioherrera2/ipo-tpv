@@ -1,5 +1,5 @@
 pnlOfertas:
--- Problema: no sé como poner los iconos de las ofertas (panel con 2 iconos y texto)
+-- Problema: poner iconos seleccionables en las ofertas (panel con 2 iconos y texto)
 
 pnlProductos:
--- Problema: no sé como hacer que se pueda seleccionar un producto (una label)
+-- Problema: hacer que se pueda seleccionar un producto (una label con foto)

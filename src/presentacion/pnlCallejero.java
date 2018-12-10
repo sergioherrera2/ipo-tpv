@@ -87,10 +87,12 @@ public class pnlCallejero extends JPanel {
 		lstHoras.setModel(new AbstractListModel() {
 			String[] values = new String[] { "20:48", "21:03" };
 
+			@Override
 			public int getSize() {
 				return values.length;
 			}
 
+			@Override
 			public Object getElementAt(int index) {
 				return values[index];
 			}
@@ -102,10 +104,12 @@ public class pnlCallejero extends JPanel {
 		lstDirecciones.setModel(new AbstractListModel() {
 			String[] values = new String[] { "Calle Calatrava, 48", "Calle Toledo, 5" };
 
+			@Override
 			public int getSize() {
 				return values.length;
 			}
 
+			@Override
 			public Object getElementAt(int index) {
 				return values[index];
 			}

@@ -91,10 +91,12 @@ public class pnlPedidos extends JPanel {
 			Class[] columnTypes = new Class[] { Integer.class, String.class, String.class, Double.class, Boolean.class,
 					String.class, String.class, String.class, String.class };
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
 
+			@Override
 			public boolean isCellEditable(int rowIndex, int columnIndex) {
 				return false;
 			}
@@ -176,10 +178,12 @@ public class pnlPedidos extends JPanel {
 				new String[] { "Producto", "Precio", "Uds", "Importe total" }) {
 			Class[] columnTypes = new Class[] { String.class, Double.class, Integer.class, Double.class };
 
+			@Override
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
 
+			@Override
 			public boolean isCellEditable(int rowIndex, int columnIndex) {
 				return false;
 			}

@@ -8,9 +8,6 @@ import java.awt.Insets;
 import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
 import java.awt.Color;
-import java.awt.Dimension;
-
-import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.border.SoftBevelBorder;

@@ -13,17 +13,11 @@ import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JTextArea;
 import java.awt.Font;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.border.SoftBevelBorder;
 import javax.swing.JScrollPane;
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import javax.swing.JTextField;
-import java.awt.Component;
 
 public class pnlOfertas extends JPanel {
 	private JPanel pnlPromociones;
@@ -241,9 +235,11 @@ public class pnlOfertas extends JPanel {
 		lsClientes = new JList();
 		lsClientes.setModel(new AbstractListModel() {
 			String[] values = new String[] {"sergio.herrera2@alu.uclm.es", "manolofergn@gmail.com"};
+			@Override
 			public int getSize() {
 				return values.length;
 			}
+			@Override
 			public Object getElementAt(int index) {
 				return values[index];
 			}

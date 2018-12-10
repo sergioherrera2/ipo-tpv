@@ -50,6 +50,7 @@ public class Login extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					Login frame = new Login();
@@ -181,6 +182,7 @@ public class Login extends JFrame {
 	}
 
 	private class BtnEntrarActionListener implements ActionListener {
+		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			TPV tpv = new TPV();
 			tpv.setVisible(true);
