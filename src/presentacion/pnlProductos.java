@@ -18,6 +18,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class pnlProductos extends JPanel {
 	private JPanel pnlProductos;
@@ -73,6 +74,7 @@ public class pnlProductos extends JPanel {
 		setLayout(gridBagLayout);
 
 		pnlProductos = new JPanel();
+		pnlProductos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlProductos.setBorder(new TitledBorder(null, "Productos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlProductos = new GridBagConstraints();
 		gbc_pnlProductos.gridwidth = 2;
@@ -324,6 +326,7 @@ public class pnlProductos extends JPanel {
 		pnlDetalles.setLayout(gbl_pnlDetalles);
 		
 		lblIngredientes = new JLabel("Ingredientes:");
+		lblIngredientes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblIngredientes = new GridBagConstraints();
 		gbc_lblIngredientes.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIngredientes.gridx = 0;
@@ -331,6 +334,7 @@ public class pnlProductos extends JPanel {
 		pnlDetalles.add(lblIngredientes, gbc_lblIngredientes);
 		
 		taIngredientes = new JTextArea();
+		taIngredientes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		taIngredientes.setEditable(false);
 		GridBagConstraints gbc_taIngredientes = new GridBagConstraints();
 		gbc_taIngredientes.gridheight = 2;
@@ -341,6 +345,7 @@ public class pnlProductos extends JPanel {
 		pnlDetalles.add(taIngredientes, gbc_taIngredientes);
 		
 		lblAlrgenos = new JLabel("Al\u00E9rgenos");
+		lblAlrgenos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblAlrgenos = new GridBagConstraints();
 		gbc_lblAlrgenos.insets = new Insets(0, 0, 5, 5);
 		gbc_lblAlrgenos.gridx = 0;
@@ -348,6 +353,7 @@ public class pnlProductos extends JPanel {
 		pnlDetalles.add(lblAlrgenos, gbc_lblAlrgenos);
 		
 		taAlrgenos = new JTextArea();
+		taAlrgenos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		taAlrgenos.setEditable(false);
 		GridBagConstraints gbc_taAlrgenos = new GridBagConstraints();
 		gbc_taAlrgenos.gridheight = 2;
@@ -358,6 +364,7 @@ public class pnlProductos extends JPanel {
 		pnlDetalles.add(taAlrgenos, gbc_taAlrgenos);
 		
 		lblPrecio = new JLabel("Precio:");
+		lblPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
 		gbc_lblPrecio.insets = new Insets(0, 0, 0, 5);
 		gbc_lblPrecio.gridx = 0;
@@ -365,6 +372,7 @@ public class pnlProductos extends JPanel {
 		pnlDetalles.add(lblPrecio, gbc_lblPrecio);
 		
 		tfPrecio = new JTextField();
+		tfPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		tfPrecio.setEditable(false);
 		GridBagConstraints gbc_tfPrecio = new GridBagConstraints();
 		gbc_tfPrecio.fill = GridBagConstraints.HORIZONTAL;
@@ -389,6 +397,7 @@ public class pnlProductos extends JPanel {
 		pnlEdición.setLayout(gbl_pnlEdición);
 		
 		btnNuevoProducto = new JButton("Nuevo producto");
+		btnNuevoProducto.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnNuevoProducto = new GridBagConstraints();
 		gbc_btnNuevoProducto.fill = GridBagConstraints.BOTH;
 		gbc_btnNuevoProducto.insets = new Insets(0, 0, 5, 0);
@@ -397,6 +406,7 @@ public class pnlProductos extends JPanel {
 		pnlEdición.add(btnNuevoProducto, gbc_btnNuevoProducto);
 		
 		btnEditarProducto = new JButton("Editar producto");
+		btnEditarProducto.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnEditarProducto = new GridBagConstraints();
 		gbc_btnEditarProducto.fill = GridBagConstraints.BOTH;
 		gbc_btnEditarProducto.insets = new Insets(0, 0, 5, 0);
@@ -405,6 +415,7 @@ public class pnlProductos extends JPanel {
 		pnlEdición.add(btnEditarProducto, gbc_btnEditarProducto);
 		
 		btnBorrarProducto = new JButton("Borrar producto");
+		btnBorrarProducto.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnBorrarProducto = new GridBagConstraints();
 		gbc_btnBorrarProducto.fill = GridBagConstraints.BOTH;
 		gbc_btnBorrarProducto.gridx = 0;

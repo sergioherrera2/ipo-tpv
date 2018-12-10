@@ -33,7 +33,7 @@ public class Login extends JFrame {
 	private JMenu mnEdicin;
 	private JMenu mnVista;
 	private JMenu mnAcercaDe;
-	private JPanel panel;
+	private JPanel pnlCentral;
 	private JLabel lblImage;
 	private JLabel lblIdentificacion;
 	private JLabel lblContrasea;
@@ -41,7 +41,7 @@ public class Login extends JFrame {
 	private JPasswordField pwdContraseña;
 	private JComboBox cbIdioma;
 	private JButton btnEntrar;
-	private JPanel panel_1;
+	private JPanel pnlInferior;
 
 	/**
 	 * Launch the application.
@@ -87,15 +87,15 @@ public class Login extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 
-		panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Login", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		contentPane.add(panel, BorderLayout.CENTER);
-		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[] { 0, 238, 91, 111, 0, 0 };
-		gbl_panel.rowHeights = new int[] { 0, 41, 36, 48, 0, 0 };
-		gbl_panel.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
-		gbl_panel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
-		panel.setLayout(gbl_panel);
+		pnlCentral = new JPanel();
+		pnlCentral.setBorder(new TitledBorder(null, "Login", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(pnlCentral, BorderLayout.CENTER);
+		GridBagLayout gbl_pnlCentral = new GridBagLayout();
+		gbl_pnlCentral.columnWidths = new int[] { 0, 238, 91, 111, 0, 0 };
+		gbl_pnlCentral.rowHeights = new int[] { 0, 41, 36, 48, 0, 0 };
+		gbl_pnlCentral.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
+		gbl_pnlCentral.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		pnlCentral.setLayout(gbl_pnlCentral);
 
 		lblImage = new JLabel("");
 		lblImage.setIcon(new ImageIcon(Login.class.getResource("/presentacion/food-2074638_960_720 - resized.png")));
@@ -106,7 +106,7 @@ public class Login extends JFrame {
 		gbc_lblImage.insets = new Insets(0, 0, 0, 5);
 		gbc_lblImage.gridx = 1;
 		gbc_lblImage.gridy = 1;
-		panel.add(lblImage, gbc_lblImage);
+		pnlCentral.add(lblImage, gbc_lblImage);
 		
 		lblIdentificacion = new JLabel("Identificaci\u00F3n:");
 		GridBagConstraints gbc_lblIdentificacion = new GridBagConstraints();
@@ -114,7 +114,7 @@ public class Login extends JFrame {
 		gbc_lblIdentificacion.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdentificacion.gridx = 2;
 		gbc_lblIdentificacion.gridy = 2;
-		panel.add(lblIdentificacion, gbc_lblIdentificacion);
+		pnlCentral.add(lblIdentificacion, gbc_lblIdentificacion);
 		
 		txtIdentificacion = new JTextField();
 		GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
@@ -122,7 +122,7 @@ public class Login extends JFrame {
 		gbc_txtIdentificacion.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtIdentificacion.gridx = 3;
 		gbc_txtIdentificacion.gridy = 2;
-		panel.add(txtIdentificacion, gbc_txtIdentificacion);
+		pnlCentral.add(txtIdentificacion, gbc_txtIdentificacion);
 		txtIdentificacion.setColumns(10);
 		
 		lblContrasea = new JLabel("Contrase\u00F1a:");
@@ -130,7 +130,7 @@ public class Login extends JFrame {
 		gbc_lblContrasea.insets = new Insets(0, 0, 5, 5);
 		gbc_lblContrasea.gridx = 2;
 		gbc_lblContrasea.gridy = 3;
-		panel.add(lblContrasea, gbc_lblContrasea);
+		pnlCentral.add(lblContrasea, gbc_lblContrasea);
 		
 		pwdContraseña = new JPasswordField();
 		GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
@@ -138,18 +138,18 @@ public class Login extends JFrame {
 		gbc_pwdContraseña.fill = GridBagConstraints.HORIZONTAL;
 		gbc_pwdContraseña.gridx = 3;
 		gbc_pwdContraseña.gridy = 3;
-		panel.add(pwdContraseña, gbc_pwdContraseña);
+		pnlCentral.add(pwdContraseña, gbc_pwdContraseña);
 		
-		panel_1 = new JPanel();
-		contentPane.add(panel_1, BorderLayout.SOUTH);
+		pnlInferior = new JPanel();
+		contentPane.add(pnlInferior, BorderLayout.SOUTH);
 		
 		cbIdioma = new JComboBox();
-		panel_1.add(cbIdioma);
+		pnlInferior.add(cbIdioma);
 		cbIdioma.setName("");
 		
 		btnEntrar = new JButton("Entrar");
 		btnEntrar.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel_1.add(btnEntrar);
+		pnlInferior.add(btnEntrar);
 	}
 
 }

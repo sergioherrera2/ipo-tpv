@@ -43,6 +43,7 @@ public class pnlClientes extends JPanel {
 		setLayout(gridBagLayout);
 		
 		pnlTablaClientes = new JPanel();
+		pnlTablaClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlTablaClientes.setBorder(new TitledBorder(null, "Clientes", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlTablaClientes = new GridBagConstraints();
 		gbc_pnlTablaClientes.gridwidth = 2;
@@ -93,6 +94,7 @@ public class pnlClientes extends JPanel {
 		spTablaClientes.setViewportView(tbClientes);
 		
 		btnAadirCliente = new JButton("A\u00F1adir cliente");
+		btnAadirCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnAadirCliente = new GridBagConstraints();
 		gbc_btnAadirCliente.fill = GridBagConstraints.BOTH;
 		gbc_btnAadirCliente.insets = new Insets(0, 0, 5, 0);
@@ -101,6 +103,7 @@ public class pnlClientes extends JPanel {
 		pnlTablaClientes.add(btnAadirCliente, gbc_btnAadirCliente);
 		
 		btnEditarCliente = new JButton("Editar cliente");
+		btnEditarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnEditarCliente = new GridBagConstraints();
 		gbc_btnEditarCliente.fill = GridBagConstraints.BOTH;
 		gbc_btnEditarCliente.insets = new Insets(0, 0, 5, 0);
@@ -109,6 +112,7 @@ public class pnlClientes extends JPanel {
 		pnlTablaClientes.add(btnEditarCliente, gbc_btnEditarCliente);
 		
 		btnBorrarCliente = new JButton("Borrar cliente");
+		btnBorrarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnBorrarCliente = new GridBagConstraints();
 		gbc_btnBorrarCliente.fill = GridBagConstraints.BOTH;
 		gbc_btnBorrarCliente.gridx = 1;
@@ -116,6 +120,7 @@ public class pnlClientes extends JPanel {
 		pnlTablaClientes.add(btnBorrarCliente, gbc_btnBorrarCliente);
 		
 		pnlHistorialPedidos = new JPanel();
+		pnlHistorialPedidos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlHistorialPedidos.setBorder(new TitledBorder(null, "Historial de pedidos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlHistorialPedidos = new GridBagConstraints();
 		gbc_pnlHistorialPedidos.insets = new Insets(0, 0, 0, 5);
@@ -158,6 +163,7 @@ public class pnlClientes extends JPanel {
 		spHistorial.setViewportView(tbHistorial);
 		
 		pnlPuntos = new JPanel();
+		pnlPuntos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlPuntos.setBorder(new TitledBorder(null, "Puntos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlPuntos = new GridBagConstraints();
 		gbc_pnlPuntos.fill = GridBagConstraints.BOTH;
@@ -172,6 +178,7 @@ public class pnlClientes extends JPanel {
 		pnlPuntos.setLayout(gbl_pnlPuntos);
 		
 		lblPuntosAcumulados = new JLabel("Puntos acumulados:");
+		lblPuntosAcumulados.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblPuntosAcumulados = new GridBagConstraints();
 		gbc_lblPuntosAcumulados.gridwidth = 2;
 		gbc_lblPuntosAcumulados.insets = new Insets(0, 0, 5, 5);
@@ -180,7 +187,7 @@ public class pnlClientes extends JPanel {
 		pnlPuntos.add(lblPuntosAcumulados, gbc_lblPuntosAcumulados);
 		
 		label = new JLabel("3");
-		label.setFont(new Font("Tahoma", Font.BOLD, 20));
+		label.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
 		label.setForeground(Color.RED);
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.gridwidth = 2;
@@ -190,6 +197,7 @@ public class pnlClientes extends JPanel {
 		pnlPuntos.add(label, gbc_label);
 		
 		lblVlidosHasta = new JLabel("V\u00E1lidos hasta:");
+		lblVlidosHasta.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		GridBagConstraints gbc_lblVlidosHasta = new GridBagConstraints();
 		gbc_lblVlidosHasta.gridwidth = 2;
 		gbc_lblVlidosHasta.insets = new Insets(0, 0, 5, 5);
@@ -198,7 +206,7 @@ public class pnlClientes extends JPanel {
 		pnlPuntos.add(lblVlidosHasta, gbc_lblVlidosHasta);
 		
 		label_1 = new JLabel("21/12/18");
-		label_1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		label_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
 		label_1.setForeground(Color.RED);
 		GridBagConstraints gbc_label_1 = new GridBagConstraints();
 		gbc_label_1.gridwidth = 2;

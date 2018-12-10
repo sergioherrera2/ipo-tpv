@@ -1,2 +1,8 @@
 pnlOfertas:
--- GridBagLayout everything
+-- Problema: no sé como poner los iconos de las ofertas (panel con 2 iconos y texto)
+
+pnlProductos:
+-- Problema: no sé como hacer que se pueda seleccionar un producto (una label)
+
+General:
+-- Impedir edición de las tablas

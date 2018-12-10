@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 import javax.swing.JButton;
 import java.awt.GridLayout;
+import java.awt.Font;
 
 public class pnlControl extends JPanel {
 	/**
@@ -20,6 +21,7 @@ public class pnlControl extends JPanel {
 		setLayout(new GridLayout(0, 1, 0, 0));
 
 		btnCerrarSesin = new JButton("Cerrar sesi\u00F3n");
+		btnCerrarSesin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		add(btnCerrarSesin);
 
 	}

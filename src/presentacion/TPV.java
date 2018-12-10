@@ -9,12 +9,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Rectangle;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
-import java.awt.FlowLayout;
-import javax.swing.BoxLayout;
 import javax.swing.JTabbedPane;
-import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
@@ -139,7 +135,7 @@ public class TPV extends JFrame {
 		pnlClientes = new pnlClientes();
 		tbpCentral.addTab("Clientes", null, pnlClientes, null);
 
-		pnlCallejero = new JPanel();
+		pnlCallejero = new pnlCallejero();
 		tbpCentral.addTab("Callejero", null, pnlCallejero, null);
 	}
 

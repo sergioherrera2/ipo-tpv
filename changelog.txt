@@ -1,5 +1,9 @@
 | 10/12/18 |
 
+TPV v0.6
+- pnlCallejero first version
+- Design improvements (font changes)
+
 TPV v0.5
 - pnlClientes first version
 

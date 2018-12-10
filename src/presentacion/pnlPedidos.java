@@ -14,6 +14,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Font;
 
 public class pnlPedidos extends JPanel {
 	private JPanel pnlTablaPedidos;
@@ -52,6 +53,7 @@ public class pnlPedidos extends JPanel {
 		setLayout(gridBagLayout);
 
 		pnlTablaPedidos = new JPanel();
+		pnlTablaPedidos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlTablaPedidos.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Pedidos",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		GridBagConstraints gbc_pnlTablaPedidos = new GridBagConstraints();
@@ -102,6 +104,7 @@ public class pnlPedidos extends JPanel {
 		spTablaPedidos.setViewportView(tbPedidos);
 
 		btnNuevoPedido = new JButton("Nuevo pedido");
+		btnNuevoPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnNuevoPedido = new GridBagConstraints();
 		gbc_btnNuevoPedido.fill = GridBagConstraints.BOTH;
 		gbc_btnNuevoPedido.insets = new Insets(0, 0, 5, 0);
@@ -110,6 +113,7 @@ public class pnlPedidos extends JPanel {
 		pnlTablaPedidos.add(btnNuevoPedido, gbc_btnNuevoPedido);
 
 		btnEditarPedido = new JButton("Editar pedido");
+		btnEditarPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnEditarPedido = new GridBagConstraints();
 		gbc_btnEditarPedido.fill = GridBagConstraints.BOTH;
 		gbc_btnEditarPedido.insets = new Insets(0, 0, 5, 0);
@@ -118,6 +122,7 @@ public class pnlPedidos extends JPanel {
 		pnlTablaPedidos.add(btnEditarPedido, gbc_btnEditarPedido);
 
 		btnVerPedido = new JButton("Ver pedido");
+		btnVerPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnVerPedido = new GridBagConstraints();
 		gbc_btnVerPedido.fill = GridBagConstraints.BOTH;
 		gbc_btnVerPedido.insets = new Insets(0, 0, 5, 0);
@@ -126,6 +131,7 @@ public class pnlPedidos extends JPanel {
 		pnlTablaPedidos.add(btnVerPedido, gbc_btnVerPedido);
 
 		btnBorrarPedido = new JButton("Borrar pedido");
+		btnBorrarPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnBorrarPedido = new GridBagConstraints();
 		gbc_btnBorrarPedido.fill = GridBagConstraints.BOTH;
 		gbc_btnBorrarPedido.gridx = 1;
@@ -133,6 +139,7 @@ public class pnlPedidos extends JPanel {
 		pnlTablaPedidos.add(btnBorrarPedido, gbc_btnBorrarPedido);
 
 		pnlProductos = new JPanel();
+		pnlProductos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlProductos.setBorder(new TitledBorder(null, "Productos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlProductos = new GridBagConstraints();
 		gbc_pnlProductos.insets = new Insets(0, 0, 0, 5);
@@ -174,6 +181,7 @@ public class pnlPedidos extends JPanel {
 		spTablaProductos.setViewportView(tbProductos);
 
 		lblTotal = new JLabel("Total:");
+		lblTotal.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		GridBagConstraints gbc_lblTotal = new GridBagConstraints();
 		gbc_lblTotal.anchor = GridBagConstraints.EAST;
 		gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
@@ -182,6 +190,8 @@ public class pnlPedidos extends JPanel {
 		pnlProductos.add(lblTotal, gbc_lblTotal);
 
 		tfPrecio = new JTextField();
+		tfPrecio.setForeground(Color.RED);
+		tfPrecio.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		tfPrecio.setEditable(false);
 		tfPrecio.setText("44.50\u20AC");
 		GridBagConstraints gbc_tfPrecio = new GridBagConstraints();
@@ -193,6 +203,7 @@ public class pnlPedidos extends JPanel {
 		tfPrecio.setColumns(10);
 
 		btnImprimirTicket = new JButton("Imprimir ticket");
+		btnImprimirTicket.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnImprimirTicket = new GridBagConstraints();
 		gbc_btnImprimirTicket.gridwidth = 2;
 		gbc_btnImprimirTicket.fill = GridBagConstraints.BOTH;
@@ -201,6 +212,7 @@ public class pnlPedidos extends JPanel {
 		pnlProductos.add(btnImprimirTicket, gbc_btnImprimirTicket);
 
 		pnlCliente = new JPanel();
+		pnlCliente.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlCliente.setBorder(new TitledBorder(null, "Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlCliente = new GridBagConstraints();
 		gbc_pnlCliente.fill = GridBagConstraints.BOTH;
@@ -215,6 +227,7 @@ public class pnlPedidos extends JPanel {
 		pnlCliente.setLayout(gbl_pnlCliente);
 
 		lblNombreYApellidos = new JLabel("Nombre y apellidos:");
+		lblNombreYApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblNombreYApellidos = new GridBagConstraints();
 		gbc_lblNombreYApellidos.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNombreYApellidos.gridx = 0;
@@ -222,6 +235,7 @@ public class pnlPedidos extends JPanel {
 		pnlCliente.add(lblNombreYApellidos, gbc_lblNombreYApellidos);
 
 		tfNombreApellidos = new JTextField();
+		tfNombreApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_tfNombreApellidos = new GridBagConstraints();
 		gbc_tfNombreApellidos.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfNombreApellidos.gridwidth = 3;
@@ -232,6 +246,7 @@ public class pnlPedidos extends JPanel {
 		tfNombreApellidos.setColumns(10);
 
 		lblTelfono = new JLabel("Tel\u00E9fono:");
+		lblTelfono.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblTelfono = new GridBagConstraints();
 		gbc_lblTelfono.insets = new Insets(0, 0, 5, 5);
 		gbc_lblTelfono.gridx = 0;
@@ -239,6 +254,7 @@ public class pnlPedidos extends JPanel {
 		pnlCliente.add(lblTelfono, gbc_lblTelfono);
 
 		tfTelefono = new JTextField();
+		tfTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_tfTelefono = new GridBagConstraints();
 		gbc_tfTelefono.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfTelefono.gridwidth = 2;
@@ -249,6 +265,7 @@ public class pnlPedidos extends JPanel {
 		tfTelefono.setColumns(10);
 
 		lblDireccinDeEnvo = new JLabel("Direcci\u00F3n de env\u00EDo:");
+		lblDireccinDeEnvo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblDireccinDeEnvo = new GridBagConstraints();
 		gbc_lblDireccinDeEnvo.insets = new Insets(0, 0, 5, 5);
 		gbc_lblDireccinDeEnvo.gridx = 0;
@@ -256,6 +273,7 @@ public class pnlPedidos extends JPanel {
 		pnlCliente.add(lblDireccinDeEnvo, gbc_lblDireccinDeEnvo);
 
 		tfDireccionEnvio = new JTextField();
+		tfDireccionEnvio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_tfDireccionEnvio = new GridBagConstraints();
 		gbc_tfDireccionEnvio.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfDireccionEnvio.gridwidth = 3;
@@ -266,6 +284,7 @@ public class pnlPedidos extends JPanel {
 		tfDireccionEnvio.setColumns(10);
 
 		lblAlergiasORestricciones = new JLabel("Alergias o restricciones:");
+		lblAlergiasORestricciones.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblAlergiasORestricciones = new GridBagConstraints();
 		gbc_lblAlergiasORestricciones.insets = new Insets(0, 0, 5, 5);
 		gbc_lblAlergiasORestricciones.gridx = 0;
@@ -273,6 +292,7 @@ public class pnlPedidos extends JPanel {
 		pnlCliente.add(lblAlergiasORestricciones, gbc_lblAlergiasORestricciones);
 
 		tfAlergias = new JTextField();
+		tfAlergias.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_tfAlergias = new GridBagConstraints();
 		gbc_tfAlergias.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfAlergias.gridwidth = 3;

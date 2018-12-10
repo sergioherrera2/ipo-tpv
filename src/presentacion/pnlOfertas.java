@@ -52,6 +52,7 @@ public class pnlOfertas extends JPanel {
 		setLayout(gridBagLayout);
 		
 		pnlPromociones = new JPanel();
+		pnlPromociones.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlPromociones.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Promociones", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		GridBagConstraints gbc_pnlPromociones = new GridBagConstraints();
 		gbc_pnlPromociones.gridheight = 5;
@@ -76,6 +77,7 @@ public class pnlOfertas extends JPanel {
 		pnlPromociones.add(spPromociones, gbc_spPromociones);
 		
 		btnNuevaOferta = new JButton("Nueva oferta");
+		btnNuevaOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnNuevaOferta = new GridBagConstraints();
 		gbc_btnNuevaOferta.fill = GridBagConstraints.BOTH;
 		gbc_btnNuevaOferta.insets = new Insets(0, 0, 5, 0);
@@ -84,6 +86,7 @@ public class pnlOfertas extends JPanel {
 		add(btnNuevaOferta, gbc_btnNuevaOferta);
 		
 		btnEditarOferta = new JButton("Editar oferta");
+		btnEditarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnEditarOferta = new GridBagConstraints();
 		gbc_btnEditarOferta.fill = GridBagConstraints.BOTH;
 		gbc_btnEditarOferta.insets = new Insets(0, 0, 5, 0);
@@ -92,6 +95,7 @@ public class pnlOfertas extends JPanel {
 		add(btnEditarOferta, gbc_btnEditarOferta);
 		
 		pnlOfertas = new JPanel();
+		pnlOfertas.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlOfertas.setBorder(new TitledBorder(null, "Ofertas", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlOfertas = new GridBagConstraints();
 		gbc_pnlOfertas.gridheight = 5;
@@ -116,6 +120,7 @@ public class pnlOfertas extends JPanel {
 		pnlOfertas.add(spOfertas, gbc_spOfertas);
 		
 		btnBorrarOferta = new JButton("Borrar oferta");
+		btnBorrarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnBorrarOferta = new GridBagConstraints();
 		gbc_btnBorrarOferta.fill = GridBagConstraints.BOTH;
 		gbc_btnBorrarOferta.insets = new Insets(0, 0, 5, 0);
@@ -124,6 +129,7 @@ public class pnlOfertas extends JPanel {
 		add(btnBorrarOferta, gbc_btnBorrarOferta);
 		
 		pnlInfo = new JPanel();
+		pnlInfo.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlInfo.setBorder(new TitledBorder(null, "Informaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlInfo = new GridBagConstraints();
 		gbc_pnlInfo.gridheight = 4;
@@ -142,6 +148,7 @@ public class pnlOfertas extends JPanel {
 		pnlInfo.add(taInfo);
 		
 		pnlClientes = new JPanel();
+		pnlClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlClientes.setBorder(new TitledBorder(null, "Clientes", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlClientes = new GridBagConstraints();
 		gbc_pnlClientes.gridheight = 4;
@@ -168,6 +175,7 @@ public class pnlOfertas extends JPanel {
 		spClientes.setViewportView(lsClientes);
 		
 		btnSeleccionar = new JButton("Seleccionar");
+		btnSeleccionar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnSeleccionar = new GridBagConstraints();
 		gbc_btnSeleccionar.fill = GridBagConstraints.BOTH;
 		gbc_btnSeleccionar.insets = new Insets(0, 0, 5, 0);
@@ -176,6 +184,7 @@ public class pnlOfertas extends JPanel {
 		add(btnSeleccionar, gbc_btnSeleccionar);
 		
 		btnEnviarOferta = new JButton("Enviar oferta");
+		btnEnviarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnEnviarOferta = new GridBagConstraints();
 		gbc_btnEnviarOferta.fill = GridBagConstraints.BOTH;
 		gbc_btnEnviarOferta.gridx = 2;

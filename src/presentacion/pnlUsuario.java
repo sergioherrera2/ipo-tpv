@@ -18,6 +18,7 @@ public class pnlUsuario extends JPanel {
 	 * Create the panel.
 	 */
 	public pnlUsuario() {
+		setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		setBorder(new TitledBorder(null, "Usuario", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 94, 140, 0, 0};
@@ -27,6 +28,7 @@ public class pnlUsuario extends JPanel {
 		setLayout(gridBagLayout);
 		
 		lblFotousuario = new JLabel("");
+		lblFotousuario.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		lblFotousuario.setIcon(new ImageIcon(pnlUsuario.class.getResource("/presentacion/iconos/pizza.png")));
 		GridBagConstraints gbc_lblFotousuario = new GridBagConstraints();
 		gbc_lblFotousuario.gridheight = 3;
@@ -36,7 +38,7 @@ public class pnlUsuario extends JPanel {
 		add(lblFotousuario, gbc_lblFotousuario);
 		
 		lblUsr = new JLabel("USR003");
-		lblUsr.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblUsr.setFont(new Font("Segoe UI Black", Font.BOLD, 13));
 		GridBagConstraints gbc_lblUsr = new GridBagConstraints();
 		gbc_lblUsr.insets = new Insets(0, 0, 5, 5);
 		gbc_lblUsr.gridx = 2;
@@ -44,6 +46,7 @@ public class pnlUsuario extends JPanel {
 		add(lblUsr, gbc_lblUsr);
 		
 		lblltAcceso = new JLabel("\u00DAlt. acceso: ayer");
+		lblltAcceso.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblltAcceso = new GridBagConstraints();
 		gbc_lblltAcceso.gridheight = 2;
 		gbc_lblltAcceso.insets = new Insets(0, 0, 0, 5);
