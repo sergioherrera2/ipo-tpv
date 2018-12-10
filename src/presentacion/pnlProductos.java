@@ -15,6 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class pnlProductos extends JPanel {
 	private JPanel pnlProductos;
@@ -47,6 +50,15 @@ public class pnlProductos extends JPanel {
 	private JLabel lblPostre4;
 	private JLabel lblPostre5;
 	private JLabel lblPostre6;
+	private JLabel lblIngredientes;
+	private JLabel lblAlrgenos;
+	private JLabel lblPrecio;
+	private JTextArea taIngredientes;
+	private JTextArea taAlrgenos;
+	private JTextField tfPrecio;
+	private JButton btnNuevoProducto;
+	private JButton btnEditarProducto;
+	private JButton btnBorrarProducto;
 
 	/**
 	 * Create the panel.
@@ -54,9 +66,9 @@ public class pnlProductos extends JPanel {
 	public pnlProductos() {
 		setBounds(new Rectangle(0, 0, 1280, 720));
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] { 0, 217, 0 };
+		gridBagLayout.columnWidths = new int[] { 1180, 100, 0 };
 		gridBagLayout.rowHeights = new int[] { 0, 241, 0 };
-		gridBagLayout.columnWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
+		gridBagLayout.columnWeights = new double[] { 1.0, 0.0, Double.MIN_VALUE };
 		gridBagLayout.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
 
@@ -304,6 +316,62 @@ public class pnlProductos extends JPanel {
 		gbc_pnlDetalles.gridx = 0;
 		gbc_pnlDetalles.gridy = 1;
 		add(pnlDetalles, gbc_pnlDetalles);
+		GridBagLayout gbl_pnlDetalles = new GridBagLayout();
+		gbl_pnlDetalles.columnWidths = new int[]{150, 0, 0};
+		gbl_pnlDetalles.rowHeights = new int[]{0, 0, 0, 0, 22, 0};
+		gbl_pnlDetalles.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlDetalles.rowWeights = new double[]{1.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
+		pnlDetalles.setLayout(gbl_pnlDetalles);
+		
+		lblIngredientes = new JLabel("Ingredientes:");
+		GridBagConstraints gbc_lblIngredientes = new GridBagConstraints();
+		gbc_lblIngredientes.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIngredientes.gridx = 0;
+		gbc_lblIngredientes.gridy = 0;
+		pnlDetalles.add(lblIngredientes, gbc_lblIngredientes);
+		
+		taIngredientes = new JTextArea();
+		taIngredientes.setEditable(false);
+		GridBagConstraints gbc_taIngredientes = new GridBagConstraints();
+		gbc_taIngredientes.gridheight = 2;
+		gbc_taIngredientes.insets = new Insets(0, 0, 5, 0);
+		gbc_taIngredientes.fill = GridBagConstraints.BOTH;
+		gbc_taIngredientes.gridx = 1;
+		gbc_taIngredientes.gridy = 0;
+		pnlDetalles.add(taIngredientes, gbc_taIngredientes);
+		
+		lblAlrgenos = new JLabel("Al\u00E9rgenos");
+		GridBagConstraints gbc_lblAlrgenos = new GridBagConstraints();
+		gbc_lblAlrgenos.insets = new Insets(0, 0, 5, 5);
+		gbc_lblAlrgenos.gridx = 0;
+		gbc_lblAlrgenos.gridy = 2;
+		pnlDetalles.add(lblAlrgenos, gbc_lblAlrgenos);
+		
+		taAlrgenos = new JTextArea();
+		taAlrgenos.setEditable(false);
+		GridBagConstraints gbc_taAlrgenos = new GridBagConstraints();
+		gbc_taAlrgenos.gridheight = 2;
+		gbc_taAlrgenos.insets = new Insets(0, 0, 5, 0);
+		gbc_taAlrgenos.fill = GridBagConstraints.BOTH;
+		gbc_taAlrgenos.gridx = 1;
+		gbc_taAlrgenos.gridy = 2;
+		pnlDetalles.add(taAlrgenos, gbc_taAlrgenos);
+		
+		lblPrecio = new JLabel("Precio:");
+		GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
+		gbc_lblPrecio.insets = new Insets(0, 0, 0, 5);
+		gbc_lblPrecio.gridx = 0;
+		gbc_lblPrecio.gridy = 4;
+		pnlDetalles.add(lblPrecio, gbc_lblPrecio);
+		
+		tfPrecio = new JTextField();
+		tfPrecio.setEditable(false);
+		GridBagConstraints gbc_tfPrecio = new GridBagConstraints();
+		gbc_tfPrecio.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tfPrecio.gridx = 1;
+		gbc_tfPrecio.gridy = 4;
+		pnlDetalles.add(tfPrecio, gbc_tfPrecio);
+		tfPrecio.setColumns(10);
 
 		pnlEdición = new JPanel();
 		pnlEdición.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Edici\u00F3n",
@@ -313,6 +381,35 @@ public class pnlProductos extends JPanel {
 		gbc_pnlEdición.gridx = 1;
 		gbc_pnlEdición.gridy = 1;
 		add(pnlEdición, gbc_pnlEdición);
+		GridBagLayout gbl_pnlEdición = new GridBagLayout();
+		gbl_pnlEdición.columnWidths = new int[]{100, 0};
+		gbl_pnlEdición.rowHeights = new int[]{50, 50, 0, 50, 0};
+		gbl_pnlEdición.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_pnlEdición.rowWeights = new double[]{0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		pnlEdición.setLayout(gbl_pnlEdición);
+		
+		btnNuevoProducto = new JButton("Nuevo producto");
+		GridBagConstraints gbc_btnNuevoProducto = new GridBagConstraints();
+		gbc_btnNuevoProducto.fill = GridBagConstraints.BOTH;
+		gbc_btnNuevoProducto.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNuevoProducto.gridx = 0;
+		gbc_btnNuevoProducto.gridy = 0;
+		pnlEdición.add(btnNuevoProducto, gbc_btnNuevoProducto);
+		
+		btnEditarProducto = new JButton("Editar producto");
+		GridBagConstraints gbc_btnEditarProducto = new GridBagConstraints();
+		gbc_btnEditarProducto.fill = GridBagConstraints.BOTH;
+		gbc_btnEditarProducto.insets = new Insets(0, 0, 5, 0);
+		gbc_btnEditarProducto.gridx = 0;
+		gbc_btnEditarProducto.gridy = 1;
+		pnlEdición.add(btnEditarProducto, gbc_btnEditarProducto);
+		
+		btnBorrarProducto = new JButton("Borrar producto");
+		GridBagConstraints gbc_btnBorrarProducto = new GridBagConstraints();
+		gbc_btnBorrarProducto.fill = GridBagConstraints.BOTH;
+		gbc_btnBorrarProducto.gridx = 0;
+		gbc_btnBorrarProducto.gridy = 3;
+		pnlEdición.add(btnBorrarProducto, gbc_btnBorrarProducto);
 
 	}
 

@@ -136,7 +136,7 @@ public class TPV extends JFrame {
 		pnlProductos = new pnlProductos();
 		tbpCentral.addTab("Productos", null, pnlProductos, null);
 
-		pnlClientes = new JPanel();
+		pnlClientes = new pnlClientes();
 		tbpCentral.addTab("Clientes", null, pnlClientes, null);
 
 		pnlCallejero = new JPanel();

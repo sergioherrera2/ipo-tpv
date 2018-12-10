@@ -1,4 +1,10 @@
-10/12/18
+| 10/12/18 |
+
+TPV v0.5
+- pnlClientes first version
+
+TPV v0.4.1
+- pnlProductos improvements
 
 TPV v0.4
 - pnlProductos first version
@@ -12,7 +18,7 @@ TPV v0.3.2
 TPV v0.3.1
 - Minor design changes
 
-09/12/18
+| 09/12/18 |
 
 TPV v0.3
 - pnlOfertas first version
@@ -20,7 +26,7 @@ TPV v0.3
 TPV v0.2
 - pnlPedidos first version
 
-07/12/18
+| 07/12/18 |
 
 TPV v0.1
 - Login form first version
