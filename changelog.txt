@@ -1,5 +1,8 @@
 10/12/18
 
+TPV v0.4
+- pnlProductos first version
+
 TPV v0.3.3
 - pnlOfertas rebased
 
