@@ -22,6 +22,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
+import javax.swing.JTextField;
+import java.awt.Component;
 
 public class pnlOfertas extends JPanel {
 	private JPanel pnlPromociones;
@@ -38,6 +40,13 @@ public class pnlOfertas extends JPanel {
 	private JScrollPane spClientes;
 	private JList lsClientes;
 	private JScrollPane spPromociones;
+	private JPanel pnlPromo1;
+	private JLabel lblProducto1;
+	private JLabel lblPostre1;
+	private JTextField txtHamburguesaYHelado;
+	private JPanel pnlOferta1;
+	private JLabel lblOfertaBebida;
+	private JTextField txtBebidaPorSolo;
 
 	/**
 	 * Create the panel.
@@ -75,6 +84,46 @@ public class pnlOfertas extends JPanel {
 		gbc_spPromociones.gridx = 0;
 		gbc_spPromociones.gridy = 0;
 		pnlPromociones.add(spPromociones, gbc_spPromociones);
+		
+		pnlPromo1 = new JPanel();
+		spPromociones.setViewportView(pnlPromo1);
+		GridBagLayout gbl_pnlPromo1 = new GridBagLayout();
+		gbl_pnlPromo1.columnWidths = new int[]{0, 0, 0};
+		gbl_pnlPromo1.rowHeights = new int[]{0, 0, 0};
+		gbl_pnlPromo1.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlPromo1.rowWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
+		pnlPromo1.setLayout(gbl_pnlPromo1);
+		
+		lblProducto1 = new JLabel("");
+		lblProducto1.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/hamburger.png")));
+		GridBagConstraints gbc_lblProducto1 = new GridBagConstraints();
+		gbc_lblProducto1.fill = GridBagConstraints.BOTH;
+		gbc_lblProducto1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblProducto1.gridx = 0;
+		gbc_lblProducto1.gridy = 0;
+		pnlPromo1.add(lblProducto1, gbc_lblProducto1);
+		
+		lblPostre1 = new JLabel("");
+		lblPostre1.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/ice-cream.png")));
+		GridBagConstraints gbc_lblPostre1 = new GridBagConstraints();
+		gbc_lblPostre1.fill = GridBagConstraints.BOTH;
+		gbc_lblPostre1.insets = new Insets(0, 0, 5, 0);
+		gbc_lblPostre1.gridx = 1;
+		gbc_lblPostre1.gridy = 0;
+		pnlPromo1.add(lblPostre1, gbc_lblPostre1);
+		
+		txtHamburguesaYHelado = new JTextField();
+		txtHamburguesaYHelado.setEditable(false);
+		txtHamburguesaYHelado.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		txtHamburguesaYHelado.setText("Hamburguesa y helado por 4,50\u20AC!");
+		GridBagConstraints gbc_txtHamburguesaYHelado = new GridBagConstraints();
+		gbc_txtHamburguesaYHelado.fill = GridBagConstraints.BOTH;
+		gbc_txtHamburguesaYHelado.gridwidth = 2;
+		gbc_txtHamburguesaYHelado.insets = new Insets(0, 0, 0, 5);
+		gbc_txtHamburguesaYHelado.gridx = 0;
+		gbc_txtHamburguesaYHelado.gridy = 1;
+		pnlPromo1.add(txtHamburguesaYHelado, gbc_txtHamburguesaYHelado);
+		txtHamburguesaYHelado.setColumns(10);
 		
 		btnNuevaOferta = new JButton("Nueva oferta");
 		btnNuevaOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
@@ -118,6 +167,33 @@ public class pnlOfertas extends JPanel {
 		gbc_spOfertas.gridx = 0;
 		gbc_spOfertas.gridy = 0;
 		pnlOfertas.add(spOfertas, gbc_spOfertas);
+		
+		pnlOferta1 = new JPanel();
+		spOfertas.setViewportView(pnlOferta1);
+		GridBagLayout gbl_pnlOferta1 = new GridBagLayout();
+		gbl_pnlOferta1.columnWidths = new int[]{214, 0};
+		gbl_pnlOferta1.rowHeights = new int[]{30, 0, 0};
+		gbl_pnlOferta1.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_pnlOferta1.rowWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
+		pnlOferta1.setLayout(gbl_pnlOferta1);
+		
+		lblOfertaBebida = new JLabel("");
+		lblOfertaBebida.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/soft-drink.png")));
+		GridBagConstraints gbc_lblOfertaBebida = new GridBagConstraints();
+		gbc_lblOfertaBebida.fill = GridBagConstraints.VERTICAL;
+		gbc_lblOfertaBebida.insets = new Insets(0, 0, 5, 0);
+		gbc_lblOfertaBebida.gridx = 0;
+		gbc_lblOfertaBebida.gridy = 0;
+		pnlOferta1.add(lblOfertaBebida, gbc_lblOfertaBebida);
+		
+		txtBebidaPorSolo = new JTextField();
+		txtBebidaPorSolo.setText("Bebida por solo 1,30\u20AC!");
+		GridBagConstraints gbc_txtBebidaPorSolo = new GridBagConstraints();
+		gbc_txtBebidaPorSolo.fill = GridBagConstraints.BOTH;
+		gbc_txtBebidaPorSolo.gridx = 0;
+		gbc_txtBebidaPorSolo.gridy = 1;
+		pnlOferta1.add(txtBebidaPorSolo, gbc_txtBebidaPorSolo);
+		txtBebidaPorSolo.setColumns(10);
 		
 		btnBorrarOferta = new JButton("Borrar oferta");
 		btnBorrarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));

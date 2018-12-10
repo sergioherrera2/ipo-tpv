@@ -3,6 +3,3 @@ pnlOfertas:
 
 pnlProductos:
 -- Problema: no sé como hacer que se pueda seleccionar un producto (una label)
-
-General:
--- Impedir edición de las tablas
