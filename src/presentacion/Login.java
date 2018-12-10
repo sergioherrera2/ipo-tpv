@@ -20,6 +20,7 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.Toolkit;
+import java.awt.Font;
 
 public class Login extends JFrame {
 
@@ -66,7 +67,7 @@ public class Login extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/presentacion/food-2074638_960_720 - resized.png")));
 		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 400);
+		setBounds(100, 100, 500, 350);
 
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -83,16 +84,18 @@ public class Login extends JFrame {
 		mnAcercaDe = new JMenu("Acerca de...");
 		menuBar.add(mnAcercaDe);
 		contentPane = new JPanel();
+		contentPane.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 
 		pnlCentral = new JPanel();
+		pnlCentral.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlCentral.setBorder(new TitledBorder(null, "Login", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		contentPane.add(pnlCentral, BorderLayout.CENTER);
 		GridBagLayout gbl_pnlCentral = new GridBagLayout();
 		gbl_pnlCentral.columnWidths = new int[] { 0, 238, 91, 111, 0, 0 };
-		gbl_pnlCentral.rowHeights = new int[] { 0, 41, 36, 48, 0, 0 };
+		gbl_pnlCentral.rowHeights = new int[] { 41, 36, 48, 0, 0, 0 };
 		gbl_pnlCentral.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
 		gbl_pnlCentral.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		pnlCentral.setLayout(gbl_pnlCentral);
@@ -102,52 +105,63 @@ public class Login extends JFrame {
 		// lblImage.setIcon(new
 		// ImageIcon(Login.class.getResource("/presentacion/food-2074638_960_720.png")));
 		GridBagConstraints gbc_lblImage = new GridBagConstraints();
-		gbc_lblImage.gridheight = 4;
+		gbc_lblImage.gridwidth = 2;
+		gbc_lblImage.fill = GridBagConstraints.VERTICAL;
+		gbc_lblImage.gridheight = 5;
 		gbc_lblImage.insets = new Insets(0, 0, 0, 5);
-		gbc_lblImage.gridx = 1;
-		gbc_lblImage.gridy = 1;
+		gbc_lblImage.gridx = 0;
+		gbc_lblImage.gridy = 0;
 		pnlCentral.add(lblImage, gbc_lblImage);
 		
 		lblIdentificacion = new JLabel("Identificaci\u00F3n:");
+		lblIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblIdentificacion = new GridBagConstraints();
 		gbc_lblIdentificacion.anchor = GridBagConstraints.EAST;
 		gbc_lblIdentificacion.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdentificacion.gridx = 2;
-		gbc_lblIdentificacion.gridy = 2;
+		gbc_lblIdentificacion.gridy = 0;
 		pnlCentral.add(lblIdentificacion, gbc_lblIdentificacion);
 		
 		txtIdentificacion = new JTextField();
+		txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
-		gbc_txtIdentificacion.insets = new Insets(0, 0, 5, 5);
+		gbc_txtIdentificacion.gridwidth = 3;
+		gbc_txtIdentificacion.insets = new Insets(0, 0, 5, 0);
 		gbc_txtIdentificacion.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtIdentificacion.gridx = 3;
-		gbc_txtIdentificacion.gridy = 2;
+		gbc_txtIdentificacion.gridx = 2;
+		gbc_txtIdentificacion.gridy = 1;
 		pnlCentral.add(txtIdentificacion, gbc_txtIdentificacion);
 		txtIdentificacion.setColumns(10);
 		
 		lblContrasea = new JLabel("Contrase\u00F1a:");
+		lblContrasea.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblContrasea = new GridBagConstraints();
 		gbc_lblContrasea.insets = new Insets(0, 0, 5, 5);
 		gbc_lblContrasea.gridx = 2;
-		gbc_lblContrasea.gridy = 3;
+		gbc_lblContrasea.gridy = 2;
 		pnlCentral.add(lblContrasea, gbc_lblContrasea);
 		
 		pwdContraseña = new JPasswordField();
+		pwdContraseña.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
-		gbc_pwdContraseña.insets = new Insets(0, 0, 5, 5);
+		gbc_pwdContraseña.insets = new Insets(0, 0, 5, 0);
+		gbc_pwdContraseña.gridwidth = 3;
 		gbc_pwdContraseña.fill = GridBagConstraints.HORIZONTAL;
-		gbc_pwdContraseña.gridx = 3;
+		gbc_pwdContraseña.gridx = 2;
 		gbc_pwdContraseña.gridy = 3;
 		pnlCentral.add(pwdContraseña, gbc_pwdContraseña);
 		
 		pnlInferior = new JPanel();
+		pnlInferior.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		contentPane.add(pnlInferior, BorderLayout.SOUTH);
 		
 		cbIdioma = new JComboBox();
+		cbIdioma.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlInferior.add(cbIdioma);
 		cbIdioma.setName("");
 		
 		btnEntrar = new JButton("Entrar");
+		btnEntrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		btnEntrar.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlInferior.add(btnEntrar);
 	}
