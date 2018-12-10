@@ -21,12 +21,12 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.Toolkit;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Login extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JMenuBar menuBar;
@@ -43,6 +43,7 @@ public class Login extends JFrame {
 	private JComboBox cbIdioma;
 	private JButton btnEntrar;
 	private JPanel pnlInferior;
+	private JLabel lblDemoPulseEntrar;
 
 	/**
 	 * Launch the application.
@@ -64,10 +65,12 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/presentacion/food-2074638_960_720 - resized.png")));
+		setBackground(Color.DARK_GRAY);
+		setIconImage(Toolkit.getDefaultToolkit()
+				.getImage(Login.class.getResource("/presentacion/iconos/food-2074638_960_720 - resized.png")));
 		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 350);
+		setBounds(100, 100, 570, 350);
 
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -95,24 +98,25 @@ public class Login extends JFrame {
 		contentPane.add(pnlCentral, BorderLayout.CENTER);
 		GridBagLayout gbl_pnlCentral = new GridBagLayout();
 		gbl_pnlCentral.columnWidths = new int[] { 0, 238, 91, 111, 0, 0 };
-		gbl_pnlCentral.rowHeights = new int[] { 41, 36, 48, 0, 0, 0 };
+		gbl_pnlCentral.rowHeights = new int[] { 41, 36, 48, 0, 0, 0, 0 };
 		gbl_pnlCentral.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
-		gbl_pnlCentral.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		gbl_pnlCentral.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		pnlCentral.setLayout(gbl_pnlCentral);
 
 		lblImage = new JLabel("");
-		lblImage.setIcon(new ImageIcon(Login.class.getResource("/presentacion/food-2074638_960_720 - resized.png")));
+		lblImage.setIcon(
+				new ImageIcon(Login.class.getResource("/presentacion/iconos/food-2074638_960_720 - resized.png")));
 		// lblImage.setIcon(new
 		// ImageIcon(Login.class.getResource("/presentacion/food-2074638_960_720.png")));
 		GridBagConstraints gbc_lblImage = new GridBagConstraints();
 		gbc_lblImage.gridwidth = 2;
 		gbc_lblImage.fill = GridBagConstraints.VERTICAL;
 		gbc_lblImage.gridheight = 5;
-		gbc_lblImage.insets = new Insets(0, 0, 0, 5);
+		gbc_lblImage.insets = new Insets(0, 0, 5, 5);
 		gbc_lblImage.gridx = 0;
 		gbc_lblImage.gridy = 0;
 		pnlCentral.add(lblImage, gbc_lblImage);
-		
+
 		lblIdentificacion = new JLabel("Identificaci\u00F3n:");
 		lblIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblIdentificacion = new GridBagConstraints();
@@ -121,7 +125,7 @@ public class Login extends JFrame {
 		gbc_lblIdentificacion.gridx = 2;
 		gbc_lblIdentificacion.gridy = 0;
 		pnlCentral.add(lblIdentificacion, gbc_lblIdentificacion);
-		
+
 		txtIdentificacion = new JTextField();
 		txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
@@ -132,7 +136,7 @@ public class Login extends JFrame {
 		gbc_txtIdentificacion.gridy = 1;
 		pnlCentral.add(txtIdentificacion, gbc_txtIdentificacion);
 		txtIdentificacion.setColumns(10);
-		
+
 		lblContrasea = new JLabel("Contrase\u00F1a:");
 		lblContrasea.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblContrasea = new GridBagConstraints();
@@ -140,7 +144,7 @@ public class Login extends JFrame {
 		gbc_lblContrasea.gridx = 2;
 		gbc_lblContrasea.gridy = 2;
 		pnlCentral.add(lblContrasea, gbc_lblContrasea);
-		
+
 		pwdContraseña = new JPasswordField();
 		pwdContraseña.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
@@ -150,20 +154,36 @@ public class Login extends JFrame {
 		gbc_pwdContraseña.gridx = 2;
 		gbc_pwdContraseña.gridy = 3;
 		pnlCentral.add(pwdContraseña, gbc_pwdContraseña);
-		
+
+		lblDemoPulseEntrar = new JLabel("Demo: pulse entrar sin introducir nada");
+		GridBagConstraints gbc_lblDemoPulseEntrar = new GridBagConstraints();
+		gbc_lblDemoPulseEntrar.gridwidth = 3;
+		gbc_lblDemoPulseEntrar.insets = new Insets(0, 0, 0, 5);
+		gbc_lblDemoPulseEntrar.gridx = 2;
+		gbc_lblDemoPulseEntrar.gridy = 5;
+		pnlCentral.add(lblDemoPulseEntrar, gbc_lblDemoPulseEntrar);
+		lblDemoPulseEntrar.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+
 		pnlInferior = new JPanel();
 		pnlInferior.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		contentPane.add(pnlInferior, BorderLayout.SOUTH);
-		
+
 		cbIdioma = new JComboBox();
 		cbIdioma.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlInferior.add(cbIdioma);
 		cbIdioma.setName("");
-		
+
 		btnEntrar = new JButton("Entrar");
+		btnEntrar.addActionListener(new BtnEntrarActionListener());
 		btnEntrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		btnEntrar.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlInferior.add(btnEntrar);
 	}
 
+	private class BtnEntrarActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent arg0) {
+			TPV tpv = new TPV();
+			tpv.setVisible(true);
+		}
+	}
 }

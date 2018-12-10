@@ -94,6 +94,10 @@ public class pnlPedidos extends JPanel {
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}
+
+			public boolean isCellEditable(int rowIndex, int columnIndex) {
+				return false;
+			}
 		});
 		tbPedidos.getColumnModel().getColumn(2).setPreferredWidth(95);
 		tbPedidos.getColumnModel().getColumn(3).setPreferredWidth(89);
@@ -174,6 +178,10 @@ public class pnlPedidos extends JPanel {
 
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
+			}
+
+			public boolean isCellEditable(int rowIndex, int columnIndex) {
+				return false;
 			}
 		});
 		tbProductos.getColumnModel().getColumn(0).setPreferredWidth(107);

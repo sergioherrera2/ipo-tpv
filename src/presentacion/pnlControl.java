@@ -7,10 +7,6 @@ import java.awt.GridLayout;
 import java.awt.Font;
 
 public class pnlControl extends JPanel {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JButton btnCerrarSesin;
 
 	/**

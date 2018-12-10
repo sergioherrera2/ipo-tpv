@@ -1,7 +1,10 @@
 | 10/12/18 |
 
-TPV v0.6.1
+TPV v0.7
 - Login: font changes
+- Login: demo implemented
+- pnlCallejero: image changed
+- Other style changes
 
 TPV v0.6
 - pnlCallejero first version
