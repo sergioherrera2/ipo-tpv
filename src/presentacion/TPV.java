@@ -48,6 +48,7 @@ public class TPV extends JFrame {
 			public void run() {
 				try {
 					TPV frame = new TPV();
+					frame.setExtendedState(MAXIMIZED_BOTH);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

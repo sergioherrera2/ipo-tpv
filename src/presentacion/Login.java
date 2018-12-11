@@ -172,7 +172,7 @@ public class Login extends JFrame {
 		contentPane.add(pnlInferior, BorderLayout.SOUTH);
 
 		cbIdioma = new JComboBox();
-		cbIdioma.setModel(new DefaultComboBoxModel(new String[] {"Espa\u00F1ol", "Ingl\u00E9s"}));
+		cbIdioma.setModel(new DefaultComboBoxModel(new String[] { "Espa\u00F1ol", "Ingl\u00E9s" }));
 		cbIdioma.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlInferior.add(cbIdioma);
 		cbIdioma.setName("");
@@ -188,6 +188,7 @@ public class Login extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			TPV tpv = new TPV();
+			tpv.setExtendedState(MAXIMIZED_BOTH);
 			tpv.setVisible(true);
 		}
 	}
