@@ -127,7 +127,7 @@ public class TPV extends JFrame {
 		gbc_lblBanner.gridy = 0;
 		pnlBanner.add(lblBanner, gbc_lblBanner);
 
-		lbldemoV = new JLabel("(Demo - v0.7.1)");
+		lbldemoV = new JLabel("(Demo - v0.7.4)");
 		lbldemoV.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		GridBagConstraints gbc_lbldemoV = new GridBagConstraints();
 		gbc_lbldemoV.gridx = 1;
