@@ -24,6 +24,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
 
 public class Login extends JFrame {
 
@@ -171,6 +172,7 @@ public class Login extends JFrame {
 		contentPane.add(pnlInferior, BorderLayout.SOUTH);
 
 		cbIdioma = new JComboBox();
+		cbIdioma.setModel(new DefaultComboBoxModel(new String[] {"Espa\u00F1ol", "Ingl\u00E9s"}));
 		cbIdioma.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlInferior.add(cbIdioma);
 		cbIdioma.setName("");
