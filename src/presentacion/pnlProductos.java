@@ -83,7 +83,7 @@ public class pnlProductos extends JPanel {
 		GridBagLayout gbl_pnlProductos = new GridBagLayout();
 		gbl_pnlProductos.columnWidths = new int[] { 150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0 };
 		gbl_pnlProductos.rowHeights = new int[] { 50, 0, 0, 0 };
-		gbl_pnlProductos.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0,
+		gbl_pnlProductos.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				Double.MIN_VALUE };
 		gbl_pnlProductos.rowWeights = new double[] { 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		pnlProductos.setLayout(gbl_pnlProductos);

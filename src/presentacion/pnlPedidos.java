@@ -232,18 +232,19 @@ public class pnlPedidos extends JPanel {
 		gbc_pnlCliente.gridy = 1;
 		add(pnlCliente, gbc_pnlCliente);
 		GridBagLayout gbl_pnlCliente = new GridBagLayout();
-		gbl_pnlCliente.columnWidths = new int[] { 178, 120, 120, 0 };
-		gbl_pnlCliente.rowHeights = new int[] { 50, 50, 50, 50, 50, 50, 50, 0 };
-		gbl_pnlCliente.columnWeights = new double[] { 0.0, 0.0, 0.0, Double.MIN_VALUE };
-		gbl_pnlCliente.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		gbl_pnlCliente.columnWidths = new int[] { 10, 178, 120, 120, 10, 0 };
+		gbl_pnlCliente.rowHeights = new int[] { 10, 50, 50, 50, 0, 50, 50, 50, 50, 10, 0 };
+		gbl_pnlCliente.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		gbl_pnlCliente.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		pnlCliente.setLayout(gbl_pnlCliente);
 
 		lblNombreYApellidos = new JLabel("Nombre y apellidos:");
 		lblNombreYApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblNombreYApellidos = new GridBagConstraints();
+		gbc_lblNombreYApellidos.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_lblNombreYApellidos.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNombreYApellidos.gridx = 0;
-		gbc_lblNombreYApellidos.gridy = 0;
+		gbc_lblNombreYApellidos.gridx = 1;
+		gbc_lblNombreYApellidos.gridy = 1;
 		pnlCliente.add(lblNombreYApellidos, gbc_lblNombreYApellidos);
 
 		tfNombreApellidos = new JTextField();
@@ -251,37 +252,39 @@ public class pnlPedidos extends JPanel {
 		GridBagConstraints gbc_tfNombreApellidos = new GridBagConstraints();
 		gbc_tfNombreApellidos.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfNombreApellidos.gridwidth = 3;
-		gbc_tfNombreApellidos.insets = new Insets(0, 0, 5, 0);
-		gbc_tfNombreApellidos.gridx = 0;
-		gbc_tfNombreApellidos.gridy = 1;
+		gbc_tfNombreApellidos.insets = new Insets(0, 0, 5, 5);
+		gbc_tfNombreApellidos.gridx = 1;
+		gbc_tfNombreApellidos.gridy = 2;
 		pnlCliente.add(tfNombreApellidos, gbc_tfNombreApellidos);
 		tfNombreApellidos.setColumns(10);
 
 		lblTelfono = new JLabel("Tel\u00E9fono:");
 		lblTelfono.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblTelfono = new GridBagConstraints();
+		gbc_lblTelfono.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_lblTelfono.insets = new Insets(0, 0, 5, 5);
-		gbc_lblTelfono.gridx = 0;
-		gbc_lblTelfono.gridy = 2;
+		gbc_lblTelfono.gridx = 1;
+		gbc_lblTelfono.gridy = 3;
 		pnlCliente.add(lblTelfono, gbc_lblTelfono);
-
-		tfTelefono = new JTextField();
-		tfTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-		GridBagConstraints gbc_tfTelefono = new GridBagConstraints();
-		gbc_tfTelefono.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tfTelefono.gridwidth = 2;
-		gbc_tfTelefono.insets = new Insets(0, 0, 5, 0);
-		gbc_tfTelefono.gridx = 1;
-		gbc_tfTelefono.gridy = 2;
-		pnlCliente.add(tfTelefono, gbc_tfTelefono);
-		tfTelefono.setColumns(10);
+		
+				tfTelefono = new JTextField();
+				tfTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+				GridBagConstraints gbc_tfTelefono = new GridBagConstraints();
+				gbc_tfTelefono.fill = GridBagConstraints.HORIZONTAL;
+				gbc_tfTelefono.gridwidth = 3;
+				gbc_tfTelefono.insets = new Insets(0, 0, 5, 5);
+				gbc_tfTelefono.gridx = 1;
+				gbc_tfTelefono.gridy = 4;
+				pnlCliente.add(tfTelefono, gbc_tfTelefono);
+				tfTelefono.setColumns(10);
 
 		lblDireccinDeEnvo = new JLabel("Direcci\u00F3n de env\u00EDo:");
 		lblDireccinDeEnvo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblDireccinDeEnvo = new GridBagConstraints();
+		gbc_lblDireccinDeEnvo.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_lblDireccinDeEnvo.insets = new Insets(0, 0, 5, 5);
-		gbc_lblDireccinDeEnvo.gridx = 0;
-		gbc_lblDireccinDeEnvo.gridy = 3;
+		gbc_lblDireccinDeEnvo.gridx = 1;
+		gbc_lblDireccinDeEnvo.gridy = 5;
 		pnlCliente.add(lblDireccinDeEnvo, gbc_lblDireccinDeEnvo);
 
 		tfDireccionEnvio = new JTextField();
@@ -289,28 +292,29 @@ public class pnlPedidos extends JPanel {
 		GridBagConstraints gbc_tfDireccionEnvio = new GridBagConstraints();
 		gbc_tfDireccionEnvio.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfDireccionEnvio.gridwidth = 3;
-		gbc_tfDireccionEnvio.insets = new Insets(0, 0, 5, 0);
-		gbc_tfDireccionEnvio.gridx = 0;
-		gbc_tfDireccionEnvio.gridy = 4;
+		gbc_tfDireccionEnvio.insets = new Insets(0, 0, 5, 5);
+		gbc_tfDireccionEnvio.gridx = 1;
+		gbc_tfDireccionEnvio.gridy = 6;
 		pnlCliente.add(tfDireccionEnvio, gbc_tfDireccionEnvio);
 		tfDireccionEnvio.setColumns(10);
 
 		lblAlergiasORestricciones = new JLabel("Alergias o restricciones:");
 		lblAlergiasORestricciones.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblAlergiasORestricciones = new GridBagConstraints();
+		gbc_lblAlergiasORestricciones.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_lblAlergiasORestricciones.insets = new Insets(0, 0, 5, 5);
-		gbc_lblAlergiasORestricciones.gridx = 0;
-		gbc_lblAlergiasORestricciones.gridy = 5;
+		gbc_lblAlergiasORestricciones.gridx = 1;
+		gbc_lblAlergiasORestricciones.gridy = 7;
 		pnlCliente.add(lblAlergiasORestricciones, gbc_lblAlergiasORestricciones);
 
 		tfAlergias = new JTextField();
 		tfAlergias.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_tfAlergias = new GridBagConstraints();
+		gbc_tfAlergias.insets = new Insets(0, 0, 5, 5);
 		gbc_tfAlergias.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tfAlergias.gridwidth = 3;
-		gbc_tfAlergias.insets = new Insets(0, 0, 0, 5);
-		gbc_tfAlergias.gridx = 0;
-		gbc_tfAlergias.gridy = 6;
+		gbc_tfAlergias.gridx = 1;
+		gbc_tfAlergias.gridy = 8;
 		pnlCliente.add(tfAlergias, gbc_tfAlergias);
 		tfAlergias.setColumns(10);
 
