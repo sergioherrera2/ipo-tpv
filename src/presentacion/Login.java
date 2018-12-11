@@ -100,7 +100,7 @@ public class Login extends JFrame {
 		GridBagLayout gbl_pnlCentral = new GridBagLayout();
 		gbl_pnlCentral.columnWidths = new int[] { 0, 238, 91, 111, 0, 0 };
 		gbl_pnlCentral.rowHeights = new int[] { 41, 36, 48, 0, 0, 0, 0 };
-		gbl_pnlCentral.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
+		gbl_pnlCentral.columnWeights = new double[] { 0.0, 1.0, 0.0, 0.0, 1.0, Double.MIN_VALUE };
 		gbl_pnlCentral.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		pnlCentral.setLayout(gbl_pnlCentral);
 
@@ -130,7 +130,7 @@ public class Login extends JFrame {
 		txtIdentificacion = new JTextField();
 		txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
-		gbc_txtIdentificacion.gridwidth = 3;
+		gbc_txtIdentificacion.gridwidth = 2;
 		gbc_txtIdentificacion.insets = new Insets(0, 0, 5, 0);
 		gbc_txtIdentificacion.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtIdentificacion.gridx = 2;
@@ -150,20 +150,21 @@ public class Login extends JFrame {
 		pwdContraseña.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
 		gbc_pwdContraseña.insets = new Insets(0, 0, 5, 0);
-		gbc_pwdContraseña.gridwidth = 3;
+		gbc_pwdContraseña.gridwidth = 2;
 		gbc_pwdContraseña.fill = GridBagConstraints.HORIZONTAL;
 		gbc_pwdContraseña.gridx = 2;
 		gbc_pwdContraseña.gridy = 3;
 		pnlCentral.add(pwdContraseña, gbc_pwdContraseña);
 
 		lblDemoPulseEntrar = new JLabel("Demo: pulse entrar sin introducir nada");
+		lblDemoPulseEntrar.setForeground(Color.DARK_GRAY);
 		GridBagConstraints gbc_lblDemoPulseEntrar = new GridBagConstraints();
-		gbc_lblDemoPulseEntrar.gridwidth = 3;
+		gbc_lblDemoPulseEntrar.gridwidth = 2;
 		gbc_lblDemoPulseEntrar.insets = new Insets(0, 0, 0, 5);
 		gbc_lblDemoPulseEntrar.gridx = 2;
 		gbc_lblDemoPulseEntrar.gridy = 5;
 		pnlCentral.add(lblDemoPulseEntrar, gbc_lblDemoPulseEntrar);
-		lblDemoPulseEntrar.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+		lblDemoPulseEntrar.setFont(new Font("Segoe UI", Font.ITALIC, 13));
 
 		pnlInferior = new JPanel();
 		pnlInferior.setFont(new Font("Segoe UI", Font.PLAIN, 13));
