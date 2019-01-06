@@ -29,7 +29,7 @@ public class pnlUsuario extends JPanel {
 		
 		lblFotousuario = new JLabel("");
 		lblFotousuario.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-		lblFotousuario.setIcon(new ImageIcon(pnlUsuario.class.getResource("/presentacion/iconos/pizza.png")));
+		lblFotousuario.setIcon(new ImageIcon(pnlUsuario.class.getResource("/presentacion/imagenes/pizza.png")));
 		GridBagConstraints gbc_lblFotousuario = new GridBagConstraints();
 		gbc_lblFotousuario.gridheight = 3;
 		gbc_lblFotousuario.insets = new Insets(0, 0, 0, 5);

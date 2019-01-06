@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class pnlClientes extends JPanel {
 	private JPanel pnlTablaClientes;
@@ -29,6 +30,7 @@ public class pnlClientes extends JPanel {
 	private JLabel label;
 	private JLabel lblVlidosHasta;
 	private JLabel label_1;
+	private JLabel lblHelp;
 
 	/**
 	 * Create the panel.
@@ -36,11 +38,19 @@ public class pnlClientes extends JPanel {
 	public pnlClientes() {
 		setBounds(new Rectangle(0, 0, 1280, 720));
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] { 1106, 150, 0 };
-		gridBagLayout.rowHeights = new int[] { 510, 0, 0 };
-		gridBagLayout.columnWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
-		gridBagLayout.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
+		gridBagLayout.columnWidths = new int[] { 1106, 150, 0, 0 };
+		gridBagLayout.rowHeights = new int[] { 0, 510, 0, 0 };
+		gridBagLayout.columnWeights = new double[] { 1.0, 1.0, 0.0, Double.MIN_VALUE };
+		gridBagLayout.rowWeights = new double[] { 0.0, 1.0, 1.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
+		
+		lblHelp = new JLabel("");
+		GridBagConstraints gbc_lblHelp = new GridBagConstraints();
+		gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
+		gbc_lblHelp.gridx = 2;
+		gbc_lblHelp.gridy = 0;
+		add(lblHelp, gbc_lblHelp);
+		lblHelp.setIcon(new ImageIcon(pnlClientes.class.getResource("/presentacion/iconos/information.png")));
 
 		pnlTablaClientes = new JPanel();
 		pnlTablaClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13));
@@ -51,7 +61,7 @@ public class pnlClientes extends JPanel {
 		gbc_pnlTablaClientes.insets = new Insets(0, 0, 5, 5);
 		gbc_pnlTablaClientes.fill = GridBagConstraints.BOTH;
 		gbc_pnlTablaClientes.gridx = 0;
-		gbc_pnlTablaClientes.gridy = 0;
+		gbc_pnlTablaClientes.gridy = 1;
 		add(pnlTablaClientes, gbc_pnlTablaClientes);
 		GridBagLayout gbl_pnlTablaClientes = new GridBagLayout();
 		gbl_pnlTablaClientes.columnWidths = new int[] { 0, 100, 0 };
@@ -63,7 +73,7 @@ public class pnlClientes extends JPanel {
 		spTablaClientes = new JScrollPane();
 		GridBagConstraints gbc_spTablaClientes = new GridBagConstraints();
 		gbc_spTablaClientes.gridheight = 4;
-		gbc_spTablaClientes.insets = new Insets(0, 0, 5, 5);
+		gbc_spTablaClientes.insets = new Insets(0, 0, 0, 5);
 		gbc_spTablaClientes.fill = GridBagConstraints.BOTH;
 		gbc_spTablaClientes.gridx = 0;
 		gbc_spTablaClientes.gridy = 0;
@@ -102,6 +112,7 @@ public class pnlClientes extends JPanel {
 		spTablaClientes.setViewportView(tbClientes);
 
 		btnAadirCliente = new JButton("A\u00F1adir cliente");
+		btnAadirCliente.setIcon(new ImageIcon(pnlClientes.class.getResource("/presentacion/iconos/rounded-add-button.png")));
 		btnAadirCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnAadirCliente = new GridBagConstraints();
 		gbc_btnAadirCliente.fill = GridBagConstraints.BOTH;
@@ -111,6 +122,7 @@ public class pnlClientes extends JPanel {
 		pnlTablaClientes.add(btnAadirCliente, gbc_btnAadirCliente);
 
 		btnEditarCliente = new JButton("Editar cliente");
+		btnEditarCliente.setIcon(new ImageIcon(pnlClientes.class.getResource("/presentacion/iconos/edit24.png")));
 		btnEditarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnEditarCliente = new GridBagConstraints();
 		gbc_btnEditarCliente.fill = GridBagConstraints.BOTH;
@@ -120,6 +132,7 @@ public class pnlClientes extends JPanel {
 		pnlTablaClientes.add(btnEditarCliente, gbc_btnEditarCliente);
 
 		btnBorrarCliente = new JButton("Borrar cliente");
+		btnBorrarCliente.setIcon(new ImageIcon(pnlClientes.class.getResource("/presentacion/iconos/rubbish-bin-delete-button.png")));
 		btnBorrarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		GridBagConstraints gbc_btnBorrarCliente = new GridBagConstraints();
 		gbc_btnBorrarCliente.fill = GridBagConstraints.BOTH;
@@ -135,7 +148,7 @@ public class pnlClientes extends JPanel {
 		gbc_pnlHistorialPedidos.insets = new Insets(0, 0, 0, 5);
 		gbc_pnlHistorialPedidos.fill = GridBagConstraints.BOTH;
 		gbc_pnlHistorialPedidos.gridx = 0;
-		gbc_pnlHistorialPedidos.gridy = 1;
+		gbc_pnlHistorialPedidos.gridy = 2;
 		add(pnlHistorialPedidos, gbc_pnlHistorialPedidos);
 		GridBagLayout gbl_pnlHistorialPedidos = new GridBagLayout();
 		gbl_pnlHistorialPedidos.columnWidths = new int[] { 0, 0 };
@@ -178,9 +191,10 @@ public class pnlClientes extends JPanel {
 		pnlPuntos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
 		pnlPuntos.setBorder(new TitledBorder(null, "Puntos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_pnlPuntos = new GridBagConstraints();
+		gbc_pnlPuntos.insets = new Insets(0, 0, 0, 5);
 		gbc_pnlPuntos.fill = GridBagConstraints.BOTH;
 		gbc_pnlPuntos.gridx = 1;
-		gbc_pnlPuntos.gridy = 1;
+		gbc_pnlPuntos.gridy = 2;
 		add(pnlPuntos, gbc_pnlPuntos);
 		GridBagLayout gbl_pnlPuntos = new GridBagLayout();
 		gbl_pnlPuntos.columnWidths = new int[] { 0, 35, 0 };
