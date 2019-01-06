@@ -34,9 +34,12 @@ public class pnlControl extends JPanel {
 
     private class BtnCerrarSesinActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showConfirmDialog(null, "¿Seguro que quieres salir?",
-                    "Aviso", JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE);
+            if (JOptionPane.showConfirmDialog(null,
+                    "¿Seguro que quieres salir?", "Aviso",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE) == 0) {
+                System.exit(0);
+            }
         }
     }
 }

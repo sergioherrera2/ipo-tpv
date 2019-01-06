@@ -90,7 +90,6 @@ public class TPV extends JFrame {
 
         mnAcercaDe = new JMenu("Acerca de...");
         menuBar.add(mnAcercaDe);
-        // setBounds(100, 100, 450, 300);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -138,7 +137,7 @@ public class TPV extends JFrame {
         gbc_lblBanner.gridy = 0;
         pnlBanner.add(lblBanner, gbc_lblBanner);
 
-        lbldemoV = new JLabel("v0.7.7)");
+        lbldemoV = new JLabel("(v0.7.8)");
         lbldemoV.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         GridBagConstraints gbc_lbldemoV = new GridBagConstraints();
         gbc_lbldemoV.gridx = 1;
@@ -156,7 +155,7 @@ public class TPV extends JFrame {
         tbpCentral = new JTabbedPane(JTabbedPane.LEFT);
         contentPane.add(tbpCentral, BorderLayout.CENTER);
 
-        pnlPedidos = new pnlPedidos();
+        pnlPedidos = new pnlPedidos(frame);
         tbpCentral.addTab("Pedidos", null, pnlPedidos, null);
 
         pnlOfertas = new pnlOfertas();
@@ -165,7 +164,7 @@ public class TPV extends JFrame {
         pnlProductos = new pnlProductos();
         tbpCentral.addTab("Productos", null, pnlProductos, null);
 
-        pnlClientes = new pnlClientes();
+        pnlClientes = new pnlDatosCliente();
         tbpCentral.addTab("Clientes", null, pnlClientes, null);
 
         pnlCallejero = new pnlCallejero();

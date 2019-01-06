@@ -12,17 +12,23 @@ import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
 import java.awt.Color;
+import java.awt.Dialog.ModalExclusionType;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class pnlPedidos extends JPanel {
+    private TPV tpv;
+
     private JPanel pnlTablaPedidos;
     private JScrollPane spTablaPedidos;
     private JTable tbPedidos;
     private JPanel pnlProductos;
-    private JPanel pnlCliente;
     private JButton btnNuevoPedido;
     private JButton btnEditarPedido;
     private JButton btnVerPedido;
@@ -32,25 +38,19 @@ public class pnlPedidos extends JPanel {
     private JButton btnImprimirTicket;
     private JLabel lblTotal;
     private JTextField tfPrecio;
-    private JLabel lblNombreYApellidos;
-    private JTextField tfNombreApellidos;
-    private JLabel lblTelfono;
-    private JTextField tfTelefono;
-    private JLabel lblDireccinDeEnvo;
-    private JTextField tfDireccionEnvio;
-    private JLabel lblAlergiasORestricciones;
-    private JTextField tfAlergias;
     private JLabel lblHelp;
+    private JPanel panel;
 
     /**
      * Create the panel.
      */
-    public pnlPedidos() {
+    public pnlPedidos(TPV tpv) {
+        this.tpv = tpv;
         setBounds(new Rectangle(0, 0, 1280, 720));
         GridBagLayout gridBagLayout = new GridBagLayout();
         gridBagLayout.columnWidths = new int[] { 871, 0, 0, 0 };
-        gridBagLayout.rowHeights = new int[] { 0, 316, 431, 0 };
-        gridBagLayout.columnWeights = new double[] { 1.0, 0.0, 0.0,
+        gridBagLayout.rowHeights = new int[] { 0, 375, 431, 0 };
+        gridBagLayout.columnWeights = new double[] { 1.0, 1.0, 0.0,
                 Double.MIN_VALUE };
         gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 1.0,
                 Double.MIN_VALUE };
@@ -84,7 +84,7 @@ public class pnlPedidos extends JPanel {
                 0 };
         gbl_pnlTablaPedidos.columnWeights = new double[] { 1.0, 0.0,
                 Double.MIN_VALUE };
-        gbl_pnlTablaPedidos.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0,
+        gbl_pnlTablaPedidos.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 1.0,
                 0.0, Double.MIN_VALUE };
         pnlTablaPedidos.setLayout(gbl_pnlTablaPedidos);
 
@@ -134,6 +134,7 @@ public class pnlPedidos extends JPanel {
         spTablaPedidos.setViewportView(tbPedidos);
 
         btnNuevoPedido = new JButton("Nuevo pedido");
+        btnNuevoPedido.addActionListener(new BtnNuevoPedidoActionListener());
         btnNuevoPedido.setIcon(new ImageIcon(pnlPedidos.class
                 .getResource("/presentacion/iconos/rounded-add-button.png")));
         btnNuevoPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
@@ -145,6 +146,7 @@ public class pnlPedidos extends JPanel {
         pnlTablaPedidos.add(btnNuevoPedido, gbc_btnNuevoPedido);
 
         btnEditarPedido = new JButton("Editar pedido");
+        btnEditarPedido.addActionListener(new BtnEditarPedidoActionListener());
         btnEditarPedido.setIcon(new ImageIcon(pnlPedidos.class
                 .getResource("/presentacion/iconos/edit24.png")));
         btnEditarPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
@@ -156,6 +158,7 @@ public class pnlPedidos extends JPanel {
         pnlTablaPedidos.add(btnEditarPedido, gbc_btnEditarPedido);
 
         btnVerPedido = new JButton("Ver pedido");
+        btnVerPedido.addActionListener(new BtnVerPedidoActionListener());
         btnVerPedido.setIcon(new ImageIcon(pnlPedidos.class
                 .getResource("/presentacion/iconos/show-more-button.png")));
         btnVerPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
@@ -167,6 +170,7 @@ public class pnlPedidos extends JPanel {
         pnlTablaPedidos.add(btnVerPedido, gbc_btnVerPedido);
 
         btnBorrarPedido = new JButton("Borrar pedido");
+        btnBorrarPedido.addActionListener(new BtnBorrarPedidoActionListener());
         btnBorrarPedido.setIcon(new ImageIcon(pnlPedidos.class.getResource(
                 "/presentacion/iconos/rubbish-bin-delete-button.png")));
         btnBorrarPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
@@ -267,107 +271,67 @@ public class pnlPedidos extends JPanel {
         gbc_btnImprimirTicket.gridy = 2;
         pnlProductos.add(btnImprimirTicket, gbc_btnImprimirTicket);
 
-        pnlCliente = new JPanel();
-        pnlCliente.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlCliente.setBorder(new TitledBorder(null, "Cliente",
-                TitledBorder.LEADING, TitledBorder.TOP, null, null));
-        GridBagConstraints gbc_pnlCliente = new GridBagConstraints();
-        gbc_pnlCliente.insets = new Insets(0, 0, 0, 5);
-        gbc_pnlCliente.fill = GridBagConstraints.BOTH;
-        gbc_pnlCliente.gridx = 1;
-        gbc_pnlCliente.gridy = 2;
-        add(pnlCliente, gbc_pnlCliente);
-        GridBagLayout gbl_pnlCliente = new GridBagLayout();
-        gbl_pnlCliente.columnWidths = new int[] { 10, 178, 120, 120, 10, 0 };
-        gbl_pnlCliente.rowHeights = new int[] { 10, 50, 50, 50, 0, 50, 50, 50,
-                50, 10, 0 };
-        gbl_pnlCliente.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0,
-                Double.MIN_VALUE };
-        gbl_pnlCliente.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
-        pnlCliente.setLayout(gbl_pnlCliente);
-
-        lblNombreYApellidos = new JLabel("Nombre y apellidos:");
-        lblNombreYApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_lblNombreYApellidos = new GridBagConstraints();
-        gbc_lblNombreYApellidos.anchor = GridBagConstraints.SOUTHWEST;
-        gbc_lblNombreYApellidos.insets = new Insets(0, 0, 5, 5);
-        gbc_lblNombreYApellidos.gridx = 1;
-        gbc_lblNombreYApellidos.gridy = 1;
-        pnlCliente.add(lblNombreYApellidos, gbc_lblNombreYApellidos);
-
-        tfNombreApellidos = new JTextField();
-        tfNombreApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_tfNombreApellidos = new GridBagConstraints();
-        gbc_tfNombreApellidos.fill = GridBagConstraints.HORIZONTAL;
-        gbc_tfNombreApellidos.gridwidth = 3;
-        gbc_tfNombreApellidos.insets = new Insets(0, 0, 5, 5);
-        gbc_tfNombreApellidos.gridx = 1;
-        gbc_tfNombreApellidos.gridy = 2;
-        pnlCliente.add(tfNombreApellidos, gbc_tfNombreApellidos);
-        tfNombreApellidos.setColumns(10);
-
-        lblTelfono = new JLabel("Tel\u00E9fono:");
-        lblTelfono.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_lblTelfono = new GridBagConstraints();
-        gbc_lblTelfono.anchor = GridBagConstraints.SOUTHWEST;
-        gbc_lblTelfono.insets = new Insets(0, 0, 5, 5);
-        gbc_lblTelfono.gridx = 1;
-        gbc_lblTelfono.gridy = 3;
-        pnlCliente.add(lblTelfono, gbc_lblTelfono);
-
-        tfTelefono = new JTextField();
-        tfTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_tfTelefono = new GridBagConstraints();
-        gbc_tfTelefono.fill = GridBagConstraints.HORIZONTAL;
-        gbc_tfTelefono.gridwidth = 3;
-        gbc_tfTelefono.insets = new Insets(0, 0, 5, 5);
-        gbc_tfTelefono.gridx = 1;
-        gbc_tfTelefono.gridy = 4;
-        pnlCliente.add(tfTelefono, gbc_tfTelefono);
-        tfTelefono.setColumns(10);
-
-        lblDireccinDeEnvo = new JLabel("Direcci\u00F3n de env\u00EDo:");
-        lblDireccinDeEnvo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_lblDireccinDeEnvo = new GridBagConstraints();
-        gbc_lblDireccinDeEnvo.anchor = GridBagConstraints.SOUTHWEST;
-        gbc_lblDireccinDeEnvo.insets = new Insets(0, 0, 5, 5);
-        gbc_lblDireccinDeEnvo.gridx = 1;
-        gbc_lblDireccinDeEnvo.gridy = 5;
-        pnlCliente.add(lblDireccinDeEnvo, gbc_lblDireccinDeEnvo);
-
-        tfDireccionEnvio = new JTextField();
-        tfDireccionEnvio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_tfDireccionEnvio = new GridBagConstraints();
-        gbc_tfDireccionEnvio.fill = GridBagConstraints.HORIZONTAL;
-        gbc_tfDireccionEnvio.gridwidth = 3;
-        gbc_tfDireccionEnvio.insets = new Insets(0, 0, 5, 5);
-        gbc_tfDireccionEnvio.gridx = 1;
-        gbc_tfDireccionEnvio.gridy = 6;
-        pnlCliente.add(tfDireccionEnvio, gbc_tfDireccionEnvio);
-        tfDireccionEnvio.setColumns(10);
-
-        lblAlergiasORestricciones = new JLabel("Alergias o restricciones:");
-        lblAlergiasORestricciones.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_lblAlergiasORestricciones = new GridBagConstraints();
-        gbc_lblAlergiasORestricciones.anchor = GridBagConstraints.SOUTHWEST;
-        gbc_lblAlergiasORestricciones.insets = new Insets(0, 0, 5, 5);
-        gbc_lblAlergiasORestricciones.gridx = 1;
-        gbc_lblAlergiasORestricciones.gridy = 7;
-        pnlCliente.add(lblAlergiasORestricciones,
-                gbc_lblAlergiasORestricciones);
-
-        tfAlergias = new JTextField();
-        tfAlergias.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        GridBagConstraints gbc_tfAlergias = new GridBagConstraints();
-        gbc_tfAlergias.insets = new Insets(0, 0, 5, 5);
-        gbc_tfAlergias.fill = GridBagConstraints.HORIZONTAL;
-        gbc_tfAlergias.gridwidth = 3;
-        gbc_tfAlergias.gridx = 1;
-        gbc_tfAlergias.gridy = 8;
-        pnlCliente.add(tfAlergias, gbc_tfAlergias);
-        tfAlergias.setColumns(10);
+        panel = new pnlDatosCliente();
+        GridBagConstraints gbc_panel = new GridBagConstraints();
+        gbc_panel.insets = new Insets(0, 0, 0, 5);
+        gbc_panel.fill = GridBagConstraints.BOTH;
+        gbc_panel.gridx = 1;
+        gbc_panel.gridy = 2;
+        add(panel, gbc_panel);
 
     }
 
+    private class BtnNuevoPedidoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            GestionPedidos gp = new GestionPedidos();
+            gp.setLocationRelativeTo(null);
+            gp.setVisible(true);
+        }
+    }
+
+    private class BtnEditarPedidoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (tbPedidos.getSelectedRow() > -1) {
+                GestionPedidos gp = new GestionPedidos();
+                gp.setLocationRelativeTo(null);
+                gp.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(tpv,
+                        "Primero tienes que seleccionar una fila.", "Aviso",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }
+
+    private class BtnVerPedidoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (tbPedidos.getSelectedRow() > -1) {
+                GestionPedidos gp = new GestionPedidos();
+                gp.setLocationRelativeTo(null);
+                gp.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(tpv,
+                        "Primero tienes que seleccionar una fila.", "Aviso",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }
+
+    private class BtnBorrarPedidoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            DefaultTableModel dtm = (DefaultTableModel) tbPedidos.getModel();
+            if (tbPedidos.getSelectedRow() > -1) {
+                if (JOptionPane.showConfirmDialog(tpv,
+                        "¿Estás seguro de que quieres borrar el pedido?",
+                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    dtm.removeRow(tbPedidos.getSelectedRow());
+                }
+            } else {
+                JOptionPane.showMessageDialog(tpv,
+                        "Primero tienes que seleccionar una fila.", "Aviso",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+    }
 }

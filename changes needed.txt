@@ -5,3 +5,6 @@ pnlOfertas:
 pnlProductos:
 -- Problema: hacer que se pueda seleccionar un producto (una label con foto)
 -- Solución: mouseClicked y cambiar el fondo para mostrar la selección
+
+pnlPedidos:
+-- Problema: pueden abrirse ventanas infinitas
