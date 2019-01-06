@@ -19,6 +19,7 @@ import java.awt.Insets;
 import java.awt.Font;
 
 public class TPV extends JFrame {
+    private static TPV frame;
 
     private JPanel contentPane;
     private JMenuBar menuBar;
@@ -47,7 +48,7 @@ public class TPV extends JFrame {
             @Override
             public void run() {
                 try {
-                    TPV frame = new TPV();
+                    frame = new TPV();
                     frame.setExtendedState(MAXIMIZED_BOTH);
                     frame.setVisible(true);
                 } catch (Exception e) {
@@ -55,6 +56,14 @@ public class TPV extends JFrame {
                 }
             }
         });
+    }
+
+    public static TPV getFrame() {
+        return frame;
+    }
+
+    public static void setFrame(TPV frame) {
+        TPV.frame = frame;
     }
 
     /**
@@ -129,7 +138,7 @@ public class TPV extends JFrame {
         gbc_lblBanner.gridy = 0;
         pnlBanner.add(lblBanner, gbc_lblBanner);
 
-        lbldemoV = new JLabel("(Demo - v0.7.6)");
+        lbldemoV = new JLabel("v0.7.7)");
         lbldemoV.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         GridBagConstraints gbc_lbldemoV = new GridBagConstraints();
         gbc_lbldemoV.gridx = 1;

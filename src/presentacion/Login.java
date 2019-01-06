@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
 import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
 import java.awt.GridBagLayout;
@@ -25,10 +26,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.border.EtchedBorder;
+import java.awt.Cursor;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Login extends JFrame {
 
-    private static final long serialVersionUID = 1L;
+    private static Login frame;
     private JPanel contentPane;
     private JMenuBar menuBar;
     private JMenu mnArchivo;
@@ -44,7 +53,6 @@ public class Login extends JFrame {
     private JComboBox cbIdioma;
     private JButton btnEntrar;
     private JPanel pnlInferior;
-    private JLabel lblDemoPulseEntrar;
     private JLabel lblHelp;
 
     /**
@@ -55,13 +63,21 @@ public class Login extends JFrame {
             @Override
             public void run() {
                 try {
-                    Login frame = new Login();
+                    frame = new Login();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
+    }
+
+    public static Login getFrame() {
+        return frame;
+    }
+
+    public static void setFrame(Login frame) {
+        Login.frame = frame;
     }
 
     /**
@@ -109,6 +125,8 @@ public class Login extends JFrame {
         pnlCentral.setLayout(gbl_pnlCentral);
 
         lblHelp = new JLabel("");
+        lblHelp.addMouseListener(new LblHelpMouseListener());
+        lblHelp.setToolTipText("Pulse para mostrar la ayuda");
         lblHelp.setIcon(new ImageIcon(Login.class
                 .getResource("/presentacion/iconos/information.png")));
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
@@ -120,7 +138,7 @@ public class Login extends JFrame {
         lblImage = new JLabel("");
         lblImage.setIcon(new ImageIcon(Login.class.getResource(
                 "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
-        
+
         GridBagConstraints gbc_lblImage = new GridBagConstraints();
         gbc_lblImage.gridwidth = 2;
         gbc_lblImage.fill = GridBagConstraints.VERTICAL;
@@ -140,6 +158,10 @@ public class Login extends JFrame {
         pnlCentral.add(lblIdentificacion, gbc_lblIdentificacion);
 
         txtIdentificacion = new JTextField();
+        txtIdentificacion.addKeyListener(new TxtIdentificacionKeyListener());
+        txtIdentificacion
+                .addActionListener(new TxtIdentificacionActionListener());
+        txtIdentificacion.addFocusListener(new TxtFocusListener());
         txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
         gbc_txtIdentificacion.gridwidth = 2;
@@ -157,8 +179,11 @@ public class Login extends JFrame {
         gbc_lblContrasea.gridx = 2;
         gbc_lblContrasea.gridy = 3;
         pnlCentral.add(lblContrasea, gbc_lblContrasea);
+        lblContrasea.setEnabled(false);
 
         pwdContraseña = new JPasswordField();
+        pwdContraseña.addActionListener(new PwdContraseñaActionListener());
+        pwdContraseña.addFocusListener(new TxtFocusListener());
         pwdContraseña.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
         gbc_pwdContraseña.insets = new Insets(0, 0, 5, 5);
@@ -167,17 +192,7 @@ public class Login extends JFrame {
         gbc_pwdContraseña.gridx = 2;
         gbc_pwdContraseña.gridy = 4;
         pnlCentral.add(pwdContraseña, gbc_pwdContraseña);
-
-        lblDemoPulseEntrar = new JLabel(
-                "Demo: pulse entrar sin introducir nada");
-        lblDemoPulseEntrar.setForeground(Color.DARK_GRAY);
-        GridBagConstraints gbc_lblDemoPulseEntrar = new GridBagConstraints();
-        gbc_lblDemoPulseEntrar.gridwidth = 2;
-        gbc_lblDemoPulseEntrar.insets = new Insets(0, 0, 0, 5);
-        gbc_lblDemoPulseEntrar.gridx = 2;
-        gbc_lblDemoPulseEntrar.gridy = 6;
-        pnlCentral.add(lblDemoPulseEntrar, gbc_lblDemoPulseEntrar);
-        lblDemoPulseEntrar.setFont(new Font("Segoe UI", Font.ITALIC, 13));
+        pwdContraseña.setEnabled(false);
 
         pnlInferior = new JPanel();
         pnlInferior.setFont(new Font("Segoe UI", Font.PLAIN, 13));
@@ -191,10 +206,14 @@ public class Login extends JFrame {
         pnlInferior.setLayout(gbl_pnlInferior);
 
         btnEntrar = new JButton("Entrar");
-        btnEntrar.setIcon(new ImageIcon(Login.class.getResource("/presentacion/iconos/exit-to-app-button (1).png")));
+        btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        btnEntrar.setIcon(new ImageIcon(Login.class.getResource(
+                "/presentacion/iconos/exit-to-app-button (1).png")));
         btnEntrar.addActionListener(new BtnEntrarActionListener());
 
         cbIdioma = new JComboBox();
+        cbIdioma.setToolTipText(
+                "Seleccione el idioma con el que desee usar la aplicación");
         cbIdioma.setModel(new DefaultComboBoxModel(
                 new String[] { "Espa\u00F1ol", "Ingl\u00E9s" }));
         cbIdioma.setFont(new Font("Segoe UI", Font.PLAIN, 13));
@@ -216,9 +235,66 @@ public class Login extends JFrame {
     private class BtnEntrarActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent arg0) {
-            TPV tpv = new TPV();
-            tpv.setExtendedState(MAXIMIZED_BOTH);
-            tpv.setVisible(true);
+            if (txtIdentificacion.getText().equals("ipo")
+                    && pwdContraseña.getText().equals("tpv")) {
+                TPV tpv = new TPV();
+                tpv.setExtendedState(MAXIMIZED_BOTH);
+                frame.setVisible(false);
+                tpv.setVisible(true);
+            } else {
+                if (txtIdentificacion.getText().equals("ipo")) {
+                    JOptionPane.showMessageDialog(frame,
+                            "Contraseña incorrecta", "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(frame,
+                            "Los datos introducidos no se corresponden con ningún usuario",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+
+        }
+    }
+
+    private class TxtFocusListener extends FocusAdapter {
+        @Override
+        public void focusGained(FocusEvent e) {
+            e.getComponent().setBackground(new Color(250, 250, 150));
+        }
+
+        @Override
+        public void focusLost(FocusEvent e) {
+            e.getComponent().setBackground(new Color(250, 250, 250));
+        }
+    }
+
+    private class TxtIdentificacionActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            lblContrasea.setEnabled(true);
+            pwdContraseña.setEnabled(true);
+            pwdContraseña.requestFocus();
+        }
+    }
+
+    private class PwdContraseñaActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            btnEntrar.requestFocus();
+        }
+    }
+
+    private class LblHelpMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(frame,
+                    "Introduzca sus datos para entrar a la aplicación. \nEjemplo:"
+                            + "\n\nIdentificación: ipo\n" + "Contraseña: tpv",
+                    "Ayuda", JOptionPane.QUESTION_MESSAGE);
+
+        }
+    }
+    private class TxtIdentificacionKeyListener extends KeyAdapter {
+        @Override
+        public void keyTyped(KeyEvent e) {
         }
     }
 }
