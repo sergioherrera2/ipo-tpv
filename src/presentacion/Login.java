@@ -34,6 +34,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
 
 public class Login extends JFrame {
 
@@ -54,6 +56,9 @@ public class Login extends JFrame {
     private JButton btnEntrar;
     private JPanel pnlInferior;
     private JLabel lblHelp;
+    private JMenuItem mntmInformacinDelAutor;
+    private JMenuItem mntmNewMenuItem;
+    private JMenuItem mntmSalir;
 
     /**
      * Launch the application.
@@ -96,6 +101,11 @@ public class Login extends JFrame {
         mnArchivo = new JMenu("Archivo");
         menuBar.add(mnArchivo);
 
+        mntmSalir = new JMenuItem("Salir");
+        mntmSalir.setIcon(new ImageIcon(Login.class.getResource("/presentacion/iconos/exit-to-app-button.png")));
+        mntmSalir.addActionListener(new MntmSalirActionListener());
+        mnArchivo.add(mntmSalir);
+
         mnEdicin = new JMenu("Edici\u00F3n");
         menuBar.add(mnEdicin);
 
@@ -104,6 +114,15 @@ public class Login extends JFrame {
 
         mnAcercaDe = new JMenu("Acerca de...");
         menuBar.add(mnAcercaDe);
+
+        mntmInformacinDelAutor = new JMenuItem("Autor");
+        mntmInformacinDelAutor
+                .addActionListener(new MntmInformacinDelAutorActionListener());
+        mnAcercaDe.add(mntmInformacinDelAutor);
+
+        mntmNewMenuItem = new JMenuItem("Version | v0.8beta");
+        mntmNewMenuItem.addActionListener(new MntmNewMenuItemActionListener());
+        mnAcercaDe.add(mntmNewMenuItem);
         contentPane = new JPanel();
         contentPane.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -292,9 +311,71 @@ public class Login extends JFrame {
 
         }
     }
+
     private class TxtIdentificacionKeyListener extends KeyAdapter {
         @Override
         public void keyTyped(KeyEvent e) {
+            lblContrasea.setEnabled(true);
+            pwdContraseña.setEnabled(true);
+        }
+    }
+
+    private class MntmInformacinDelAutorActionListener
+            implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(frame,
+                    "Este prototipo ha sido desarrollado por Sergio Herrera Piqueras, \nalumno de la Escuela Superior de Informática de Ciudad Real, \npara la práctica final de la asignatura Interacción Persona-Ordenador I.",
+                    "Autor", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class MntmNewMenuItemActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(frame, "| 06/01/19 |\r\n" + "\r\n"
+                    + "TPV v0.7.8\r\n" + "- pnlDatosCliente now is dynamic\r\n"
+                    + "- pnlControl now is working\r\n"
+                    + "- Some design improvements\r\n" + "\r\n"
+                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n"
+                    + "- pnlControl confirm dialog added (without action for now)\r\n"
+                    + "\r\n" + "TPV v0.7.6\r\n"
+                    + "- Design style improved and better resource management\r\n"
+                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n"
+                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n"
+                    + "- TPV is now maximized by default\r\n"
+                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n"
+                    + "- Login: language is now shown\r\n" + "\r\n"
+                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n"
+                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n"
+                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n"
+                    + "- Login: font changes\r\n"
+                    + "- Login: demo implemented\r\n"
+                    + "- pnlCallejero: image changed\r\n"
+                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n"
+                    + "- pnlCallejero first version\r\n"
+                    + "- Design improvements (font changes)\r\n" + "\r\n"
+                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n"
+                    + "\r\n" + "TPV v0.4.1\r\n"
+                    + "- pnlProductos improvements\r\n" + "\r\n"
+                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n"
+                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n"
+                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n"
+                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n"
+                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n"
+                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n"
+                    + "- pnlPedidos first version\r\n" + "\r\n"
+                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n"
+                    + "- Login form first version\r\n" + "- TPV created",
+                    "Changelog", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class MntmSalirActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (JOptionPane.showConfirmDialog(frame,
+                    "¿Estás seguro de que quieres salir?", "Cuidado",
+                    JOptionPane.YES_NO_OPTION) == 0) {
+                System.exit(0);
+            }
         }
     }
 }

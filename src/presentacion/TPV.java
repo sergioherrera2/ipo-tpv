@@ -17,6 +17,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class TPV extends JFrame {
     private static TPV frame;
@@ -38,7 +44,9 @@ public class TPV extends JFrame {
     private JPanel pnlProductos;
     private JPanel pnlClientes;
     private JPanel pnlCallejero;
-    private JLabel lbldemoV;
+    private JMenuItem mntmSalir;
+    private JMenuItem mntmAutor;
+    private JMenuItem mntmVersin;
 
     /**
      * Launch the application.
@@ -82,6 +90,12 @@ public class TPV extends JFrame {
         mnArchivo = new JMenu("Archivo");
         menuBar.add(mnArchivo);
 
+        mntmSalir = new JMenuItem("Salir");
+        mntmSalir.setIcon(new ImageIcon(TPV.class
+                .getResource("/presentacion/iconos/exit-to-app-button.png")));
+        mntmSalir.addActionListener(new MntmSalirActionListener());
+        mnArchivo.add(mntmSalir);
+
         mnEdicin = new JMenu("Edici\u00F3n");
         menuBar.add(mnEdicin);
 
@@ -90,6 +104,14 @@ public class TPV extends JFrame {
 
         mnAcercaDe = new JMenu("Acerca de...");
         menuBar.add(mnAcercaDe);
+
+        mntmAutor = new JMenuItem("Autor");
+        mntmAutor.addActionListener(new MntmAutorActionListener());
+        mnAcercaDe.add(mntmAutor);
+
+        mntmVersin = new JMenuItem("Versión | v0.8beta");
+        mntmVersin.addActionListener(new MntmVersinActionListener());
+        mnAcercaDe.add(mntmVersin);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -132,17 +154,11 @@ public class TPV extends JFrame {
         lblBanner = new JLabel("\u00A1Bienvenido/a!");
         lblBanner.setFont(new Font("Segoe UI Black", Font.PLAIN, 40));
         GridBagConstraints gbc_lblBanner = new GridBagConstraints();
+        gbc_lblBanner.gridwidth = 2;
         gbc_lblBanner.insets = new Insets(0, 0, 0, 5);
         gbc_lblBanner.gridx = 0;
         gbc_lblBanner.gridy = 0;
         pnlBanner.add(lblBanner, gbc_lblBanner);
-
-        lbldemoV = new JLabel("(v0.7.8)");
-        lbldemoV.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-        GridBagConstraints gbc_lbldemoV = new GridBagConstraints();
-        gbc_lbldemoV.gridx = 1;
-        gbc_lbldemoV.gridy = 0;
-        pnlBanner.add(lbldemoV, gbc_lbldemoV);
 
         pnlControl = new pnlControl();
         pnlControl.setMinimumSize(new Dimension(246, 99));
@@ -164,11 +180,68 @@ public class TPV extends JFrame {
         pnlProductos = new pnlProductos();
         tbpCentral.addTab("Productos", null, pnlProductos, null);
 
-        pnlClientes = new pnlDatosCliente();
+        pnlClientes = new pnlClientes();
         tbpCentral.addTab("Clientes", null, pnlClientes, null);
 
         pnlCallejero = new pnlCallejero();
         tbpCentral.addTab("Callejero", null, pnlCallejero, null);
     }
 
+    private class MntmSalirActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (JOptionPane.showConfirmDialog(frame,
+                    "¿Estás seguro de que quieres salir?", "Cuidado",
+                    JOptionPane.YES_NO_OPTION) == 0) {
+                System.exit(0);
+            }
+        }
+    }
+
+    private class MntmAutorActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(frame,
+                    "Este prototipo ha sido desarrollado por Sergio Herrera Piqueras, \nalumno de la Escuela Superior de Informática de Ciudad Real, \npara la práctica final de la asignatura Interacción Persona-Ordenador I.",
+                    "Autor", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class MntmVersinActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(frame, "| 06/01/19 |\r\n" + "\r\n"
+                    + "TPV v0.7.8\r\n" + "- pnlDatosCliente now is dynamic\r\n"
+                    + "- pnlControl now is working\r\n"
+                    + "- Some design improvements\r\n" + "\r\n"
+                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n"
+                    + "- pnlControl confirm dialog added (without action for now)\r\n"
+                    + "\r\n" + "TPV v0.7.6\r\n"
+                    + "- Design style improved and better resource management\r\n"
+                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n"
+                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n"
+                    + "- TPV is now maximized by default\r\n"
+                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n"
+                    + "- Login: language is now shown\r\n" + "\r\n"
+                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n"
+                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n"
+                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n"
+                    + "- Login: font changes\r\n"
+                    + "- Login: demo implemented\r\n"
+                    + "- pnlCallejero: image changed\r\n"
+                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n"
+                    + "- pnlCallejero first version\r\n"
+                    + "- Design improvements (font changes)\r\n" + "\r\n"
+                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n"
+                    + "\r\n" + "TPV v0.4.1\r\n"
+                    + "- pnlProductos improvements\r\n" + "\r\n"
+                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n"
+                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n"
+                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n"
+                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n"
+                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n"
+                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n"
+                    + "- pnlPedidos first version\r\n" + "\r\n"
+                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n"
+                    + "- Login form first version\r\n" + "- TPV created",
+                    "Changelog", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 }

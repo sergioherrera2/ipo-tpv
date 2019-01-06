@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -43,7 +44,6 @@ public class GestionPedidos extends JFrame {
     private JTextField txtHorarecogida;
     private JLabel lblHoraDeLlegada;
     private JTextField txtHorallegada;
-    private JPanel pnlDatosCliente;
     private JPanel pnlCliente;
     private JPanel pnlResumen;
     private JTable tResumen;
@@ -64,6 +64,30 @@ public class GestionPedidos extends JFrame {
 
     public void settResumen(JTable tResumen) {
         this.tResumen = tResumen;
+    }
+
+    public JPanel getPnlCliente() {
+        return pnlCliente;
+    }
+
+    public void setPnlCliente(JPanel pnlCliente) {
+        this.pnlCliente = pnlCliente;
+    }
+
+    public JTextField getTxtHorarecogida() {
+        return txtHorarecogida;
+    }
+
+    public void setTxtHorarecogida(JTextField txtHorarecogida) {
+        this.txtHorarecogida = txtHorarecogida;
+    }
+
+    public JTextField getTxtHorallegada() {
+        return txtHorallegada;
+    }
+
+    public void setTxtHorallegada(JTextField txtHorallegada) {
+        this.txtHorallegada = txtHorallegada;
     }
 
     /**
@@ -308,6 +332,8 @@ public class GestionPedidos extends JFrame {
                     }
                     {
                         btnEliminar = new JButton("Eliminar");
+                        btnEliminar.addActionListener(
+                                new BtnEliminarActionListener());
                         btnEliminar.setIcon(
                                 new ImageIcon(GestionPedidos.class.getResource(
                                         "/presentacion/iconos/rubbish-bin-delete-button.png")));
@@ -431,6 +457,23 @@ public class GestionPedidos extends JFrame {
     private class BtnTerminarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             frame.dispose();
+        }
+    }
+
+    private class BtnEliminarActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            DefaultTableModel dtm = (DefaultTableModel) tResumen.getModel();
+            if (tResumen.getSelectedRow() > -1) {
+                if (JOptionPane.showConfirmDialog(frame,
+                        "¿Estás seguro de que quieres borrar el producto?",
+                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    dtm.removeRow(tResumen.getSelectedRow());
+                }
+            } else {
+                JOptionPane.showMessageDialog(frame,
+                        "Primero tienes que seleccionar un producto.", "Aviso",
+                        JOptionPane.WARNING_MESSAGE);
+            }
         }
     }
 }

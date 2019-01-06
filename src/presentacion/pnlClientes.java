@@ -32,7 +32,127 @@ public class pnlClientes extends JPanel {
 	private JLabel label_1;
 	private JLabel lblHelp;
 
-	/**
+	public JPanel getPnlTablaClientes() {
+        return pnlTablaClientes;
+    }
+
+    public void setPnlTablaClientes(JPanel pnlTablaClientes) {
+        this.pnlTablaClientes = pnlTablaClientes;
+    }
+
+    public JPanel getPnlHistorialPedidos() {
+        return pnlHistorialPedidos;
+    }
+
+    public void setPnlHistorialPedidos(JPanel pnlHistorialPedidos) {
+        this.pnlHistorialPedidos = pnlHistorialPedidos;
+    }
+
+    public JPanel getPnlPuntos() {
+        return pnlPuntos;
+    }
+
+    public void setPnlPuntos(JPanel pnlPuntos) {
+        this.pnlPuntos = pnlPuntos;
+    }
+
+    public JScrollPane getSpTablaClientes() {
+        return spTablaClientes;
+    }
+
+    public void setSpTablaClientes(JScrollPane spTablaClientes) {
+        this.spTablaClientes = spTablaClientes;
+    }
+
+    public JTable getTbClientes() {
+        return tbClientes;
+    }
+
+    public void setTbClientes(JTable tbClientes) {
+        this.tbClientes = tbClientes;
+    }
+
+    public JButton getBtnAadirCliente() {
+        return btnAadirCliente;
+    }
+
+    public void setBtnAadirCliente(JButton btnAadirCliente) {
+        this.btnAadirCliente = btnAadirCliente;
+    }
+
+    public JButton getBtnEditarCliente() {
+        return btnEditarCliente;
+    }
+
+    public void setBtnEditarCliente(JButton btnEditarCliente) {
+        this.btnEditarCliente = btnEditarCliente;
+    }
+
+    public JButton getBtnBorrarCliente() {
+        return btnBorrarCliente;
+    }
+
+    public void setBtnBorrarCliente(JButton btnBorrarCliente) {
+        this.btnBorrarCliente = btnBorrarCliente;
+    }
+
+    public JScrollPane getSpHistorial() {
+        return spHistorial;
+    }
+
+    public void setSpHistorial(JScrollPane spHistorial) {
+        this.spHistorial = spHistorial;
+    }
+
+    public JTable getTbHistorial() {
+        return tbHistorial;
+    }
+
+    public void setTbHistorial(JTable tbHistorial) {
+        this.tbHistorial = tbHistorial;
+    }
+
+    public JLabel getLblPuntosAcumulados() {
+        return lblPuntosAcumulados;
+    }
+
+    public void setLblPuntosAcumulados(JLabel lblPuntosAcumulados) {
+        this.lblPuntosAcumulados = lblPuntosAcumulados;
+    }
+
+    public JLabel getLabel() {
+        return label;
+    }
+
+    public void setLabel(JLabel label) {
+        this.label = label;
+    }
+
+    public JLabel getLblVlidosHasta() {
+        return lblVlidosHasta;
+    }
+
+    public void setLblVlidosHasta(JLabel lblVlidosHasta) {
+        this.lblVlidosHasta = lblVlidosHasta;
+    }
+
+    public JLabel getLabel_1() {
+        return label_1;
+    }
+
+    public void setLabel_1(JLabel label_1) {
+        this.label_1 = label_1;
+    }
+
+    public JLabel getLblHelp() {
+        return lblHelp;
+    }
+
+    public void setLblHelp(JLabel lblHelp) {
+        this.lblHelp = lblHelp;
+    }
+
+    /**
 	 * Create the panel.
 	 */
 	public pnlClientes() {

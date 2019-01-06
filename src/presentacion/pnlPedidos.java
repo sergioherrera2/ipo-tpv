@@ -21,6 +21,8 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class pnlPedidos extends JPanel {
     private TPV tpv;
@@ -57,6 +59,7 @@ public class pnlPedidos extends JPanel {
         setLayout(gridBagLayout);
 
         lblHelp = new JLabel("");
+        lblHelp.addMouseListener(new LblHelpMouseListener());
         lblHelp.setIcon(new ImageIcon(pnlPedidos.class
                 .getResource("/presentacion/iconos/information.png")));
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
@@ -260,6 +263,8 @@ public class pnlPedidos extends JPanel {
         tfPrecio.setColumns(10);
 
         btnImprimirTicket = new JButton("Imprimir ticket");
+        btnImprimirTicket
+                .addActionListener(new BtnImprimirTicketActionListener());
         btnImprimirTicket.setIcon(new ImageIcon(pnlPedidos.class
                 .getResource("/presentacion/iconos/receipt.png")));
         btnImprimirTicket
@@ -332,6 +337,31 @@ public class pnlPedidos extends JPanel {
                         JOptionPane.WARNING_MESSAGE);
             }
 
+        }
+    }
+
+    private class LblHelpMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(tpv,
+                    "En esta pestaña puedes ver todos los pedidos que hay en el sistema.\r\n"
+                            + "            Sobre la tabla de pedidos se puede:\r\n"
+                            + "            - Crear un nuevo pedido en una nueva ventana al pulsar en Nuevo Pedido.\r\n"
+                            + "            - Editar el pedido seleccionado en una nueva ventana.\r\n"
+                            + "            - Ver la información detallada del pedido en otra ventana.\r\n"
+                            + "            - Borrar el pedido seleccionado.\r\n"
+                            + "             \r\n"
+                            + "            Cuando pulsas en un pedido, aparece la información de sus productos en la tabla inferior, del cual podríamos imprimir el ticket. \r\n"
+                            + "             \r\n"
+                            + "            Por último, la información del cliente será mostrada automáticamente al seleccionar un pedido mediante la base de datos.",
+                    "Ayuda", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private class BtnImprimirTicketActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(tpv, "Módulo no implementado",
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }
