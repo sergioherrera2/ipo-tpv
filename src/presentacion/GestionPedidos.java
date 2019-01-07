@@ -28,6 +28,8 @@ import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GestionPedidos extends JFrame {
     private static GestionPedidos frame;
@@ -57,6 +59,8 @@ public class GestionPedidos extends JFrame {
     private JLabel lblNewLabel;
     private JLabel lblBebida;
     private JLabel lblPostre;
+    private JLabel lblAyuda;
+    private JLabel lblAyuda_1;
 
     public JTable gettResumen() {
         return tResumen;
@@ -150,6 +154,8 @@ public class GestionPedidos extends JFrame {
             pnlPedido.setLayout(gbl_pnlPedido);
             {
                 lblAyudapedido = new JLabel("");
+                lblAyudapedido
+                        .addMouseListener(new LblAyudapedidoMouseListener());
                 lblAyudapedido.setIcon(new ImageIcon(GestionPedidos.class
                         .getResource("/presentacion/iconos/information.png")));
                 GridBagConstraints gbc_lblAyudapedido = new GridBagConstraints();
@@ -202,6 +208,7 @@ public class GestionPedidos extends JFrame {
             }
             {
                 button = new JButton("");
+                button.addActionListener(new ButtonActionListener());
                 button.setIcon(new ImageIcon(GestionPedidos.class.getResource(
                         "/presentacion/iconos/rounded-add-button.png")));
                 GridBagConstraints gbc_button = new GridBagConstraints();
@@ -275,14 +282,25 @@ public class GestionPedidos extends JFrame {
             gbc_pnlResumen.gridy = 0;
             contentPane.add(pnlResumen, gbc_pnlResumen);
             GridBagLayout gbl_pnlResumen = new GridBagLayout();
-            gbl_pnlResumen.columnWidths = new int[] { 0, 50, 50, 0 };
+            gbl_pnlResumen.columnWidths = new int[] { 0, 50, 50, 10, 0 };
             gbl_pnlResumen.rowHeights = new int[] { 10, 50, 50, 127, 25, 34, 50,
                     0 };
-            gbl_pnlResumen.columnWeights = new double[] { 1.0, 0.0, 0.0,
+            gbl_pnlResumen.columnWeights = new double[] { 1.0, 0.0, 0.0, 0.0,
                     Double.MIN_VALUE };
             gbl_pnlResumen.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 0.0,
                     0.0, 0.0, Double.MIN_VALUE };
             pnlResumen.setLayout(gbl_pnlResumen);
+            {
+                lblAyuda = new JLabel("");
+                lblAyuda.setIcon(new ImageIcon(GestionPedidos.class
+                        .getResource("/presentacion/iconos/information.png")));
+                lblAyuda.addMouseListener(new LblAyudaMouseListener());
+                GridBagConstraints gbc_lblAyuda = new GridBagConstraints();
+                gbc_lblAyuda.insets = new Insets(0, 0, 5, 0);
+                gbc_lblAyuda.gridx = 3;
+                gbc_lblAyuda.gridy = 0;
+                pnlResumen.add(lblAyuda, gbc_lblAyuda);
+            }
             {
                 {
                     scrollPane = new JScrollPane();
@@ -327,7 +345,7 @@ public class GestionPedidos extends JFrame {
                         GridBagConstraints gbc_btnConfirmar = new GridBagConstraints();
                         gbc_btnConfirmar.fill = GridBagConstraints.BOTH;
                         gbc_btnConfirmar.gridwidth = 2;
-                        gbc_btnConfirmar.insets = new Insets(0, 0, 5, 0);
+                        gbc_btnConfirmar.insets = new Insets(0, 0, 5, 5);
                         gbc_btnConfirmar.gridx = 1;
                         gbc_btnConfirmar.gridy = 1;
                         pnlResumen.add(btnConfirmar, gbc_btnConfirmar);
@@ -344,7 +362,7 @@ public class GestionPedidos extends JFrame {
                         GridBagConstraints gbc_btnEliminar = new GridBagConstraints();
                         gbc_btnEliminar.fill = GridBagConstraints.BOTH;
                         gbc_btnEliminar.gridwidth = 2;
-                        gbc_btnEliminar.insets = new Insets(0, 0, 5, 0);
+                        gbc_btnEliminar.insets = new Insets(0, 0, 5, 5);
                         gbc_btnEliminar.gridx = 1;
                         gbc_btnEliminar.gridy = 2;
                         pnlResumen.add(btnEliminar, gbc_btnEliminar);
@@ -353,7 +371,7 @@ public class GestionPedidos extends JFrame {
                         lblTotal = new JLabel("Total:");
                         GridBagConstraints gbc_lblTotal = new GridBagConstraints();
                         gbc_lblTotal.gridwidth = 2;
-                        gbc_lblTotal.insets = new Insets(0, 0, 5, 0);
+                        gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
                         gbc_lblTotal.gridx = 1;
                         gbc_lblTotal.gridy = 4;
                         pnlResumen.add(lblTotal, gbc_lblTotal);
@@ -368,7 +386,7 @@ public class GestionPedidos extends JFrame {
                                 new Font("Segoe UI Semibold", Font.PLAIN, 14));
                         GridBagConstraints gbc_textField = new GridBagConstraints();
                         gbc_textField.gridwidth = 2;
-                        gbc_textField.insets = new Insets(0, 0, 5, 0);
+                        gbc_textField.insets = new Insets(0, 0, 5, 5);
                         gbc_textField.fill = GridBagConstraints.BOTH;
                         gbc_textField.gridx = 1;
                         gbc_textField.gridy = 5;
@@ -385,6 +403,7 @@ public class GestionPedidos extends JFrame {
                         btnTerminar.setFont(
                                 new Font("Segoe UI Semibold", Font.PLAIN, 15));
                         GridBagConstraints gbc_btnTerminar = new GridBagConstraints();
+                        gbc_btnTerminar.insets = new Insets(0, 0, 0, 5);
                         gbc_btnTerminar.fill = GridBagConstraints.BOTH;
                         gbc_btnTerminar.gridwidth = 2;
                         gbc_btnTerminar.gridx = 1;
@@ -405,46 +424,66 @@ public class GestionPedidos extends JFrame {
                         contentPane.add(pnlProductos, gbc_pnlProductos);
                         GridBagLayout gbl_pnlProductos = new GridBagLayout();
                         gbl_pnlProductos.columnWidths = new int[] { 100, 100,
-                                100, 10, 100, 100, 100, 10, 100, 100, 100, 0 };
-                        gbl_pnlProductos.rowHeights = new int[] { 75, 75, 75,
+                                100, 10, 100, 100, 100, 10, 100, 100, 100, 10,
                                 0 };
+                        gbl_pnlProductos.rowHeights = new int[] { 10, 75, 75,
+                                75, 0 };
                         gbl_pnlProductos.columnWeights = new double[] { 0.0,
                                 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, Double.MIN_VALUE };
+                                0.0, 0.0, Double.MIN_VALUE };
                         gbl_pnlProductos.rowWeights = new double[] { 0.0, 0.0,
-                                0.0, Double.MIN_VALUE };
+                                0.0, 0.0, Double.MIN_VALUE };
                         pnlProductos.setLayout(gbl_pnlProductos);
                         {
                             lblNewLabel = new JLabel("");
+                            lblNewLabel.addMouseListener(
+                                    new LblNewLabelMouseListener());
+                            {
+                                lblAyuda_1 = new JLabel("");
+                                lblAyuda_1.addMouseListener(
+                                        new LblAyuda_1MouseListener());
+                                lblAyuda_1.setIcon(new ImageIcon(
+                                        GestionPedidos.class.getResource(
+                                                "/presentacion/iconos/information.png")));
+                                GridBagConstraints gbc_lblAyuda_1 = new GridBagConstraints();
+                                gbc_lblAyuda_1.insets = new Insets(0, 0, 5, 0);
+                                gbc_lblAyuda_1.gridx = 11;
+                                gbc_lblAyuda_1.gridy = 0;
+                                pnlProductos.add(lblAyuda_1, gbc_lblAyuda_1);
+                            }
                             lblNewLabel.setIcon(new ImageIcon(
                                     GestionPedidos.class.getResource(
                                             "/presentacion/imagenes/hamburger.png")));
                             GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
                             gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
                             gbc_lblNewLabel.gridx = 0;
-                            gbc_lblNewLabel.gridy = 0;
+                            gbc_lblNewLabel.gridy = 1;
                             pnlProductos.add(lblNewLabel, gbc_lblNewLabel);
                         }
                         {
                             lblBebida = new JLabel("");
+                            lblBebida.addMouseListener(
+                                    new LblNewLabelMouseListener());
                             lblBebida.setIcon(new ImageIcon(
                                     GestionPedidos.class.getResource(
                                             "/presentacion/imagenes/soft-drink.png")));
                             GridBagConstraints gbc_lblBebida = new GridBagConstraints();
                             gbc_lblBebida.insets = new Insets(0, 0, 5, 5);
                             gbc_lblBebida.gridx = 4;
-                            gbc_lblBebida.gridy = 0;
+                            gbc_lblBebida.gridy = 1;
                             pnlProductos.add(lblBebida, gbc_lblBebida);
                         }
                         {
                             lblPostre = new JLabel("");
+                            lblPostre.addMouseListener(
+                                    new LblNewLabelMouseListener());
                             lblPostre.setIcon(new ImageIcon(
                                     GestionPedidos.class.getResource(
                                             "/presentacion/imagenes/ice-cream.png")));
                             GridBagConstraints gbc_lblPostre = new GridBagConstraints();
                             gbc_lblPostre.insets = new Insets(0, 0, 5, 5);
                             gbc_lblPostre.gridx = 8;
-                            gbc_lblPostre.gridy = 0;
+                            gbc_lblPostre.gridy = 1;
                             pnlProductos.add(lblPostre, gbc_lblPostre);
                         }
                     }
@@ -476,6 +515,53 @@ public class GestionPedidos extends JFrame {
                         "Primero tienes que seleccionar un producto.", "Aviso",
                         JOptionPane.WARNING_MESSAGE);
             }
+        }
+    }
+
+    private class ButtonActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            frmCliente cliente = new frmCliente();
+            cliente.setVisible(true);
+            cliente.setLocationRelativeTo(null);
+        }
+    }
+
+    private class LblAyudapedidoMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este es el panel \"Pedido\", donde se cargará la información sobre la hora de llegada/recogida en caso de estar editando un pedido,\n"
+                            + " o los campos estarán vacíos si estamos creando uno.\n"
+                            + "Además, podemos crear un cliente sobre la marcha pulsando en +, en caso de que el mismo no exista en el sistema.",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class LblAyudaMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este es el panel \"Resumen\", donde se mostrará un resumen de lo que vayamos eligiendo para el pedido.\n"
+                            + "- El botón confirmar introduciría el producto seleccionado en el panel inferior a la tabla resumen.\n"
+                            + "- Con el botón eliminar, eliminaremos un producto.\n"
+                            + "- Con el botón terminar, cerraríamos la ventana y se crearía/editaría el producto.\n",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class LblNewLabelMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            ((JLabel) e.getComponent()).setText("(selected)");
+        }
+    }
+
+    private class LblAyuda_1MouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este es el panel \"Productos\", donde se pueden seleccionar los productos que en los paneles superiores se podrán incluir al pedido.",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

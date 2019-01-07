@@ -432,7 +432,7 @@ public class pnlClientes extends JPanel {
                 }
             } else {
                 JOptionPane.showMessageDialog(new JPanel(),
-                        "Primero tienes que seleccionar una fila.", "Aviso",
+                        "Primero tienes que seleccionar un cliente.", "Aviso",
                         JOptionPane.WARNING_MESSAGE);
             }
 

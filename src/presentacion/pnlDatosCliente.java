@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import java.awt.Rectangle;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
@@ -17,6 +19,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class pnlDatosCliente extends JPanel {
     private JLabel lblNombreYApellidos;
@@ -27,6 +32,7 @@ public class pnlDatosCliente extends JPanel {
     private JTextField tfDireccion;
     private JLabel lblAlergiasORestricciones;
     private JTextField tfAlergias;
+    private JLabel lblAyuda;
 
     /**
      * Create the panel.
@@ -44,6 +50,17 @@ public class pnlDatosCliente extends JPanel {
         gridBagLayout.rowWeights = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0,
                 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE };
         setLayout(gridBagLayout);
+        {
+            lblAyuda = new JLabel("");
+            lblAyuda.addMouseListener(new LblAyudaMouseListener());
+            lblAyuda.setIcon(new ImageIcon(pnlDatosCliente.class
+                    .getResource("/presentacion/iconos/information.png")));
+            GridBagConstraints gbc_lblAyuda = new GridBagConstraints();
+            gbc_lblAyuda.insets = new Insets(0, 0, 5, 0);
+            gbc_lblAyuda.gridx = 4;
+            gbc_lblAyuda.gridy = 0;
+            add(lblAyuda, gbc_lblAyuda);
+        }
         {
             lblNombreYApellidos = new JLabel("Nombre y apellidos:");
             lblNombreYApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 15));
@@ -157,6 +174,16 @@ public class pnlDatosCliente extends JPanel {
             tfDireccion.setEnabled(true);
             lblAlergiasORestricciones.setEnabled(true);
             tfAlergias.setEnabled(true);
+        }
+    }
+
+    private class LblAyudaMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este es el panel \"Datos de cliente\", donde se cargará la información sobre el cliente a editar,\n"
+                            + " o los campos estarán vacíos si estamos creando uno.\n",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }
