@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.border.EmptyBorder;
 
+import presentacion.paneles.MessagesPnlUsuario;
 import presentacion.paneles.pnlControl;
 import presentacion.paneles.pnlUsuario;
 
@@ -26,6 +27,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
+import java.util.Locale;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 
@@ -91,52 +93,74 @@ public class VentanaPrincipal extends JFrame {
      * Create the frame.
      */
     public VentanaPrincipal() {
-        setTitle(MessagesVentanaPrincipal.getString("VentanaPrincipal.this.title")); //$NON-NLS-1$
+        setTitle(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.this.title")); //$NON-NLS-1$
         setIconImage(Toolkit.getDefaultToolkit()
                 .getImage(VentanaPrincipal.class.getResource(
                         "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
         setBounds(new Rectangle(0, 0, 1920, 1080));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        if (MessagesVentanaPrincipal.getIdioma().getLanguage()
+                .equals(new Locale("en").getLanguage())) {
+            MessagesPestanaPedidos.setIdioma("inglés");
+            MessagesPestanaProductos.setIdioma("inglés");
+            MessagesPestanaClientes.setIdioma("inglés");
+            MessagesPestanaCallejero.setIdioma("inglés");
+            MessagesPestanaOfertas.setIdioma("inglés");
+            MessagesPnlUsuario.setIdioma("inglés");
+        }
+
         menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        mnArchivo = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnArchivo.text")); //$NON-NLS-1$
+        mnArchivo = new JMenu(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mnArchivo.text")); //$NON-NLS-1$
         menuBar.add(mnArchivo);
 
-        mntmSalir = new JMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.mntmSalir.text")); //$NON-NLS-1$
+        mntmSalir = new JMenuItem(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mntmSalir.text")); //$NON-NLS-1$
         mntmSalir.setIcon(new ImageIcon(VentanaPrincipal.class
                 .getResource("/presentacion/iconos/exit-to-app-button.png")));
         mntmSalir.addActionListener(new MntmSalirActionListener());
         mnArchivo.add(mntmSalir);
 
-        mnEdicin = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnEdicin.text")); //$NON-NLS-1$
+        mnEdicin = new JMenu(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mnEdicin.text")); //$NON-NLS-1$
         menuBar.add(mnEdicin);
 
-        mnVista = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnVista.text")); //$NON-NLS-1$
+        mnVista = new JMenu(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mnVista.text")); //$NON-NLS-1$
         menuBar.add(mnVista);
 
-        mnTamaoDeLetra = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnTamaoDeLetra.text")); //$NON-NLS-1$
+        mnTamaoDeLetra = new JMenu(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mnTamaoDeLetra.text")); //$NON-NLS-1$
         mnVista.add(mnTamaoDeLetra);
 
-        rdbtnmntmPequea = new JRadioButtonMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.rdbtnmntmPequea.text")); //$NON-NLS-1$
+        rdbtnmntmPequea = new JRadioButtonMenuItem(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.rdbtnmntmPequea.text")); //$NON-NLS-1$
         mnTamaoDeLetra.add(rdbtnmntmPequea);
 
-        rdbtnmntmMediana = new JRadioButtonMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.rdbtnmntmMediana.text")); //$NON-NLS-1$
+        rdbtnmntmMediana = new JRadioButtonMenuItem(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.rdbtnmntmMediana.text")); //$NON-NLS-1$
         rdbtnmntmMediana.setSelected(true);
         mnTamaoDeLetra.add(rdbtnmntmMediana);
 
-        rdbtnmntmGrande = new JRadioButtonMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.rdbtnmntmGrande.text")); //$NON-NLS-1$
+        rdbtnmntmGrande = new JRadioButtonMenuItem(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.rdbtnmntmGrande.text")); //$NON-NLS-1$
         mnTamaoDeLetra.add(rdbtnmntmGrande);
 
-        mnAcercaDe = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnAcercaDe.text")); //$NON-NLS-1$
+        mnAcercaDe = new JMenu(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mnAcercaDe.text")); //$NON-NLS-1$
         menuBar.add(mnAcercaDe);
 
-        mntmAutor = new JMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.mntmAutor.text")); //$NON-NLS-1$
+        mntmAutor = new JMenuItem(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mntmAutor.text")); //$NON-NLS-1$
         mntmAutor.addActionListener(new MntmAutorActionListener());
         mnAcercaDe.add(mntmAutor);
 
-        mntmVersin = new JMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.mntmVersin.text")); //$NON-NLS-1$
+        mntmVersin = new JMenuItem(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.mntmVersin.text")); //$NON-NLS-1$
         mntmVersin.addActionListener(new MntmVersinActionListener());
         mnAcercaDe.add(mntmVersin);
         contentPane = new JPanel();
@@ -178,7 +202,8 @@ public class VentanaPrincipal extends JFrame {
         gbl_pnlBanner.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
         pnlBanner.setLayout(gbl_pnlBanner);
 
-        lblBanner = new JLabel(MessagesVentanaPrincipal.getString("VentanaPrincipal.lblBanner.text")); //$NON-NLS-1$
+        lblBanner = new JLabel(MessagesVentanaPrincipal
+                .getString("VentanaPrincipal.lblBanner.text")); //$NON-NLS-1$
         lblBanner.setFont(new Font("Segoe UI Black", Font.PLAIN, 40));
         GridBagConstraints gbc_lblBanner = new GridBagConstraints();
         gbc_lblBanner.gridwidth = 2;

@@ -441,11 +441,6 @@ public class VentanaLogin extends JFrame {
         public void actionPerformed(ActionEvent e) {
             MessagesVentanaLogin.setIdioma("inglés");
             MessagesVentanaPrincipal.setIdioma("inglés");
-            MessagesPestanaPedidos.setIdioma("inglés");
-            MessagesPestanaProductos.setIdioma("inglés");
-            MessagesPestanaClientes.setIdioma("inglés");
-            MessagesPestanaCallejero.setIdioma("inglés");
-            MessagesPestanaOfertas.setIdioma("inglés");
             frame.dispose();
             frame = new VentanaLogin();
             frame.rdbtnEnglish.setSelected(true);
@@ -458,11 +453,6 @@ public class VentanaLogin extends JFrame {
         public void actionPerformed(ActionEvent e) {
             MessagesVentanaLogin.setIdioma("español");
             MessagesVentanaPrincipal.setIdioma("español");
-            MessagesPestanaPedidos.setIdioma("español");
-            MessagesPestanaProductos.setIdioma("español");
-            MessagesPestanaClientes.setIdioma("español");
-            MessagesPestanaCallejero.setIdioma("español");
-            MessagesPestanaOfertas.setIdioma("español");
             frame.dispose();
             frame = new VentanaLogin();
             frame.rdbtnEspaol.setSelected(true);
