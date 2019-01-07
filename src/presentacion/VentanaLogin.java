@@ -97,10 +97,10 @@ public class VentanaLogin extends JFrame {
     public VentanaLogin() {
         setIconImage(Toolkit.getDefaultToolkit()
                 .getImage(VentanaLogin.class.getResource(
-                        "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
+                        "/presentacion/imagenes/food-2074638_960_720 - resized.png"))); //$NON-NLS-1$
         setBackground(Color.DARK_GRAY);
 
-        setTitle("Login");
+        setTitle("Login"); //$NON-NLS-1$
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 570, 375);
 
@@ -114,7 +114,7 @@ public class VentanaLogin extends JFrame {
         mntmSalir = new JMenuItem(
                 MessagesVentanaLogin.getString("VentanaLogin.mntmSalir.text")); //$NON-NLS-1$
         mntmSalir.setIcon(new ImageIcon(VentanaLogin.class
-                .getResource("/presentacion/iconos/exit-to-app-button.png")));
+                .getResource("/presentacion/iconos/exit-to-app-button.png"))); //$NON-NLS-1$
         mntmSalir.addActionListener(new MntmSalirActionListener());
         mnArchivo.add(mntmSalir);
 
@@ -158,14 +158,14 @@ public class VentanaLogin extends JFrame {
         mntmNewMenuItem.addActionListener(new MntmNewMenuItemActionListener());
         mnAcercaDe.add(mntmNewMenuItem);
         contentPane = new JPanel();
-        contentPane.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        contentPane.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
 
         pnlCentral = new JPanel();
-        pnlCentral.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlCentral.setBorder(new TitledBorder(null, "Login",
+        pnlCentral.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
+        pnlCentral.setBorder(new TitledBorder(null, "Login", //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         contentPane.add(pnlCentral, BorderLayout.CENTER);
         GridBagLayout gbl_pnlCentral = new GridBagLayout();
@@ -182,16 +182,16 @@ public class VentanaLogin extends JFrame {
         lblHelp.setToolTipText(MessagesVentanaLogin
                 .getString("VentanaLogin.lblHelp.toolTipText")); //$NON-NLS-1$
         lblHelp.setIcon(new ImageIcon(VentanaLogin.class
-                .getResource("/presentacion/iconos/information.png")));
+                .getResource("/presentacion/iconos/information.png"))); //$NON-NLS-1$
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
         gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
         gbc_lblHelp.gridx = 4;
         gbc_lblHelp.gridy = 0;
         pnlCentral.add(lblHelp, gbc_lblHelp);
 
-        lblImage = new JLabel("");
+        lblImage = new JLabel(""); //$NON-NLS-1$
         lblImage.setIcon(new ImageIcon(VentanaLogin.class.getResource(
-                "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
+                "/presentacion/imagenes/food-2074638_960_720 - resized.png"))); //$NON-NLS-1$
 
         GridBagConstraints gbc_lblImage = new GridBagConstraints();
         gbc_lblImage.gridwidth = 2;
@@ -204,7 +204,7 @@ public class VentanaLogin extends JFrame {
 
         lblIdentificacion = new JLabel(MessagesVentanaLogin
                 .getString("VentanaLogin.lblIdentificacion.text")); //$NON-NLS-1$
-        lblIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        lblIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         GridBagConstraints gbc_lblIdentificacion = new GridBagConstraints();
         gbc_lblIdentificacion.anchor = GridBagConstraints.EAST;
         gbc_lblIdentificacion.insets = new Insets(0, 0, 5, 5);
@@ -217,7 +217,7 @@ public class VentanaLogin extends JFrame {
         txtIdentificacion
                 .addActionListener(new TxtIdentificacionActionListener());
         txtIdentificacion.addFocusListener(new MiFocusListener());
-        txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
         gbc_txtIdentificacion.gridwidth = 2;
         gbc_txtIdentificacion.insets = new Insets(0, 0, 5, 5);
@@ -229,7 +229,7 @@ public class VentanaLogin extends JFrame {
 
         lblContrasea = new JLabel(MessagesVentanaLogin
                 .getString("VentanaLogin.lblContrasea.text")); //$NON-NLS-1$
-        lblContrasea.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        lblContrasea.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         GridBagConstraints gbc_lblContrasea = new GridBagConstraints();
         gbc_lblContrasea.insets = new Insets(0, 0, 5, 5);
         gbc_lblContrasea.gridx = 2;
@@ -240,7 +240,7 @@ public class VentanaLogin extends JFrame {
         pwdContraseña = new JPasswordField();
         pwdContraseña.addActionListener(new PwdContraseñaActionListener());
         pwdContraseña.addFocusListener(new MiFocusListener());
-        pwdContraseña.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        pwdContraseña.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
         gbc_pwdContraseña.insets = new Insets(0, 0, 5, 5);
         gbc_pwdContraseña.gridwidth = 2;
@@ -251,7 +251,7 @@ public class VentanaLogin extends JFrame {
         pwdContraseña.setEnabled(false);
 
         pnlInferior = new JPanel();
-        pnlInferior.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlInferior.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         contentPane.add(pnlInferior, BorderLayout.SOUTH);
         GridBagLayout gbl_pnlInferior = new GridBagLayout();
         gbl_pnlInferior.columnWidths = new int[] { 100, 100, 262, 100, 0 };
@@ -265,13 +265,13 @@ public class VentanaLogin extends JFrame {
                 MessagesVentanaLogin.getString("VentanaLogin.btnEntrar.text")); //$NON-NLS-1$
         btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         btnEntrar.setIcon(new ImageIcon(VentanaLogin.class.getResource(
-                "/presentacion/iconos/exit-to-app-button (1).png")));
+                "/presentacion/iconos/exit-to-app-button (1).png"))); //$NON-NLS-1$
         btnEntrar.addActionListener(new BtnEntrarActionListener());
 
         rdbtnEspaol = new JRadioButton(MessagesVentanaLogin
                 .getString("VentanaLogin.rdbtnEspaol.text")); //$NON-NLS-1$
         rdbtnEspaol.addActionListener(new RdbtnEspaolActionListener());
-        rdbtnEspaol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        rdbtnEspaol.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         rdbtnEspaol.setSelected(true);
         buttonGroup.add(rdbtnEspaol);
         GridBagConstraints gbc_rdbtnEspaol = new GridBagConstraints();
@@ -283,14 +283,14 @@ public class VentanaLogin extends JFrame {
         rdbtnEnglish = new JRadioButton(MessagesVentanaLogin
                 .getString("VentanaLogin.rdbtnEnglish.text")); //$NON-NLS-1$
         rdbtnEnglish.addActionListener(new RdbtnEnglishActionListener());
-        rdbtnEnglish.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        rdbtnEnglish.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         buttonGroup.add(rdbtnEnglish);
         GridBagConstraints gbc_rdbtnEnglish = new GridBagConstraints();
         gbc_rdbtnEnglish.insets = new Insets(0, 0, 0, 5);
         gbc_rdbtnEnglish.gridx = 1;
         gbc_rdbtnEnglish.gridy = 0;
         pnlInferior.add(rdbtnEnglish, gbc_rdbtnEnglish);
-        btnEntrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+        btnEntrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnEntrar = new GridBagConstraints();
         gbc_btnEntrar.fill = GridBagConstraints.BOTH;
         gbc_btnEntrar.gridx = 3;
@@ -301,12 +301,12 @@ public class VentanaLogin extends JFrame {
     private class BtnEntrarActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent arg0) {
-            if (txtIdentificacion.getText().equals("ipo")
-                    && pwdContraseña.getText().equals("tpv")) {
+            if (txtIdentificacion.getText().equals("ipo") //$NON-NLS-1$
+                    && pwdContraseña.getText().equals("tpv")) { //$NON-NLS-1$
                 VentanaPrincipal tpv;
 
                 if (rdbtnEnglish.isSelected()) {
-                    MessagesVentanaPrincipal.setIdioma("inglés");
+                    MessagesVentanaPrincipal.setIdioma("inglés"); //$NON-NLS-1$
                     frame.setVisible(false);
                     tpv = new VentanaPrincipal();
                     tpv.setExtendedState(MAXIMIZED_BOTH);
@@ -321,14 +321,14 @@ public class VentanaLogin extends JFrame {
                 }
 
             } else {
-                if (txtIdentificacion.getText().equals("ipo")) {
+                if (txtIdentificacion.getText().equals("ipo")) { //$NON-NLS-1$
                     JOptionPane.showMessageDialog(frame,
-                            "Contraseña incorrecta", "Error",
+                            MessagesVentanaLogin.getString("VentanaLogin.0"), "Error", //$NON-NLS-1$ //$NON-NLS-2$
                             JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(frame,
-                            "Los datos introducidos no se corresponden con ningún usuario",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                            MessagesVentanaLogin.getString("VentanaLogin.24"), //$NON-NLS-1$
+                            "Error", JOptionPane.ERROR_MESSAGE); //$NON-NLS-1$
                 }
             }
 
@@ -353,9 +353,9 @@ public class VentanaLogin extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(frame,
-                    "Introduzca sus datos para entrar a la aplicación. \nEjemplo:"
-                            + "\n\nIdentificación: ipo\n" + "Contraseña: tpv",
-                    "Ayuda", JOptionPane.QUESTION_MESSAGE);
+                    MessagesVentanaLogin.getString("VentanaLogin.26") //$NON-NLS-1$
+                            + MessagesVentanaLogin.getString("VentanaLogin.1") + MessagesVentanaLogin.getString("VentanaLogin.28"), //$NON-NLS-1$ //$NON-NLS-2$
+                    MessagesVentanaLogin.getString("VentanaLogin.29"), JOptionPane.QUESTION_MESSAGE); //$NON-NLS-1$
 
         }
     }
@@ -371,58 +371,58 @@ public class VentanaLogin extends JFrame {
     private class MntmInformacinDelAutorActionListener
             implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String desc = "Este prototipo ha sido desarrollado por Sergio Herrera Piqueras, \nalumno de la Escuela Superior de Informática de Ciudad Real, \npara la práctica final de la asignatura Interacción Persona-Ordenador I.";
-            JOptionPane.showMessageDialog(frame, desc, "Autor",
+            String desc = MessagesVentanaLogin.getString("VentanaLogin.30"); //$NON-NLS-1$
+            JOptionPane.showMessageDialog(frame, desc, MessagesVentanaLogin.getString("VentanaLogin.31"), //$NON-NLS-1$
                     JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
     private class MntmNewMenuItemActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String desc = "| 07/01/19 |\r\n" + "\r\n" + "TPV v0.8.3\r\n"
-                    + "- Packages organized\r\n" + "\r\n" + "TPV v0.8.2\r\n"
-                    + "- Menubar preview implemented\r\n" + "\r\n"
-                    + "TPV v0.8.1\r\n"
-                    + "- GestionPedidos now has more help tips\r\n" + "\r\n"
-                    + "TPV v0.8\r\n" + "- frmCliente added\r\n"
-                    + "- Some listeners added\r\n" + "\r\n" + "TPV v0.7.9\r\n"
-                    + "- Menus added to Login\r\n"
-                    + "- Some help tips added\r\n" + "- pnlClientes fixed\r\n"
-                    + "\r\n" + "TPV v0.7.8\r\n"
-                    + "- pnlDatosCliente now is dynamic\r\n"
-                    + "- pnlControl now is working\r\n"
-                    + "- Some design improvements\r\n" + "\r\n"
-                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n"
-                    + "- pnlControl confirm dialog added (without action for now)\r\n"
-                    + "\r\n" + "TPV v0.7.6\r\n"
-                    + "- Design style improved and better resource management\r\n"
-                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n"
-                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n"
-                    + "- TPV is now maximized by default\r\n"
-                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n"
-                    + "- Login: language is now shown\r\n" + "\r\n"
-                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n"
-                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n"
-                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n"
-                    + "- Login: font changes\r\n"
-                    + "- Login: demo implemented\r\n"
-                    + "- pnlCallejero: image changed\r\n"
-                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n"
-                    + "- pnlCallejero first version\r\n"
-                    + "- Design improvements (font changes)\r\n" + "\r\n"
-                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n"
-                    + "\r\n" + "TPV v0.4.1\r\n"
-                    + "- pnlProductos improvements\r\n" + "\r\n"
-                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n"
-                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n"
-                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n"
-                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n"
-                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n"
-                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n"
-                    + "- pnlPedidos first version\r\n" + "\r\n"
-                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n"
-                    + "- Login form first version\r\n" + "- TPV created";
-            JOptionPane.showMessageDialog(frame, desc, "Changelog",
+            String desc = "| 07/01/19 |\r\n" + "\r\n" + "TPV v0.8.3\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Packages organized\r\n" + "\r\n" + "TPV v0.8.2\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Menubar preview implemented\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.8.1\r\n" //$NON-NLS-1$
+                    + "- GestionPedidos now has more help tips\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.8\r\n" + "- frmCliente added\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- Some listeners added\r\n" + "\r\n" + "TPV v0.7.9\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Menus added to Login\r\n" //$NON-NLS-1$
+                    + "- Some help tips added\r\n" + "- pnlClientes fixed\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "TPV v0.7.8\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- pnlDatosCliente now is dynamic\r\n" //$NON-NLS-1$
+                    + "- pnlControl now is working\r\n" //$NON-NLS-1$
+                    + "- Some design improvements\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- pnlControl confirm dialog added (without action for now)\r\n" //$NON-NLS-1$
+                    + "\r\n" + "TPV v0.7.6\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- Design style improved and better resource management\r\n" //$NON-NLS-1$
+                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- TPV is now maximized by default\r\n" //$NON-NLS-1$
+                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Login: language is now shown\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Login: font changes\r\n" //$NON-NLS-1$
+                    + "- Login: demo implemented\r\n" //$NON-NLS-1$
+                    + "- pnlCallejero: image changed\r\n" //$NON-NLS-1$
+                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- pnlCallejero first version\r\n" //$NON-NLS-1$
+                    + "- Design improvements (font changes)\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "TPV v0.4.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- pnlProductos improvements\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- pnlPedidos first version\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Login form first version\r\n" + "- TPV created"; //$NON-NLS-1$ //$NON-NLS-2$
+            JOptionPane.showMessageDialog(frame, desc, MessagesVentanaLogin.getString("VentanaLogin.125"), //$NON-NLS-1$
                     JOptionPane.INFORMATION_MESSAGE);
         }
     }
@@ -430,7 +430,7 @@ public class VentanaLogin extends JFrame {
     private class MntmSalirActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if (JOptionPane.showConfirmDialog(frame,
-                    "¿Estás seguro de que quieres salir?", "Cuidado",
+                    MessagesVentanaLogin.getString("VentanaLogin.126"), MessagesVentanaLogin.getString("VentanaLogin.127"), //$NON-NLS-1$ //$NON-NLS-2$
                     JOptionPane.YES_NO_OPTION) == 0) {
                 System.exit(0);
             }
@@ -439,8 +439,8 @@ public class VentanaLogin extends JFrame {
 
     private class RdbtnEnglishActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            MessagesVentanaLogin.setIdioma("inglés");
-            MessagesVentanaPrincipal.setIdioma("inglés");
+            MessagesVentanaLogin.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesVentanaPrincipal.setIdioma("inglés"); //$NON-NLS-1$
             frame.dispose();
             frame = new VentanaLogin();
             frame.rdbtnEnglish.setSelected(true);
@@ -451,8 +451,8 @@ public class VentanaLogin extends JFrame {
 
     private class RdbtnEspaolActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            MessagesVentanaLogin.setIdioma("español");
-            MessagesVentanaPrincipal.setIdioma("español");
+            MessagesVentanaLogin.setIdioma("español"); //$NON-NLS-1$
+            MessagesVentanaPrincipal.setIdioma("español"); //$NON-NLS-1$
             frame.dispose();
             frame = new VentanaLogin();
             frame.rdbtnEspaol.setSelected(true);
