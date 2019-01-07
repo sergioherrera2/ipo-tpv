@@ -1,5 +1,8 @@
 | 07/01/19 |
 
+TPV v0.9.2
+- Bug fixes in closing windows
+
 TPV v0.9.1
 - pnlControl and pnlDatosCliente now have full support of english
 

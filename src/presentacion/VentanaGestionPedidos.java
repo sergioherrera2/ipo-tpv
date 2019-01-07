@@ -61,7 +61,7 @@ public class VentanaGestionPedidos extends JFrame {
     private JTextField textField;
     private JButton btnTerminar;
     private JPanel pnlProductos;
-    private JLabel lblNewLabel;
+    private JLabel lblComida;
     private JLabel lblBebida;
     private JLabel lblPostre;
     private JLabel lblAyuda;
@@ -343,6 +343,8 @@ public class VentanaGestionPedidos extends JFrame {
                     });
                     {
                         btnConfirmar = new JButton("Confirmar");
+                        btnConfirmar.addActionListener(
+                                new BtnConfirmarActionListener());
                         btnConfirmar.setIcon(new ImageIcon(
                                 VentanaGestionPedidos.class.getResource(
                                         "/presentacion/iconos/right-arrow-forward.png")));
@@ -441,8 +443,8 @@ public class VentanaGestionPedidos extends JFrame {
                                 0.0, 0.0, Double.MIN_VALUE };
                         pnlProductos.setLayout(gbl_pnlProductos);
                         {
-                            lblNewLabel = new JLabel("");
-                            lblNewLabel.addMouseListener(
+                            lblComida = new JLabel("");
+                            lblComida.addMouseListener(
                                     new LblNewLabelMouseListener());
                             {
                                 lblAyuda_1 = new JLabel("");
@@ -457,14 +459,14 @@ public class VentanaGestionPedidos extends JFrame {
                                 gbc_lblAyuda_1.gridy = 0;
                                 pnlProductos.add(lblAyuda_1, gbc_lblAyuda_1);
                             }
-                            lblNewLabel.setIcon(new ImageIcon(
+                            lblComida.setIcon(new ImageIcon(
                                     VentanaGestionPedidos.class.getResource(
                                             "/presentacion/imagenes/hamburger.png")));
-                            GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-                            gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-                            gbc_lblNewLabel.gridx = 0;
-                            gbc_lblNewLabel.gridy = 1;
-                            pnlProductos.add(lblNewLabel, gbc_lblNewLabel);
+                            GridBagConstraints gbc_lblComida = new GridBagConstraints();
+                            gbc_lblComida.insets = new Insets(0, 0, 5, 5);
+                            gbc_lblComida.gridx = 0;
+                            gbc_lblComida.gridy = 1;
+                            pnlProductos.add(lblComida, gbc_lblComida);
                         }
                         {
                             lblBebida = new JLabel("");
@@ -503,7 +505,7 @@ public class VentanaGestionPedidos extends JFrame {
 
     private class BtnTerminarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+            dispose();
         }
     }
 
@@ -568,6 +570,21 @@ public class VentanaGestionPedidos extends JFrame {
             JOptionPane.showMessageDialog(new JPanel(),
                     "Este es el panel \"Productos\", donde se pueden seleccionar los productos que en los paneles superiores se podrán incluir al pedido.",
                     "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class BtnConfirmarActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (lblBebida.getText().equals("(selected)")
+                    || lblComida.getText().equals("(selected)")
+                    || lblPostre.getText().equals("(selected)")) {
+                JOptionPane.showMessageDialog(frame, "¡Producto añadido!",
+                        "Información", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(frame,
+                        "Primero tienes que seleccionar un producto.", "Aviso",
+                        JOptionPane.WARNING_MESSAGE);
+            }
         }
     }
 }

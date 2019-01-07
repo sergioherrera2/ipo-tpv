@@ -175,7 +175,7 @@ public class PestañaClientes extends JPanel {
                 Double.MIN_VALUE };
         setLayout(gridBagLayout);
 
-        lblHelp = new JLabel("");
+        lblHelp = new JLabel(""); //$NON-NLS-1$
         lblHelp.addMouseListener(new LblHelpMouseListener());
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
         gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
@@ -183,10 +183,10 @@ public class PestañaClientes extends JPanel {
         gbc_lblHelp.gridy = 0;
         add(lblHelp, gbc_lblHelp);
         lblHelp.setIcon(new ImageIcon(PestañaClientes.class
-                .getResource("/presentacion/iconos/information.png")));
+                .getResource("/presentacion/iconos/information.png"))); //$NON-NLS-1$
 
         pnlTablaClientes = new JPanel();
-        pnlTablaClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlTablaClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlTablaClientes.setBorder(new TitledBorder(null, MessagesPestanaClientes.getString("PestañaClientes.pnlTablaClientes.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlTablaClientes = new GridBagConstraints();
@@ -215,20 +215,20 @@ public class PestañaClientes extends JPanel {
         pnlTablaClientes.add(spTablaClientes, gbc_spTablaClientes);
 
         tbClientes = new JTable();
-        tbClientes.setModel(new DefaultTableModel(new Object[][] { { "Sergio",
-                "Herrera Piqueras", "Calle Concepci\u00F3n Arenal, 7",
-                new Integer(666333444), "sergio.herrera2@alu.uclm.es", "", "" },
-                { "Luis", "Rodr\u00EDguez D\u00EDaz", "Calle Quijote, 32",
-                        new Integer(755532122), null, null, "Vegano" },
-                { "Jos\u00E9", "Mart\u00EDnez Fern\u00E1ndez",
-                        "Calle Toledo, 43", null, "jmfernandez@gmail.com",
-                        "No hamburguesas", null },
-                { "Federico", "Guti\u00E9rrez de la Vega", "Calle Ancha, 4",
-                        new Integer(611333222), "jgutierrezdlv@hotmail.es",
-                        null, "Cel\u00EDaco" }, },
-                new String[] { "Nombre", "Apellidos", "Direcci\u00F3n",
-                        "Tel\u00E9fono", "e-mail", "Restricciones alimentarias",
-                        "Alergias e intolerancias" }) {
+        tbClientes.setModel(new DefaultTableModel(new Object[][] { { "Sergio", //$NON-NLS-1$
+                "Herrera Piqueras", "Calle Concepci\u00F3n Arenal, 7", //$NON-NLS-1$ //$NON-NLS-2$
+                new Integer(666333444), "sergio.herrera2@alu.uclm.es", "", "" }, //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                { "Luis", "Rodr\u00EDguez D\u00EDaz", "Calle Quijote, 32", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                        new Integer(755532122), null, null, MessagesPestanaClientes.getString("PestañaClientes.RestriccionesTabla") }, //$NON-NLS-1$
+                { "Jos\u00E9", "Mart\u00EDnez Fern\u00E1ndez", //$NON-NLS-1$ //$NON-NLS-2$
+                        "Calle Toledo, 43", null, "jmfernandez@gmail.com", //$NON-NLS-1$ //$NON-NLS-2$
+                        MessagesPestanaClientes.getString("PestañaClientes.PreferenciasTabla"), null }, //$NON-NLS-1$
+                { "Federico", "Guti\u00E9rrez de la Vega", "Calle Ancha, 4", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                        new Integer(611333222), "jgutierrezdlv@hotmail.es", //$NON-NLS-1$
+                        null, MessagesPestanaClientes.getString("PestañaClientes.RestriccionesTabla2") }, }, //$NON-NLS-1$
+                new String[] { MessagesPestanaClientes.getString("PestañaClientes.TablaNombre"), MessagesPestanaClientes.getString("PestañaClientes.TablaApellidos"), MessagesPestanaClientes.getString("PestañaClientes.TablaDireccion"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                        MessagesPestanaClientes.getString("PestañaClientes.TablaTelefono"), MessagesPestanaClientes.getString("PestañaClientes.TablaCorreo"), MessagesPestanaClientes.getString("PestañaClientes.TablaRestricciones"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                        MessagesPestanaClientes.getString("PestañaClientes.TablaAlergias") }) { //$NON-NLS-1$
             Class[] columnTypes = new Class[] { String.class, String.class,
                     String.class, Integer.class, String.class, String.class,
                     String.class };
@@ -252,8 +252,8 @@ public class PestañaClientes extends JPanel {
         btnAadirCliente = new JButton(MessagesPestanaClientes.getString("PestañaClientes.btnAadirCliente.text")); //$NON-NLS-1$
         btnAadirCliente.addActionListener(new BtnAadirClienteActionListener());
         btnAadirCliente.setIcon(new ImageIcon(PestañaClientes.class
-                .getResource("/presentacion/iconos/rounded-add-button.png")));
-        btnAadirCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/rounded-add-button.png"))); //$NON-NLS-1$
+        btnAadirCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnAadirCliente = new GridBagConstraints();
         gbc_btnAadirCliente.fill = GridBagConstraints.BOTH;
         gbc_btnAadirCliente.insets = new Insets(0, 0, 5, 0);
@@ -265,8 +265,8 @@ public class PestañaClientes extends JPanel {
         btnEditarCliente
                 .addActionListener(new BtnEditarClienteActionListener());
         btnEditarCliente.setIcon(new ImageIcon(PestañaClientes.class
-                .getResource("/presentacion/iconos/edit24.png")));
-        btnEditarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/edit24.png"))); //$NON-NLS-1$
+        btnEditarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnEditarCliente = new GridBagConstraints();
         gbc_btnEditarCliente.fill = GridBagConstraints.BOTH;
         gbc_btnEditarCliente.insets = new Insets(0, 0, 5, 0);
@@ -279,8 +279,8 @@ public class PestañaClientes extends JPanel {
                 .addActionListener(new BtnBorrarClienteActionListener());
         btnBorrarCliente
                 .setIcon(new ImageIcon(PestañaClientes.class.getResource(
-                        "/presentacion/iconos/rubbish-bin-delete-button.png")));
-        btnBorrarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                        "/presentacion/iconos/rubbish-bin-delete-button.png"))); //$NON-NLS-1$
+        btnBorrarCliente.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnBorrarCliente = new GridBagConstraints();
         gbc_btnBorrarCliente.fill = GridBagConstraints.BOTH;
         gbc_btnBorrarCliente.gridx = 1;
@@ -288,7 +288,7 @@ public class PestañaClientes extends JPanel {
         pnlTablaClientes.add(btnBorrarCliente, gbc_btnBorrarCliente);
 
         pnlHistorialPedidos = new JPanel();
-        pnlHistorialPedidos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlHistorialPedidos.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlHistorialPedidos
                 .setBorder(new TitledBorder(null, MessagesPestanaClientes.getString("PestañaClientes.pnlHistorialPedidos.borderTitle"), //$NON-NLS-1$
                         TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -316,14 +316,14 @@ public class PestañaClientes extends JPanel {
 
         tbHistorial = new JTable();
         tbHistorial.setModel(new DefaultTableModel(new Object[][] {
-                { new Integer(1), "A domicilio", "En elaboraci\u00F3n",
-                        new Double(24.67), null, "21:37", null, "22:00",
-                        "Calle Concepci\u00F3n Arenal, N7, Ciudad Real" },
-                { new Integer(2), "Recogida", "Recogido", new Double(9.8), null,
-                        "20:07", "20:30", null, null }, },
-                new String[] { "Pedido", "Tipo", "Estado", "Importe total",
-                        "Pagado", "Fecha y hora", "Hora recogida",
-                        "Hora llegada", "Direcci\u00F3n env\u00EDo" }) {
+                { new Integer(1), MessagesPestanaClientes.getString("PestañaClientes.TipoEnvio"), MessagesPestanaClientes.getString("PestañaClientes.EstadoEnvio"), //$NON-NLS-1$ //$NON-NLS-2$
+                        new Double(24.67), null, "21:37", null, "22:00", //$NON-NLS-1$ //$NON-NLS-2$
+                        "Calle Concepci\u00F3n Arenal, N7, Ciudad Real" }, //$NON-NLS-1$
+                { new Integer(2), MessagesPestanaClientes.getString("PestañaClientes.TipoEnvio2"), MessagesPestanaClientes.getString("PestañaClientes.EstadoEnvio2"), new Double(9.8), null, //$NON-NLS-1$ //$NON-NLS-2$
+                        "20:07", "20:30", null, null }, }, //$NON-NLS-1$ //$NON-NLS-2$
+                new String[] { MessagesPestanaClientes.getString("PestañaClientes.HistorialPedido"), MessagesPestanaClientes.getString("PestañaClientes.HistorialTipo"), MessagesPestanaClientes.getString("PestañaClientes.HistorialEstado"), MessagesPestanaClientes.getString("PestañaClientes.HistorialImporte"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                        MessagesPestanaClientes.getString("PestañaClientes.HistorialPagado"), MessagesPestanaClientes.getString("PestañaClientes.HistorialFechaHora"), MessagesPestanaClientes.getString("PestañaClientes.HistorialRecogida"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                        MessagesPestanaClientes.getString("PestañaClientes.HistorialLlegada"), MessagesPestanaClientes.getString("PestañaClientes.HistorialDireccion") }) { //$NON-NLS-1$ //$NON-NLS-2$
             Class[] columnTypes = new Class[] { Integer.class, String.class,
                     String.class, Double.class, Boolean.class, String.class,
                     String.class, String.class, String.class };
@@ -342,7 +342,7 @@ public class PestañaClientes extends JPanel {
         spHistorial.setViewportView(tbHistorial);
 
         pnlPuntos = new JPanel();
-        pnlPuntos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlPuntos.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlPuntos.setBorder(new TitledBorder(null, MessagesPestanaClientes.getString("PestañaClientes.pnlPuntos.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
@@ -363,7 +363,7 @@ public class PestañaClientes extends JPanel {
         pnlPuntos.setLayout(gbl_pnlPuntos);
 
         lblPuntosAcumulados = new JLabel(MessagesPestanaClientes.getString("PestañaClientes.lblPuntosAcumulados.text")); //$NON-NLS-1$
-        lblPuntosAcumulados.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        lblPuntosAcumulados.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         GridBagConstraints gbc_lblPuntosAcumulados = new GridBagConstraints();
         gbc_lblPuntosAcumulados.gridwidth = 2;
         gbc_lblPuntosAcumulados.insets = new Insets(0, 0, 5, 5);
@@ -371,8 +371,8 @@ public class PestañaClientes extends JPanel {
         gbc_lblPuntosAcumulados.gridy = 0;
         pnlPuntos.add(lblPuntosAcumulados, gbc_lblPuntosAcumulados);
 
-        label = new JLabel("3");
-        label.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
+        label = new JLabel("3"); //$NON-NLS-1$
+        label.setFont(new Font("Segoe UI Black", Font.BOLD, 20)); //$NON-NLS-1$
         label.setForeground(Color.RED);
         GridBagConstraints gbc_label = new GridBagConstraints();
         gbc_label.gridwidth = 2;
@@ -382,7 +382,7 @@ public class PestañaClientes extends JPanel {
         pnlPuntos.add(label, gbc_label);
 
         lblVlidosHasta = new JLabel(MessagesPestanaClientes.getString("PestañaClientes.lblVlidosHasta.text")); //$NON-NLS-1$
-        lblVlidosHasta.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        lblVlidosHasta.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         GridBagConstraints gbc_lblVlidosHasta = new GridBagConstraints();
         gbc_lblVlidosHasta.gridwidth = 2;
         gbc_lblVlidosHasta.insets = new Insets(0, 0, 5, 5);
@@ -391,7 +391,7 @@ public class PestañaClientes extends JPanel {
         pnlPuntos.add(lblVlidosHasta, gbc_lblVlidosHasta);
 
         label_1 = new JLabel(MessagesPestanaClientes.getString("PestañaClientes.label_1.text")); //$NON-NLS-1$
-        label_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
+        label_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20)); //$NON-NLS-1$
         label_1.setForeground(Color.RED);
         GridBagConstraints gbc_label_1 = new GridBagConstraints();
         gbc_label_1.gridwidth = 2;
@@ -417,7 +417,7 @@ public class PestañaClientes extends JPanel {
                 cliente.setLocationRelativeTo(null);
             } else {
                 JOptionPane.showMessageDialog(new JPanel(),
-                        "Primero tienes que seleccionar una fila.", "Aviso",
+                        MessagesPestanaClientes.getString("PestañaClientes.DialogoAviso"), MessagesPestanaClientes.getString("PestañaClientes.CabeceraAviso"), //$NON-NLS-1$ //$NON-NLS-2$
                         JOptionPane.WARNING_MESSAGE);
             }
 
@@ -430,13 +430,13 @@ public class PestañaClientes extends JPanel {
                 DefaultTableModel dtm = (DefaultTableModel) tbClientes
                         .getModel();
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        "¿Estás seguro de que quieres borrar este cliente?",
-                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                        MessagesPestanaClientes.getString("PestañaClientes.DialogoConfirmacion"), //$NON-NLS-1$
+                        MessagesPestanaClientes.getString("PestañaClientes.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     dtm.removeRow(tbClientes.getSelectedRow());
                 }
             } else {
                 JOptionPane.showMessageDialog(new JPanel(),
-                        "Primero tienes que seleccionar un cliente.", "Aviso",
+                        MessagesPestanaClientes.getString("PestañaClientes.DialogoAviso2"), MessagesPestanaClientes.getString("PestañaClientes.CabeceraAviso"), //$NON-NLS-1$ //$NON-NLS-2$
                         JOptionPane.WARNING_MESSAGE);
             }
 
@@ -447,12 +447,12 @@ public class PestañaClientes extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Esta es la pestaña clientes. Aquí se podrán ver los clientes, su historial de pedidos -que se cargaría en el panel inferior al ser seleccionado- y sus puntos acumulados y su caducidad.\n"
-                            + "\nLas operaciones disponibles son:\n"
-                            + "- Añadir cliente: abrirá un formulario que se rellenará y al clickar en \"Aceptar\" se cargaría automáticamente al sistema y aparecería en la lista.\n"
-                            + "- Editar cliente: se cargarían los datos en un nuevo formulario, donde podremos modificar los datos y se guardarían al pulsar aceptar.\n"
-                            + "- Eliminar cliente: se elimina el cliente seleccionado.",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesPestanaClientes.getString("PestañaClientes.MensajeAyuda1") //$NON-NLS-1$
+                            + MessagesPestanaClientes.getString("PestañaClientes.MensajeAyuda2") //$NON-NLS-1$
+                            + MessagesPestanaClientes.getString("PestañaClientes.MensajeAyuda3") //$NON-NLS-1$
+                            + MessagesPestanaClientes.getString("PestañaClientes.MensajeAyuda4") //$NON-NLS-1$
+                            + MessagesPestanaClientes.getString("PestañaClientes.MensajeAyuda5"), //$NON-NLS-1$
+                    MessagesPestanaClientes.getString("PestañaClientes.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
         }
     }
 }

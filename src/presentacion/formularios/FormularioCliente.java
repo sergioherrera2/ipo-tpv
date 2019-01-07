@@ -282,7 +282,7 @@ public class FormularioCliente extends JFrame {
 
     private class BtnAceptarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+            dispose();
         }
     }
 }
