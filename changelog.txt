@@ -1,4 +1,17 @@
-| 06/01/19 |
+| 07/01/19 |
+
+TPV v0.8.3
+- Packages organized
+
+TPV v0.8.2
+- Menubar preview implemented
+
+TPV v0.8.1
+- GestionPedidos now has more help tips
+
+TPV v0.8
+- frmCliente added
+- Some listeners added
 
 TPV v0.7.9
 - Menus added to Login
