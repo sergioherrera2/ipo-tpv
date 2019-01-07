@@ -37,7 +37,7 @@ public class pnlOferta extends JPanel {
             add(lblProducto, gbc_lblProducto);
         }
         {
-            lblDesc = new JLabel("¡(x) por 1,30€!");
+            lblDesc = new JLabel(MessagesPnlOferta.getString("pnlOferta.lblDesc.text")); //$NON-NLS-1$
             GridBagConstraints gbc_lblDesc = new GridBagConstraints();
             gbc_lblDesc.gridx = 0;
             gbc_lblDesc.gridy = 1;

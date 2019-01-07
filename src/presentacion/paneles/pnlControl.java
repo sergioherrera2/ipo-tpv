@@ -23,7 +23,7 @@ public class pnlControl extends JPanel {
                 TitledBorder.TOP, null, null));
         setLayout(new GridLayout(0, 1, 0, 0));
 
-        btnCerrarSesin = new JButton("Cerrar sesi\u00F3n");
+        btnCerrarSesin = new JButton(MessagesPnlControl.getString("pnlControl.btnCerrarSesin.text")); //$NON-NLS-1$
         btnCerrarSesin.addActionListener(new BtnCerrarSesinActionListener());
         btnCerrarSesin.setIcon(new ImageIcon(pnlControl.class
                 .getResource("/presentacion/iconos/exit-to-app-button.png")));

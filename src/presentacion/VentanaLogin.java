@@ -12,6 +12,7 @@ import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
 
 import presentacion.listeners.MiFocusListener;
+import presentacion.MessagesVentanaLogin;
 
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
@@ -20,19 +21,13 @@ import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import java.awt.Toolkit;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.border.EtchedBorder;
 import java.awt.Cursor;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
@@ -445,7 +440,12 @@ public class VentanaLogin extends JFrame {
     private class RdbtnEnglishActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             MessagesVentanaLogin.setIdioma("inglés");
-            MessagesVentanaPrincipal.setIdioma("español");
+            MessagesVentanaPrincipal.setIdioma("inglés");
+            MessagesPestanaPedidos.setIdioma("inglés");
+            MessagesPestanaProductos.setIdioma("inglés");
+            MessagesPestanaClientes.setIdioma("inglés");
+            MessagesPestanaCallejero.setIdioma("inglés");
+            MessagesPestanaOfertas.setIdioma("inglés");
             frame.dispose();
             frame = new VentanaLogin();
             frame.rdbtnEnglish.setSelected(true);
@@ -458,6 +458,11 @@ public class VentanaLogin extends JFrame {
         public void actionPerformed(ActionEvent e) {
             MessagesVentanaLogin.setIdioma("español");
             MessagesVentanaPrincipal.setIdioma("español");
+            MessagesPestanaPedidos.setIdioma("español");
+            MessagesPestanaProductos.setIdioma("español");
+            MessagesPestanaClientes.setIdioma("español");
+            MessagesPestanaCallejero.setIdioma("español");
+            MessagesPestanaOfertas.setIdioma("español");
             frame.dispose();
             frame = new VentanaLogin();
             frame.rdbtnEspaol.setSelected(true);

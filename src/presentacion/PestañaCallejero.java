@@ -54,7 +54,7 @@ public class PestañaCallejero extends JPanel {
         add(lblHelp, gbc_lblHelp);
 
         pnlCallejero = new JPanel();
-        pnlCallejero.setBorder(new TitledBorder(null, "Callejero",
+        pnlCallejero.setBorder(new TitledBorder(null, MessagesPestanaCallejero.getString("PestañaCallejero.pnlCallejero.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlCallejero = new GridBagConstraints();
         gbc_pnlCallejero.gridheight = 7;
@@ -79,7 +79,7 @@ public class PestañaCallejero extends JPanel {
         gbc_lblMapa.gridy = 0;
         pnlCallejero.add(lblMapa, gbc_lblMapa);
 
-        lblPrximosDestinos = new JLabel("Pr\u00F3ximos destinos:");
+        lblPrximosDestinos = new JLabel(MessagesPestanaCallejero.getString("PestañaCallejero.lblPrximosDestinos.text")); //$NON-NLS-1$
         lblPrximosDestinos
                 .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_lblPrximosDestinos = new GridBagConstraints();
@@ -134,7 +134,7 @@ public class PestañaCallejero extends JPanel {
         });
         spListas.setViewportView(lstDirecciones);
 
-        lblInfoDelPedido = new JLabel("Info del pedido:");
+        lblInfoDelPedido = new JLabel(MessagesPestanaCallejero.getString("PestañaCallejero.lblInfoDelPedido.text")); //$NON-NLS-1$
         lblInfoDelPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_lblInfoDelPedido = new GridBagConstraints();
         gbc_lblInfoDelPedido.fill = GridBagConstraints.VERTICAL;
@@ -144,7 +144,7 @@ public class PestañaCallejero extends JPanel {
         gbc_lblInfoDelPedido.gridy = 4;
         add(lblInfoDelPedido, gbc_lblInfoDelPedido);
 
-        rdbtnPagado = new JRadioButton("Pagado");
+        rdbtnPagado = new JRadioButton(MessagesPestanaCallejero.getString("PestañaCallejero.rdbtnPagado.text")); //$NON-NLS-1$
         rdbtnPagado.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         GridBagConstraints gbc_rdbtnPagado = new GridBagConstraints();
         gbc_rdbtnPagado.fill = GridBagConstraints.BOTH;
@@ -154,7 +154,7 @@ public class PestañaCallejero extends JPanel {
         gbc_rdbtnPagado.gridy = 5;
         add(rdbtnPagado, gbc_rdbtnPagado);
 
-        rdbtnCaliente = new JRadioButton("Caliente");
+        rdbtnCaliente = new JRadioButton(MessagesPestanaCallejero.getString("PestañaCallejero.rdbtnCaliente.text")); //$NON-NLS-1$
         rdbtnCaliente.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         GridBagConstraints gbc_rdbtnCaliente = new GridBagConstraints();
         gbc_rdbtnCaliente.fill = GridBagConstraints.BOTH;

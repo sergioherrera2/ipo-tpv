@@ -19,7 +19,7 @@ public class pnlUsuario extends JPanel {
 	 */
 	public pnlUsuario() {
 		setFont(new Font("Segoe UI", Font.PLAIN, 13));
-		setBorder(new TitledBorder(null, "Usuario", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		setBorder(new TitledBorder(null, MessagesPnlUsuario.getString("pnlUsuario.this.borderTitle"), TitledBorder.LEADING, TitledBorder.TOP, null, null)); //$NON-NLS-1$
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 94, 140, 0, 0};
 		gridBagLayout.rowHeights = new int[]{58, 0, 0, 0};
@@ -45,7 +45,7 @@ public class pnlUsuario extends JPanel {
 		gbc_lblUsr.gridy = 0;
 		add(lblUsr, gbc_lblUsr);
 		
-		lblltAcceso = new JLabel("\u00DAlt. acceso: ayer");
+		lblltAcceso = new JLabel(MessagesPnlUsuario.getString("pnlUsuario.lblltAcceso.text")); //$NON-NLS-1$
 		lblltAcceso.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		GridBagConstraints gbc_lblltAcceso = new GridBagConstraints();
 		gbc_lblltAcceso.gridheight = 2;

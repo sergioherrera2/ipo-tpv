@@ -187,7 +187,7 @@ public class PestañaClientes extends JPanel {
 
         pnlTablaClientes = new JPanel();
         pnlTablaClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlTablaClientes.setBorder(new TitledBorder(null, "Clientes",
+        pnlTablaClientes.setBorder(new TitledBorder(null, MessagesPestanaClientes.getString("PestañaClientes.pnlTablaClientes.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlTablaClientes = new GridBagConstraints();
         gbc_pnlTablaClientes.gridwidth = 2;
@@ -249,7 +249,7 @@ public class PestañaClientes extends JPanel {
         tbClientes.getColumnModel().getColumn(6).setPreferredWidth(148);
         spTablaClientes.setViewportView(tbClientes);
 
-        btnAadirCliente = new JButton("A\u00F1adir cliente");
+        btnAadirCliente = new JButton(MessagesPestanaClientes.getString("PestañaClientes.btnAadirCliente.text")); //$NON-NLS-1$
         btnAadirCliente.addActionListener(new BtnAadirClienteActionListener());
         btnAadirCliente.setIcon(new ImageIcon(PestañaClientes.class
                 .getResource("/presentacion/iconos/rounded-add-button.png")));
@@ -261,7 +261,7 @@ public class PestañaClientes extends JPanel {
         gbc_btnAadirCliente.gridy = 0;
         pnlTablaClientes.add(btnAadirCliente, gbc_btnAadirCliente);
 
-        btnEditarCliente = new JButton("Editar cliente");
+        btnEditarCliente = new JButton(MessagesPestanaClientes.getString("PestañaClientes.btnEditarCliente.text")); //$NON-NLS-1$
         btnEditarCliente
                 .addActionListener(new BtnEditarClienteActionListener());
         btnEditarCliente.setIcon(new ImageIcon(PestañaClientes.class
@@ -274,7 +274,7 @@ public class PestañaClientes extends JPanel {
         gbc_btnEditarCliente.gridy = 1;
         pnlTablaClientes.add(btnEditarCliente, gbc_btnEditarCliente);
 
-        btnBorrarCliente = new JButton("Borrar cliente");
+        btnBorrarCliente = new JButton(MessagesPestanaClientes.getString("PestañaClientes.btnBorrarCliente.text")); //$NON-NLS-1$
         btnBorrarCliente
                 .addActionListener(new BtnBorrarClienteActionListener());
         btnBorrarCliente
@@ -290,7 +290,7 @@ public class PestañaClientes extends JPanel {
         pnlHistorialPedidos = new JPanel();
         pnlHistorialPedidos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         pnlHistorialPedidos
-                .setBorder(new TitledBorder(null, "Historial de pedidos",
+                .setBorder(new TitledBorder(null, MessagesPestanaClientes.getString("PestañaClientes.pnlHistorialPedidos.borderTitle"), //$NON-NLS-1$
                         TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlHistorialPedidos = new GridBagConstraints();
         gbc_pnlHistorialPedidos.insets = new Insets(0, 0, 0, 5);
@@ -343,7 +343,7 @@ public class PestañaClientes extends JPanel {
 
         pnlPuntos = new JPanel();
         pnlPuntos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlPuntos.setBorder(new TitledBorder(null, "Puntos",
+        pnlPuntos.setBorder(new TitledBorder(null, MessagesPestanaClientes.getString("PestañaClientes.pnlPuntos.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
         GridBagConstraints gbc_pnlPuntos = new GridBagConstraints();
@@ -362,7 +362,7 @@ public class PestañaClientes extends JPanel {
                 Double.MIN_VALUE };
         pnlPuntos.setLayout(gbl_pnlPuntos);
 
-        lblPuntosAcumulados = new JLabel("Puntos acumulados:");
+        lblPuntosAcumulados = new JLabel(MessagesPestanaClientes.getString("PestañaClientes.lblPuntosAcumulados.text")); //$NON-NLS-1$
         lblPuntosAcumulados.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         GridBagConstraints gbc_lblPuntosAcumulados = new GridBagConstraints();
         gbc_lblPuntosAcumulados.gridwidth = 2;
@@ -381,7 +381,7 @@ public class PestañaClientes extends JPanel {
         gbc_label.gridy = 1;
         pnlPuntos.add(label, gbc_label);
 
-        lblVlidosHasta = new JLabel("V\u00E1lidos hasta:");
+        lblVlidosHasta = new JLabel(MessagesPestanaClientes.getString("PestañaClientes.lblVlidosHasta.text")); //$NON-NLS-1$
         lblVlidosHasta.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         GridBagConstraints gbc_lblVlidosHasta = new GridBagConstraints();
         gbc_lblVlidosHasta.gridwidth = 2;
@@ -390,7 +390,7 @@ public class PestañaClientes extends JPanel {
         gbc_lblVlidosHasta.gridy = 2;
         pnlPuntos.add(lblVlidosHasta, gbc_lblVlidosHasta);
 
-        label_1 = new JLabel("21/12/18");
+        label_1 = new JLabel(MessagesPestanaClientes.getString("PestañaClientes.label_1.text")); //$NON-NLS-1$
         label_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
         label_1.setForeground(Color.RED);
         GridBagConstraints gbc_label_1 = new GridBagConstraints();

@@ -40,7 +40,7 @@ public class pnlDatosCliente extends JPanel {
      * Create the panel.
      */
     public pnlDatosCliente() {
-        setBorder(new TitledBorder(null, "Cliente", TitledBorder.LEADING,
+        setBorder(new TitledBorder(null, MessagesPnlDatosCliente.getString("pnlDatosCliente.this.borderTitle"), TitledBorder.LEADING, //$NON-NLS-1$
                 TitledBorder.TOP, null, null));
         setBounds(new Rectangle(0, 0, 460, 400));
         GridBagLayout gridBagLayout = new GridBagLayout();
@@ -64,7 +64,7 @@ public class pnlDatosCliente extends JPanel {
             add(lblAyuda, gbc_lblAyuda);
         }
         {
-            lblNombreYApellidos = new JLabel("Nombre y apellidos:");
+            lblNombreYApellidos = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblNombreYApellidos.text")); //$NON-NLS-1$
             lblNombreYApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_lblNombreYApellidos = new GridBagConstraints();
             gbc_lblNombreYApellidos.anchor = GridBagConstraints.SOUTHWEST;
@@ -89,7 +89,7 @@ public class pnlDatosCliente extends JPanel {
             tfNombreApellidos.setColumns(10);
         }
         {
-            lblTelefono = new JLabel("Teléfono:");
+            lblTelefono = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblTelefono.text")); //$NON-NLS-1$
             lblTelefono.setEnabled(false);
             lblTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_lblTelefono = new GridBagConstraints();
@@ -114,7 +114,7 @@ public class pnlDatosCliente extends JPanel {
             tfTelefono.setColumns(10);
         }
         {
-            lblDireccinDeEnvo = new JLabel("Dirección de envío:");
+            lblDireccinDeEnvo = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblDireccinDeEnvo.text")); //$NON-NLS-1$
             lblDireccinDeEnvo.setEnabled(false);
             lblDireccinDeEnvo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_lblDireccinDeEnvo = new GridBagConstraints();
@@ -139,7 +139,7 @@ public class pnlDatosCliente extends JPanel {
             tfDireccion.setColumns(10);
         }
         {
-            lblAlergiasORestricciones = new JLabel("Alergias o restricciones:");
+            lblAlergiasORestricciones = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblAlergiasORestricciones.text")); //$NON-NLS-1$
             lblAlergiasORestricciones.setEnabled(false);
             lblAlergiasORestricciones
                     .setFont(new Font("Segoe UI", Font.PLAIN, 15));

@@ -76,7 +76,7 @@ public class PestañaOfertas extends JPanel {
         pnlPromociones.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         pnlPromociones.setBorder(
                 new TitledBorder(UIManager.getBorder("TitledBorder.border"),
-                        "Promociones", TitledBorder.LEADING, TitledBorder.TOP,
+                        MessagesPestanaOfertas.getString("PestañaOfertas.pnlPromociones.borderTitle"), TitledBorder.LEADING, TitledBorder.TOP, //$NON-NLS-1$
                         null, new Color(0, 0, 0)));
         GridBagConstraints gbc_pnlPromociones = new GridBagConstraints();
         gbc_pnlPromociones.gridheight = 5;
@@ -111,7 +111,7 @@ public class PestañaOfertas extends JPanel {
         gbl_pnlPromo1.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
         pnlPromo1.setLayout(gbl_pnlPromo1);
 
-        btnNuevaOferta = new JButton("Nueva oferta");
+        btnNuevaOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnNuevaOferta.text")); //$NON-NLS-1$
         btnNuevaOferta.addActionListener(new BtnNuevaOfertaActionListener());
         btnNuevaOferta.setIcon(new ImageIcon(PestañaOfertas.class
                 .getResource("/presentacion/iconos/rounded-add-button.png")));
@@ -123,7 +123,7 @@ public class PestañaOfertas extends JPanel {
         gbc_btnNuevaOferta.gridy = 1;
         add(btnNuevaOferta, gbc_btnNuevaOferta);
 
-        btnEditarOferta = new JButton("Editar oferta");
+        btnEditarOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnEditarOferta.text")); //$NON-NLS-1$
         btnEditarOferta.addActionListener(new BtnEditarOfertaActionListener());
         btnEditarOferta.setIcon(new ImageIcon(PestañaOfertas.class
                 .getResource("/presentacion/iconos/edit24.png")));
@@ -137,7 +137,7 @@ public class PestañaOfertas extends JPanel {
 
         pnlOfertas = new JPanel();
         pnlOfertas.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlOfertas.setBorder(new TitledBorder(null, "Ofertas",
+        pnlOfertas.setBorder(new TitledBorder(null, MessagesPestanaOfertas.getString("PestañaOfertas.pnlOfertas.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlOfertas = new GridBagConstraints();
         gbc_pnlOfertas.gridheight = 5;
@@ -170,7 +170,7 @@ public class PestañaOfertas extends JPanel {
         gbl_pnlOferta1.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
         pnlOferta1.setLayout(gbl_pnlOferta1);
 
-        btnBorrarOferta = new JButton("Borrar oferta");
+        btnBorrarOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnBorrarOferta.text")); //$NON-NLS-1$
         btnBorrarOferta.addActionListener(new BtnBorrarPromoActionListener());
         btnBorrarOferta.setIcon(new ImageIcon(PestañaOfertas.class.getResource(
                 "/presentacion/iconos/rubbish-bin-delete-button.png")));
@@ -184,7 +184,7 @@ public class PestañaOfertas extends JPanel {
 
         pnlInfo = new JPanel();
         pnlInfo.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlInfo.setBorder(new TitledBorder(null, "Informaci\u00F3n",
+        pnlInfo.setBorder(new TitledBorder(null, MessagesPestanaOfertas.getString("PestañaOfertas.pnlInfo.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlInfo = new GridBagConstraints();
         gbc_pnlInfo.gridheight = 4;
@@ -199,13 +199,13 @@ public class PestañaOfertas extends JPanel {
         taInfo.setFont(new Font("Segoe UI", Font.BOLD, 13));
         taInfo.setEditable(false);
         taInfo.setText(
-                "Oferta v\u00E1lida hasta el 31 de diciembre de 2018...");
+                MessagesPestanaOfertas.getString("PestañaOfertas.taInfo.text")); //$NON-NLS-1$
         taInfo.setEnabled(false);
         pnlInfo.add(taInfo);
 
         pnlClientes = new JPanel();
         pnlClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlClientes.setBorder(new TitledBorder(null, "Clientes",
+        pnlClientes.setBorder(new TitledBorder(null, MessagesPestanaOfertas.getString("PestañaOfertas.pnlClientes.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlClientes = new GridBagConstraints();
         gbc_pnlClientes.gridheight = 4;
@@ -236,7 +236,7 @@ public class PestañaOfertas extends JPanel {
         });
         spClientes.setViewportView(lsClientes);
 
-        btnSeleccionar = new JButton("Seleccionar");
+        btnSeleccionar = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnSeleccionar.text")); //$NON-NLS-1$
         btnSeleccionar.addActionListener(new BtnSeleccionarActionListener());
         btnSeleccionar.setIcon(new ImageIcon(PestañaOfertas.class
                 .getResource("/presentacion/iconos/select-all.png")));
@@ -248,7 +248,7 @@ public class PestañaOfertas extends JPanel {
         gbc_btnSeleccionar.gridy = 13;
         add(btnSeleccionar, gbc_btnSeleccionar);
 
-        btnEnviarOferta = new JButton("Enviar oferta");
+        btnEnviarOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnEnviarOferta.text")); //$NON-NLS-1$
         btnEnviarOferta.addActionListener(new BtnEnviarOfertaActionListener());
         btnEnviarOferta.setIcon(new ImageIcon(PestañaOfertas.class
                 .getResource("/presentacion/iconos/send-button.png")));

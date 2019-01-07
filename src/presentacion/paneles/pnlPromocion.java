@@ -50,7 +50,7 @@ public class pnlPromocion extends JPanel {
             add(lblBebida, gbc_lblBebida);
         }
         {
-            lblDesc = new JLabel("Descripción de la promoción");
+            lblDesc = new JLabel(MessagesPnlPromocion.getString("pnlPromocion.lblDesc.text")); //$NON-NLS-1$
             GridBagConstraints gbc_lblDesc = new GridBagConstraints();
             gbc_lblDesc.gridwidth = 3;
             gbc_lblDesc.gridx = 0;

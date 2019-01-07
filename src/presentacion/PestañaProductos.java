@@ -93,7 +93,7 @@ public class PestañaProductos extends JPanel {
 
         pnlProductos = new JPanel();
         pnlProductos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlProductos.setBorder(new TitledBorder(null, "Productos",
+        pnlProductos.setBorder(new TitledBorder(null, MessagesPestanaProductos.getString("PestañaProductos.pnlProductos.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlProductos = new GridBagConstraints();
         gbc_pnlProductos.gridwidth = 2;
@@ -347,7 +347,7 @@ public class PestañaProductos extends JPanel {
         pnlPostres.add(lblPostre6, gbc_lblPostre6);
 
         pnlDetalles = new JPanel();
-        pnlDetalles.setBorder(new TitledBorder(null, "Detalles",
+        pnlDetalles.setBorder(new TitledBorder(null, MessagesPestanaProductos.getString("PestañaProductos.pnlDetalles.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlDetalles = new GridBagConstraints();
         gbc_pnlDetalles.insets = new Insets(0, 0, 0, 5);
@@ -364,7 +364,7 @@ public class PestañaProductos extends JPanel {
                 Double.MIN_VALUE };
         pnlDetalles.setLayout(gbl_pnlDetalles);
 
-        lblIngredientes = new JLabel("Ingredientes:");
+        lblIngredientes = new JLabel(MessagesPestanaProductos.getString("PestañaProductos.lblIngredientes.text")); //$NON-NLS-1$
         lblIngredientes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_lblIngredientes = new GridBagConstraints();
         gbc_lblIngredientes.insets = new Insets(0, 0, 5, 5);
@@ -383,7 +383,7 @@ public class PestañaProductos extends JPanel {
         gbc_taIngredientes.gridy = 0;
         pnlDetalles.add(taIngredientes, gbc_taIngredientes);
 
-        lblAlrgenos = new JLabel("Al\u00E9rgenos");
+        lblAlrgenos = new JLabel(MessagesPestanaProductos.getString("PestañaProductos.lblAlrgenos.text")); //$NON-NLS-1$
         lblAlrgenos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_lblAlrgenos = new GridBagConstraints();
         gbc_lblAlrgenos.insets = new Insets(0, 0, 5, 5);
@@ -402,7 +402,7 @@ public class PestañaProductos extends JPanel {
         gbc_taAlrgenos.gridy = 2;
         pnlDetalles.add(taAlrgenos, gbc_taAlrgenos);
 
-        lblPrecio = new JLabel("Precio:");
+        lblPrecio = new JLabel(MessagesPestanaProductos.getString("PestañaProductos.lblPrecio.text")); //$NON-NLS-1$
         lblPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
         gbc_lblPrecio.insets = new Insets(0, 0, 0, 5);
@@ -423,7 +423,7 @@ public class PestañaProductos extends JPanel {
         pnlEdicion = new JPanel();
         pnlEdicion.setBorder(
                 new TitledBorder(UIManager.getBorder("TitledBorder.border"),
-                        "Edici\u00F3n", TitledBorder.LEADING, TitledBorder.TOP,
+                        MessagesPestanaProductos.getString("PestañaProductos.pnlEdicion.borderTitle"), TitledBorder.LEADING, TitledBorder.TOP, //$NON-NLS-1$
                         null, new Color(0, 0, 0)));
         GridBagConstraints gbc_pnlEdicion = new GridBagConstraints();
         gbc_pnlEdicion.insets = new Insets(0, 0, 0, 5);
@@ -439,7 +439,7 @@ public class PestañaProductos extends JPanel {
                 Double.MIN_VALUE };
         pnlEdicion.setLayout(gbl_pnlEdicion);
 
-        btnNuevoProducto = new JButton("Nuevo producto");
+        btnNuevoProducto = new JButton(MessagesPestanaProductos.getString("PestañaProductos.btnNuevoProducto.text")); //$NON-NLS-1$
         btnNuevoProducto
                 .addActionListener(new BtnNuevoProductoActionListener());
         btnNuevoProducto.setIcon(new ImageIcon(PestañaProductos.class
@@ -452,7 +452,7 @@ public class PestañaProductos extends JPanel {
         gbc_btnNuevoProducto.gridy = 0;
         pnlEdicion.add(btnNuevoProducto, gbc_btnNuevoProducto);
 
-        btnEditarProducto = new JButton("Editar producto");
+        btnEditarProducto = new JButton(MessagesPestanaProductos.getString("PestañaProductos.btnEditarProducto.text")); //$NON-NLS-1$
         btnEditarProducto
                 .addActionListener(new BtnEditarProductoActionListener());
         btnEditarProducto.setIcon(new ImageIcon(PestañaProductos.class
@@ -466,7 +466,7 @@ public class PestañaProductos extends JPanel {
         gbc_btnEditarProducto.gridy = 1;
         pnlEdicion.add(btnEditarProducto, gbc_btnEditarProducto);
 
-        btnBorrarProducto = new JButton("Borrar producto");
+        btnBorrarProducto = new JButton(MessagesPestanaProductos.getString("PestañaProductos.btnBorrarProducto.text")); //$NON-NLS-1$
         btnBorrarProducto
                 .addActionListener(new BtnBorrarProductoActionListener());
         btnBorrarProducto.setIcon(new ImageIcon(PestañaProductos.class.getResource(
