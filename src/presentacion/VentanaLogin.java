@@ -39,6 +39,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class VentanaLogin extends JFrame {
 
@@ -55,7 +57,6 @@ public class VentanaLogin extends JFrame {
     private JLabel lblContrasea;
     private JTextField txtIdentificacion;
     private JPasswordField pwdContraseña;
-    private JComboBox cbIdioma;
     private JButton btnEntrar;
     private JPanel pnlInferior;
     private JLabel lblHelp;
@@ -66,6 +67,9 @@ public class VentanaLogin extends JFrame {
     private JRadioButtonMenuItem rdbtnmntmPequea;
     private JRadioButtonMenuItem rdbtnmntmMediana;
     private JRadioButtonMenuItem rdbtnmntmGrande;
+    private JRadioButton rdbtnEspaol;
+    private JRadioButton rdbtnEnglish;
+    private final ButtonGroup buttonGroup = new ButtonGroup();
 
     /**
      * Launch the application.
@@ -108,43 +112,54 @@ public class VentanaLogin extends JFrame {
         menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        mnArchivo = new JMenu("Archivo");
+        mnArchivo = new JMenu(
+                MessagesVentanaLogin.getString("VentanaLogin.mnArchivo.text")); //$NON-NLS-1$
         menuBar.add(mnArchivo);
 
-        mntmSalir = new JMenuItem("Salir");
+        mntmSalir = new JMenuItem(
+                MessagesVentanaLogin.getString("VentanaLogin.mntmSalir.text")); //$NON-NLS-1$
         mntmSalir.setIcon(new ImageIcon(VentanaLogin.class
                 .getResource("/presentacion/iconos/exit-to-app-button.png")));
         mntmSalir.addActionListener(new MntmSalirActionListener());
         mnArchivo.add(mntmSalir);
 
-        mnEdicin = new JMenu("Edici\u00F3n");
+        mnEdicin = new JMenu(
+                MessagesVentanaLogin.getString("VentanaLogin.mnEdicin.text")); //$NON-NLS-1$
         menuBar.add(mnEdicin);
 
-        mnVista = new JMenu("Vista");
+        mnVista = new JMenu(
+                MessagesVentanaLogin.getString("VentanaLogin.mnVista.text")); //$NON-NLS-1$
         menuBar.add(mnVista);
 
-        mnTamaoDeLetra = new JMenu("Tamaño de letra");
+        mnTamaoDeLetra = new JMenu(MessagesVentanaLogin
+                .getString("VentanaLogin.mnTamaoDeLetra.text")); //$NON-NLS-1$
         mnVista.add(mnTamaoDeLetra);
 
-        rdbtnmntmPequea = new JRadioButtonMenuItem("Pequeña");
+        rdbtnmntmPequea = new JRadioButtonMenuItem(MessagesVentanaLogin
+                .getString("VentanaLogin.rdbtnmntmPequea.text")); //$NON-NLS-1$
         mnTamaoDeLetra.add(rdbtnmntmPequea);
 
-        rdbtnmntmMediana = new JRadioButtonMenuItem("Mediana");
+        rdbtnmntmMediana = new JRadioButtonMenuItem(MessagesVentanaLogin
+                .getString("VentanaLogin.rdbtnmntmMediana.text")); //$NON-NLS-1$
         rdbtnmntmMediana.setSelected(true);
         mnTamaoDeLetra.add(rdbtnmntmMediana);
 
-        rdbtnmntmGrande = new JRadioButtonMenuItem("Grande");
+        rdbtnmntmGrande = new JRadioButtonMenuItem(MessagesVentanaLogin
+                .getString("VentanaLogin.rdbtnmntmGrande.text")); //$NON-NLS-1$
         mnTamaoDeLetra.add(rdbtnmntmGrande);
 
-        mnAcercaDe = new JMenu("Acerca de...");
+        mnAcercaDe = new JMenu(
+                MessagesVentanaLogin.getString("VentanaLogin.mnAcercaDe.text")); //$NON-NLS-1$
         menuBar.add(mnAcercaDe);
 
-        mntmInformacinDelAutor = new JMenuItem("Autor");
+        mntmInformacinDelAutor = new JMenuItem(MessagesVentanaLogin
+                .getString("VentanaLogin.mntmInformacinDelAutor.text")); //$NON-NLS-1$
         mntmInformacinDelAutor
                 .addActionListener(new MntmInformacinDelAutorActionListener());
         mnAcercaDe.add(mntmInformacinDelAutor);
 
-        mntmNewMenuItem = new JMenuItem("Version | v0.8beta");
+        mntmNewMenuItem = new JMenuItem(MessagesVentanaLogin
+                .getString("VentanaLogin.mntmNewMenuItem.text")); //$NON-NLS-1$
         mntmNewMenuItem.addActionListener(new MntmNewMenuItemActionListener());
         mnAcercaDe.add(mntmNewMenuItem);
         contentPane = new JPanel();
@@ -167,9 +182,10 @@ public class VentanaLogin extends JFrame {
                 0.0, Double.MIN_VALUE };
         pnlCentral.setLayout(gbl_pnlCentral);
 
-        lblHelp = new JLabel("");
+        lblHelp = new JLabel((String) null);
         lblHelp.addMouseListener(new LblHelpMouseListener());
-        lblHelp.setToolTipText("Pulse para mostrar la ayuda");
+        lblHelp.setToolTipText(MessagesVentanaLogin
+                .getString("VentanaLogin.lblHelp.toolTipText")); //$NON-NLS-1$
         lblHelp.setIcon(new ImageIcon(VentanaLogin.class
                 .getResource("/presentacion/iconos/information.png")));
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
@@ -191,7 +207,8 @@ public class VentanaLogin extends JFrame {
         gbc_lblImage.gridy = 1;
         pnlCentral.add(lblImage, gbc_lblImage);
 
-        lblIdentificacion = new JLabel("Identificaci\u00F3n:");
+        lblIdentificacion = new JLabel(MessagesVentanaLogin
+                .getString("VentanaLogin.lblIdentificacion.text")); //$NON-NLS-1$
         lblIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_lblIdentificacion = new GridBagConstraints();
         gbc_lblIdentificacion.anchor = GridBagConstraints.EAST;
@@ -215,7 +232,8 @@ public class VentanaLogin extends JFrame {
         pnlCentral.add(txtIdentificacion, gbc_txtIdentificacion);
         txtIdentificacion.setColumns(10);
 
-        lblContrasea = new JLabel("Contrase\u00F1a:");
+        lblContrasea = new JLabel(MessagesVentanaLogin
+                .getString("VentanaLogin.lblContrasea.text")); //$NON-NLS-1$
         lblContrasea.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_lblContrasea = new GridBagConstraints();
         gbc_lblContrasea.insets = new Insets(0, 0, 5, 5);
@@ -241,36 +259,46 @@ public class VentanaLogin extends JFrame {
         pnlInferior.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         contentPane.add(pnlInferior, BorderLayout.SOUTH);
         GridBagLayout gbl_pnlInferior = new GridBagLayout();
-        gbl_pnlInferior.columnWidths = new int[] { 100, 262, 100, 0 };
+        gbl_pnlInferior.columnWidths = new int[] { 100, 100, 262, 100, 0 };
         gbl_pnlInferior.rowHeights = new int[] { 50, 0 };
-        gbl_pnlInferior.columnWeights = new double[] { 0.0, 1.0, 0.0,
+        gbl_pnlInferior.columnWeights = new double[] { 0.0, 0.0, 1.0, 0.0,
                 Double.MIN_VALUE };
         gbl_pnlInferior.rowWeights = new double[] { 0.0, Double.MIN_VALUE };
         pnlInferior.setLayout(gbl_pnlInferior);
 
-        btnEntrar = new JButton("Entrar");
+        btnEntrar = new JButton(
+                MessagesVentanaLogin.getString("VentanaLogin.btnEntrar.text")); //$NON-NLS-1$
         btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         btnEntrar.setIcon(new ImageIcon(VentanaLogin.class.getResource(
                 "/presentacion/iconos/exit-to-app-button (1).png")));
         btnEntrar.addActionListener(new BtnEntrarActionListener());
 
-        cbIdioma = new JComboBox();
-        cbIdioma.setToolTipText(
-                "Seleccione el idioma con el que desee usar la aplicación");
-        cbIdioma.setModel(new DefaultComboBoxModel(
-                new String[] { "Espa\u00F1ol", "Ingl\u00E9s" }));
-        cbIdioma.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        GridBagConstraints gbc_cbIdioma = new GridBagConstraints();
-        gbc_cbIdioma.fill = GridBagConstraints.BOTH;
-        gbc_cbIdioma.insets = new Insets(0, 0, 0, 5);
-        gbc_cbIdioma.gridx = 0;
-        gbc_cbIdioma.gridy = 0;
-        pnlInferior.add(cbIdioma, gbc_cbIdioma);
-        cbIdioma.setName("");
+        rdbtnEspaol = new JRadioButton(MessagesVentanaLogin
+                .getString("VentanaLogin.rdbtnEspaol.text")); //$NON-NLS-1$
+        rdbtnEspaol.addActionListener(new RdbtnEspaolActionListener());
+        rdbtnEspaol.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        rdbtnEspaol.setSelected(true);
+        buttonGroup.add(rdbtnEspaol);
+        GridBagConstraints gbc_rdbtnEspaol = new GridBagConstraints();
+        gbc_rdbtnEspaol.insets = new Insets(0, 0, 0, 5);
+        gbc_rdbtnEspaol.gridx = 0;
+        gbc_rdbtnEspaol.gridy = 0;
+        pnlInferior.add(rdbtnEspaol, gbc_rdbtnEspaol);
+
+        rdbtnEnglish = new JRadioButton(MessagesVentanaLogin
+                .getString("VentanaLogin.rdbtnEnglish.text")); //$NON-NLS-1$
+        rdbtnEnglish.addActionListener(new RdbtnEnglishActionListener());
+        rdbtnEnglish.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        buttonGroup.add(rdbtnEnglish);
+        GridBagConstraints gbc_rdbtnEnglish = new GridBagConstraints();
+        gbc_rdbtnEnglish.insets = new Insets(0, 0, 0, 5);
+        gbc_rdbtnEnglish.gridx = 1;
+        gbc_rdbtnEnglish.gridy = 0;
+        pnlInferior.add(rdbtnEnglish, gbc_rdbtnEnglish);
         btnEntrar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnEntrar = new GridBagConstraints();
         gbc_btnEntrar.fill = GridBagConstraints.BOTH;
-        gbc_btnEntrar.gridx = 2;
+        gbc_btnEntrar.gridx = 3;
         gbc_btnEntrar.gridy = 0;
         pnlInferior.add(btnEntrar, gbc_btnEntrar);
     }
@@ -280,10 +308,23 @@ public class VentanaLogin extends JFrame {
         public void actionPerformed(ActionEvent arg0) {
             if (txtIdentificacion.getText().equals("ipo")
                     && pwdContraseña.getText().equals("tpv")) {
-                VentanaPrincipal tpv = new VentanaPrincipal();
-                tpv.setExtendedState(MAXIMIZED_BOTH);
-                frame.setVisible(false);
-                tpv.setVisible(true);
+                VentanaPrincipal tpv;
+
+                if (rdbtnEnglish.isSelected()) {
+                    MessagesVentanaPrincipal.setIdioma("inglés");
+                    frame.setVisible(false);
+                    tpv = new VentanaPrincipal();
+                    tpv.setExtendedState(MAXIMIZED_BOTH);
+                    tpv.setVisible(true);
+                    dispose();
+                } else {
+                    frame.setVisible(false);
+                    tpv = new VentanaPrincipal();
+                    tpv.setExtendedState(MAXIMIZED_BOTH);
+                    tpv.setVisible(true);
+                    dispose();
+                }
+
             } else {
                 if (txtIdentificacion.getText().equals("ipo")) {
                     JOptionPane.showMessageDialog(frame,
@@ -335,18 +376,18 @@ public class VentanaLogin extends JFrame {
     private class MntmInformacinDelAutorActionListener
             implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(frame,
-                    "Este prototipo ha sido desarrollado por Sergio Herrera Piqueras, \nalumno de la Escuela Superior de Informática de Ciudad Real, \npara la práctica final de la asignatura Interacción Persona-Ordenador I.",
-                    "Autor", JOptionPane.INFORMATION_MESSAGE);
+            String desc = "Este prototipo ha sido desarrollado por Sergio Herrera Piqueras, \nalumno de la Escuela Superior de Informática de Ciudad Real, \npara la práctica final de la asignatura Interacción Persona-Ordenador I.";
+            JOptionPane.showMessageDialog(frame, desc, "Autor",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
     private class MntmNewMenuItemActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(frame, "| 07/01/19 |\r\n" + "\r\n"
-                    + "TPV v0.8.3\r\n" + "- Packages organized\r\n" + "\r\n"
-                    + "TPV v0.8.2\r\n" + "- Menubar preview implemented\r\n"
-                    + "\r\n" + "TPV v0.8.1\r\n"
+            String desc = "| 07/01/19 |\r\n" + "\r\n" + "TPV v0.8.3\r\n"
+                    + "- Packages organized\r\n" + "\r\n" + "TPV v0.8.2\r\n"
+                    + "- Menubar preview implemented\r\n" + "\r\n"
+                    + "TPV v0.8.1\r\n"
                     + "- GestionPedidos now has more help tips\r\n" + "\r\n"
                     + "TPV v0.8\r\n" + "- frmCliente added\r\n"
                     + "- Some listeners added\r\n" + "\r\n" + "TPV v0.7.9\r\n"
@@ -385,8 +426,9 @@ public class VentanaLogin extends JFrame {
                     + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n"
                     + "- pnlPedidos first version\r\n" + "\r\n"
                     + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n"
-                    + "- Login form first version\r\n" + "- TPV created",
-                    "Changelog", JOptionPane.INFORMATION_MESSAGE);
+                    + "- Login form first version\r\n" + "- TPV created";
+            JOptionPane.showMessageDialog(frame, desc, "Changelog",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -397,6 +439,29 @@ public class VentanaLogin extends JFrame {
                     JOptionPane.YES_NO_OPTION) == 0) {
                 System.exit(0);
             }
+        }
+    }
+
+    private class RdbtnEnglishActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            MessagesVentanaLogin.setIdioma("inglés");
+            MessagesVentanaPrincipal.setIdioma("español");
+            frame.dispose();
+            frame = new VentanaLogin();
+            frame.rdbtnEnglish.setSelected(true);
+            frame.setVisible(true);
+
+        }
+    }
+
+    private class RdbtnEspaolActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            MessagesVentanaLogin.setIdioma("español");
+            MessagesVentanaPrincipal.setIdioma("español");
+            frame.dispose();
+            frame = new VentanaLogin();
+            frame.rdbtnEspaol.setSelected(true);
+            frame.setVisible(true);
         }
     }
 }

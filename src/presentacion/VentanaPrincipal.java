@@ -91,7 +91,7 @@ public class VentanaPrincipal extends JFrame {
      * Create the frame.
      */
     public VentanaPrincipal() {
-        setTitle("TPV");
+        setTitle(MessagesVentanaPrincipal.getString("VentanaPrincipal.this.title")); //$NON-NLS-1$
         setIconImage(Toolkit.getDefaultToolkit()
                 .getImage(VentanaPrincipal.class.getResource(
                         "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
@@ -101,42 +101,42 @@ public class VentanaPrincipal extends JFrame {
         menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        mnArchivo = new JMenu("Archivo");
+        mnArchivo = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnArchivo.text")); //$NON-NLS-1$
         menuBar.add(mnArchivo);
 
-        mntmSalir = new JMenuItem("Salir");
+        mntmSalir = new JMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.mntmSalir.text")); //$NON-NLS-1$
         mntmSalir.setIcon(new ImageIcon(VentanaPrincipal.class
                 .getResource("/presentacion/iconos/exit-to-app-button.png")));
         mntmSalir.addActionListener(new MntmSalirActionListener());
         mnArchivo.add(mntmSalir);
 
-        mnEdicin = new JMenu("Edici\u00F3n");
+        mnEdicin = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnEdicin.text")); //$NON-NLS-1$
         menuBar.add(mnEdicin);
 
-        mnVista = new JMenu("Vista");
+        mnVista = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnVista.text")); //$NON-NLS-1$
         menuBar.add(mnVista);
 
-        mnTamaoDeLetra = new JMenu("Tamaño de letra");
+        mnTamaoDeLetra = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnTamaoDeLetra.text")); //$NON-NLS-1$
         mnVista.add(mnTamaoDeLetra);
 
-        rdbtnmntmPequea = new JRadioButtonMenuItem("Pequeña");
+        rdbtnmntmPequea = new JRadioButtonMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.rdbtnmntmPequea.text")); //$NON-NLS-1$
         mnTamaoDeLetra.add(rdbtnmntmPequea);
 
-        rdbtnmntmMediana = new JRadioButtonMenuItem("Mediana");
+        rdbtnmntmMediana = new JRadioButtonMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.rdbtnmntmMediana.text")); //$NON-NLS-1$
         rdbtnmntmMediana.setSelected(true);
         mnTamaoDeLetra.add(rdbtnmntmMediana);
 
-        rdbtnmntmGrande = new JRadioButtonMenuItem("Grande");
+        rdbtnmntmGrande = new JRadioButtonMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.rdbtnmntmGrande.text")); //$NON-NLS-1$
         mnTamaoDeLetra.add(rdbtnmntmGrande);
 
-        mnAcercaDe = new JMenu("Acerca de...");
+        mnAcercaDe = new JMenu(MessagesVentanaPrincipal.getString("VentanaPrincipal.mnAcercaDe.text")); //$NON-NLS-1$
         menuBar.add(mnAcercaDe);
 
-        mntmAutor = new JMenuItem("Autor");
+        mntmAutor = new JMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.mntmAutor.text")); //$NON-NLS-1$
         mntmAutor.addActionListener(new MntmAutorActionListener());
         mnAcercaDe.add(mntmAutor);
 
-        mntmVersin = new JMenuItem("Versión | v0.8beta");
+        mntmVersin = new JMenuItem(MessagesVentanaPrincipal.getString("VentanaPrincipal.mntmVersin.text")); //$NON-NLS-1$
         mntmVersin.addActionListener(new MntmVersinActionListener());
         mnAcercaDe.add(mntmVersin);
         contentPane = new JPanel();
@@ -178,7 +178,7 @@ public class VentanaPrincipal extends JFrame {
         gbl_pnlBanner.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
         pnlBanner.setLayout(gbl_pnlBanner);
 
-        lblBanner = new JLabel("\u00A1Bienvenido/a!");
+        lblBanner = new JLabel(MessagesVentanaPrincipal.getString("VentanaPrincipal.lblBanner.text")); //$NON-NLS-1$
         lblBanner.setFont(new Font("Segoe UI Black", Font.PLAIN, 40));
         GridBagConstraints gbc_lblBanner = new GridBagConstraints();
         gbc_lblBanner.gridwidth = 2;

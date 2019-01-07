@@ -1,5 +1,11 @@
 | 07/01/19 |
 
+TPV v0.8.5
+- VentanaPrincipal internationalize
+
+TPV v0.8.4
+- Login internationalize
+
 TPV v0.8.3
 - Packages organized
 
