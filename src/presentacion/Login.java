@@ -59,6 +59,10 @@ public class Login extends JFrame {
     private JMenuItem mntmInformacinDelAutor;
     private JMenuItem mntmNewMenuItem;
     private JMenuItem mntmSalir;
+    private JMenu mnTamaoDeLetra;
+    private JRadioButtonMenuItem rdbtnmntmPequea;
+    private JRadioButtonMenuItem rdbtnmntmMediana;
+    private JRadioButtonMenuItem rdbtnmntmGrande;
 
     /**
      * Launch the application.
@@ -89,6 +93,9 @@ public class Login extends JFrame {
      * Create the frame.
      */
     public Login() {
+        setIconImage(
+                Toolkit.getDefaultToolkit().getImage(Login.class.getResource(
+                        "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
         setBackground(Color.DARK_GRAY);
 
         setTitle("Login");
@@ -112,6 +119,19 @@ public class Login extends JFrame {
 
         mnVista = new JMenu("Vista");
         menuBar.add(mnVista);
+
+        mnTamaoDeLetra = new JMenu("Tamaño de letra");
+        mnVista.add(mnTamaoDeLetra);
+
+        rdbtnmntmPequea = new JRadioButtonMenuItem("Pequeña");
+        mnTamaoDeLetra.add(rdbtnmntmPequea);
+
+        rdbtnmntmMediana = new JRadioButtonMenuItem("Mediana");
+        rdbtnmntmMediana.setSelected(true);
+        mnTamaoDeLetra.add(rdbtnmntmMediana);
+
+        rdbtnmntmGrande = new JRadioButtonMenuItem("Grande");
+        mnTamaoDeLetra.add(rdbtnmntmGrande);
 
         mnAcercaDe = new JMenu("Acerca de...");
         menuBar.add(mnAcercaDe);

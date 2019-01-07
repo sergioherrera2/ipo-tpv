@@ -445,8 +445,8 @@ public class pnlClientes extends JPanel {
             JOptionPane.showMessageDialog(new JPanel(),
                     "Esta es la pestaña clientes. Aquí se podrán ver los clientes, su historial de pedidos -que se cargaría en el panel inferior al ser seleccionado- y sus puntos acumulados y su caducidad.\n"
                             + "\nLas operaciones disponibles son:\n"
-                            + "- Añadir cliente: abrirá un formulario que se rellenará y al clickar en \"Aceptar\" se cargaría automáticamente al sistema y aparecería en la lista."
-                            + "- Editar cliente: se cargarían los datos en un nuevo formulario, donde podremos modificar los datos y se guardarían al pulsar aceptar."
+                            + "- Añadir cliente: abrirá un formulario que se rellenará y al clickar en \"Aceptar\" se cargaría automáticamente al sistema y aparecería en la lista.\n"
+                            + "- Editar cliente: se cargarían los datos en un nuevo formulario, donde podremos modificar los datos y se guardarían al pulsar aceptar.\n"
                             + "- Eliminar cliente: se elimina el cliente seleccionado.",
                     "Ayuda", JOptionPane.INFORMATION_MESSAGE);
         }

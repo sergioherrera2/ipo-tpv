@@ -10,9 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
 import java.awt.Font;
 import javax.swing.JRadioButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class pnlCallejero extends JPanel {
     private JPanel pnlCallejero;
@@ -36,12 +39,14 @@ public class pnlCallejero extends JPanel {
         gridBagLayout.columnWidths = new int[] { 1028, 121, 131, 0 };
         gridBagLayout.rowHeights = new int[] { 0, 42, 47, 194, 0, 0, 0, 0, 0 };
         gridBagLayout.columnWeights = new double[] { 1.0, 0.0, 0.0, 0.0 };
-        gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
-                0.0, Double.MIN_VALUE };
+        gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 0.0, 0.0,
+                0.0, 0.0, Double.MIN_VALUE };
         setLayout(gridBagLayout);
-        
+
         lblHelp = new JLabel("");
-        lblHelp.setIcon(new ImageIcon(pnlCallejero.class.getResource("/presentacion/iconos/information.png")));
+        lblHelp.addMouseListener(new LblHelpMouseListener());
+        lblHelp.setIcon(new ImageIcon(pnlCallejero.class
+                .getResource("/presentacion/iconos/information.png")));
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
         gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
         gbc_lblHelp.gridx = 3;
@@ -171,4 +176,13 @@ public class pnlCallejero extends JPanel {
 
     }
 
+    private class LblHelpMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Esta es la pestaña \"Callejero\". En la tabla de la derecha se mostrarán los pedidos más próximos, que serán dibujados en el mapa de la izquierda.\n"
+                            + "Además, información breve del pedido será mostrada abajo (si tiene que entregarse caliente, si el cliente es VIP).",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 }

@@ -43,7 +43,6 @@ public class frmCliente extends JFrame {
     private JTextArea taRestricciones;
     private JTextArea taAlergias;
     private JButton btnAceptar;
-    private JLabel lblAyuda;
 
     /**
      * Launch the application.
@@ -80,25 +79,13 @@ public class frmCliente extends JFrame {
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         setContentPane(contentPane);
         GridBagLayout gbl_contentPane = new GridBagLayout();
-        gbl_contentPane.columnWidths = new int[] { 0, 230, 229, 0, 100, 10, 0 };
-        gbl_contentPane.rowHeights = new int[] { 10, 50, 50, 50, 50, 50, 150,
+        gbl_contentPane.columnWidths = new int[] { 0, 230, 229, 0, 100, 0 };
+        gbl_contentPane.rowHeights = new int[] { 50, 50, 50, 50, 50, 150,
                 50, 0 };
-        gbl_contentPane.columnWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 0.0,
-                0.0, Double.MIN_VALUE };
-        gbl_contentPane.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0,
+        gbl_contentPane.columnWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
+        gbl_contentPane.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0,
                 0.0, 1.0, 0.0, Double.MIN_VALUE };
         contentPane.setLayout(gbl_contentPane);
-        {
-            lblAyuda = new JLabel("");
-            lblAyuda.addMouseListener(new LblAyudaMouseListener());
-            lblAyuda.setIcon(new ImageIcon(frmCliente.class
-                    .getResource("/presentacion/iconos/information.png")));
-            GridBagConstraints gbc_lblAyuda = new GridBagConstraints();
-            gbc_lblAyuda.insets = new Insets(0, 0, 5, 0);
-            gbc_lblAyuda.gridx = 5;
-            gbc_lblAyuda.gridy = 0;
-            contentPane.add(lblAyuda, gbc_lblAyuda);
-        }
         {
             lblNombre = new JLabel("Nombre:");
             lblNombre.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
@@ -106,7 +93,7 @@ public class frmCliente extends JFrame {
             gbc_lblNombre.anchor = GridBagConstraints.EAST;
             gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
             gbc_lblNombre.gridx = 0;
-            gbc_lblNombre.gridy = 1;
+            gbc_lblNombre.gridy = 0;
             contentPane.add(lblNombre, gbc_lblNombre);
         }
         {
@@ -117,7 +104,7 @@ public class frmCliente extends JFrame {
             gbc_txtNombre.insets = new Insets(0, 0, 5, 5);
             gbc_txtNombre.fill = GridBagConstraints.HORIZONTAL;
             gbc_txtNombre.gridx = 1;
-            gbc_txtNombre.gridy = 1;
+            gbc_txtNombre.gridy = 0;
             contentPane.add(txtNombre, gbc_txtNombre);
             txtNombre.setColumns(10);
         }
@@ -128,7 +115,7 @@ public class frmCliente extends JFrame {
             gbc_lblApellidos.anchor = GridBagConstraints.EAST;
             gbc_lblApellidos.insets = new Insets(0, 0, 5, 5);
             gbc_lblApellidos.gridx = 0;
-            gbc_lblApellidos.gridy = 2;
+            gbc_lblApellidos.gridy = 1;
             contentPane.add(lblApellidos, gbc_lblApellidos);
         }
         {
@@ -140,7 +127,7 @@ public class frmCliente extends JFrame {
             gbc_txtApellidos.insets = new Insets(0, 0, 5, 5);
             gbc_txtApellidos.fill = GridBagConstraints.HORIZONTAL;
             gbc_txtApellidos.gridx = 1;
-            gbc_txtApellidos.gridy = 2;
+            gbc_txtApellidos.gridy = 1;
             contentPane.add(txtApellidos, gbc_txtApellidos);
             txtApellidos.setColumns(10);
         }
@@ -151,7 +138,7 @@ public class frmCliente extends JFrame {
             gbc_lblDireccin.anchor = GridBagConstraints.EAST;
             gbc_lblDireccin.insets = new Insets(0, 0, 5, 5);
             gbc_lblDireccin.gridx = 0;
-            gbc_lblDireccin.gridy = 3;
+            gbc_lblDireccin.gridy = 2;
             contentPane.add(lblDireccin, gbc_lblDireccin);
         }
         {
@@ -163,7 +150,7 @@ public class frmCliente extends JFrame {
             gbc_txtDireccin.insets = new Insets(0, 0, 5, 5);
             gbc_txtDireccin.fill = GridBagConstraints.HORIZONTAL;
             gbc_txtDireccin.gridx = 1;
-            gbc_txtDireccin.gridy = 3;
+            gbc_txtDireccin.gridy = 2;
             contentPane.add(txtDireccin, gbc_txtDireccin);
             txtDireccin.setColumns(10);
         }
@@ -174,7 +161,7 @@ public class frmCliente extends JFrame {
             gbc_lblTelfonos.anchor = GridBagConstraints.EAST;
             gbc_lblTelfonos.insets = new Insets(0, 0, 5, 5);
             gbc_lblTelfonos.gridx = 0;
-            gbc_lblTelfonos.gridy = 4;
+            gbc_lblTelfonos.gridy = 3;
             contentPane.add(lblTelfonos, gbc_lblTelfonos);
         }
         {
@@ -185,7 +172,7 @@ public class frmCliente extends JFrame {
             gbc_txtTelfono1.insets = new Insets(0, 0, 5, 5);
             gbc_txtTelfono1.fill = GridBagConstraints.HORIZONTAL;
             gbc_txtTelfono1.gridx = 1;
-            gbc_txtTelfono1.gridy = 4;
+            gbc_txtTelfono1.gridy = 3;
             contentPane.add(txtTelfono1, gbc_txtTelfono1);
             txtTelfono1.setColumns(10);
         }
@@ -197,7 +184,7 @@ public class frmCliente extends JFrame {
             gbc_txtTelfono2.insets = new Insets(0, 0, 5, 5);
             gbc_txtTelfono2.fill = GridBagConstraints.HORIZONTAL;
             gbc_txtTelfono2.gridx = 2;
-            gbc_txtTelfono2.gridy = 4;
+            gbc_txtTelfono2.gridy = 3;
             contentPane.add(txtTelfono2, gbc_txtTelfono2);
             txtTelfono2.setColumns(10);
         }
@@ -209,7 +196,7 @@ public class frmCliente extends JFrame {
             gbc_lblCorreoElectrnico.anchor = GridBagConstraints.EAST;
             gbc_lblCorreoElectrnico.insets = new Insets(0, 0, 5, 5);
             gbc_lblCorreoElectrnico.gridx = 0;
-            gbc_lblCorreoElectrnico.gridy = 5;
+            gbc_lblCorreoElectrnico.gridy = 4;
             contentPane.add(lblCorreoElectrnico, gbc_lblCorreoElectrnico);
         }
         {
@@ -221,7 +208,7 @@ public class frmCliente extends JFrame {
             gbc_txtCorreo.insets = new Insets(0, 0, 5, 5);
             gbc_txtCorreo.fill = GridBagConstraints.HORIZONTAL;
             gbc_txtCorreo.gridx = 1;
-            gbc_txtCorreo.gridy = 5;
+            gbc_txtCorreo.gridy = 4;
             contentPane.add(txtCorreo, gbc_txtCorreo);
             txtCorreo.setColumns(10);
         }
@@ -234,7 +221,7 @@ public class frmCliente extends JFrame {
             gbc_lblRestriccionesAlimentarias.anchor = GridBagConstraints.EAST;
             gbc_lblRestriccionesAlimentarias.insets = new Insets(0, 0, 5, 5);
             gbc_lblRestriccionesAlimentarias.gridx = 0;
-            gbc_lblRestriccionesAlimentarias.gridy = 6;
+            gbc_lblRestriccionesAlimentarias.gridy = 5;
             contentPane.add(lblRestriccionesAlimentarias,
                     gbc_lblRestriccionesAlimentarias);
         }
@@ -247,7 +234,7 @@ public class frmCliente extends JFrame {
             gbc_taRestricciones.insets = new Insets(0, 0, 5, 5);
             gbc_taRestricciones.fill = GridBagConstraints.BOTH;
             gbc_taRestricciones.gridx = 1;
-            gbc_taRestricciones.gridy = 6;
+            gbc_taRestricciones.gridy = 5;
             contentPane.add(taRestricciones, gbc_taRestricciones);
         }
         {
@@ -258,7 +245,7 @@ public class frmCliente extends JFrame {
             gbc_lblAlergiasEIntolerancias.anchor = GridBagConstraints.EAST;
             gbc_lblAlergiasEIntolerancias.insets = new Insets(0, 0, 0, 5);
             gbc_lblAlergiasEIntolerancias.gridx = 0;
-            gbc_lblAlergiasEIntolerancias.gridy = 7;
+            gbc_lblAlergiasEIntolerancias.gridy = 6;
             contentPane.add(lblAlergiasEIntolerancias,
                     gbc_lblAlergiasEIntolerancias);
         }
@@ -272,7 +259,7 @@ public class frmCliente extends JFrame {
             gbc_taAlergias.insets = new Insets(0, 0, 0, 5);
             gbc_taAlergias.fill = GridBagConstraints.HORIZONTAL;
             gbc_taAlergias.gridx = 1;
-            gbc_taAlergias.gridy = 7;
+            gbc_taAlergias.gridy = 6;
             contentPane.add(taAlergias, gbc_taAlergias);
         }
         {
@@ -282,10 +269,9 @@ public class frmCliente extends JFrame {
             btnAceptar.setIcon(new ImageIcon(frmCliente.class
                     .getResource("/presentacion/iconos/check-symbol.png")));
             GridBagConstraints gbc_btnAceptar = new GridBagConstraints();
-            gbc_btnAceptar.insets = new Insets(0, 0, 0, 5);
             gbc_btnAceptar.fill = GridBagConstraints.BOTH;
             gbc_btnAceptar.gridx = 4;
-            gbc_btnAceptar.gridy = 7;
+            gbc_btnAceptar.gridy = 6;
             contentPane.add(btnAceptar, gbc_btnAceptar);
         }
     }
@@ -293,15 +279,6 @@ public class frmCliente extends JFrame {
     private class BtnAceptarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             frame.dispose();
-        }
-    }
-
-    private class LblAyudaMouseListener extends MouseAdapter {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            JOptionPane.showMessageDialog(frame,
-                    "Este formulario nos permite la adición o modificación de datos del cliente.\nEn la aplicación final, el botón aceptar crearía un cliente.",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

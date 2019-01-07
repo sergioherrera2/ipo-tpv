@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JRadioButtonMenuItem;
 import javax.swing.border.EmptyBorder;
 import java.awt.Rectangle;
 import javax.swing.JMenuBar;
@@ -47,6 +48,14 @@ public class TPV extends JFrame {
     private JMenuItem mntmSalir;
     private JMenuItem mntmAutor;
     private JMenuItem mntmVersin;
+
+    private JMenu mnTamaoDeLetra;
+
+    private JRadioButtonMenuItem rdbtnmntmPequea;
+
+    private JRadioButtonMenuItem rdbtnmntmMediana;
+
+    private JRadioButtonMenuItem rdbtnmntmGrande;
 
     /**
      * Launch the application.
@@ -101,6 +110,19 @@ public class TPV extends JFrame {
 
         mnVista = new JMenu("Vista");
         menuBar.add(mnVista);
+
+        mnTamaoDeLetra = new JMenu("Tamaño de letra");
+        mnVista.add(mnTamaoDeLetra);
+
+        rdbtnmntmPequea = new JRadioButtonMenuItem("Pequeña");
+        mnTamaoDeLetra.add(rdbtnmntmPequea);
+
+        rdbtnmntmMediana = new JRadioButtonMenuItem("Mediana");
+        rdbtnmntmMediana.setSelected(true);
+        mnTamaoDeLetra.add(rdbtnmntmMediana);
+
+        rdbtnmntmGrande = new JRadioButtonMenuItem("Grande");
+        mnTamaoDeLetra.add(rdbtnmntmGrande);
 
         mnAcercaDe = new JMenu("Acerca de...");
         menuBar.add(mnAcercaDe);

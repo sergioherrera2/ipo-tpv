@@ -42,6 +42,7 @@ public class pnlPedidos extends JPanel {
     private JTextField tfPrecio;
     private JLabel lblHelp;
     private JPanel panel;
+    private JLabel lblAyuda;
 
     /**
      * Create the panel.
@@ -194,13 +195,23 @@ public class pnlPedidos extends JPanel {
         gbc_pnlProductos.gridy = 2;
         add(pnlProductos, gbc_pnlProductos);
         GridBagLayout gbl_pnlProductos = new GridBagLayout();
-        gbl_pnlProductos.columnWidths = new int[] { 606, 50, 50, 0 };
-        gbl_pnlProductos.rowHeights = new int[] { 0, 0, 50, 0 };
-        gbl_pnlProductos.columnWeights = new double[] { 1.0, 0.0, 0.0,
+        gbl_pnlProductos.columnWidths = new int[] { 606, 50, 50, 10, 0 };
+        gbl_pnlProductos.rowHeights = new int[] { 10, 0, 0, 50, 0 };
+        gbl_pnlProductos.columnWeights = new double[] { 1.0, 0.0, 0.0, 0.0,
                 Double.MIN_VALUE };
-        gbl_pnlProductos.rowWeights = new double[] { 1.0, 0.0, 0.0,
+        gbl_pnlProductos.rowWeights = new double[] { 0.0, 1.0, 0.0, 0.0,
                 Double.MIN_VALUE };
         pnlProductos.setLayout(gbl_pnlProductos);
+
+        lblAyuda = new JLabel("");
+        lblAyuda.addMouseListener(new LblAyudaMouseListener());
+        lblAyuda.setIcon(new ImageIcon(pnlPedidos.class
+                .getResource("/presentacion/iconos/information.png")));
+        GridBagConstraints gbc_lblAyuda = new GridBagConstraints();
+        gbc_lblAyuda.insets = new Insets(0, 0, 5, 0);
+        gbc_lblAyuda.gridx = 3;
+        gbc_lblAyuda.gridy = 0;
+        pnlProductos.add(lblAyuda, gbc_lblAyuda);
 
         spTablaProductos = new JScrollPane();
         GridBagConstraints gbc_spTablaProductos = new GridBagConstraints();
@@ -208,7 +219,7 @@ public class pnlPedidos extends JPanel {
         gbc_spTablaProductos.insets = new Insets(0, 0, 0, 5);
         gbc_spTablaProductos.fill = GridBagConstraints.BOTH;
         gbc_spTablaProductos.gridx = 0;
-        gbc_spTablaProductos.gridy = 0;
+        gbc_spTablaProductos.gridy = 1;
         pnlProductos.add(spTablaProductos, gbc_spTablaProductos);
 
         tbProductos = new JTable();
@@ -246,7 +257,7 @@ public class pnlPedidos extends JPanel {
         gbc_lblTotal.anchor = GridBagConstraints.EAST;
         gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
         gbc_lblTotal.gridx = 1;
-        gbc_lblTotal.gridy = 1;
+        gbc_lblTotal.gridy = 2;
         pnlProductos.add(lblTotal, gbc_lblTotal);
 
         tfPrecio = new JTextField();
@@ -256,9 +267,9 @@ public class pnlPedidos extends JPanel {
         tfPrecio.setText("44.50\u20AC");
         GridBagConstraints gbc_tfPrecio = new GridBagConstraints();
         gbc_tfPrecio.fill = GridBagConstraints.HORIZONTAL;
-        gbc_tfPrecio.insets = new Insets(0, 0, 5, 0);
+        gbc_tfPrecio.insets = new Insets(0, 0, 5, 5);
         gbc_tfPrecio.gridx = 2;
-        gbc_tfPrecio.gridy = 1;
+        gbc_tfPrecio.gridy = 2;
         pnlProductos.add(tfPrecio, gbc_tfPrecio);
         tfPrecio.setColumns(10);
 
@@ -270,10 +281,11 @@ public class pnlPedidos extends JPanel {
         btnImprimirTicket
                 .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnImprimirTicket = new GridBagConstraints();
+        gbc_btnImprimirTicket.insets = new Insets(0, 0, 0, 5);
         gbc_btnImprimirTicket.gridwidth = 2;
         gbc_btnImprimirTicket.fill = GridBagConstraints.BOTH;
         gbc_btnImprimirTicket.gridx = 1;
-        gbc_btnImprimirTicket.gridy = 2;
+        gbc_btnImprimirTicket.gridy = 3;
         pnlProductos.add(btnImprimirTicket, gbc_btnImprimirTicket);
 
         panel = new pnlDatosCliente();
@@ -362,6 +374,15 @@ public class pnlPedidos extends JPanel {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(tpv, "Módulo no implementado",
                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class LblAyudaMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(tpv,
+                    "En este panel podemos ver la información del pedido e imprimir su ticket.",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }
