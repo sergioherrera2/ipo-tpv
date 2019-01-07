@@ -76,7 +76,7 @@ public class PestañaPedidos extends JPanel {
         pnlTablaPedidos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         pnlTablaPedidos.setBorder(
                 new TitledBorder(UIManager.getBorder("TitledBorder.border"),
-                        "Pedidos", TitledBorder.LEADING, TitledBorder.TOP, null,
+                        MessagesPestanaPedidos.getString("PestañaPedidos.pnlTablaPedidos.borderTitle"), TitledBorder.LEADING, TitledBorder.TOP, null, //$NON-NLS-1$
                         new Color(0, 0, 0)));
         GridBagConstraints gbc_pnlTablaPedidos = new GridBagConstraints();
         gbc_pnlTablaPedidos.gridwidth = 2;
@@ -140,7 +140,7 @@ public class PestañaPedidos extends JPanel {
         tbPedidos.getColumnModel().getColumn(8).setPreferredWidth(103);
         spTablaPedidos.setViewportView(tbPedidos);
 
-        btnNuevoPedido = new JButton("Nuevo pedido");
+        btnNuevoPedido = new JButton(MessagesPestanaPedidos.getString("PestañaPedidos.btnNuevoPedido.text")); //$NON-NLS-1$
         btnNuevoPedido.addActionListener(new BtnNuevoPedidoActionListener());
         btnNuevoPedido.setIcon(new ImageIcon(PestañaPedidos.class
                 .getResource("/presentacion/iconos/rounded-add-button.png")));
@@ -152,7 +152,7 @@ public class PestañaPedidos extends JPanel {
         gbc_btnNuevoPedido.gridy = 0;
         pnlTablaPedidos.add(btnNuevoPedido, gbc_btnNuevoPedido);
 
-        btnEditarPedido = new JButton("Editar pedido");
+        btnEditarPedido = new JButton(MessagesPestanaPedidos.getString("PestañaPedidos.btnEditarPedido.text")); //$NON-NLS-1$
         btnEditarPedido.addActionListener(new BtnEditarPedidoActionListener());
         btnEditarPedido.setIcon(new ImageIcon(PestañaPedidos.class
                 .getResource("/presentacion/iconos/edit24.png")));
@@ -164,7 +164,7 @@ public class PestañaPedidos extends JPanel {
         gbc_btnEditarPedido.gridy = 1;
         pnlTablaPedidos.add(btnEditarPedido, gbc_btnEditarPedido);
 
-        btnVerPedido = new JButton("Ver pedido");
+        btnVerPedido = new JButton(MessagesPestanaPedidos.getString("PestañaPedidos.btnVerPedido.text")); //$NON-NLS-1$
         btnVerPedido.addActionListener(new BtnVerPedidoActionListener());
         btnVerPedido.setIcon(new ImageIcon(PestañaPedidos.class
                 .getResource("/presentacion/iconos/show-more-button.png")));
@@ -176,7 +176,7 @@ public class PestañaPedidos extends JPanel {
         gbc_btnVerPedido.gridy = 2;
         pnlTablaPedidos.add(btnVerPedido, gbc_btnVerPedido);
 
-        btnBorrarPedido = new JButton("Borrar pedido");
+        btnBorrarPedido = new JButton(MessagesPestanaPedidos.getString("PestañaPedidos.btnBorrarPedido.text")); //$NON-NLS-1$
         btnBorrarPedido.addActionListener(new BtnBorrarPedidoActionListener());
         btnBorrarPedido.setIcon(new ImageIcon(PestañaPedidos.class.getResource(
                 "/presentacion/iconos/rubbish-bin-delete-button.png")));
@@ -189,7 +189,7 @@ public class PestañaPedidos extends JPanel {
 
         pnlProductos = new JPanel();
         pnlProductos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        pnlProductos.setBorder(new TitledBorder(null, "Productos",
+        pnlProductos.setBorder(new TitledBorder(null, MessagesPestanaPedidos.getString("PestañaPedidos.pnlProductos.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlProductos = new GridBagConstraints();
         gbc_pnlProductos.insets = new Insets(0, 0, 0, 5);
@@ -254,7 +254,7 @@ public class PestañaPedidos extends JPanel {
         tbProductos.getColumnModel().getColumn(3).setPreferredWidth(95);
         spTablaProductos.setViewportView(tbProductos);
 
-        lblTotal = new JLabel("Total:");
+        lblTotal = new JLabel(MessagesPestanaPedidos.getString("PestañaPedidos.lblTotal.text")); //$NON-NLS-1$
         lblTotal.setFont(new Font("Segoe UI", Font.PLAIN, 15));
         GridBagConstraints gbc_lblTotal = new GridBagConstraints();
         gbc_lblTotal.anchor = GridBagConstraints.EAST;
@@ -276,7 +276,7 @@ public class PestañaPedidos extends JPanel {
         pnlProductos.add(tfPrecio, gbc_tfPrecio);
         tfPrecio.setColumns(10);
 
-        btnImprimirTicket = new JButton("Imprimir ticket");
+        btnImprimirTicket = new JButton(MessagesPestanaPedidos.getString("PestañaPedidos.btnImprimirTicket.text")); //$NON-NLS-1$
         btnImprimirTicket
                 .addActionListener(new BtnImprimirTicketActionListener());
         btnImprimirTicket.setIcon(new ImageIcon(PestañaPedidos.class

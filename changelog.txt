@@ -1,10 +1,19 @@
 | 07/01/19 |
 
+TPV v0.8.8
+- All components in UI now supports english language
+
+TPV v0.8.7
+- First tabs internationalized in real-time (but PestanaPedidos)
+
+TPV v0.8.6
+- All panels and forms internationalized
+
 TPV v0.8.5
-- VentanaPrincipal internationalize
+- VentanaPrincipal internationalized
 
 TPV v0.8.4
-- Login internationalize
+- Login internationalized
 
 TPV v0.8.3
 - Packages organized

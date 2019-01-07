@@ -8,6 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.border.EmptyBorder;
 
+import presentacion.formularios.MessagesFormularioCliente;
+import presentacion.paneles.MessagesPnlControl;
+import presentacion.paneles.MessagesPnlDatosCliente;
+import presentacion.paneles.MessagesPnlOferta;
+import presentacion.paneles.MessagesPnlPromocion;
 import presentacion.paneles.MessagesPnlUsuario;
 import presentacion.paneles.pnlControl;
 import presentacion.paneles.pnlUsuario;
@@ -109,6 +114,11 @@ public class VentanaPrincipal extends JFrame {
             MessagesPestanaCallejero.setIdioma("inglés");
             MessagesPestanaOfertas.setIdioma("inglés");
             MessagesPnlUsuario.setIdioma("inglés");
+            MessagesPnlControl.setIdioma("inglés");
+            MessagesPnlOferta.setIdioma("inglés");
+            MessagesPnlDatosCliente.setIdioma("inglés");
+            MessagesPnlPromocion.setIdioma("inglés");
+            MessagesFormularioCliente.setIdioma("inglés");
         }
 
         menuBar = new JMenuBar();
