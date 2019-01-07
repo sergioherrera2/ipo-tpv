@@ -1,3 +1,21 @@
+- Terminar internacionalización paneles (source>externalize strings)
+- Borrar mains sobrantes
+- Limpiar código lo máximo posible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 pnlOfertas:
 -- Problema: poner iconos seleccionables en las ofertas (panel con 2 iconos y texto)
 -- Solución: crear panel dinámico (Seminario 3) e introducirlos en el ScrollPane

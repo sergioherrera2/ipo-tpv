@@ -19,15 +19,15 @@ public class pnlControl extends JPanel {
      * Create the panel.
      */
     public pnlControl() {
-        setBorder(new TitledBorder(null, "Control", TitledBorder.LEADING,
+        setBorder(new TitledBorder(null, "Control", TitledBorder.LEADING, //$NON-NLS-1$
                 TitledBorder.TOP, null, null));
         setLayout(new GridLayout(0, 1, 0, 0));
 
         btnCerrarSesin = new JButton(MessagesPnlControl.getString("pnlControl.btnCerrarSesin.text")); //$NON-NLS-1$
         btnCerrarSesin.addActionListener(new BtnCerrarSesinActionListener());
         btnCerrarSesin.setIcon(new ImageIcon(pnlControl.class
-                .getResource("/presentacion/iconos/exit-to-app-button.png")));
-        btnCerrarSesin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/exit-to-app-button.png"))); //$NON-NLS-1$
+        btnCerrarSesin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         add(btnCerrarSesin);
 
     }
@@ -35,7 +35,7 @@ public class pnlControl extends JPanel {
     private class BtnCerrarSesinActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if (JOptionPane.showConfirmDialog(null,
-                    "¿Seguro que quieres salir?", "Aviso",
+                    MessagesPnlControl.getString("pnlControl.DialogoConfirmacion"), MessagesPnlControl.getString("pnlControl.DialogoAviso"), //$NON-NLS-1$ //$NON-NLS-2$
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE) == 0) {
                 System.exit(0);

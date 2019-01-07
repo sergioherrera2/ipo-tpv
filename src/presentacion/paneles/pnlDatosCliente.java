@@ -53,10 +53,10 @@ public class pnlDatosCliente extends JPanel {
                 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE };
         setLayout(gridBagLayout);
         {
-            lblAyuda = new JLabel("");
+            lblAyuda = new JLabel(""); //$NON-NLS-1$
             lblAyuda.addMouseListener(new LblAyudaMouseListener());
             lblAyuda.setIcon(new ImageIcon(pnlDatosCliente.class
-                    .getResource("/presentacion/iconos/information.png")));
+                    .getResource("/presentacion/iconos/information.png"))); //$NON-NLS-1$
             GridBagConstraints gbc_lblAyuda = new GridBagConstraints();
             gbc_lblAyuda.insets = new Insets(0, 0, 5, 0);
             gbc_lblAyuda.gridx = 4;
@@ -65,7 +65,7 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             lblNombreYApellidos = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblNombreYApellidos.text")); //$NON-NLS-1$
-            lblNombreYApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            lblNombreYApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_lblNombreYApellidos = new GridBagConstraints();
             gbc_lblNombreYApellidos.anchor = GridBagConstraints.SOUTHWEST;
             gbc_lblNombreYApellidos.insets = new Insets(0, 0, 5, 5);
@@ -78,7 +78,7 @@ public class pnlDatosCliente extends JPanel {
             tfNombreApellidos
                     .addKeyListener(new TfNombreApellidosKeyListener());
             tfNombreApellidos.addFocusListener(new MiFocusListener());
-            tfNombreApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            tfNombreApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_tfNombreApellidos = new GridBagConstraints();
             gbc_tfNombreApellidos.fill = GridBagConstraints.HORIZONTAL;
             gbc_tfNombreApellidos.insets = new Insets(0, 0, 5, 5);
@@ -91,7 +91,7 @@ public class pnlDatosCliente extends JPanel {
         {
             lblTelefono = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblTelefono.text")); //$NON-NLS-1$
             lblTelefono.setEnabled(false);
-            lblTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            lblTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_lblTelefono = new GridBagConstraints();
             gbc_lblTelefono.anchor = GridBagConstraints.SOUTHWEST;
             gbc_lblTelefono.insets = new Insets(0, 0, 5, 5);
@@ -103,7 +103,7 @@ public class pnlDatosCliente extends JPanel {
             tfTelefono = new JTextField();
             tfTelefono.setEnabled(false);
             tfTelefono.addFocusListener(new MiFocusListener());
-            tfTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            tfTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_tfTelefono = new GridBagConstraints();
             gbc_tfTelefono.insets = new Insets(0, 0, 5, 5);
             gbc_tfTelefono.gridwidth = 3;
@@ -116,7 +116,7 @@ public class pnlDatosCliente extends JPanel {
         {
             lblDireccinDeEnvo = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblDireccinDeEnvo.text")); //$NON-NLS-1$
             lblDireccinDeEnvo.setEnabled(false);
-            lblDireccinDeEnvo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            lblDireccinDeEnvo.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_lblDireccinDeEnvo = new GridBagConstraints();
             gbc_lblDireccinDeEnvo.anchor = GridBagConstraints.SOUTHWEST;
             gbc_lblDireccinDeEnvo.insets = new Insets(0, 0, 5, 5);
@@ -128,7 +128,7 @@ public class pnlDatosCliente extends JPanel {
             tfDireccion = new JTextField();
             tfDireccion.setEnabled(false);
             tfDireccion.addFocusListener(new MiFocusListener());
-            tfDireccion.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            tfDireccion.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_tfDireccion = new GridBagConstraints();
             gbc_tfDireccion.insets = new Insets(0, 0, 5, 5);
             gbc_tfDireccion.gridwidth = 3;
@@ -142,7 +142,7 @@ public class pnlDatosCliente extends JPanel {
             lblAlergiasORestricciones = new JLabel(MessagesPnlDatosCliente.getString("pnlDatosCliente.lblAlergiasORestricciones.text")); //$NON-NLS-1$
             lblAlergiasORestricciones.setEnabled(false);
             lblAlergiasORestricciones
-                    .setFont(new Font("Segoe UI", Font.PLAIN, 15));
+                    .setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_lblAlergiasORestricciones = new GridBagConstraints();
             gbc_lblAlergiasORestricciones.anchor = GridBagConstraints.SOUTHWEST;
             gbc_lblAlergiasORestricciones.insets = new Insets(0, 0, 5, 5);
@@ -154,7 +154,7 @@ public class pnlDatosCliente extends JPanel {
             tfAlergias = new JTextField();
             tfAlergias.setEnabled(false);
             tfAlergias.addFocusListener(new MiFocusListener());
-            tfAlergias.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            tfAlergias.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
             GridBagConstraints gbc_tfAlergias = new GridBagConstraints();
             gbc_tfAlergias.insets = new Insets(0, 0, 5, 5);
             gbc_tfAlergias.gridwidth = 3;
@@ -183,9 +183,9 @@ public class pnlDatosCliente extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este es el panel \"Datos de cliente\", donde se cargará la información sobre el cliente a editar,\n"
-                            + " o los campos estarán vacíos si estamos creando uno.\n",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesPnlDatosCliente.getString("pnlDatosCliente.Ayuda") //$NON-NLS-1$
+                            + MessagesPnlDatosCliente.getString("pnlDatosCliente.Ayuda2"), //$NON-NLS-1$
+                    MessagesPnlDatosCliente.getString("pnlDatosCliente.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
         }
     }
 }
