@@ -102,23 +102,23 @@ public class VentanaPrincipal extends JFrame {
                 .getString("VentanaPrincipal.this.title")); //$NON-NLS-1$
         setIconImage(Toolkit.getDefaultToolkit()
                 .getImage(VentanaPrincipal.class.getResource(
-                        "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
+                        "/presentacion/imagenes/food-2074638_960_720 - resized.png"))); //$NON-NLS-1$
         setBounds(new Rectangle(0, 0, 1920, 1080));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         if (MessagesVentanaPrincipal.getIdioma().getLanguage()
-                .equals(new Locale("en").getLanguage())) {
-            MessagesPestanaPedidos.setIdioma("inglés");
-            MessagesPestanaProductos.setIdioma("inglés");
-            MessagesPestanaClientes.setIdioma("inglés");
-            MessagesPestanaCallejero.setIdioma("inglés");
-            MessagesPestanaOfertas.setIdioma("inglés");
-            MessagesPnlUsuario.setIdioma("inglés");
-            MessagesPnlControl.setIdioma("inglés");
-            MessagesPnlOferta.setIdioma("inglés");
-            MessagesPnlDatosCliente.setIdioma("inglés");
-            MessagesPnlPromocion.setIdioma("inglés");
-            MessagesFormularioCliente.setIdioma("inglés");
+                .equals(new Locale("en").getLanguage())) { //$NON-NLS-1$
+            MessagesPestanaPedidos.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPestanaProductos.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPestanaClientes.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPestanaCallejero.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPestanaOfertas.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPnlUsuario.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPnlControl.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPnlOferta.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPnlDatosCliente.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesPnlPromocion.setIdioma("inglés"); //$NON-NLS-1$
+            MessagesFormularioCliente.setIdioma("inglés"); //$NON-NLS-1$
         }
 
         menuBar = new JMenuBar();
@@ -131,7 +131,7 @@ public class VentanaPrincipal extends JFrame {
         mntmSalir = new JMenuItem(MessagesVentanaPrincipal
                 .getString("VentanaPrincipal.mntmSalir.text")); //$NON-NLS-1$
         mntmSalir.setIcon(new ImageIcon(VentanaPrincipal.class
-                .getResource("/presentacion/iconos/exit-to-app-button.png")));
+                .getResource("/presentacion/iconos/exit-to-app-button.png"))); //$NON-NLS-1$
         mntmSalir.addActionListener(new MntmSalirActionListener());
         mnArchivo.add(mntmSalir);
 
@@ -214,7 +214,7 @@ public class VentanaPrincipal extends JFrame {
 
         lblBanner = new JLabel(MessagesVentanaPrincipal
                 .getString("VentanaPrincipal.lblBanner.text")); //$NON-NLS-1$
-        lblBanner.setFont(new Font("Segoe UI Black", Font.PLAIN, 40));
+        lblBanner.setFont(new Font("Segoe UI Black", Font.PLAIN, 40)); //$NON-NLS-1$
         GridBagConstraints gbc_lblBanner = new GridBagConstraints();
         gbc_lblBanner.gridwidth = 2;
         gbc_lblBanner.insets = new Insets(0, 0, 0, 5);
@@ -234,25 +234,39 @@ public class VentanaPrincipal extends JFrame {
         contentPane.add(tbpCentral, BorderLayout.CENTER);
 
         pnlPedidos = new PestañaPedidos(frame);
-        tbpCentral.addTab("Pedidos", null, pnlPedidos, null);
+        tbpCentral.addTab(MessagesVentanaPrincipal.getString(
+                "VentanaPrincipal.TabPedidos"), null, pnlPedidos, null); //$NON-NLS-1$
 
         pnlOfertas = new PestañaOfertas();
-        tbpCentral.addTab("Ofertas", null, pnlOfertas, null);
+        tbpCentral.addTab(MessagesVentanaPrincipal.getString(
+                "VentanaPrincipal.TabOfertas"), null, pnlOfertas, null); //$NON-NLS-1$
 
         pnlProductos = new PestañaProductos();
-        tbpCentral.addTab("Productos", null, pnlProductos, null);
+        tbpCentral.addTab(
+                MessagesVentanaPrincipal
+                        .getString("VentanaPrincipal.TabProductos"), //$NON-NLS-1$
+                null, pnlProductos, null);
 
         pnlClientes = new PestañaClientes();
-        tbpCentral.addTab("Clientes", null, pnlClientes, null);
+        tbpCentral.addTab(
+                MessagesVentanaPrincipal
+                        .getString("VentanaPrincipal.TabClientes"), //$NON-NLS-1$
+                null, pnlClientes, null);
 
         pnlCallejero = new PestañaCallejero();
-        tbpCentral.addTab("Callejero", null, pnlCallejero, null);
+        tbpCentral.addTab(
+                MessagesVentanaPrincipal
+                        .getString("VentanaPrincipal.TabCallejero"), //$NON-NLS-1$
+                null, pnlCallejero, null);
     }
 
     private class MntmSalirActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if (JOptionPane.showConfirmDialog(frame,
-                    "¿Estás seguro de que quieres salir?", "Cuidado",
+                    MessagesVentanaPrincipal
+                            .getString("VentanaPrincipal.DialogoConfirmacion"), //$NON-NLS-1$
+                    MessagesVentanaPrincipal
+                            .getString("VentanaPrincipal.DialogoCuidado"), //$NON-NLS-1$
                     JOptionPane.YES_NO_OPTION) == 0) {
                 System.exit(0);
             }
@@ -262,57 +276,62 @@ public class VentanaPrincipal extends JFrame {
     private class MntmAutorActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(frame,
-                    "Este prototipo ha sido desarrollado por Sergio Herrera Piqueras, \nalumno de la Escuela Superior de Informática de Ciudad Real, \npara la práctica final de la asignatura Interacción Persona-Ordenador I.",
-                    "Autor", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesVentanaPrincipal
+                            .getString("VentanaPrincipal.InfoAutor"), //$NON-NLS-1$
+                    MessagesVentanaPrincipal
+                            .getString("VentanaPrincipal.MenuAutor"), //$NON-NLS-1$
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
     private class MntmVersinActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(frame, "| 07/01/19 |\r\n" + "\r\n"
-                    + "TPV v0.8.3\r\n" + "- Packages organized\r\n" + "\r\n"
-                    + "TPV v0.8.2\r\n" + "- Menubar preview implemented\r\n"
-                    + "\r\n" + "TPV v0.8.1\r\n"
-                    + "- GestionPedidos now has more help tips\r\n" + "\r\n"
-                    + "TPV v0.8\r\n" + "- frmCliente added\r\n"
-                    + "- Some listeners added\r\n" + "\r\n" + "TPV v0.7.9\r\n"
-                    + "- Menus added to Login\r\n"
-                    + "- Some help tips added\r\n" + "- pnlClientes fixed\r\n"
-                    + "\r\n" + "TPV v0.7.8\r\n"
-                    + "- pnlDatosCliente now is dynamic\r\n"
-                    + "- pnlControl now is working\r\n"
-                    + "- Some design improvements\r\n" + "\r\n"
-                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n"
-                    + "- pnlControl confirm dialog added (without action for now)\r\n"
-                    + "\r\n" + "TPV v0.7.6\r\n"
-                    + "- Design style improved and better resource management\r\n"
-                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n"
-                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n"
-                    + "- TPV is now maximized by default\r\n"
-                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n"
-                    + "- Login: language is now shown\r\n" + "\r\n"
-                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n"
-                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n"
-                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n"
-                    + "- Login: font changes\r\n"
-                    + "- Login: demo implemented\r\n"
-                    + "- pnlCallejero: image changed\r\n"
-                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n"
-                    + "- pnlCallejero first version\r\n"
-                    + "- Design improvements (font changes)\r\n" + "\r\n"
-                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n"
-                    + "\r\n" + "TPV v0.4.1\r\n"
-                    + "- pnlProductos improvements\r\n" + "\r\n"
-                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n"
-                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n"
-                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n"
-                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n"
-                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n"
-                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n"
-                    + "- pnlPedidos first version\r\n" + "\r\n"
-                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n"
-                    + "- Login form first version\r\n" + "- TPV created",
-                    "Changelog", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(frame, "| 07/01/19 |\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.8.3\r\n" + "- Packages organized\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "TPV v0.8.2\r\n" + "- Menubar preview implemented\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "TPV v0.8.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- GestionPedidos now has more help tips\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.8\r\n" + "- frmCliente added\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- Some listeners added\r\n" + "\r\n" + "TPV v0.7.9\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Menus added to Login\r\n" //$NON-NLS-1$
+                    + "- Some help tips added\r\n" + "- pnlClientes fixed\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "TPV v0.7.8\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- pnlDatosCliente now is dynamic\r\n" //$NON-NLS-1$
+                    + "- pnlControl now is working\r\n" //$NON-NLS-1$
+                    + "- Some design improvements\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- pnlControl confirm dialog added (without action for now)\r\n" //$NON-NLS-1$
+                    + "\r\n" + "TPV v0.7.6\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- Design style improved and better resource management\r\n" //$NON-NLS-1$
+                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- TPV is now maximized by default\r\n" //$NON-NLS-1$
+                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Login: language is now shown\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Login: font changes\r\n" //$NON-NLS-1$
+                    + "- Login: demo implemented\r\n" //$NON-NLS-1$
+                    + "- pnlCallejero: image changed\r\n" //$NON-NLS-1$
+                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- pnlCallejero first version\r\n" //$NON-NLS-1$
+                    + "- Design improvements (font changes)\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "TPV v0.4.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "- pnlProductos improvements\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- pnlPedidos first version\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
+                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                    + "- Login form first version\r\n" + "- TPV created", //$NON-NLS-1$ //$NON-NLS-2$
+                    MessagesVentanaPrincipal
+                            .getString("VentanaPrincipal.ListaCambios"), //$NON-NLS-1$
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

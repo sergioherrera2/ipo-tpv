@@ -1,5 +1,8 @@
 | 07/01/19 |
 
+TPV v0.9
+- VentanaPrincipal now have full support of english
+
 TPV v0.8.9
 - Login window now have full support of english
 
