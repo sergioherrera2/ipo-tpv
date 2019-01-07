@@ -16,8 +16,13 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import java.awt.GridLayout;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class pnlOfertas extends JPanel {
     private JPanel pnlPromociones;
@@ -35,12 +40,7 @@ public class pnlOfertas extends JPanel {
     private JList lsClientes;
     private JScrollPane spPromociones;
     private JPanel pnlPromo1;
-    private JLabel lblProducto1;
-    private JLabel lblPostre1;
-    private JTextField txtHamburguesaYHelado;
     private JPanel pnlOferta1;
-    private JLabel lblOfertaBebida;
-    private JTextField txtBebidaPorSolo;
     private JLabel lblHelp;
 
     /**
@@ -50,16 +50,18 @@ public class pnlOfertas extends JPanel {
         setBounds(new Rectangle(0, 0, 1280, 720));
         GridBagLayout gridBagLayout = new GridBagLayout();
         gridBagLayout.columnWidths = new int[] { 771, 507, 100, 0, 0 };
-        gridBagLayout.rowHeights = new int[] { 0, 50, 50, 50, 50, 50, 50, 50, 50,
-                50, 50, 50, 50, 50, 50, 0 };
+        gridBagLayout.rowHeights = new int[] { 0, 50, 50, 50, 50, 50, 50, 50,
+                50, 50, 50, 50, 50, 50, 50, 0 };
         gridBagLayout.columnWeights = new double[] { 1.0, 0.0, 0.0, 0.0,
                 Double.MIN_VALUE };
-        gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+        gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
         setLayout(gridBagLayout);
-        
+
         lblHelp = new JLabel("");
-        lblHelp.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/information.png")));
+        lblHelp.addMouseListener(new LblHelpMouseListener());
+        lblHelp.setIcon(new ImageIcon(pnlOfertas.class
+                .getResource("/presentacion/iconos/information.png")));
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
         gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
         gbc_lblHelp.gridx = 3;
@@ -95,7 +97,7 @@ public class pnlOfertas extends JPanel {
         gbc_spPromociones.gridy = 0;
         pnlPromociones.add(spPromociones, gbc_spPromociones);
 
-        pnlPromo1 = new JPanel();
+        pnlPromo1 = new pnlPromocion();
         spPromociones.setViewportView(pnlPromo1);
         GridBagLayout gbl_pnlPromo1 = new GridBagLayout();
         gbl_pnlPromo1.columnWidths = new int[] { 0, 0, 0 };
@@ -105,41 +107,10 @@ public class pnlOfertas extends JPanel {
         gbl_pnlPromo1.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
         pnlPromo1.setLayout(gbl_pnlPromo1);
 
-        lblProducto1 = new JLabel("");
-        lblProducto1.setIcon(new ImageIcon(pnlOfertas.class
-                .getResource("/presentacion/imagenes/hamburger.png")));
-        GridBagConstraints gbc_lblProducto1 = new GridBagConstraints();
-        gbc_lblProducto1.fill = GridBagConstraints.BOTH;
-        gbc_lblProducto1.insets = new Insets(0, 0, 5, 5);
-        gbc_lblProducto1.gridx = 0;
-        gbc_lblProducto1.gridy = 0;
-        pnlPromo1.add(lblProducto1, gbc_lblProducto1);
-
-        lblPostre1 = new JLabel("");
-        lblPostre1.setIcon(new ImageIcon(pnlOfertas.class
-                .getResource("/presentacion/imagenes/ice-cream.png")));
-        GridBagConstraints gbc_lblPostre1 = new GridBagConstraints();
-        gbc_lblPostre1.fill = GridBagConstraints.BOTH;
-        gbc_lblPostre1.insets = new Insets(0, 0, 5, 0);
-        gbc_lblPostre1.gridx = 1;
-        gbc_lblPostre1.gridy = 0;
-        pnlPromo1.add(lblPostre1, gbc_lblPostre1);
-
-        txtHamburguesaYHelado = new JTextField();
-        txtHamburguesaYHelado.setEditable(false);
-        txtHamburguesaYHelado.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        txtHamburguesaYHelado.setText("Hamburguesa y helado por 4,50\u20AC!");
-        GridBagConstraints gbc_txtHamburguesaYHelado = new GridBagConstraints();
-        gbc_txtHamburguesaYHelado.fill = GridBagConstraints.BOTH;
-        gbc_txtHamburguesaYHelado.gridwidth = 2;
-        gbc_txtHamburguesaYHelado.insets = new Insets(0, 0, 0, 5);
-        gbc_txtHamburguesaYHelado.gridx = 0;
-        gbc_txtHamburguesaYHelado.gridy = 1;
-        pnlPromo1.add(txtHamburguesaYHelado, gbc_txtHamburguesaYHelado);
-        txtHamburguesaYHelado.setColumns(10);
-
         btnNuevaOferta = new JButton("Nueva oferta");
-        btnNuevaOferta.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/rounded-add-button.png")));
+        btnNuevaOferta.addActionListener(new BtnNuevaOfertaActionListener());
+        btnNuevaOferta.setIcon(new ImageIcon(pnlOfertas.class
+                .getResource("/presentacion/iconos/rounded-add-button.png")));
         btnNuevaOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnNuevaOferta = new GridBagConstraints();
         gbc_btnNuevaOferta.fill = GridBagConstraints.BOTH;
@@ -149,7 +120,9 @@ public class pnlOfertas extends JPanel {
         add(btnNuevaOferta, gbc_btnNuevaOferta);
 
         btnEditarOferta = new JButton("Editar oferta");
-        btnEditarOferta.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/edit24.png")));
+        btnEditarOferta.addActionListener(new BtnEditarOfertaActionListener());
+        btnEditarOferta.setIcon(new ImageIcon(pnlOfertas.class
+                .getResource("/presentacion/iconos/edit24.png")));
         btnEditarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnEditarOferta = new GridBagConstraints();
         gbc_btnEditarOferta.fill = GridBagConstraints.BOTH;
@@ -184,7 +157,7 @@ public class pnlOfertas extends JPanel {
         gbc_spOfertas.gridy = 0;
         pnlOfertas.add(spOfertas, gbc_spOfertas);
 
-        pnlOferta1 = new JPanel();
+        pnlOferta1 = new pnlOferta();
         spOfertas.setViewportView(pnlOferta1);
         GridBagLayout gbl_pnlOferta1 = new GridBagLayout();
         gbl_pnlOferta1.columnWidths = new int[] { 214, 0 };
@@ -193,27 +166,10 @@ public class pnlOfertas extends JPanel {
         gbl_pnlOferta1.rowWeights = new double[] { 1.0, 1.0, Double.MIN_VALUE };
         pnlOferta1.setLayout(gbl_pnlOferta1);
 
-        lblOfertaBebida = new JLabel("");
-        lblOfertaBebida.setIcon(new ImageIcon(pnlOfertas.class
-                .getResource("/presentacion/imagenes/soft-drink.png")));
-        GridBagConstraints gbc_lblOfertaBebida = new GridBagConstraints();
-        gbc_lblOfertaBebida.fill = GridBagConstraints.VERTICAL;
-        gbc_lblOfertaBebida.insets = new Insets(0, 0, 5, 0);
-        gbc_lblOfertaBebida.gridx = 0;
-        gbc_lblOfertaBebida.gridy = 0;
-        pnlOferta1.add(lblOfertaBebida, gbc_lblOfertaBebida);
-
-        txtBebidaPorSolo = new JTextField();
-        txtBebidaPorSolo.setText("Bebida por solo 1,30\u20AC!");
-        GridBagConstraints gbc_txtBebidaPorSolo = new GridBagConstraints();
-        gbc_txtBebidaPorSolo.fill = GridBagConstraints.BOTH;
-        gbc_txtBebidaPorSolo.gridx = 0;
-        gbc_txtBebidaPorSolo.gridy = 1;
-        pnlOferta1.add(txtBebidaPorSolo, gbc_txtBebidaPorSolo);
-        txtBebidaPorSolo.setColumns(10);
-
         btnBorrarOferta = new JButton("Borrar oferta");
-        btnBorrarOferta.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/rubbish-bin-delete-button.png")));
+        btnBorrarOferta.addActionListener(new BtnBorrarPromoActionListener());
+        btnBorrarOferta.setIcon(new ImageIcon(pnlOfertas.class.getResource(
+                "/presentacion/iconos/rubbish-bin-delete-button.png")));
         btnBorrarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnBorrarOferta = new GridBagConstraints();
         gbc_btnBorrarOferta.fill = GridBagConstraints.BOTH;
@@ -277,7 +233,9 @@ public class pnlOfertas extends JPanel {
         spClientes.setViewportView(lsClientes);
 
         btnSeleccionar = new JButton("Seleccionar");
-        btnSeleccionar.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/select-all.png")));
+        btnSeleccionar.addActionListener(new BtnSeleccionarActionListener());
+        btnSeleccionar.setIcon(new ImageIcon(pnlOfertas.class
+                .getResource("/presentacion/iconos/select-all.png")));
         btnSeleccionar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnSeleccionar = new GridBagConstraints();
         gbc_btnSeleccionar.fill = GridBagConstraints.BOTH;
@@ -287,7 +245,9 @@ public class pnlOfertas extends JPanel {
         add(btnSeleccionar, gbc_btnSeleccionar);
 
         btnEnviarOferta = new JButton("Enviar oferta");
-        btnEnviarOferta.setIcon(new ImageIcon(pnlOfertas.class.getResource("/presentacion/iconos/send-button.png")));
+        btnEnviarOferta.addActionListener(new BtnEnviarOfertaActionListener());
+        btnEnviarOferta.setIcon(new ImageIcon(pnlOfertas.class
+                .getResource("/presentacion/iconos/send-button.png")));
         btnEnviarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnEnviarOferta = new GridBagConstraints();
         gbc_btnEnviarOferta.insets = new Insets(0, 0, 0, 5);
@@ -296,5 +256,81 @@ public class pnlOfertas extends JPanel {
         gbc_btnEnviarOferta.gridy = 14;
         add(btnEnviarOferta, gbc_btnEnviarOferta);
 
+    }
+
+    private class BtnNuevaOfertaActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este módulo no ha sido implementado. "
+                            + "En una versión final, este botón añadiría un panel con una oferta o promoción en una de las listas.",
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private class BtnBorrarPromoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (pnlPromo1.getBackground().equals(new Color(250, 250, 150))) {
+                if (JOptionPane.showConfirmDialog(new JPanel(),
+                        "¿Estás seguro de que quieres borrar la promoción?",
+                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    pnlPromo1.setBackground(new Color(250, 250, 250));
+                    pnlPromo1.setVisible(false);
+                }
+            } else if (pnlOferta1.getBackground()
+                    .equals(new Color(250, 250, 150))) {
+                if (JOptionPane.showConfirmDialog(new JPanel(),
+                        "¿Estás seguro de que quieres borrar la promoción?",
+                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    pnlOferta1.setBackground(new Color(250, 250, 250));
+                    pnlOferta1.setVisible(false);
+                }
+            } else {
+                JOptionPane.showMessageDialog(new JPanel(),
+                        "Primero tienes que seleccionar una promoción.",
+                        "Cuidado", JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+    }
+
+    private class BtnEditarOfertaActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este módulo no ha sido implementado. "
+                            + "En una versión final, este botón editaría una oferta o promoción seleccionada (con fondo amarillo).",
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private class BtnSeleccionarActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este módulo no ha sido implementado. "
+                            + "En una versión final, este botón permitiría la selección múltiple de los e-mails a la izquierda.",
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private class BtnEnviarOfertaActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (JOptionPane.showConfirmDialog(new JPanel(),
+                    "Vas a enviar las ofertas seleccionadas los e-mails marcados. ¿Enviar?",
+                    "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                JOptionPane.showMessageDialog(new JPanel(),
+                        "¡Oferta/s enviada/s!.", "Información",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }
+
+    private class LblHelpMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Esta es la pestaña ofertas y promociones, en la que tenemos la posibilidad de añadir ofertas, editarlas y eliminarlas.\n"
+                            + "El panel información nos mostrará la información relacionada con la oferta o promoción seleccionada.\n"
+                            + "Adicionalmente, podemos enviar mediante la selección de e-mails, las ofertas o promociones a los clientes VIP (que son los únicos que aparecerán aquí) que queramos.",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 }

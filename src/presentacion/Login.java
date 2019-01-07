@@ -102,7 +102,8 @@ public class Login extends JFrame {
         menuBar.add(mnArchivo);
 
         mntmSalir = new JMenuItem("Salir");
-        mntmSalir.setIcon(new ImageIcon(Login.class.getResource("/presentacion/iconos/exit-to-app-button.png")));
+        mntmSalir.setIcon(new ImageIcon(Login.class
+                .getResource("/presentacion/iconos/exit-to-app-button.png")));
         mntmSalir.addActionListener(new MntmSalirActionListener());
         mnArchivo.add(mntmSalir);
 
@@ -180,7 +181,7 @@ public class Login extends JFrame {
         txtIdentificacion.addKeyListener(new TxtIdentificacionKeyListener());
         txtIdentificacion
                 .addActionListener(new TxtIdentificacionActionListener());
-        txtIdentificacion.addFocusListener(new TxtFocusListener());
+        txtIdentificacion.addFocusListener(new MiFocusListener());
         txtIdentificacion.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_txtIdentificacion = new GridBagConstraints();
         gbc_txtIdentificacion.gridwidth = 2;
@@ -202,7 +203,7 @@ public class Login extends JFrame {
 
         pwdContraseña = new JPasswordField();
         pwdContraseña.addActionListener(new PwdContraseñaActionListener());
-        pwdContraseña.addFocusListener(new TxtFocusListener());
+        pwdContraseña.addFocusListener(new MiFocusListener());
         pwdContraseña.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         GridBagConstraints gbc_pwdContraseña = new GridBagConstraints();
         gbc_pwdContraseña.insets = new Insets(0, 0, 5, 5);
@@ -272,18 +273,6 @@ public class Login extends JFrame {
                 }
             }
 
-        }
-    }
-
-    private class TxtFocusListener extends FocusAdapter {
-        @Override
-        public void focusGained(FocusEvent e) {
-            e.getComponent().setBackground(new Color(250, 250, 150));
-        }
-
-        @Override
-        public void focusLost(FocusEvent e) {
-            e.getComponent().setBackground(new Color(250, 250, 250));
         }
     }
 

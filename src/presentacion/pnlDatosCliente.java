@@ -8,7 +8,15 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class pnlDatosCliente extends JPanel {
     private JLabel lblNombreYApellidos;
@@ -48,6 +56,9 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             tfNombreApellidos = new JTextField();
+            tfNombreApellidos
+                    .addKeyListener(new TfNombreApellidosKeyListener());
+            tfNombreApellidos.addFocusListener(new MiFocusListener());
             tfNombreApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_tfNombreApellidos = new GridBagConstraints();
             gbc_tfNombreApellidos.fill = GridBagConstraints.HORIZONTAL;
@@ -60,6 +71,7 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             lblTelefono = new JLabel("Teléfono:");
+            lblTelefono.setEnabled(false);
             lblTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_lblTelefono = new GridBagConstraints();
             gbc_lblTelefono.anchor = GridBagConstraints.SOUTHWEST;
@@ -70,6 +82,8 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             tfTelefono = new JTextField();
+            tfTelefono.setEnabled(false);
+            tfTelefono.addFocusListener(new MiFocusListener());
             tfTelefono.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_tfTelefono = new GridBagConstraints();
             gbc_tfTelefono.insets = new Insets(0, 0, 5, 5);
@@ -82,6 +96,7 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             lblDireccinDeEnvo = new JLabel("Dirección de envío:");
+            lblDireccinDeEnvo.setEnabled(false);
             lblDireccinDeEnvo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_lblDireccinDeEnvo = new GridBagConstraints();
             gbc_lblDireccinDeEnvo.anchor = GridBagConstraints.SOUTHWEST;
@@ -92,6 +107,8 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             tfDireccion = new JTextField();
+            tfDireccion.setEnabled(false);
+            tfDireccion.addFocusListener(new MiFocusListener());
             tfDireccion.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_tfDireccion = new GridBagConstraints();
             gbc_tfDireccion.insets = new Insets(0, 0, 5, 5);
@@ -104,6 +121,7 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             lblAlergiasORestricciones = new JLabel("Alergias o restricciones:");
+            lblAlergiasORestricciones.setEnabled(false);
             lblAlergiasORestricciones
                     .setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_lblAlergiasORestricciones = new GridBagConstraints();
@@ -115,6 +133,8 @@ public class pnlDatosCliente extends JPanel {
         }
         {
             tfAlergias = new JTextField();
+            tfAlergias.setEnabled(false);
+            tfAlergias.addFocusListener(new MiFocusListener());
             tfAlergias.setFont(new Font("Segoe UI", Font.PLAIN, 15));
             GridBagConstraints gbc_tfAlergias = new GridBagConstraints();
             gbc_tfAlergias.insets = new Insets(0, 0, 5, 5);
@@ -128,4 +148,15 @@ public class pnlDatosCliente extends JPanel {
 
     }
 
+    private class TfNombreApellidosKeyListener extends KeyAdapter {
+        @Override
+        public void keyTyped(KeyEvent e) {
+            lblTelefono.setEnabled(true);
+            tfTelefono.setEnabled(true);
+            lblDireccinDeEnvo.setEnabled(true);
+            tfDireccion.setEnabled(true);
+            lblAlergiasORestricciones.setEnabled(true);
+            tfAlergias.setEnabled(true);
+        }
+    }
 }

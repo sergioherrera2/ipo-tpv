@@ -222,6 +222,7 @@ public class GestionPedidos extends JFrame {
             }
             {
                 txtHorarecogida = new JTextField();
+                txtHorarecogida.addFocusListener(new MiFocusListener());
                 GridBagConstraints gbc_txtHorarecogida = new GridBagConstraints();
                 gbc_txtHorarecogida.gridwidth = 2;
                 gbc_txtHorarecogida.insets = new Insets(0, 0, 5, 5);
@@ -243,6 +244,7 @@ public class GestionPedidos extends JFrame {
             }
             {
                 txtHorallegada = new JTextField();
+                txtHorallegada.addFocusListener(new MiFocusListener());
                 GridBagConstraints gbc_txtHorallegada = new GridBagConstraints();
                 gbc_txtHorallegada.insets = new Insets(0, 0, 5, 5);
                 gbc_txtHorallegada.gridwidth = 2;

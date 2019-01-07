@@ -6,9 +6,13 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.border.TitledBorder;
+
+import org.omg.IOP.TAG_ALTERNATE_IIOP_ADDRESS;
+
 import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
@@ -16,6 +20,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class pnlProductos extends JPanel {
     private JPanel pnlProductos;
@@ -69,11 +77,14 @@ public class pnlProductos extends JPanel {
         gridBagLayout.rowHeights = new int[] { 0, 0, 241, 0 };
         gridBagLayout.columnWeights = new double[] { 1.0, 0.0, 0.0,
                 Double.MIN_VALUE };
-        gridBagLayout.rowWeights = new double[] { 0.0, 1.0, 1.0, Double.MIN_VALUE };
+        gridBagLayout.rowWeights = new double[] { 0.0, 1.0, 1.0,
+                Double.MIN_VALUE };
         setLayout(gridBagLayout);
-        
+
         lblHelp = new JLabel("");
-        lblHelp.setIcon(new ImageIcon(pnlProductos.class.getResource("/presentacion/iconos/information.png")));
+        lblHelp.addMouseListener(new LblHelpMouseListener());
+        lblHelp.setIcon(new ImageIcon(pnlProductos.class
+                .getResource("/presentacion/iconos/information.png")));
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
         gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
         gbc_lblHelp.gridx = 2;
@@ -122,6 +133,7 @@ public class pnlProductos extends JPanel {
         pnlComida.setLayout(gbl_pnlComida);
 
         lbProducto1 = new JLabel("");
+        lbProducto1.addMouseListener(new LbProductoMouseListener());
         GridBagConstraints gbc_lbProducto1 = new GridBagConstraints();
         gbc_lbProducto1.insets = new Insets(0, 0, 5, 5);
         gbc_lbProducto1.gridx = 0;
@@ -206,6 +218,7 @@ public class pnlProductos extends JPanel {
         pnlBebidas.setLayout(gbl_pnlBebidas);
 
         lblBebida1 = new JLabel("");
+        lblBebida1.addMouseListener(new LbProductoMouseListener());
         GridBagConstraints gbc_lblBebida1 = new GridBagConstraints();
         gbc_lblBebida1.insets = new Insets(0, 0, 5, 5);
         gbc_lblBebida1.gridx = 0;
@@ -290,6 +303,7 @@ public class pnlProductos extends JPanel {
         pnlPostres.setLayout(gbl_pnlPostres);
 
         lblPostre1 = new JLabel("");
+        lblPostre1.addMouseListener(new LbProductoMouseListener());
         GridBagConstraints gbc_lblPostre1 = new GridBagConstraints();
         gbc_lblPostre1.insets = new Insets(0, 0, 5, 5);
         gbc_lblPostre1.gridx = 0;
@@ -426,7 +440,10 @@ public class pnlProductos extends JPanel {
         pnlEdicion.setLayout(gbl_pnlEdicion);
 
         btnNuevoProducto = new JButton("Nuevo producto");
-        btnNuevoProducto.setIcon(new ImageIcon(pnlProductos.class.getResource("/presentacion/iconos/rounded-add-button.png")));
+        btnNuevoProducto
+                .addActionListener(new BtnNuevoProductoActionListener());
+        btnNuevoProducto.setIcon(new ImageIcon(pnlProductos.class
+                .getResource("/presentacion/iconos/rounded-add-button.png")));
         btnNuevoProducto.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnNuevoProducto = new GridBagConstraints();
         gbc_btnNuevoProducto.fill = GridBagConstraints.BOTH;
@@ -436,7 +453,10 @@ public class pnlProductos extends JPanel {
         pnlEdicion.add(btnNuevoProducto, gbc_btnNuevoProducto);
 
         btnEditarProducto = new JButton("Editar producto");
-        btnEditarProducto.setIcon(new ImageIcon(pnlProductos.class.getResource("/presentacion/iconos/edit24.png")));
+        btnEditarProducto
+                .addActionListener(new BtnEditarProductoActionListener());
+        btnEditarProducto.setIcon(new ImageIcon(pnlProductos.class
+                .getResource("/presentacion/iconos/edit24.png")));
         btnEditarProducto
                 .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnEditarProducto = new GridBagConstraints();
@@ -447,7 +467,10 @@ public class pnlProductos extends JPanel {
         pnlEdicion.add(btnEditarProducto, gbc_btnEditarProducto);
 
         btnBorrarProducto = new JButton("Borrar producto");
-        btnBorrarProducto.setIcon(new ImageIcon(pnlProductos.class.getResource("/presentacion/iconos/rubbish-bin-delete-button.png")));
+        btnBorrarProducto
+                .addActionListener(new BtnBorrarProductoActionListener());
+        btnBorrarProducto.setIcon(new ImageIcon(pnlProductos.class.getResource(
+                "/presentacion/iconos/rubbish-bin-delete-button.png")));
         btnBorrarProducto
                 .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
         GridBagConstraints gbc_btnBorrarProducto = new GridBagConstraints();
@@ -458,4 +481,79 @@ public class pnlProductos extends JPanel {
 
     }
 
+    private class LbProductoMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            ((JLabel) e.getComponent()).setText("(selected)");
+            taIngredientes.setEditable(true);
+            taAlrgenos.setEditable(true);
+            tfPrecio.setEditable(true);
+        }
+    }
+
+    private class BtnBorrarProductoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if (lbProducto1.getText().equals("(selected)")) {
+                if (JOptionPane.showConfirmDialog(new JPanel(),
+                        "¿Estás seguro de que quieres borrar este producto?",
+                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    lbProducto1.setVisible(false);
+                    lbProducto1.setText("(removed)");
+                }
+            } else if (lblBebida1.getText().equals("(selected)")) {
+                if (JOptionPane.showConfirmDialog(new JPanel(),
+                        "¿Estás seguro de que quieres borrar la promoción?",
+                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    lblBebida1.setVisible(false);
+                    lblBebida1.setText("(removed)");
+                }
+            } else if (lblPostre1.getText().equals("(selected)")) {
+                if (JOptionPane.showConfirmDialog(new JPanel(),
+                        "¿Estás seguro de que quieres borrar la promoción?",
+                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    lblPostre1.setVisible(false);
+                    lblPostre1.setText("(removed)");
+                }
+            } else {
+                JOptionPane.showMessageDialog(new JPanel(),
+                        "Primero tienes que seleccionar una promoción.",
+                        "Cuidado", JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+    }
+
+    private class BtnNuevoProductoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este módulo no ha sido implementado. "
+                            + "En una versión final, este botón añadiría un producto cuya información sería rellenada con los campos de abajo. Además, se agruparía automáticamente en el panel que le correspondiera (comida, bebida, postre...).",
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private class BtnEditarProductoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Este módulo no ha sido implementado. "
+                            + "En una versión final, este botón editaría un producto seleccionado (con marca selected), cuya información se mostraría abajo.",
+                    "Aviso", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private class LblHelpMouseListener extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JOptionPane.showMessageDialog(new JPanel(),
+                    "Esta es la pestaña productos, en la cual podemos ver los tipos de productos disponibles para su elección.\n"
+                            + "Al seleccionar un producto, su información se muestra en el panel inferior (no implementado).\n"
+                            + "\nOperaciones disponibles:"
+                            + "\n\t- Seleccionar producto: pulsando sobre la imagen de un producto."
+                            + "\n\t- Añadir producto: aquí aparecería un form que permitiría la elección de una imagen y la escritura de su información."
+                            + "\n\t- Editar producto: el producto con la marca selected podría actualizarse con los datos modificados del panel inferior."
+                            + "\n\t- Borrar producto: el producto seleccionado es eliminado.",
+                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+
+        }
+    }
 }
