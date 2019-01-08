@@ -7,6 +7,9 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.ImageIcon;
 import javax.swing.border.TitledBorder;
+
+import presentacion.messages.MessagesPnlUsuario;
+
 import java.awt.Font;
 
 public class pnlUsuario extends JPanel {

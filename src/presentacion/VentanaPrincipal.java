@@ -8,12 +8,19 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.border.EmptyBorder;
 
-import presentacion.formularios.MessagesFormularioCliente;
-import presentacion.paneles.MessagesPnlControl;
-import presentacion.paneles.MessagesPnlDatosCliente;
-import presentacion.paneles.MessagesPnlOferta;
-import presentacion.paneles.MessagesPnlPromocion;
-import presentacion.paneles.MessagesPnlUsuario;
+import presentacion.messages.MessagesFormularioCliente;
+import presentacion.messages.MessagesPestanaCallejero;
+import presentacion.messages.MessagesPestanaClientes;
+import presentacion.messages.MessagesPestanaOfertas;
+import presentacion.messages.MessagesPestanaPedidos;
+import presentacion.messages.MessagesPestanaProductos;
+import presentacion.messages.MessagesPnlControl;
+import presentacion.messages.MessagesPnlDatosCliente;
+import presentacion.messages.MessagesPnlOferta;
+import presentacion.messages.MessagesPnlPromocion;
+import presentacion.messages.MessagesPnlUsuario;
+import presentacion.messages.MessagesVentanaGestionPedidos;
+import presentacion.messages.MessagesVentanaPrincipal;
 import presentacion.paneles.pnlControl;
 import presentacion.paneles.pnlUsuario;
 
@@ -182,7 +189,7 @@ public class VentanaPrincipal extends JFrame {
         pnlSuperior = new JPanel();
         contentPane.add(pnlSuperior, BorderLayout.NORTH);
         GridBagLayout gbl_pnlSuperior = new GridBagLayout();
-        gbl_pnlSuperior.columnWidths = new int[] { 306, 56, 0, 0 };
+        gbl_pnlSuperior.columnWidths = new int[] { 250, 56, 250, 0 };
         gbl_pnlSuperior.rowHeights = new int[] { 143, 0 };
         gbl_pnlSuperior.columnWeights = new double[] { 0.0, 1.0, 0.0,
                 Double.MIN_VALUE };

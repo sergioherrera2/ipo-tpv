@@ -9,13 +9,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import presentacion.messages.MessagesPestanaPedidos;
 import presentacion.paneles.pnlDatosCliente;
 
 import javax.swing.JButton;
 import javax.swing.border.TitledBorder;
 import javax.swing.UIManager;
 import java.awt.Color;
-import java.awt.Dialog.ModalExclusionType;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;

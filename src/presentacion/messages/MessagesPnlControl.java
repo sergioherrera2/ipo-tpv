@@ -1,17 +1,17 @@
-package presentacion;
+package presentacion.messages;
 
 import java.beans.Beans;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-public class MessagesPestanaPedidos {
+public class MessagesPnlControl {
     ////////////////////////////////////////////////////////////////////////////
     //
     // Constructor
     //
     ////////////////////////////////////////////////////////////////////////////
-    private MessagesPestanaPedidos() {
+    private MessagesPnlControl() {
         // do not instantiate
     }
 
@@ -20,7 +20,7 @@ public class MessagesPestanaPedidos {
     // Bundle access
     //
     ////////////////////////////////////////////////////////////////////////////
-    private static final String BUNDLE_NAME = "presentacion.MessagesPestanaPedidos"; //$NON-NLS-1$
+    private static final String BUNDLE_NAME = "presentacion.messages.MessagesPnlControl"; //$NON-NLS-1$
     private static ResourceBundle RESOURCE_BUNDLE = loadBundle();
 
     private static ResourceBundle loadBundle() {

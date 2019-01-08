@@ -12,7 +12,8 @@ import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
 
 import presentacion.listeners.MiFocusListener;
-import presentacion.MessagesVentanaLogin;
+import presentacion.messages.MessagesVentanaLogin;
+import presentacion.messages.MessagesVentanaPrincipal;
 
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;

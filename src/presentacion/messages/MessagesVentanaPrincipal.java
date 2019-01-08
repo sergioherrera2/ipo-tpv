@@ -1,17 +1,17 @@
-package presentacion.paneles;
+package presentacion.messages;
 
 import java.beans.Beans;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-public class MessagesPnlDatosCliente {
+public class MessagesVentanaPrincipal {
     ////////////////////////////////////////////////////////////////////////////
     //
     // Constructor
     //
     ////////////////////////////////////////////////////////////////////////////
-    private MessagesPnlDatosCliente() {
+    private MessagesVentanaPrincipal() {
         // do not instantiate
     }
 
@@ -20,8 +20,9 @@ public class MessagesPnlDatosCliente {
     // Bundle access
     //
     ////////////////////////////////////////////////////////////////////////////
-    private static final String BUNDLE_NAME = "presentacion.paneles.MessagesPnlDatosCliente"; //$NON-NLS-1$
+    private static final String BUNDLE_NAME = "presentacion.messages.MessagesVentanaPrincipal"; //$NON-NLS-1$
     private static ResourceBundle RESOURCE_BUNDLE = loadBundle();
+    private static Locale locale = new Locale("es");
 
     private static ResourceBundle loadBundle() {
         return ResourceBundle.getBundle(BUNDLE_NAME);
@@ -43,7 +44,7 @@ public class MessagesPnlDatosCliente {
     }
 
     private static Locale getLocale(String appIdioma) {
-        Locale locale = new Locale("es");
+        locale = new Locale("es");
         if (appIdioma.equals("inglés"))
             locale = new Locale("en");
         return locale;
@@ -52,5 +53,9 @@ public class MessagesPnlDatosCliente {
     public static void setIdioma(String idioma) {
         RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME,
                 getLocale(idioma));
+    }
+
+    public static Locale getIdioma() {
+        return locale;
     }
 }

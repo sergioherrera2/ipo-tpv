@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import presentacion.formularios.FormularioCliente;
+import presentacion.messages.MessagesPestanaClientes;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;

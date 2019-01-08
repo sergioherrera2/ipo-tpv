@@ -1,6 +1,9 @@
 package presentacion.paneles;
 
 import javax.swing.JPanel;
+
+import presentacion.messages.MessagesPnlPromocion;
+
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;

@@ -1,5 +1,8 @@
 | 08/01/19 |
 
+TPV v0.9.4
+- Reallocation of resources
+
 TPV v0.9.3
 - App now have full support of english
 

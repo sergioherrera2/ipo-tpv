@@ -7,7 +7,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.border.TitledBorder;
 
-import org.omg.IOP.TAG_ALTERNATE_IIOP_ADDRESS;
+import presentacion.messages.MessagesPestanaProductos;
 
 import javax.swing.UIManager;
 import java.awt.Color;

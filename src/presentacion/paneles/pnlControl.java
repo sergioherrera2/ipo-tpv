@@ -2,6 +2,9 @@ package presentacion.paneles;
 
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
+
+import presentacion.messages.MessagesPnlControl;
+
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 

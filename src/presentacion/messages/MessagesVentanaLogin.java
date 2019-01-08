@@ -1,17 +1,17 @@
-package presentacion.formularios;
+package presentacion.messages;
 
 import java.beans.Beans;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-public class MessagesFormularioCliente {
+public class MessagesVentanaLogin {
     ////////////////////////////////////////////////////////////////////////////
     //
     // Constructor
     //
     ////////////////////////////////////////////////////////////////////////////
-    private MessagesFormularioCliente() {
+    private MessagesVentanaLogin() {
         // do not instantiate
     }
 
@@ -20,7 +20,7 @@ public class MessagesFormularioCliente {
     // Bundle access
     //
     ////////////////////////////////////////////////////////////////////////////
-    private static final String BUNDLE_NAME = "presentacion.formularios.MessagesFormularioCliente"; //$NON-NLS-1$
+    private static final String BUNDLE_NAME = "presentacion.messages.MessagesVentanaPrincipal"; //$NON-NLS-1$
     private static ResourceBundle RESOURCE_BUNDLE = loadBundle();
 
     private static ResourceBundle loadBundle() {

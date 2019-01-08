@@ -5,6 +5,9 @@ import java.awt.Rectangle;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.border.TitledBorder;
+
+import presentacion.messages.MessagesPestanaCallejero;
+
 import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -54,7 +57,9 @@ public class PestañaCallejero extends JPanel {
         add(lblHelp, gbc_lblHelp);
 
         pnlCallejero = new JPanel();
-        pnlCallejero.setBorder(new TitledBorder(null, MessagesPestanaCallejero.getString("PestañaCallejero.pnlCallejero.borderTitle"), //$NON-NLS-1$
+        pnlCallejero.setBorder(new TitledBorder(null,
+                MessagesPestanaCallejero
+                        .getString("PestañaCallejero.pnlCallejero.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlCallejero = new GridBagConstraints();
         gbc_pnlCallejero.gridheight = 7;
@@ -79,7 +84,8 @@ public class PestañaCallejero extends JPanel {
         gbc_lblMapa.gridy = 0;
         pnlCallejero.add(lblMapa, gbc_lblMapa);
 
-        lblPrximosDestinos = new JLabel(MessagesPestanaCallejero.getString("PestañaCallejero.lblPrximosDestinos.text")); //$NON-NLS-1$
+        lblPrximosDestinos = new JLabel(MessagesPestanaCallejero
+                .getString("PestañaCallejero.lblPrximosDestinos.text")); //$NON-NLS-1$
         lblPrximosDestinos
                 .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_lblPrximosDestinos = new GridBagConstraints();
@@ -134,7 +140,8 @@ public class PestañaCallejero extends JPanel {
         });
         spListas.setViewportView(lstDirecciones);
 
-        lblInfoDelPedido = new JLabel(MessagesPestanaCallejero.getString("PestañaCallejero.lblInfoDelPedido.text")); //$NON-NLS-1$
+        lblInfoDelPedido = new JLabel(MessagesPestanaCallejero
+                .getString("PestañaCallejero.lblInfoDelPedido.text")); //$NON-NLS-1$
         lblInfoDelPedido.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_lblInfoDelPedido = new GridBagConstraints();
         gbc_lblInfoDelPedido.fill = GridBagConstraints.VERTICAL;
@@ -144,7 +151,8 @@ public class PestañaCallejero extends JPanel {
         gbc_lblInfoDelPedido.gridy = 4;
         add(lblInfoDelPedido, gbc_lblInfoDelPedido);
 
-        rdbtnPagado = new JRadioButton(MessagesPestanaCallejero.getString("PestañaCallejero.rdbtnPagado.text")); //$NON-NLS-1$
+        rdbtnPagado = new JRadioButton(MessagesPestanaCallejero
+                .getString("PestañaCallejero.rdbtnPagado.text")); //$NON-NLS-1$
         rdbtnPagado.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         GridBagConstraints gbc_rdbtnPagado = new GridBagConstraints();
         gbc_rdbtnPagado.fill = GridBagConstraints.BOTH;
@@ -154,7 +162,8 @@ public class PestañaCallejero extends JPanel {
         gbc_rdbtnPagado.gridy = 5;
         add(rdbtnPagado, gbc_rdbtnPagado);
 
-        rdbtnCaliente = new JRadioButton(MessagesPestanaCallejero.getString("PestañaCallejero.rdbtnCaliente.text")); //$NON-NLS-1$
+        rdbtnCaliente = new JRadioButton(MessagesPestanaCallejero
+                .getString("PestañaCallejero.rdbtnCaliente.text")); //$NON-NLS-1$
         rdbtnCaliente.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         GridBagConstraints gbc_rdbtnCaliente = new GridBagConstraints();
         gbc_rdbtnCaliente.fill = GridBagConstraints.BOTH;
@@ -180,9 +189,13 @@ public class PestañaCallejero extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    MessagesPestanaCallejero.getString("PestañaCallejero.MensajeAyuda") //$NON-NLS-1$
-                            + MessagesPestanaCallejero.getString("PestañaCallejero.MensajeAyuda2"), //$NON-NLS-1$
-                    MessagesPestanaCallejero.getString("PestañaCallejero.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
+                    MessagesPestanaCallejero
+                            .getString("PestañaCallejero.MensajeAyuda") //$NON-NLS-1$
+                            + MessagesPestanaCallejero.getString(
+                                    "PestañaCallejero.MensajeAyuda2"), //$NON-NLS-1$
+                    MessagesPestanaCallejero
+                            .getString("PestañaCallejero.CabeceraAyuda"), //$NON-NLS-1$
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

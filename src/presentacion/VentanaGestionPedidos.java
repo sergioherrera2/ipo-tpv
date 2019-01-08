@@ -27,6 +27,7 @@ import javax.swing.table.DefaultTableModel;
 
 import presentacion.formularios.FormularioCliente;
 import presentacion.listeners.MiFocusListener;
+import presentacion.messages.MessagesVentanaGestionPedidos;
 import presentacion.paneles.pnlDatosCliente;
 
 import javax.swing.JScrollPane;

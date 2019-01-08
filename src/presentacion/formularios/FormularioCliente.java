@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
 import presentacion.listeners.MiFocusListener;
+import presentacion.messages.MessagesFormularioCliente;
 
 import javax.swing.JButton;
 import javax.swing.ImageIcon;

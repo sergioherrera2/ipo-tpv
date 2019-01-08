@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 import presentacion.listeners.MiFocusListener;
+import presentacion.messages.MessagesPnlDatosCliente;
 
 import java.awt.Color;
 import java.awt.Font;

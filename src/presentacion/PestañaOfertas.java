@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import java.awt.Rectangle;
 import javax.swing.border.TitledBorder;
 
+import presentacion.messages.MessagesPestanaOfertas;
 import presentacion.paneles.pnlOferta;
 import presentacion.paneles.pnlPromocion;
 
@@ -22,7 +23,6 @@ import java.awt.GridLayout;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
-import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
