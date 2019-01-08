@@ -67,6 +67,7 @@ public class VentanaLogin extends JFrame {
     private JRadioButton rdbtnEnglish;
     private final ButtonGroup buttonGroup = new ButtonGroup();
     private JLabel lblVersion;
+    private final ButtonGroup buttonGroup_1 = new ButtonGroup();
 
     /**
      * Launch the application.
@@ -134,15 +135,18 @@ public class VentanaLogin extends JFrame {
 
         rdbtnmntmPequea = new JRadioButtonMenuItem(MessagesVentanaLogin
                 .getString("VentanaLogin.rdbtnmntmPequea.text")); //$NON-NLS-1$
+        buttonGroup_1.add(rdbtnmntmPequea);
         mnTamaoDeLetra.add(rdbtnmntmPequea);
 
         rdbtnmntmMediana = new JRadioButtonMenuItem(MessagesVentanaLogin
                 .getString("VentanaLogin.rdbtnmntmMediana.text")); //$NON-NLS-1$
+        buttonGroup_1.add(rdbtnmntmMediana);
         rdbtnmntmMediana.setSelected(true);
         mnTamaoDeLetra.add(rdbtnmntmMediana);
 
         rdbtnmntmGrande = new JRadioButtonMenuItem(MessagesVentanaLogin
                 .getString("VentanaLogin.rdbtnmntmGrande.text")); //$NON-NLS-1$
+        buttonGroup_1.add(rdbtnmntmGrande);
         mnTamaoDeLetra.add(rdbtnmntmGrande);
 
         mnAcercaDe = new JMenu(
@@ -292,8 +296,9 @@ public class VentanaLogin extends JFrame {
         gbc_rdbtnEnglish.gridx = 1;
         gbc_rdbtnEnglish.gridy = 0;
         pnlInferior.add(rdbtnEnglish, gbc_rdbtnEnglish);
-        
-        lblVersion = new JLabel(MessagesVentanaLogin.getString("VentanaLogin.lblNewLabel.text")); //$NON-NLS-1$
+
+        lblVersion = new JLabel(MessagesVentanaLogin
+                .getString("VentanaLogin.lblNewLabel.text")); //$NON-NLS-1$
         lblVersion.setFont(new Font("Montserrat", Font.PLAIN, 12));
         GridBagConstraints gbc_lblVersion = new GridBagConstraints();
         gbc_lblVersion.insets = new Insets(0, 0, 0, 5);
@@ -393,7 +398,8 @@ public class VentanaLogin extends JFrame {
 
     private class MntmNewMenuItemActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String desc = "| 08/01/19 |\r\n" + "\r\n" + "TPV v0.9.6\r\n"
+            String desc = "| 08/01/19 |\r\n" + "\r\n" + "TPV v1.0\r\n"
+                    + "- Prototype ready\r\n" + "\r\n" + "TPV v0.9.6\r\n"
                     + "- Forms feedback improved and changelog updated\r\n"
                     + "\r\n" + "TPV v0.9.5\r\n" + "- Mains not used removed\r\n"
                     + "\r\n" + "TPV v0.9.4\r\n"
@@ -459,7 +465,7 @@ public class VentanaLogin extends JFrame {
                     + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n"
                     + "- pnlPedidos first version\r\n" + "\r\n"
                     + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n"
-                    + "- Login form first version\r\n" + "- TPV created"; //$NON-NLS-2$
+                    + "- Login form first version\r\n" + "- TPV created";
             JOptionPane.showMessageDialog(frame, desc,
                     MessagesVentanaLogin.getString("VentanaLogin.125"), //$NON-NLS-1$
                     JOptionPane.INFORMATION_MESSAGE);

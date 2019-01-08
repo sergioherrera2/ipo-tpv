@@ -42,6 +42,7 @@ import java.awt.event.ActionListener;
 import java.util.Locale;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import javax.swing.ButtonGroup;
 
 public class VentanaPrincipal extends JFrame {
     private static VentanaPrincipal frame;
@@ -74,6 +75,7 @@ public class VentanaPrincipal extends JFrame {
     private JRadioButtonMenuItem rdbtnmntmMediana;
 
     private JRadioButtonMenuItem rdbtnmntmGrande;
+    private final ButtonGroup buttonGroup = new ButtonGroup();
 
     public static VentanaPrincipal getFrame() {
         return frame;
@@ -139,15 +141,18 @@ public class VentanaPrincipal extends JFrame {
 
         rdbtnmntmPequea = new JRadioButtonMenuItem(MessagesVentanaPrincipal
                 .getString("VentanaPrincipal.rdbtnmntmPequea.text")); //$NON-NLS-1$
+        buttonGroup.add(rdbtnmntmPequea);
         mnTamaoDeLetra.add(rdbtnmntmPequea);
 
         rdbtnmntmMediana = new JRadioButtonMenuItem(MessagesVentanaPrincipal
                 .getString("VentanaPrincipal.rdbtnmntmMediana.text")); //$NON-NLS-1$
+        buttonGroup.add(rdbtnmntmMediana);
         rdbtnmntmMediana.setSelected(true);
         mnTamaoDeLetra.add(rdbtnmntmMediana);
 
         rdbtnmntmGrande = new JRadioButtonMenuItem(MessagesVentanaPrincipal
                 .getString("VentanaPrincipal.rdbtnmntmGrande.text")); //$NON-NLS-1$
+        buttonGroup.add(rdbtnmntmGrande);
         mnTamaoDeLetra.add(rdbtnmntmGrande);
 
         mnAcercaDe = new JMenu(MessagesVentanaPrincipal
@@ -277,6 +282,7 @@ public class VentanaPrincipal extends JFrame {
     private class MntmVersinActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(frame, "| 08/01/19 |\r\n" + "\r\n"
+                    + "TPV v1.0\r\n" + "- Prototype ready\r\n" + "\r\n"
                     + "TPV v0.9.6\r\n"
                     + "- Forms feedback improved and changelog updated\r\n"
                     + "\r\n" + "TPV v0.9.5\r\n" + "- Mains not used removed\r\n"
