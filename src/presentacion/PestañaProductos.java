@@ -502,14 +502,14 @@ public class PestañaProductos extends JPanel {
                 }
             } else if (lblBebida1.getText().equals(MessagesPestanaProductos.getString("PestañaProductos.MarcaSelected"))) { //$NON-NLS-1$
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        MessagesPestanaProductos.getString("PestañaProductos.DialogoConfirmacion2"), //$NON-NLS-1$
+                        MessagesPestanaProductos.getString("PestañaProductos.DialogoConfirmacion"), //$NON-NLS-1$
                         MessagesPestanaProductos.getString("PestañaProductos.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     lblBebida1.setVisible(false);
                     lblBebida1.setText(MessagesPestanaProductos.getString("PestañaProductos.MarcaRemoved")); //$NON-NLS-1$
                 }
             } else if (lblPostre1.getText().equals(MessagesPestanaProductos.getString("PestañaProductos.MarcaSelected"))) { //$NON-NLS-1$
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        MessagesPestanaProductos.getString("PestañaProductos.DialogoConfirmacion2"), //$NON-NLS-1$
+                        MessagesPestanaProductos.getString("PestañaProductos.DialogoConfirmacion"), //$NON-NLS-1$
                         MessagesPestanaProductos.getString("PestañaProductos.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     lblPostre1.setVisible(false);
                     lblPostre1.setText(MessagesPestanaProductos.getString("PestañaProductos.MarcaRemoved")); //$NON-NLS-1$

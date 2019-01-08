@@ -123,6 +123,7 @@ public class pnlDatosCliente extends JPanel {
                 e.printStackTrace();
             }
             ftfTelefono.setEnabled(false);
+            ftfTelefono.addFocusListener(new MiFocusListener());
             GridBagConstraints gbc_ftfTelefono = new GridBagConstraints();
             gbc_ftfTelefono.gridwidth = 3;
             gbc_ftfTelefono.insets = new Insets(0, 0, 5, 5);
