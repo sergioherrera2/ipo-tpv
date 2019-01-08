@@ -75,24 +75,6 @@ public class VentanaPrincipal extends JFrame {
 
     private JRadioButtonMenuItem rdbtnmntmGrande;
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    frame = new VentanaPrincipal();
-                    frame.setExtendedState(MAXIMIZED_BOTH);
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
     public static VentanaPrincipal getFrame() {
         return frame;
     }

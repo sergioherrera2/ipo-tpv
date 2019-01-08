@@ -1,5 +1,4 @@
 - Mejorar entrada de datos específicos (números de teléfono, e-mails...)
-- Borrar mains sobrantes
 - Limpiar código lo máximo posible
 - Meter changelog a la opción de menú
 

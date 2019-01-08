@@ -101,23 +101,6 @@ public class VentanaGestionPedidos extends JFrame {
     }
 
     /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    frame = new VentanaGestionPedidos();
-                    frame.setLocationRelativeTo(null);
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-    /**
      * Create the frame.
      */
     public VentanaGestionPedidos() {
@@ -125,7 +108,8 @@ public class VentanaGestionPedidos extends JFrame {
         setIconImage(Toolkit.getDefaultToolkit()
                 .getImage(VentanaGestionPedidos.class.getResource(
                         "/presentacion/imagenes/food-2074638_960_720 - resized.png"))); //$NON-NLS-1$
-        setTitle(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.this.title")); //$NON-NLS-1$
+        setTitle(MessagesVentanaGestionPedidos
+                .getString("VentanaGestionPedidos.this.title")); //$NON-NLS-1$
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 1280, 720);
         contentPane = new JPanel();
@@ -142,7 +126,9 @@ public class VentanaGestionPedidos extends JFrame {
         {
             pnlPedido = new JPanel();
             pnlPedido.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
-            pnlPedido.setBorder(new TitledBorder(null, MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.pnlPedido.borderTitle"), //$NON-NLS-1$
+            pnlPedido.setBorder(new TitledBorder(null,
+                    MessagesVentanaGestionPedidos.getString(
+                            "VentanaGestionPedidos.pnlPedido.borderTitle"), //$NON-NLS-1$
                     TitledBorder.LEADING, TitledBorder.TOP, null, null));
             GridBagConstraints gbc_pnlPedido = new GridBagConstraints();
             gbc_pnlPedido.insets = new Insets(0, 0, 5, 5);
@@ -171,7 +157,8 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(lblAyudapedido, gbc_lblAyudapedido);
             }
             {
-                lblTipo = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblTipo.text")); //$NON-NLS-1$
+                lblTipo = new JLabel(MessagesVentanaGestionPedidos
+                        .getString("VentanaGestionPedidos.lblTipo.text")); //$NON-NLS-1$
                 lblTipo.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblTipo = new GridBagConstraints();
                 gbc_lblTipo.insets = new Insets(0, 0, 5, 5);
@@ -183,8 +170,13 @@ public class VentanaGestionPedidos extends JFrame {
             {
                 cbTipo = new JComboBox();
                 cbTipo.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
-                cbTipo.setModel(new DefaultComboBoxModel(
-                        new String[] { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ComboTipo1"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ComboTipo2"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ComboTipo3") })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                cbTipo.setModel(new DefaultComboBoxModel(new String[] {
+                        MessagesVentanaGestionPedidos
+                                .getString("VentanaGestionPedidos.ComboTipo1"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos
+                                .getString("VentanaGestionPedidos.ComboTipo2"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.ComboTipo3") })); //$NON-NLS-1$
                 GridBagConstraints gbc_cbTipo = new GridBagConstraints();
                 gbc_cbTipo.gridwidth = 2;
                 gbc_cbTipo.insets = new Insets(0, 0, 5, 5);
@@ -194,7 +186,8 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(cbTipo, gbc_cbTipo);
             }
             {
-                lblClienteVip = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblClienteVip.text")); //$NON-NLS-1$
+                lblClienteVip = new JLabel(MessagesVentanaGestionPedidos
+                        .getString("VentanaGestionPedidos.lblClienteVip.text")); //$NON-NLS-1$
                 lblClienteVip.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblClienteVip = new GridBagConstraints();
                 gbc_lblClienteVip.anchor = GridBagConstraints.WEST;
@@ -225,7 +218,9 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(button, gbc_button);
             }
             {
-                lblHoraDeRecogida = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblHoraDeRecogida.text")); //$NON-NLS-1$
+                lblHoraDeRecogida = new JLabel(
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.lblHoraDeRecogida.text")); //$NON-NLS-1$
                 lblHoraDeRecogida.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblHoraDeRecogida = new GridBagConstraints();
                 gbc_lblHoraDeRecogida.anchor = GridBagConstraints.WEST;
@@ -247,7 +242,9 @@ public class VentanaGestionPedidos extends JFrame {
                 txtHorarecogida.setColumns(10);
             }
             {
-                lblHoraDeLlegada = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblHoraDeLlegada.text")); //$NON-NLS-1$
+                lblHoraDeLlegada = new JLabel(
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.lblHoraDeLlegada.text")); //$NON-NLS-1$
                 lblHoraDeLlegada.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblHoraDeLlegada = new GridBagConstraints();
                 gbc_lblHoraDeLlegada.anchor = GridBagConstraints.WEST;
@@ -280,7 +277,9 @@ public class VentanaGestionPedidos extends JFrame {
         }
         {
             pnlResumen = new JPanel();
-            pnlResumen.setBorder(new TitledBorder(null, MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.pnlResumen.borderTitle"), //$NON-NLS-1$
+            pnlResumen.setBorder(new TitledBorder(null,
+                    MessagesVentanaGestionPedidos.getString(
+                            "VentanaGestionPedidos.pnlResumen.borderTitle"), //$NON-NLS-1$
                     TitledBorder.LEADING, TitledBorder.TOP, null, null));
             GridBagConstraints gbc_pnlResumen = new GridBagConstraints();
             gbc_pnlResumen.insets = new Insets(0, 0, 5, 0);
@@ -320,15 +319,26 @@ public class VentanaGestionPedidos extends JFrame {
                     pnlResumen.add(scrollPane, gbc_scrollPane);
                     tResumen = new JTable();
                     scrollPane.setViewportView(tResumen);
-                    tResumen.setModel(new DefaultTableModel(new Object[][] {
-                            { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.Producto1"), new Double(6.99), new Integer(3), //$NON-NLS-1$
-                                    new Double(6.95) },
-                            { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.Producto2"), new Double(1.5), new Integer(2), //$NON-NLS-1$
-                                    new Double(3.0) },
-                            { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.Producto3"), new Double(1.4), new Integer(1), //$NON-NLS-1$
-                                    new Double(1.4) }, },
-                            new String[] { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaProducto"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaPrecio"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaUds"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaTotal") }) { //$NON-NLS-1$
+                    tResumen.setModel(new DefaultTableModel(
+                            new Object[][] {
+                                    { MessagesVentanaGestionPedidos.getString(
+                                            "VentanaGestionPedidos.Producto1"), //$NON-NLS-1$
+                                            new Double(6.99), new Integer(3), new Double(6.95) },
+                                    { MessagesVentanaGestionPedidos.getString(
+                                            "VentanaGestionPedidos.Producto2"), //$NON-NLS-1$
+                                            new Double(1.5), new Integer(2), new Double(3.0) },
+                                    { MessagesVentanaGestionPedidos.getString(
+                                            "VentanaGestionPedidos.Producto3"), //$NON-NLS-1$
+                                            new Double(1.4), new Integer(1), new Double(1.4) }, },
+                            new String[] {
+                                    MessagesVentanaGestionPedidos.getString(
+                                            "VentanaGestionPedidos.ColumnaProducto"), //$NON-NLS-1$
+                                    MessagesVentanaGestionPedidos.getString(
+                                            "VentanaGestionPedidos.ColumnaPrecio"), //$NON-NLS-1$
+                                    MessagesVentanaGestionPedidos.getString(
+                                            "VentanaGestionPedidos.ColumnaUds"), //$NON-NLS-1$
+                                    MessagesVentanaGestionPedidos.getString(
+                                            "VentanaGestionPedidos.ColumnaTotal") }) { //$NON-NLS-1$
                         Class[] columnTypes = new Class[] { String.class,
                                 Double.class, Integer.class, Double.class };
 
@@ -343,7 +353,9 @@ public class VentanaGestionPedidos extends JFrame {
                         }
                     });
                     {
-                        btnConfirmar = new JButton(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.btnConfirmar.text")); //$NON-NLS-1$
+                        btnConfirmar = new JButton(
+                                MessagesVentanaGestionPedidos.getString(
+                                        "VentanaGestionPedidos.btnConfirmar.text")); //$NON-NLS-1$
                         btnConfirmar.addActionListener(
                                 new BtnConfirmarActionListener());
                         btnConfirmar.setIcon(new ImageIcon(
@@ -360,7 +372,9 @@ public class VentanaGestionPedidos extends JFrame {
                         pnlResumen.add(btnConfirmar, gbc_btnConfirmar);
                     }
                     {
-                        btnEliminar = new JButton(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.btnEliminar.text")); //$NON-NLS-1$
+                        btnEliminar = new JButton(
+                                MessagesVentanaGestionPedidos.getString(
+                                        "VentanaGestionPedidos.btnEliminar.text")); //$NON-NLS-1$
                         btnEliminar.addActionListener(
                                 new BtnEliminarActionListener());
                         btnEliminar.setIcon(new ImageIcon(
@@ -377,7 +391,9 @@ public class VentanaGestionPedidos extends JFrame {
                         pnlResumen.add(btnEliminar, gbc_btnEliminar);
                     }
                     {
-                        lblTotal = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblTotal.text")); //$NON-NLS-1$
+                        lblTotal = new JLabel(
+                                MessagesVentanaGestionPedidos.getString(
+                                        "VentanaGestionPedidos.lblTotal.text")); //$NON-NLS-1$
                         GridBagConstraints gbc_lblTotal = new GridBagConstraints();
                         gbc_lblTotal.gridwidth = 2;
                         gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
@@ -403,7 +419,9 @@ public class VentanaGestionPedidos extends JFrame {
                         textField.setColumns(10);
                     }
                     {
-                        btnTerminar = new JButton(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.btnTerminar.text")); //$NON-NLS-1$
+                        btnTerminar = new JButton(
+                                MessagesVentanaGestionPedidos.getString(
+                                        "VentanaGestionPedidos.btnTerminar.text")); //$NON-NLS-1$
                         btnTerminar.addActionListener(
                                 new BtnTerminarActionListener());
                         btnTerminar.setIcon(new ImageIcon(
@@ -422,8 +440,9 @@ public class VentanaGestionPedidos extends JFrame {
                     {
                         pnlProductos = new JPanel();
                         pnlProductos.setBorder(new TitledBorder(null,
-                                MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.pnlProductos.borderTitle"), TitledBorder.LEADING, //$NON-NLS-1$
-                                TitledBorder.TOP, null, null));
+                                MessagesVentanaGestionPedidos.getString(
+                                        "VentanaGestionPedidos.pnlProductos.borderTitle"), //$NON-NLS-1$
+                                TitledBorder.LEADING, TitledBorder.TOP, null, null));
                         GridBagConstraints gbc_pnlProductos = new GridBagConstraints();
                         gbc_pnlProductos.gridwidth = 3;
                         gbc_pnlProductos.insets = new Insets(0, 0, 0, 5);
@@ -515,13 +534,19 @@ public class VentanaGestionPedidos extends JFrame {
             DefaultTableModel dtm = (DefaultTableModel) tResumen.getModel();
             if (tResumen.getSelectedRow() > -1) {
                 if (JOptionPane.showConfirmDialog(frame,
-                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoConfirmacion"), //$NON-NLS-1$
-                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.DialogoConfirmacion"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.CabeceraCuidado"), //$NON-NLS-1$
+                        JOptionPane.YES_NO_OPTION) == 0) {
                     dtm.removeRow(tResumen.getSelectedRow());
                 }
             } else {
                 JOptionPane.showMessageDialog(frame,
-                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoInfo"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAviso"), //$NON-NLS-1$ //$NON-NLS-2$
+                        MessagesVentanaGestionPedidos
+                                .getString("VentanaGestionPedidos.DialogoInfo"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.CabeceraAviso"), //$NON-NLS-1$
                         JOptionPane.WARNING_MESSAGE);
             }
         }
@@ -539,10 +564,15 @@ public class VentanaGestionPedidos extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MensajeAyuda1") //$NON-NLS-1$
-                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MensajeAyuda2") //$NON-NLS-1$
-                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MensajeAyuda3"), //$NON-NLS-1$
-                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos
+                            .getString("VentanaGestionPedidos.MensajeAyuda1") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString(
+                                    "VentanaGestionPedidos.MensajeAyuda2") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString(
+                                    "VentanaGestionPedidos.MensajeAyuda3"), //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos
+                            .getString("VentanaGestionPedidos.CabeceraAyuda"), //$NON-NLS-1$
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -550,18 +580,25 @@ public class VentanaGestionPedidos extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda") //$NON-NLS-1$
-                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda2") //$NON-NLS-1$
-                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda3") //$NON-NLS-1$
-                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda4"), //$NON-NLS-1$
-                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos.getString(
+                            "VentanaGestionPedidos.ResumenMensajeAyuda") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString(
+                                    "VentanaGestionPedidos.ResumenMensajeAyuda2") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString(
+                                    "VentanaGestionPedidos.ResumenMensajeAyuda3") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString(
+                                    "VentanaGestionPedidos.ResumenMensajeAyuda4"), //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos
+                            .getString("VentanaGestionPedidos.CabeceraAyuda"), //$NON-NLS-1$
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
     private class LblNewLabelMouseListener extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {
-            ((JLabel) e.getComponent()).setText(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected")); //$NON-NLS-1$
+            ((JLabel) e.getComponent()).setText(MessagesVentanaGestionPedidos
+                    .getString("VentanaGestionPedidos.MarcaSelected")); //$NON-NLS-1$
         }
     }
 
@@ -569,21 +606,37 @@ public class VentanaGestionPedidos extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ProductosMensajeAyuda"), //$NON-NLS-1$
-                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos.getString(
+                            "VentanaGestionPedidos.ProductosMensajeAyuda"), //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos
+                            .getString("VentanaGestionPedidos.CabeceraAyuda"), //$NON-NLS-1$
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
     private class BtnConfirmarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (lblBebida.getText().equals(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected")) //$NON-NLS-1$
-                    || lblComida.getText().equals(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected")) //$NON-NLS-1$
-                    || lblPostre.getText().equals(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected"))) { //$NON-NLS-1$
-                JOptionPane.showMessageDialog(frame, MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoAñadido"), //$NON-NLS-1$
-                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraInformacion"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
+            if (lblBebida.getText()
+                    .equals(MessagesVentanaGestionPedidos
+                            .getString("VentanaGestionPedidos.MarcaSelected")) //$NON-NLS-1$
+                    || lblComida.getText()
+                            .equals(MessagesVentanaGestionPedidos.getString(
+                                    "VentanaGestionPedidos.MarcaSelected")) //$NON-NLS-1$
+                    || lblPostre.getText()
+                            .equals(MessagesVentanaGestionPedidos.getString(
+                                    "VentanaGestionPedidos.MarcaSelected"))) { //$NON-NLS-1$
+                JOptionPane.showMessageDialog(frame,
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.DialogoAñadido"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.CabeceraInformacion"), //$NON-NLS-1$
+                        JOptionPane.WARNING_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(frame,
-                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoInfo"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAviso"), //$NON-NLS-1$ //$NON-NLS-2$
+                        MessagesVentanaGestionPedidos
+                                .getString("VentanaGestionPedidos.DialogoInfo"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString(
+                                "VentanaGestionPedidos.CabeceraAviso"), //$NON-NLS-1$
                         JOptionPane.WARNING_MESSAGE);
             }
         }

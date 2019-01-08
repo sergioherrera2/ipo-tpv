@@ -49,23 +49,6 @@ public class FormularioCliente extends JFrame {
     private JButton btnAceptar;
 
     /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    frame = new FormularioCliente();
-                    frame.setLocationRelativeTo(null);
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-    /**
      * Create the frame.
      */
     public FormularioCliente() {
@@ -75,11 +58,14 @@ public class FormularioCliente extends JFrame {
         setIconImage(Toolkit.getDefaultToolkit()
                 .getImage(FormularioCliente.class.getResource(
                         "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
-        setTitle(MessagesFormularioCliente.getString("FormularioCliente.this.title")); //$NON-NLS-1$
+        setTitle(MessagesFormularioCliente
+                .getString("FormularioCliente.this.title")); //$NON-NLS-1$
         setBounds(new Rectangle(0, 0, 1280, 720));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         contentPane = new JPanel();
-        contentPane.setBorder(new TitledBorder(null, MessagesFormularioCliente.getString("FormularioCliente.contentPane.borderTitle"), //$NON-NLS-1$
+        contentPane.setBorder(new TitledBorder(null,
+                MessagesFormularioCliente
+                        .getString("FormularioCliente.contentPane.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         setContentPane(contentPane);
         GridBagLayout gbl_contentPane = new GridBagLayout();
@@ -92,7 +78,8 @@ public class FormularioCliente extends JFrame {
                 1.0, 0.0, Double.MIN_VALUE };
         contentPane.setLayout(gbl_contentPane);
         {
-            lblNombre = new JLabel(MessagesFormularioCliente.getString("FormularioCliente.lblNombre.text")); //$NON-NLS-1$
+            lblNombre = new JLabel(MessagesFormularioCliente
+                    .getString("FormularioCliente.lblNombre.text")); //$NON-NLS-1$
             lblNombre.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             GridBagConstraints gbc_lblNombre = new GridBagConstraints();
             gbc_lblNombre.anchor = GridBagConstraints.EAST;
@@ -114,7 +101,8 @@ public class FormularioCliente extends JFrame {
             txtNombre.setColumns(10);
         }
         {
-            lblApellidos = new JLabel(MessagesFormularioCliente.getString("FormularioCliente.lblApellidos.text")); //$NON-NLS-1$
+            lblApellidos = new JLabel(MessagesFormularioCliente
+                    .getString("FormularioCliente.lblApellidos.text")); //$NON-NLS-1$
             lblApellidos.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             GridBagConstraints gbc_lblApellidos = new GridBagConstraints();
             gbc_lblApellidos.anchor = GridBagConstraints.EAST;
@@ -137,7 +125,8 @@ public class FormularioCliente extends JFrame {
             txtApellidos.setColumns(10);
         }
         {
-            lblDireccin = new JLabel(MessagesFormularioCliente.getString("FormularioCliente.lblDireccin.text")); //$NON-NLS-1$
+            lblDireccin = new JLabel(MessagesFormularioCliente
+                    .getString("FormularioCliente.lblDireccin.text")); //$NON-NLS-1$
             lblDireccin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             GridBagConstraints gbc_lblDireccin = new GridBagConstraints();
             gbc_lblDireccin.anchor = GridBagConstraints.EAST;
@@ -160,7 +149,8 @@ public class FormularioCliente extends JFrame {
             txtDireccin.setColumns(10);
         }
         {
-            lblTelfonos = new JLabel(MessagesFormularioCliente.getString("FormularioCliente.lblTelfonos.text")); //$NON-NLS-1$
+            lblTelfonos = new JLabel(MessagesFormularioCliente
+                    .getString("FormularioCliente.lblTelfonos.text")); //$NON-NLS-1$
             lblTelfonos.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             GridBagConstraints gbc_lblTelfonos = new GridBagConstraints();
             gbc_lblTelfonos.anchor = GridBagConstraints.EAST;
@@ -194,7 +184,8 @@ public class FormularioCliente extends JFrame {
             txtTelfono2.setColumns(10);
         }
         {
-            lblCorreoElectrnico = new JLabel(MessagesFormularioCliente.getString("FormularioCliente.lblCorreoElectrnico.text")); //$NON-NLS-1$
+            lblCorreoElectrnico = new JLabel(MessagesFormularioCliente
+                    .getString("FormularioCliente.lblCorreoElectrnico.text")); //$NON-NLS-1$
             lblCorreoElectrnico
                     .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             GridBagConstraints gbc_lblCorreoElectrnico = new GridBagConstraints();
@@ -219,7 +210,8 @@ public class FormularioCliente extends JFrame {
         }
         {
             lblRestriccionesAlimentarias = new JLabel(
-                    MessagesFormularioCliente.getString("FormularioCliente.lblRestriccionesAlimentarias.text")); //$NON-NLS-1$
+                    MessagesFormularioCliente.getString(
+                            "FormularioCliente.lblRestriccionesAlimentarias.text")); //$NON-NLS-1$
             lblRestriccionesAlimentarias
                     .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             GridBagConstraints gbc_lblRestriccionesAlimentarias = new GridBagConstraints();
@@ -243,7 +235,9 @@ public class FormularioCliente extends JFrame {
             contentPane.add(taRestricciones, gbc_taRestricciones);
         }
         {
-            lblAlergiasEIntolerancias = new JLabel(MessagesFormularioCliente.getString("FormularioCliente.lblAlergiasEIntolerancias.text")); //$NON-NLS-1$
+            lblAlergiasEIntolerancias = new JLabel(
+                    MessagesFormularioCliente.getString(
+                            "FormularioCliente.lblAlergiasEIntolerancias.text")); //$NON-NLS-1$
             lblAlergiasEIntolerancias
                     .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             GridBagConstraints gbc_lblAlergiasEIntolerancias = new GridBagConstraints();
@@ -268,7 +262,8 @@ public class FormularioCliente extends JFrame {
             contentPane.add(taAlergias, gbc_taAlergias);
         }
         {
-            btnAceptar = new JButton(MessagesFormularioCliente.getString("FormularioCliente.btnAceptar.text")); //$NON-NLS-1$
+            btnAceptar = new JButton(MessagesFormularioCliente
+                    .getString("FormularioCliente.btnAceptar.text")); //$NON-NLS-1$
             btnAceptar.addActionListener(new BtnAceptarActionListener());
             btnAceptar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
             btnAceptar.setIcon(new ImageIcon(FormularioCliente.class
