@@ -1,6 +1,6 @@
-- Mejorar entrada de datos específicos (números de teléfono, e-mails...)
-- Limpiar código lo máximo posible
-- Meter changelog a la opción de menú
+- Limpiar código
+
+
 
 
 

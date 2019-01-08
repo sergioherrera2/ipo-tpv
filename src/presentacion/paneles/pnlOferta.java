@@ -13,6 +13,7 @@ import java.awt.Insets;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
 
 public class pnlOferta extends JPanel {
     private JLabel lblProducto;
@@ -41,6 +42,7 @@ public class pnlOferta extends JPanel {
         }
         {
             lblDesc = new JLabel(MessagesPnlOferta.getString("pnlOferta.lblDesc.text")); //$NON-NLS-1$
+            lblDesc.setFont(new Font("Segoe UI", Font.PLAIN, 14));
             GridBagConstraints gbc_lblDesc = new GridBagConstraints();
             gbc_lblDesc.gridx = 0;
             gbc_lblDesc.gridy = 1;

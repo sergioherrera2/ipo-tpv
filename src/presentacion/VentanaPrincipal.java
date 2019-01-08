@@ -276,49 +276,74 @@ public class VentanaPrincipal extends JFrame {
 
     private class MntmVersinActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(frame, "| 07/01/19 |\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "TPV v0.8.3\r\n" + "- Packages organized\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "TPV v0.8.2\r\n" + "- Menubar preview implemented\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "\r\n" + "TPV v0.8.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "- GestionPedidos now has more help tips\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "TPV v0.8\r\n" + "- frmCliente added\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "- Some listeners added\r\n" + "\r\n" + "TPV v0.7.9\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "- Menus added to Login\r\n" //$NON-NLS-1$
-                    + "- Some help tips added\r\n" + "- pnlClientes fixed\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "\r\n" + "TPV v0.7.8\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "- pnlDatosCliente now is dynamic\r\n" //$NON-NLS-1$
-                    + "- pnlControl now is working\r\n" //$NON-NLS-1$
-                    + "- Some design improvements\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "- pnlControl confirm dialog added (without action for now)\r\n" //$NON-NLS-1$
-                    + "\r\n" + "TPV v0.7.6\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "- Design style improved and better resource management\r\n" //$NON-NLS-1$
-                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "- TPV is now maximized by default\r\n" //$NON-NLS-1$
-                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "- Login: language is now shown\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "- Login: font changes\r\n" //$NON-NLS-1$
-                    + "- Login: demo implemented\r\n" //$NON-NLS-1$
-                    + "- pnlCallejero: image changed\r\n" //$NON-NLS-1$
-                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "- pnlCallejero first version\r\n" //$NON-NLS-1$
-                    + "- Design improvements (font changes)\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "\r\n" + "TPV v0.4.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "- pnlProductos improvements\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "- pnlPedidos first version\r\n" + "\r\n" //$NON-NLS-1$ //$NON-NLS-2$
-                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-                    + "- Login form first version\r\n" + "- TPV created", //$NON-NLS-1$ //$NON-NLS-2$
+            JOptionPane.showMessageDialog(frame, "| 08/01/19 |\r\n" + "\r\n"
+                    + "TPV v0.9.6\r\n"
+                    + "- Forms feedback improved and changelog updated\r\n"
+                    + "\r\n" + "TPV v0.9.5\r\n" + "- Mains not used removed\r\n"
+                    + "\r\n" + "TPV v0.9.4\r\n"
+                    + "- Reallocation of resources\r\n" + "\r\n"
+                    + "TPV v0.9.3\r\n"
+                    + "- App now have full support of english\r\n" + "\r\n"
+                    + "| 07/01/19 |\r\n" + "\r\n" + "TPV v0.9.2\r\n"
+                    + "- Bug fixes in closing windows\r\n" + "\r\n"
+                    + "TPV v0.9.1\r\n"
+                    + "- pnlControl and pnlDatosCliente now have full support of english\r\n"
+                    + "\r\n" + "TPV v0.9\r\n"
+                    + "- VentanaPrincipal now have full support of english\r\n"
+                    + "\r\n" + "TPV v0.8.9\r\n"
+                    + "- Login window now have full support of english\r\n"
+                    + "\r\n" + "TPV v0.8.8\r\n"
+                    + "- All components in UI now supports english language\r\n"
+                    + "\r\n" + "TPV v0.8.7\r\n"
+                    + "- First tabs internationalized in real-time (but PestanaPedidos)\r\n"
+                    + "\r\n" + "TPV v0.8.6\r\n"
+                    + "- All panels and forms internationalized\r\n" + "\r\n"
+                    + "TPV v0.8.5\r\n"
+                    + "- VentanaPrincipal internationalized\r\n" + "\r\n"
+                    + "TPV v0.8.4\r\n" + "- Login internationalized\r\n"
+                    + "\r\n" + "TPV v0.8.3\r\n" + "- Packages organized\r\n"
+                    + "\r\n" + "TPV v0.8.2\r\n"
+                    + "- Menubar preview implemented\r\n" + "\r\n"
+                    + "TPV v0.8.1\r\n"
+                    + "- GestionPedidos now has more help tips\r\n" + "\r\n"
+                    + "TPV v0.8\r\n" + "- frmCliente added\r\n"
+                    + "- Some listeners added\r\n" + "\r\n" + "TPV v0.7.9\r\n"
+                    + "- Menus added to Login\r\n"
+                    + "- Some help tips added\r\n" + "- pnlClientes fixed\r\n"
+                    + "\r\n" + "TPV v0.7.8\r\n"
+                    + "- pnlDatosCliente now is dynamic\r\n"
+                    + "- pnlControl now is working\r\n"
+                    + "- Some design improvements\r\n" + "\r\n"
+                    + "TPV v0.7.7\r\n" + "- Feedback added to login window\r\n"
+                    + "- pnlControl confirm dialog added (without action for now)\r\n"
+                    + "\r\n" + "TPV v0.7.6\r\n"
+                    + "- Design style improved and better resource management\r\n"
+                    + "\r\n" + "| 11/12/18 |\r\n" + "\r\n" + "TPV v0.7.5\r\n"
+                    + "- Design improvements\r\n" + "\r\n" + "TPV v0.7.4\r\n"
+                    + "- TPV is now maximized by default\r\n"
+                    + "- Version label updated\r\n" + "\r\n" + "TPV v0.7.3\r\n"
+                    + "- Login: language is now shown\r\n" + "\r\n"
+                    + "TPV v0.7.2\r\n" + "- Login: minor visual changes\r\n"
+                    + "\r\n" + "| 10/12/18 |\r\n" + "\r\n" + "TPV v0.7.1\r\n"
+                    + "- pnlOfertas: new proposal\r\n" + "\r\n" + "TPV v0.7\r\n"
+                    + "- Login: font changes\r\n"
+                    + "- Login: demo implemented\r\n"
+                    + "- pnlCallejero: image changed\r\n"
+                    + "- Other style changes\r\n" + "\r\n" + "TPV v0.6\r\n"
+                    + "- pnlCallejero first version\r\n"
+                    + "- Design improvements (font changes)\r\n" + "\r\n"
+                    + "TPV v0.5\r\n" + "- pnlClientes first version\r\n"
+                    + "\r\n" + "TPV v0.4.1\r\n"
+                    + "- pnlProductos improvements\r\n" + "\r\n"
+                    + "TPV v0.4\r\n" + "- pnlProductos first version\r\n"
+                    + "\r\n" + "TPV v0.3.3\r\n" + "- pnlOfertas rebased\r\n"
+                    + "\r\n" + "TPV v0.3.2\r\n" + "- pnlPedidos rebased\r\n"
+                    + "\r\n" + "TPV v0.3.1\r\n" + "- Minor design changes\r\n"
+                    + "\r\n" + "| 09/12/18 |\r\n" + "\r\n" + "TPV v0.3\r\n"
+                    + "- pnlOfertas first version\r\n" + "\r\n" + "TPV v0.2\r\n"
+                    + "- pnlPedidos first version\r\n" + "\r\n"
+                    + "| 07/12/18 |\r\n" + "\r\n" + "TPV v0.1\r\n"
+                    + "- Login form first version\r\n" + "- TPV created",
                     MessagesVentanaPrincipal
                             .getString("VentanaPrincipal.ListaCambios"), //$NON-NLS-1$
                     JOptionPane.INFORMATION_MESSAGE);

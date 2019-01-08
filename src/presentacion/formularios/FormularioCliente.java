@@ -1,13 +1,10 @@
 package presentacion.formularios;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Rectangle;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -15,6 +12,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.MaskFormatter;
 
 import presentacion.listeners.MiFocusListener;
 import presentacion.messages.MessagesFormularioCliente;
@@ -24,8 +22,9 @@ import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.text.ParseException;
+
+import javax.swing.JFormattedTextField;
 
 public class FormularioCliente extends JFrame {
     private static FormularioCliente frame;
@@ -41,12 +40,13 @@ public class FormularioCliente extends JFrame {
     private JTextField txtNombre;
     private JTextField txtApellidos;
     private JTextField txtDireccin;
-    private JTextField txtTelfono1;
     private JTextField txtCorreo;
     private JTextField txtTelfono2;
     private JTextArea taRestricciones;
     private JTextArea taAlergias;
     private JButton btnAceptar;
+    private JFormattedTextField ftfTelfono1;
+    private JFormattedTextField ftfTelfono2;
 
     /**
      * Create the frame.
@@ -90,6 +90,7 @@ public class FormularioCliente extends JFrame {
         }
         {
             txtNombre = new JTextField();
+            txtNombre.addActionListener(new TxtNombreActionListener());
             txtNombre.addFocusListener(new MiFocusListener());
             txtNombre.setFont(new Font("Segoe UI", Font.PLAIN, 14));
             GridBagConstraints gbc_txtNombre = new GridBagConstraints();
@@ -113,6 +114,7 @@ public class FormularioCliente extends JFrame {
         }
         {
             txtApellidos = new JTextField();
+            txtApellidos.addActionListener(new TxtApellidosActionListener());
             txtApellidos.addFocusListener(new MiFocusListener());
             txtApellidos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
             GridBagConstraints gbc_txtApellidos = new GridBagConstraints();
@@ -137,6 +139,7 @@ public class FormularioCliente extends JFrame {
         }
         {
             txtDireccin = new JTextField();
+            txtDireccin.addActionListener(new TxtDireccinActionListener());
             txtDireccin.addFocusListener(new MiFocusListener());
             txtDireccin.setFont(new Font("Segoe UI", Font.PLAIN, 14));
             GridBagConstraints gbc_txtDireccin = new GridBagConstraints();
@@ -160,29 +163,46 @@ public class FormularioCliente extends JFrame {
             contentPane.add(lblTelfonos, gbc_lblTelfonos);
         }
         {
-            txtTelfono1 = new JTextField();
-            txtTelfono1.addFocusListener(new MiFocusListener());
-            txtTelfono1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-            GridBagConstraints gbc_txtTelfono1 = new GridBagConstraints();
-            gbc_txtTelfono1.insets = new Insets(0, 0, 5, 5);
-            gbc_txtTelfono1.fill = GridBagConstraints.HORIZONTAL;
-            gbc_txtTelfono1.gridx = 1;
-            gbc_txtTelfono1.gridy = 3;
-            contentPane.add(txtTelfono1, gbc_txtTelfono1);
-            txtTelfono1.setColumns(10);
+            MaskFormatter formatoTlfno;
+            try {
+                formatoTlfno = new MaskFormatter("'(###')' ###' ###' ###");
+                formatoTlfno.setPlaceholderCharacter('*');
+                ftfTelfono1 = new JFormattedTextField(formatoTlfno);
+                ftfTelfono1.addActionListener(new FtfTelfono1ActionListener());
+                ftfTelfono1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            ftfTelfono1.addFocusListener(new MiFocusListener());
+            GridBagConstraints gbc_ftfTelfono1 = new GridBagConstraints();
+            gbc_ftfTelfono1.insets = new Insets(0, 0, 5, 5);
+            gbc_ftfTelfono1.fill = GridBagConstraints.HORIZONTAL;
+            gbc_ftfTelfono1.gridx = 1;
+            gbc_ftfTelfono1.gridy = 3;
+            contentPane.add(ftfTelfono1, gbc_ftfTelfono1);
         }
         {
-            txtTelfono2 = new JTextField();
-            txtTelfono2.addFocusListener(new MiFocusListener());
-            txtTelfono2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-            GridBagConstraints gbc_txtTelfono2 = new GridBagConstraints();
-            gbc_txtTelfono2.insets = new Insets(0, 0, 5, 5);
-            gbc_txtTelfono2.fill = GridBagConstraints.HORIZONTAL;
-            gbc_txtTelfono2.gridx = 2;
-            gbc_txtTelfono2.gridy = 3;
-            contentPane.add(txtTelfono2, gbc_txtTelfono2);
-            txtTelfono2.setColumns(10);
+            MaskFormatter formatoTlfno;
+            try {
+                formatoTlfno = new MaskFormatter("'(###')' ###' ###' ###");
+                formatoTlfno.setPlaceholderCharacter('*');
+                ftfTelfono2 = new JFormattedTextField(formatoTlfno);
+                ftfTelfono2.addActionListener(new FtfTelfono2ActionListener());
+                ftfTelfono2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            ftfTelfono2.addFocusListener(new MiFocusListener());
+            GridBagConstraints gbc_ftfTelfono2 = new GridBagConstraints();
+            gbc_ftfTelfono2.insets = new Insets(0, 0, 5, 5);
+            gbc_ftfTelfono2.fill = GridBagConstraints.HORIZONTAL;
+            gbc_ftfTelfono2.gridx = 2;
+            gbc_ftfTelfono2.gridy = 3;
+            contentPane.add(ftfTelfono2, gbc_ftfTelfono2);
         }
+
         {
             lblCorreoElectrnico = new JLabel(MessagesFormularioCliente
                     .getString("FormularioCliente.lblCorreoElectrnico.text")); //$NON-NLS-1$
@@ -197,6 +217,7 @@ public class FormularioCliente extends JFrame {
         }
         {
             txtCorreo = new JTextField();
+            txtCorreo.addActionListener(new TxtCorreoActionListener());
             txtCorreo.addFocusListener(new MiFocusListener());
             txtCorreo.setFont(new Font("Segoe UI", Font.PLAIN, 14));
             GridBagConstraints gbc_txtCorreo = new GridBagConstraints();
@@ -279,6 +300,42 @@ public class FormularioCliente extends JFrame {
     private class BtnAceptarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             dispose();
+        }
+    }
+
+    private class TxtNombreActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            txtApellidos.requestFocus();
+        }
+    }
+
+    private class TxtApellidosActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            txtDireccin.requestFocus();
+        }
+    }
+
+    private class TxtDireccinActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            ftfTelfono1.requestFocus();
+        }
+    }
+
+    private class FtfTelfono1ActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            ftfTelfono2.requestFocus();
+        }
+    }
+
+    private class FtfTelfono2ActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            txtCorreo.requestFocus();
+        }
+    }
+
+    private class TxtCorreoActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            taRestricciones.requestFocus();
         }
     }
 }

@@ -1,6 +1,5 @@
 package presentacion;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.DefaultComboBoxModel;
