@@ -1,4 +1,3 @@
-- Terminar internacionalización paneles (source>externalize strings)
 - Mejorar entrada de datos específicos (números de teléfono, e-mails...)
 - Borrar mains sobrantes
 - Limpiar código lo máximo posible
@@ -16,6 +15,8 @@
 
 
 
+
+---------------------------------------------------------------------------------------------------
 
 pnlOfertas:
 -- Problema: poner iconos seleccionables en las ofertas (panel con 2 iconos y texto)

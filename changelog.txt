@@ -1,3 +1,8 @@
+| 08/01/19 |
+
+TPV v0.9.3
+- App now have full support of english
+
 | 07/01/19 |
 
 TPV v0.9.2

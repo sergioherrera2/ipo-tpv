@@ -123,8 +123,8 @@ public class VentanaGestionPedidos extends JFrame {
         setResizable(false);
         setIconImage(Toolkit.getDefaultToolkit()
                 .getImage(VentanaGestionPedidos.class.getResource(
-                        "/presentacion/imagenes/food-2074638_960_720 - resized.png")));
-        setTitle("Gestión del pedido");
+                        "/presentacion/imagenes/food-2074638_960_720 - resized.png"))); //$NON-NLS-1$
+        setTitle(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.this.title")); //$NON-NLS-1$
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBounds(100, 100, 1280, 720);
         contentPane = new JPanel();
@@ -140,8 +140,8 @@ public class VentanaGestionPedidos extends JFrame {
         contentPane.setLayout(gbl_contentPane);
         {
             pnlPedido = new JPanel();
-            pnlPedido.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-            pnlPedido.setBorder(new TitledBorder(null, "Pedido",
+            pnlPedido.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
+            pnlPedido.setBorder(new TitledBorder(null, MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.pnlPedido.borderTitle"), //$NON-NLS-1$
                     TitledBorder.LEADING, TitledBorder.TOP, null, null));
             GridBagConstraints gbc_pnlPedido = new GridBagConstraints();
             gbc_pnlPedido.insets = new Insets(0, 0, 5, 5);
@@ -158,11 +158,11 @@ public class VentanaGestionPedidos extends JFrame {
                     1.0, Double.MIN_VALUE };
             pnlPedido.setLayout(gbl_pnlPedido);
             {
-                lblAyudapedido = new JLabel("");
+                lblAyudapedido = new JLabel(""); //$NON-NLS-1$
                 lblAyudapedido
                         .addMouseListener(new LblAyudapedidoMouseListener());
                 lblAyudapedido.setIcon(new ImageIcon(VentanaGestionPedidos.class
-                        .getResource("/presentacion/iconos/information.png")));
+                        .getResource("/presentacion/iconos/information.png"))); //$NON-NLS-1$
                 GridBagConstraints gbc_lblAyudapedido = new GridBagConstraints();
                 gbc_lblAyudapedido.insets = new Insets(0, 0, 5, 0);
                 gbc_lblAyudapedido.gridx = 4;
@@ -170,8 +170,8 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(lblAyudapedido, gbc_lblAyudapedido);
             }
             {
-                lblTipo = new JLabel("Tipo:");
-                lblTipo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+                lblTipo = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblTipo.text")); //$NON-NLS-1$
+                lblTipo.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblTipo = new GridBagConstraints();
                 gbc_lblTipo.insets = new Insets(0, 0, 5, 5);
                 gbc_lblTipo.anchor = GridBagConstraints.WEST;
@@ -181,9 +181,9 @@ public class VentanaGestionPedidos extends JFrame {
             }
             {
                 cbTipo = new JComboBox();
-                cbTipo.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+                cbTipo.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 cbTipo.setModel(new DefaultComboBoxModel(
-                        new String[] { "Local", "Recogida", "A domicilio" }));
+                        new String[] { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ComboTipo1"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ComboTipo2"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ComboTipo3") })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
                 GridBagConstraints gbc_cbTipo = new GridBagConstraints();
                 gbc_cbTipo.gridwidth = 2;
                 gbc_cbTipo.insets = new Insets(0, 0, 5, 5);
@@ -193,8 +193,8 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(cbTipo, gbc_cbTipo);
             }
             {
-                lblClienteVip = new JLabel("Cliente VIP:");
-                lblClienteVip.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+                lblClienteVip = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblClienteVip.text")); //$NON-NLS-1$
+                lblClienteVip.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblClienteVip = new GridBagConstraints();
                 gbc_lblClienteVip.anchor = GridBagConstraints.WEST;
                 gbc_lblClienteVip.insets = new Insets(0, 0, 5, 5);
@@ -203,7 +203,7 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(lblClienteVip, gbc_lblClienteVip);
             }
             {
-                rdbtnVip = new JRadioButton("");
+                rdbtnVip = new JRadioButton(""); //$NON-NLS-1$
                 rdbtnVip.setHorizontalTextPosition(SwingConstants.LEFT);
                 GridBagConstraints gbc_rdbtnVip = new GridBagConstraints();
                 gbc_rdbtnVip.insets = new Insets(0, 0, 5, 5);
@@ -212,11 +212,11 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(rdbtnVip, gbc_rdbtnVip);
             }
             {
-                button = new JButton("");
+                button = new JButton(""); //$NON-NLS-1$
                 button.addActionListener(new ButtonActionListener());
                 button.setIcon(
                         new ImageIcon(VentanaGestionPedidos.class.getResource(
-                                "/presentacion/iconos/rounded-add-button.png")));
+                                "/presentacion/iconos/rounded-add-button.png"))); //$NON-NLS-1$
                 GridBagConstraints gbc_button = new GridBagConstraints();
                 gbc_button.insets = new Insets(0, 0, 5, 5);
                 gbc_button.gridx = 3;
@@ -224,8 +224,8 @@ public class VentanaGestionPedidos extends JFrame {
                 pnlPedido.add(button, gbc_button);
             }
             {
-                lblHoraDeRecogida = new JLabel("Hora de recogida:");
-                lblHoraDeRecogida.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+                lblHoraDeRecogida = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblHoraDeRecogida.text")); //$NON-NLS-1$
+                lblHoraDeRecogida.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblHoraDeRecogida = new GridBagConstraints();
                 gbc_lblHoraDeRecogida.anchor = GridBagConstraints.WEST;
                 gbc_lblHoraDeRecogida.insets = new Insets(0, 0, 5, 5);
@@ -246,8 +246,8 @@ public class VentanaGestionPedidos extends JFrame {
                 txtHorarecogida.setColumns(10);
             }
             {
-                lblHoraDeLlegada = new JLabel("Hora de llegada:");
-                lblHoraDeLlegada.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+                lblHoraDeLlegada = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblHoraDeLlegada.text")); //$NON-NLS-1$
+                lblHoraDeLlegada.setFont(new Font("Segoe UI", Font.PLAIN, 15)); //$NON-NLS-1$
                 GridBagConstraints gbc_lblHoraDeLlegada = new GridBagConstraints();
                 gbc_lblHoraDeLlegada.anchor = GridBagConstraints.WEST;
                 gbc_lblHoraDeLlegada.insets = new Insets(0, 0, 5, 5);
@@ -279,7 +279,7 @@ public class VentanaGestionPedidos extends JFrame {
         }
         {
             pnlResumen = new JPanel();
-            pnlResumen.setBorder(new TitledBorder(null, "Resumen del pedido",
+            pnlResumen.setBorder(new TitledBorder(null, MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.pnlResumen.borderTitle"), //$NON-NLS-1$
                     TitledBorder.LEADING, TitledBorder.TOP, null, null));
             GridBagConstraints gbc_pnlResumen = new GridBagConstraints();
             gbc_pnlResumen.insets = new Insets(0, 0, 5, 0);
@@ -297,9 +297,9 @@ public class VentanaGestionPedidos extends JFrame {
                     0.0, 0.0, Double.MIN_VALUE };
             pnlResumen.setLayout(gbl_pnlResumen);
             {
-                lblAyuda = new JLabel("");
+                lblAyuda = new JLabel(""); //$NON-NLS-1$
                 lblAyuda.setIcon(new ImageIcon(VentanaGestionPedidos.class
-                        .getResource("/presentacion/iconos/information.png")));
+                        .getResource("/presentacion/iconos/information.png"))); //$NON-NLS-1$
                 lblAyuda.addMouseListener(new LblAyudaMouseListener());
                 GridBagConstraints gbc_lblAyuda = new GridBagConstraints();
                 gbc_lblAyuda.insets = new Insets(0, 0, 5, 0);
@@ -320,14 +320,14 @@ public class VentanaGestionPedidos extends JFrame {
                     tResumen = new JTable();
                     scrollPane.setViewportView(tResumen);
                     tResumen.setModel(new DefaultTableModel(new Object[][] {
-                            { "Pizza", new Double(6.99), new Integer(3),
+                            { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.Producto1"), new Double(6.99), new Integer(3), //$NON-NLS-1$
                                     new Double(6.95) },
-                            { "Coca Cola Zero", new Double(1.5), new Integer(2),
+                            { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.Producto2"), new Double(1.5), new Integer(2), //$NON-NLS-1$
                                     new Double(3.0) },
-                            { "McFlurry", new Double(1.4), new Integer(1),
+                            { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.Producto3"), new Double(1.4), new Integer(1), //$NON-NLS-1$
                                     new Double(1.4) }, },
-                            new String[] { "Producto", "Precio", "Uds",
-                                    "Importe total" }) {
+                            new String[] { MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaProducto"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaPrecio"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaUds"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+                                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ColumnaTotal") }) { //$NON-NLS-1$
                         Class[] columnTypes = new Class[] { String.class,
                                 Double.class, Integer.class, Double.class };
 
@@ -342,14 +342,14 @@ public class VentanaGestionPedidos extends JFrame {
                         }
                     });
                     {
-                        btnConfirmar = new JButton("Confirmar");
+                        btnConfirmar = new JButton(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.btnConfirmar.text")); //$NON-NLS-1$
                         btnConfirmar.addActionListener(
                                 new BtnConfirmarActionListener());
                         btnConfirmar.setIcon(new ImageIcon(
                                 VentanaGestionPedidos.class.getResource(
-                                        "/presentacion/iconos/right-arrow-forward.png")));
+                                        "/presentacion/iconos/right-arrow-forward.png"))); //$NON-NLS-1$
                         btnConfirmar.setFont(
-                                new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                                new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
                         GridBagConstraints gbc_btnConfirmar = new GridBagConstraints();
                         gbc_btnConfirmar.fill = GridBagConstraints.BOTH;
                         gbc_btnConfirmar.gridwidth = 2;
@@ -359,14 +359,14 @@ public class VentanaGestionPedidos extends JFrame {
                         pnlResumen.add(btnConfirmar, gbc_btnConfirmar);
                     }
                     {
-                        btnEliminar = new JButton("Eliminar");
+                        btnEliminar = new JButton(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.btnEliminar.text")); //$NON-NLS-1$
                         btnEliminar.addActionListener(
                                 new BtnEliminarActionListener());
                         btnEliminar.setIcon(new ImageIcon(
                                 VentanaGestionPedidos.class.getResource(
-                                        "/presentacion/iconos/rubbish-bin-delete-button.png")));
+                                        "/presentacion/iconos/rubbish-bin-delete-button.png"))); //$NON-NLS-1$
                         btnEliminar.setFont(
-                                new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                                new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
                         GridBagConstraints gbc_btnEliminar = new GridBagConstraints();
                         gbc_btnEliminar.fill = GridBagConstraints.BOTH;
                         gbc_btnEliminar.gridwidth = 2;
@@ -376,7 +376,7 @@ public class VentanaGestionPedidos extends JFrame {
                         pnlResumen.add(btnEliminar, gbc_btnEliminar);
                     }
                     {
-                        lblTotal = new JLabel("Total:");
+                        lblTotal = new JLabel(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.lblTotal.text")); //$NON-NLS-1$
                         GridBagConstraints gbc_lblTotal = new GridBagConstraints();
                         gbc_lblTotal.gridwidth = 2;
                         gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
@@ -387,11 +387,11 @@ public class VentanaGestionPedidos extends JFrame {
                     {
                         textField = new JTextField();
                         textField.setHorizontalAlignment(SwingConstants.CENTER);
-                        textField.setText("25,37€");
+                        textField.setText("25,37€"); //$NON-NLS-1$
                         textField.setEditable(false);
                         textField.setForeground(Color.RED);
                         textField.setFont(
-                                new Font("Segoe UI Semibold", Font.PLAIN, 14));
+                                new Font("Segoe UI Semibold", Font.PLAIN, 14)); //$NON-NLS-1$
                         GridBagConstraints gbc_textField = new GridBagConstraints();
                         gbc_textField.gridwidth = 2;
                         gbc_textField.insets = new Insets(0, 0, 5, 5);
@@ -402,14 +402,14 @@ public class VentanaGestionPedidos extends JFrame {
                         textField.setColumns(10);
                     }
                     {
-                        btnTerminar = new JButton("Terminar");
+                        btnTerminar = new JButton(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.btnTerminar.text")); //$NON-NLS-1$
                         btnTerminar.addActionListener(
                                 new BtnTerminarActionListener());
                         btnTerminar.setIcon(new ImageIcon(
                                 VentanaGestionPedidos.class.getResource(
-                                        "/presentacion/iconos/check-symbol.png")));
+                                        "/presentacion/iconos/check-symbol.png"))); //$NON-NLS-1$
                         btnTerminar.setFont(
-                                new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                                new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
                         GridBagConstraints gbc_btnTerminar = new GridBagConstraints();
                         gbc_btnTerminar.insets = new Insets(0, 0, 0, 5);
                         gbc_btnTerminar.fill = GridBagConstraints.BOTH;
@@ -421,7 +421,7 @@ public class VentanaGestionPedidos extends JFrame {
                     {
                         pnlProductos = new JPanel();
                         pnlProductos.setBorder(new TitledBorder(null,
-                                "Productos", TitledBorder.LEADING,
+                                MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.pnlProductos.borderTitle"), TitledBorder.LEADING, //$NON-NLS-1$
                                 TitledBorder.TOP, null, null));
                         GridBagConstraints gbc_pnlProductos = new GridBagConstraints();
                         gbc_pnlProductos.gridwidth = 3;
@@ -443,16 +443,16 @@ public class VentanaGestionPedidos extends JFrame {
                                 0.0, 0.0, Double.MIN_VALUE };
                         pnlProductos.setLayout(gbl_pnlProductos);
                         {
-                            lblComida = new JLabel("");
+                            lblComida = new JLabel(""); //$NON-NLS-1$
                             lblComida.addMouseListener(
                                     new LblNewLabelMouseListener());
                             {
-                                lblAyuda_1 = new JLabel("");
+                                lblAyuda_1 = new JLabel(""); //$NON-NLS-1$
                                 lblAyuda_1.addMouseListener(
                                         new LblAyuda_1MouseListener());
                                 lblAyuda_1.setIcon(new ImageIcon(
                                         VentanaGestionPedidos.class.getResource(
-                                                "/presentacion/iconos/information.png")));
+                                                "/presentacion/iconos/information.png"))); //$NON-NLS-1$
                                 GridBagConstraints gbc_lblAyuda_1 = new GridBagConstraints();
                                 gbc_lblAyuda_1.insets = new Insets(0, 0, 5, 0);
                                 gbc_lblAyuda_1.gridx = 11;
@@ -461,7 +461,7 @@ public class VentanaGestionPedidos extends JFrame {
                             }
                             lblComida.setIcon(new ImageIcon(
                                     VentanaGestionPedidos.class.getResource(
-                                            "/presentacion/imagenes/hamburger.png")));
+                                            "/presentacion/imagenes/hamburger.png"))); //$NON-NLS-1$
                             GridBagConstraints gbc_lblComida = new GridBagConstraints();
                             gbc_lblComida.insets = new Insets(0, 0, 5, 5);
                             gbc_lblComida.gridx = 0;
@@ -469,12 +469,12 @@ public class VentanaGestionPedidos extends JFrame {
                             pnlProductos.add(lblComida, gbc_lblComida);
                         }
                         {
-                            lblBebida = new JLabel("");
+                            lblBebida = new JLabel(""); //$NON-NLS-1$
                             lblBebida.addMouseListener(
                                     new LblNewLabelMouseListener());
                             lblBebida.setIcon(new ImageIcon(
                                     VentanaGestionPedidos.class.getResource(
-                                            "/presentacion/imagenes/soft-drink.png")));
+                                            "/presentacion/imagenes/soft-drink.png"))); //$NON-NLS-1$
                             GridBagConstraints gbc_lblBebida = new GridBagConstraints();
                             gbc_lblBebida.insets = new Insets(0, 0, 5, 5);
                             gbc_lblBebida.gridx = 4;
@@ -482,12 +482,12 @@ public class VentanaGestionPedidos extends JFrame {
                             pnlProductos.add(lblBebida, gbc_lblBebida);
                         }
                         {
-                            lblPostre = new JLabel("");
+                            lblPostre = new JLabel(""); //$NON-NLS-1$
                             lblPostre.addMouseListener(
                                     new LblNewLabelMouseListener());
                             lblPostre.setIcon(new ImageIcon(
                                     VentanaGestionPedidos.class.getResource(
-                                            "/presentacion/imagenes/ice-cream.png")));
+                                            "/presentacion/imagenes/ice-cream.png"))); //$NON-NLS-1$
                             GridBagConstraints gbc_lblPostre = new GridBagConstraints();
                             gbc_lblPostre.insets = new Insets(0, 0, 5, 5);
                             gbc_lblPostre.gridx = 8;
@@ -514,13 +514,13 @@ public class VentanaGestionPedidos extends JFrame {
             DefaultTableModel dtm = (DefaultTableModel) tResumen.getModel();
             if (tResumen.getSelectedRow() > -1) {
                 if (JOptionPane.showConfirmDialog(frame,
-                        "¿Estás seguro de que quieres borrar el producto?",
-                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoConfirmacion"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     dtm.removeRow(tResumen.getSelectedRow());
                 }
             } else {
                 JOptionPane.showMessageDialog(frame,
-                        "Primero tienes que seleccionar un producto.", "Aviso",
+                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoInfo"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAviso"), //$NON-NLS-1$ //$NON-NLS-2$
                         JOptionPane.WARNING_MESSAGE);
             }
         }
@@ -538,10 +538,10 @@ public class VentanaGestionPedidos extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este es el panel \"Pedido\", donde se cargará la información sobre la hora de llegada/recogida en caso de estar editando un pedido,\n"
-                            + " o los campos estarán vacíos si estamos creando uno.\n"
-                            + "Además, podemos crear un cliente sobre la marcha pulsando en +, en caso de que el mismo no exista en el sistema.",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MensajeAyuda1") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MensajeAyuda2") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MensajeAyuda3"), //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
         }
     }
 
@@ -549,18 +549,18 @@ public class VentanaGestionPedidos extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este es el panel \"Resumen\", donde se mostrará un resumen de lo que vayamos eligiendo para el pedido.\n"
-                            + "- El botón confirmar introduciría el producto seleccionado en el panel inferior a la tabla resumen.\n"
-                            + "- Con el botón eliminar, eliminaremos un producto.\n"
-                            + "- Con el botón terminar, cerraríamos la ventana y se crearía/editaría el producto.\n",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda2") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda3") //$NON-NLS-1$
+                            + MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ResumenMensajeAyuda4"), //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
         }
     }
 
     private class LblNewLabelMouseListener extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {
-            ((JLabel) e.getComponent()).setText("(selected)");
+            ((JLabel) e.getComponent()).setText(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected")); //$NON-NLS-1$
         }
     }
 
@@ -568,21 +568,21 @@ public class VentanaGestionPedidos extends JFrame {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este es el panel \"Productos\", donde se pueden seleccionar los productos que en los paneles superiores se podrán incluir al pedido.",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.ProductosMensajeAyuda"), //$NON-NLS-1$
+                    MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
         }
     }
 
     private class BtnConfirmarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (lblBebida.getText().equals("(selected)")
-                    || lblComida.getText().equals("(selected)")
-                    || lblPostre.getText().equals("(selected)")) {
-                JOptionPane.showMessageDialog(frame, "¡Producto añadido!",
-                        "Información", JOptionPane.WARNING_MESSAGE);
+            if (lblBebida.getText().equals(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected")) //$NON-NLS-1$
+                    || lblComida.getText().equals(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected")) //$NON-NLS-1$
+                    || lblPostre.getText().equals(MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.MarcaSelected"))) { //$NON-NLS-1$
+                JOptionPane.showMessageDialog(frame, MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoAñadido"), //$NON-NLS-1$
+                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraInformacion"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
             } else {
                 JOptionPane.showMessageDialog(frame,
-                        "Primero tienes que seleccionar un producto.", "Aviso",
+                        MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.DialogoInfo"), MessagesVentanaGestionPedidos.getString("VentanaGestionPedidos.CabeceraAviso"), //$NON-NLS-1$ //$NON-NLS-2$
                         JOptionPane.WARNING_MESSAGE);
             }
         }

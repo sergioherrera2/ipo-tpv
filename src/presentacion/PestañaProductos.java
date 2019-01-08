@@ -81,10 +81,10 @@ public class PestañaProductos extends JPanel {
                 Double.MIN_VALUE };
         setLayout(gridBagLayout);
 
-        lblHelp = new JLabel("");
+        lblHelp = new JLabel(""); //$NON-NLS-1$
         lblHelp.addMouseListener(new LblHelpMouseListener());
         lblHelp.setIcon(new ImageIcon(PestañaProductos.class
-                .getResource("/presentacion/iconos/information.png")));
+                .getResource("/presentacion/iconos/information.png"))); //$NON-NLS-1$
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
         gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
         gbc_lblHelp.gridx = 2;
@@ -92,7 +92,7 @@ public class PestañaProductos extends JPanel {
         add(lblHelp, gbc_lblHelp);
 
         pnlProductos = new JPanel();
-        pnlProductos.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlProductos.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlProductos.setBorder(new TitledBorder(null, MessagesPestanaProductos.getString("PestañaProductos.pnlProductos.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlProductos = new GridBagConstraints();
@@ -132,7 +132,7 @@ public class PestañaProductos extends JPanel {
                 Double.MIN_VALUE };
         pnlComida.setLayout(gbl_pnlComida);
 
-        lbProducto1 = new JLabel("");
+        lbProducto1 = new JLabel(""); //$NON-NLS-1$
         lbProducto1.addMouseListener(new LbProductoMouseListener());
         GridBagConstraints gbc_lbProducto1 = new GridBagConstraints();
         gbc_lbProducto1.insets = new Insets(0, 0, 5, 5);
@@ -140,58 +140,58 @@ public class PestañaProductos extends JPanel {
         gbc_lbProducto1.gridy = 0;
         pnlComida.add(lbProducto1, gbc_lbProducto1);
         lbProducto1.setIcon(new ImageIcon(PestañaProductos.class
-                .getResource("/presentacion/imagenes/pizza (1).png")));
+                .getResource("/presentacion/imagenes/pizza (1).png"))); //$NON-NLS-1$
 
-        lblProducto2 = new JLabel("-");
+        lblProducto2 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto2 = new GridBagConstraints();
         gbc_lblProducto2.insets = new Insets(0, 0, 5, 5);
         gbc_lblProducto2.gridx = 1;
         gbc_lblProducto2.gridy = 0;
         pnlComida.add(lblProducto2, gbc_lblProducto2);
 
-        lblProducto3 = new JLabel("-");
+        lblProducto3 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto3 = new GridBagConstraints();
         gbc_lblProducto3.insets = new Insets(0, 0, 5, 0);
         gbc_lblProducto3.gridx = 2;
         gbc_lblProducto3.gridy = 0;
         pnlComida.add(lblProducto3, gbc_lblProducto3);
 
-        lblProducto4 = new JLabel("-");
+        lblProducto4 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto4 = new GridBagConstraints();
         gbc_lblProducto4.insets = new Insets(0, 0, 5, 5);
         gbc_lblProducto4.gridx = 0;
         gbc_lblProducto4.gridy = 1;
         pnlComida.add(lblProducto4, gbc_lblProducto4);
 
-        lblProducto5 = new JLabel("-");
+        lblProducto5 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto5 = new GridBagConstraints();
         gbc_lblProducto5.insets = new Insets(0, 0, 5, 5);
         gbc_lblProducto5.gridx = 1;
         gbc_lblProducto5.gridy = 1;
         pnlComida.add(lblProducto5, gbc_lblProducto5);
 
-        lblProducto6 = new JLabel("-");
+        lblProducto6 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto6 = new GridBagConstraints();
         gbc_lblProducto6.insets = new Insets(0, 0, 5, 0);
         gbc_lblProducto6.gridx = 2;
         gbc_lblProducto6.gridy = 1;
         pnlComida.add(lblProducto6, gbc_lblProducto6);
 
-        lblProducto7 = new JLabel("-");
+        lblProducto7 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto7 = new GridBagConstraints();
         gbc_lblProducto7.insets = new Insets(0, 0, 0, 5);
         gbc_lblProducto7.gridx = 0;
         gbc_lblProducto7.gridy = 2;
         pnlComida.add(lblProducto7, gbc_lblProducto7);
 
-        lblProducto8 = new JLabel("-");
+        lblProducto8 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto8 = new GridBagConstraints();
         gbc_lblProducto8.insets = new Insets(0, 0, 0, 5);
         gbc_lblProducto8.gridx = 1;
         gbc_lblProducto8.gridy = 2;
         pnlComida.add(lblProducto8, gbc_lblProducto8);
 
-        lblProducto9 = new JLabel("-");
+        lblProducto9 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblProducto9 = new GridBagConstraints();
         gbc_lblProducto9.gridx = 2;
         gbc_lblProducto9.gridy = 2;
@@ -217,7 +217,7 @@ public class PestañaProductos extends JPanel {
                 Double.MIN_VALUE };
         pnlBebidas.setLayout(gbl_pnlBebidas);
 
-        lblBebida1 = new JLabel("");
+        lblBebida1 = new JLabel(""); //$NON-NLS-1$
         lblBebida1.addMouseListener(new LbProductoMouseListener());
         GridBagConstraints gbc_lblBebida1 = new GridBagConstraints();
         gbc_lblBebida1.insets = new Insets(0, 0, 5, 5);
@@ -225,58 +225,58 @@ public class PestañaProductos extends JPanel {
         gbc_lblBebida1.gridy = 0;
         pnlBebidas.add(lblBebida1, gbc_lblBebida1);
         lblBebida1.setIcon(new ImageIcon(PestañaProductos.class
-                .getResource("/presentacion/imagenes/soft-drink.png")));
+                .getResource("/presentacion/imagenes/soft-drink.png"))); //$NON-NLS-1$
 
-        lblBebida2 = new JLabel("-");
+        lblBebida2 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida2 = new GridBagConstraints();
         gbc_lblBebida2.insets = new Insets(0, 0, 5, 5);
         gbc_lblBebida2.gridx = 1;
         gbc_lblBebida2.gridy = 0;
         pnlBebidas.add(lblBebida2, gbc_lblBebida2);
 
-        lblBebida3 = new JLabel("-");
+        lblBebida3 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida3 = new GridBagConstraints();
         gbc_lblBebida3.insets = new Insets(0, 0, 5, 0);
         gbc_lblBebida3.gridx = 2;
         gbc_lblBebida3.gridy = 0;
         pnlBebidas.add(lblBebida3, gbc_lblBebida3);
 
-        lblBebida4 = new JLabel("-");
+        lblBebida4 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida4 = new GridBagConstraints();
         gbc_lblBebida4.insets = new Insets(0, 0, 5, 5);
         gbc_lblBebida4.gridx = 0;
         gbc_lblBebida4.gridy = 1;
         pnlBebidas.add(lblBebida4, gbc_lblBebida4);
 
-        lblBebida5 = new JLabel("-");
+        lblBebida5 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida5 = new GridBagConstraints();
         gbc_lblBebida5.insets = new Insets(0, 0, 5, 5);
         gbc_lblBebida5.gridx = 1;
         gbc_lblBebida5.gridy = 1;
         pnlBebidas.add(lblBebida5, gbc_lblBebida5);
 
-        lblBebida6 = new JLabel("-");
+        lblBebida6 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida6 = new GridBagConstraints();
         gbc_lblBebida6.insets = new Insets(0, 0, 5, 0);
         gbc_lblBebida6.gridx = 2;
         gbc_lblBebida6.gridy = 1;
         pnlBebidas.add(lblBebida6, gbc_lblBebida6);
 
-        lblBebida7 = new JLabel("-");
+        lblBebida7 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida7 = new GridBagConstraints();
         gbc_lblBebida7.insets = new Insets(0, 0, 0, 5);
         gbc_lblBebida7.gridx = 0;
         gbc_lblBebida7.gridy = 2;
         pnlBebidas.add(lblBebida7, gbc_lblBebida7);
 
-        lblBebida8 = new JLabel("-");
+        lblBebida8 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida8 = new GridBagConstraints();
         gbc_lblBebida8.insets = new Insets(0, 0, 0, 5);
         gbc_lblBebida8.gridx = 1;
         gbc_lblBebida8.gridy = 2;
         pnlBebidas.add(lblBebida8, gbc_lblBebida8);
 
-        lblBebida9 = new JLabel("-");
+        lblBebida9 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblBebida9 = new GridBagConstraints();
         gbc_lblBebida9.gridx = 2;
         gbc_lblBebida9.gridy = 2;
@@ -302,7 +302,7 @@ public class PestañaProductos extends JPanel {
                 Double.MIN_VALUE };
         pnlPostres.setLayout(gbl_pnlPostres);
 
-        lblPostre1 = new JLabel("");
+        lblPostre1 = new JLabel(""); //$NON-NLS-1$
         lblPostre1.addMouseListener(new LbProductoMouseListener());
         GridBagConstraints gbc_lblPostre1 = new GridBagConstraints();
         gbc_lblPostre1.insets = new Insets(0, 0, 5, 5);
@@ -310,37 +310,37 @@ public class PestañaProductos extends JPanel {
         gbc_lblPostre1.gridy = 0;
         pnlPostres.add(lblPostre1, gbc_lblPostre1);
         lblPostre1.setIcon(new ImageIcon(PestañaProductos.class
-                .getResource("/presentacion/imagenes/ice-cream.png")));
+                .getResource("/presentacion/imagenes/ice-cream.png"))); //$NON-NLS-1$
 
-        lblPostre2 = new JLabel("-");
+        lblPostre2 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblPostre2 = new GridBagConstraints();
         gbc_lblPostre2.insets = new Insets(0, 0, 5, 0);
         gbc_lblPostre2.gridx = 1;
         gbc_lblPostre2.gridy = 0;
         pnlPostres.add(lblPostre2, gbc_lblPostre2);
 
-        lblPostre3 = new JLabel("-");
+        lblPostre3 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblPostre3 = new GridBagConstraints();
         gbc_lblPostre3.insets = new Insets(0, 0, 5, 5);
         gbc_lblPostre3.gridx = 0;
         gbc_lblPostre3.gridy = 1;
         pnlPostres.add(lblPostre3, gbc_lblPostre3);
 
-        lblPostre4 = new JLabel("-");
+        lblPostre4 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblPostre4 = new GridBagConstraints();
         gbc_lblPostre4.insets = new Insets(0, 0, 5, 0);
         gbc_lblPostre4.gridx = 1;
         gbc_lblPostre4.gridy = 1;
         pnlPostres.add(lblPostre4, gbc_lblPostre4);
 
-        lblPostre5 = new JLabel("-");
+        lblPostre5 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblPostre5 = new GridBagConstraints();
         gbc_lblPostre5.insets = new Insets(0, 0, 0, 5);
         gbc_lblPostre5.gridx = 0;
         gbc_lblPostre5.gridy = 2;
         pnlPostres.add(lblPostre5, gbc_lblPostre5);
 
-        lblPostre6 = new JLabel("-");
+        lblPostre6 = new JLabel("-"); //$NON-NLS-1$
         GridBagConstraints gbc_lblPostre6 = new GridBagConstraints();
         gbc_lblPostre6.gridx = 1;
         gbc_lblPostre6.gridy = 2;
@@ -365,7 +365,7 @@ public class PestañaProductos extends JPanel {
         pnlDetalles.setLayout(gbl_pnlDetalles);
 
         lblIngredientes = new JLabel(MessagesPestanaProductos.getString("PestañaProductos.lblIngredientes.text")); //$NON-NLS-1$
-        lblIngredientes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        lblIngredientes.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         GridBagConstraints gbc_lblIngredientes = new GridBagConstraints();
         gbc_lblIngredientes.insets = new Insets(0, 0, 5, 5);
         gbc_lblIngredientes.gridx = 0;
@@ -373,7 +373,7 @@ public class PestañaProductos extends JPanel {
         pnlDetalles.add(lblIngredientes, gbc_lblIngredientes);
 
         taIngredientes = new JTextArea();
-        taIngredientes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        taIngredientes.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         taIngredientes.setEditable(false);
         GridBagConstraints gbc_taIngredientes = new GridBagConstraints();
         gbc_taIngredientes.gridheight = 2;
@@ -384,7 +384,7 @@ public class PestañaProductos extends JPanel {
         pnlDetalles.add(taIngredientes, gbc_taIngredientes);
 
         lblAlrgenos = new JLabel(MessagesPestanaProductos.getString("PestañaProductos.lblAlrgenos.text")); //$NON-NLS-1$
-        lblAlrgenos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        lblAlrgenos.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         GridBagConstraints gbc_lblAlrgenos = new GridBagConstraints();
         gbc_lblAlrgenos.insets = new Insets(0, 0, 5, 5);
         gbc_lblAlrgenos.gridx = 0;
@@ -392,7 +392,7 @@ public class PestañaProductos extends JPanel {
         pnlDetalles.add(lblAlrgenos, gbc_lblAlrgenos);
 
         taAlrgenos = new JTextArea();
-        taAlrgenos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        taAlrgenos.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         taAlrgenos.setEditable(false);
         GridBagConstraints gbc_taAlrgenos = new GridBagConstraints();
         gbc_taAlrgenos.gridheight = 2;
@@ -403,7 +403,7 @@ public class PestañaProductos extends JPanel {
         pnlDetalles.add(taAlrgenos, gbc_taAlrgenos);
 
         lblPrecio = new JLabel(MessagesPestanaProductos.getString("PestañaProductos.lblPrecio.text")); //$NON-NLS-1$
-        lblPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        lblPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         GridBagConstraints gbc_lblPrecio = new GridBagConstraints();
         gbc_lblPrecio.insets = new Insets(0, 0, 0, 5);
         gbc_lblPrecio.gridx = 0;
@@ -411,7 +411,7 @@ public class PestañaProductos extends JPanel {
         pnlDetalles.add(lblPrecio, gbc_lblPrecio);
 
         tfPrecio = new JTextField();
-        tfPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        tfPrecio.setFont(new Font("Segoe UI", Font.PLAIN, 14)); //$NON-NLS-1$
         tfPrecio.setEditable(false);
         GridBagConstraints gbc_tfPrecio = new GridBagConstraints();
         gbc_tfPrecio.fill = GridBagConstraints.HORIZONTAL;
@@ -422,7 +422,7 @@ public class PestañaProductos extends JPanel {
 
         pnlEdicion = new JPanel();
         pnlEdicion.setBorder(
-                new TitledBorder(UIManager.getBorder("TitledBorder.border"),
+                new TitledBorder(UIManager.getBorder("TitledBorder.border"), //$NON-NLS-1$
                         MessagesPestanaProductos.getString("PestañaProductos.pnlEdicion.borderTitle"), TitledBorder.LEADING, TitledBorder.TOP, //$NON-NLS-1$
                         null, new Color(0, 0, 0)));
         GridBagConstraints gbc_pnlEdicion = new GridBagConstraints();
@@ -443,8 +443,8 @@ public class PestañaProductos extends JPanel {
         btnNuevoProducto
                 .addActionListener(new BtnNuevoProductoActionListener());
         btnNuevoProducto.setIcon(new ImageIcon(PestañaProductos.class
-                .getResource("/presentacion/iconos/rounded-add-button.png")));
-        btnNuevoProducto.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/rounded-add-button.png"))); //$NON-NLS-1$
+        btnNuevoProducto.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnNuevoProducto = new GridBagConstraints();
         gbc_btnNuevoProducto.fill = GridBagConstraints.BOTH;
         gbc_btnNuevoProducto.insets = new Insets(0, 0, 5, 0);
@@ -456,9 +456,9 @@ public class PestañaProductos extends JPanel {
         btnEditarProducto
                 .addActionListener(new BtnEditarProductoActionListener());
         btnEditarProducto.setIcon(new ImageIcon(PestañaProductos.class
-                .getResource("/presentacion/iconos/edit24.png")));
+                .getResource("/presentacion/iconos/edit24.png"))); //$NON-NLS-1$
         btnEditarProducto
-                .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnEditarProducto = new GridBagConstraints();
         gbc_btnEditarProducto.fill = GridBagConstraints.BOTH;
         gbc_btnEditarProducto.insets = new Insets(0, 0, 5, 0);
@@ -470,9 +470,9 @@ public class PestañaProductos extends JPanel {
         btnBorrarProducto
                 .addActionListener(new BtnBorrarProductoActionListener());
         btnBorrarProducto.setIcon(new ImageIcon(PestañaProductos.class.getResource(
-                "/presentacion/iconos/rubbish-bin-delete-button.png")));
+                "/presentacion/iconos/rubbish-bin-delete-button.png"))); //$NON-NLS-1$
         btnBorrarProducto
-                .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnBorrarProducto = new GridBagConstraints();
         gbc_btnBorrarProducto.fill = GridBagConstraints.BOTH;
         gbc_btnBorrarProducto.gridx = 0;
@@ -484,7 +484,7 @@ public class PestañaProductos extends JPanel {
     private class LbProductoMouseListener extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {
-            ((JLabel) e.getComponent()).setText("(selected)");
+            ((JLabel) e.getComponent()).setText(MessagesPestanaProductos.getString("PestañaProductos.MarcaSelected")); //$NON-NLS-1$
             taIngredientes.setEditable(true);
             taAlrgenos.setEditable(true);
             tfPrecio.setEditable(true);
@@ -493,31 +493,31 @@ public class PestañaProductos extends JPanel {
 
     private class BtnBorrarProductoActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            if (lbProducto1.getText().equals("(selected)")) {
+            if (lbProducto1.getText().equals(MessagesPestanaProductos.getString("PestañaProductos.MarcaSelected"))) { //$NON-NLS-1$
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        "¿Estás seguro de que quieres borrar este producto?",
-                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                        MessagesPestanaProductos.getString("PestañaProductos.DialogoConfirmacion"), //$NON-NLS-1$
+                        MessagesPestanaProductos.getString("PestañaProductos.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     lbProducto1.setVisible(false);
-                    lbProducto1.setText("(removed)");
+                    lbProducto1.setText(MessagesPestanaProductos.getString("PestañaProductos.MarcaRemoved")); //$NON-NLS-1$
                 }
-            } else if (lblBebida1.getText().equals("(selected)")) {
+            } else if (lblBebida1.getText().equals(MessagesPestanaProductos.getString("PestañaProductos.MarcaSelected"))) { //$NON-NLS-1$
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        "¿Estás seguro de que quieres borrar la promoción?",
-                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                        MessagesPestanaProductos.getString("PestañaProductos.DialogoConfirmacion2"), //$NON-NLS-1$
+                        MessagesPestanaProductos.getString("PestañaProductos.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     lblBebida1.setVisible(false);
-                    lblBebida1.setText("(removed)");
+                    lblBebida1.setText(MessagesPestanaProductos.getString("PestañaProductos.MarcaRemoved")); //$NON-NLS-1$
                 }
-            } else if (lblPostre1.getText().equals("(selected)")) {
+            } else if (lblPostre1.getText().equals(MessagesPestanaProductos.getString("PestañaProductos.MarcaSelected"))) { //$NON-NLS-1$
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        "¿Estás seguro de que quieres borrar la promoción?",
-                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                        MessagesPestanaProductos.getString("PestañaProductos.DialogoConfirmacion2"), //$NON-NLS-1$
+                        MessagesPestanaProductos.getString("PestañaProductos.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     lblPostre1.setVisible(false);
-                    lblPostre1.setText("(removed)");
+                    lblPostre1.setText(MessagesPestanaProductos.getString("PestañaProductos.MarcaRemoved")); //$NON-NLS-1$
                 }
             } else {
                 JOptionPane.showMessageDialog(new JPanel(),
-                        "Primero tienes que seleccionar una promoción.",
-                        "Cuidado", JOptionPane.WARNING_MESSAGE);
+                        MessagesPestanaProductos.getString("PestañaProductos.DialogoInfo"), //$NON-NLS-1$
+                        MessagesPestanaProductos.getString("PestañaProductos.CabeceraCuidado"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
             }
 
         }
@@ -526,18 +526,18 @@ public class PestañaProductos extends JPanel {
     private class BtnNuevoProductoActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este módulo no ha sido implementado. "
-                            + "En una versión final, este botón añadiría un producto cuya información sería rellenada con los campos de abajo. Además, se agruparía automáticamente en el panel que le correspondiera (comida, bebida, postre...).",
-                    "Aviso", JOptionPane.WARNING_MESSAGE);
+                    MessagesPestanaProductos.getString("PestañaProductos.DialogoModulo") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.DialogoModulo2"), //$NON-NLS-1$
+                    MessagesPestanaProductos.getString("PestañaProductos.CabeceraAviso"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
         }
     }
 
     private class BtnEditarProductoActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este módulo no ha sido implementado. "
-                            + "En una versión final, este botón editaría un producto seleccionado (con marca selected), cuya información se mostraría abajo.",
-                    "Aviso", JOptionPane.WARNING_MESSAGE);
+                    MessagesPestanaProductos.getString("PestañaProductos.DialogoModulo") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.DialogoModulo3"), //$NON-NLS-1$
+                    MessagesPestanaProductos.getString("PestañaProductos.CabeceraAviso"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
         }
     }
 
@@ -545,14 +545,14 @@ public class PestañaProductos extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Esta es la pestaña productos, en la cual podemos ver los tipos de productos disponibles para su elección.\n"
-                            + "Al seleccionar un producto, su información se muestra en el panel inferior (no implementado).\n"
-                            + "\nOperaciones disponibles:"
-                            + "\n\t- Seleccionar producto: pulsando sobre la imagen de un producto."
-                            + "\n\t- Añadir producto: aquí aparecería un form que permitiría la elección de una imagen y la escritura de su información."
-                            + "\n\t- Editar producto: el producto con la marca selected podría actualizarse con los datos modificados del panel inferior."
-                            + "\n\t- Borrar producto: el producto seleccionado es eliminado.",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesPestanaProductos.getString("PestañaProductos.MensajeAyuda1") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.MensajeAyuda2") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.MensajeAyuda3") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.MensajeAyuda4") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.MensajeAyuda5") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.MensajeAyuda6") //$NON-NLS-1$
+                            + MessagesPestanaProductos.getString("PestañaProductos.MensajeAyuda7"), //$NON-NLS-1$
+                    MessagesPestanaProductos.getString("PestañaProductos.CabeceraAyuda"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
 
         }
     }

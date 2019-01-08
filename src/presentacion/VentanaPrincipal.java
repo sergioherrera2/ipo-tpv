@@ -108,6 +108,7 @@ public class VentanaPrincipal extends JFrame {
 
         if (MessagesVentanaPrincipal.getIdioma().getLanguage()
                 .equals(new Locale("en").getLanguage())) { //$NON-NLS-1$
+            MessagesVentanaGestionPedidos.setIdioma("inglés");
             MessagesPestanaPedidos.setIdioma("inglés"); //$NON-NLS-1$
             MessagesPestanaProductos.setIdioma("inglés"); //$NON-NLS-1$
             MessagesPestanaClientes.setIdioma("inglés"); //$NON-NLS-1$

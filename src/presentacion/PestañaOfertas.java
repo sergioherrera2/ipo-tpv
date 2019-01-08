@@ -62,10 +62,10 @@ public class PestañaOfertas extends JPanel {
                 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
         setLayout(gridBagLayout);
 
-        lblHelp = new JLabel("");
+        lblHelp = new JLabel(""); //$NON-NLS-1$
         lblHelp.addMouseListener(new LblHelpMouseListener());
         lblHelp.setIcon(new ImageIcon(PestañaOfertas.class
-                .getResource("/presentacion/iconos/information.png")));
+                .getResource("/presentacion/iconos/information.png"))); //$NON-NLS-1$
         GridBagConstraints gbc_lblHelp = new GridBagConstraints();
         gbc_lblHelp.insets = new Insets(0, 0, 5, 0);
         gbc_lblHelp.gridx = 3;
@@ -73,9 +73,9 @@ public class PestañaOfertas extends JPanel {
         add(lblHelp, gbc_lblHelp);
 
         pnlPromociones = new JPanel();
-        pnlPromociones.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlPromociones.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlPromociones.setBorder(
-                new TitledBorder(UIManager.getBorder("TitledBorder.border"),
+                new TitledBorder(UIManager.getBorder("TitledBorder.border"), //$NON-NLS-1$
                         MessagesPestanaOfertas.getString("PestañaOfertas.pnlPromociones.borderTitle"), TitledBorder.LEADING, TitledBorder.TOP, //$NON-NLS-1$
                         null, new Color(0, 0, 0)));
         GridBagConstraints gbc_pnlPromociones = new GridBagConstraints();
@@ -114,8 +114,8 @@ public class PestañaOfertas extends JPanel {
         btnNuevaOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnNuevaOferta.text")); //$NON-NLS-1$
         btnNuevaOferta.addActionListener(new BtnNuevaOfertaActionListener());
         btnNuevaOferta.setIcon(new ImageIcon(PestañaOfertas.class
-                .getResource("/presentacion/iconos/rounded-add-button.png")));
-        btnNuevaOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/rounded-add-button.png"))); //$NON-NLS-1$
+        btnNuevaOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnNuevaOferta = new GridBagConstraints();
         gbc_btnNuevaOferta.fill = GridBagConstraints.BOTH;
         gbc_btnNuevaOferta.insets = new Insets(0, 0, 5, 5);
@@ -126,8 +126,8 @@ public class PestañaOfertas extends JPanel {
         btnEditarOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnEditarOferta.text")); //$NON-NLS-1$
         btnEditarOferta.addActionListener(new BtnEditarOfertaActionListener());
         btnEditarOferta.setIcon(new ImageIcon(PestañaOfertas.class
-                .getResource("/presentacion/iconos/edit24.png")));
-        btnEditarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/edit24.png"))); //$NON-NLS-1$
+        btnEditarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnEditarOferta = new GridBagConstraints();
         gbc_btnEditarOferta.fill = GridBagConstraints.BOTH;
         gbc_btnEditarOferta.insets = new Insets(0, 0, 5, 5);
@@ -136,7 +136,7 @@ public class PestañaOfertas extends JPanel {
         add(btnEditarOferta, gbc_btnEditarOferta);
 
         pnlOfertas = new JPanel();
-        pnlOfertas.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlOfertas.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlOfertas.setBorder(new TitledBorder(null, MessagesPestanaOfertas.getString("PestañaOfertas.pnlOfertas.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlOfertas = new GridBagConstraints();
@@ -173,8 +173,8 @@ public class PestañaOfertas extends JPanel {
         btnBorrarOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnBorrarOferta.text")); //$NON-NLS-1$
         btnBorrarOferta.addActionListener(new BtnBorrarPromoActionListener());
         btnBorrarOferta.setIcon(new ImageIcon(PestañaOfertas.class.getResource(
-                "/presentacion/iconos/rubbish-bin-delete-button.png")));
-        btnBorrarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                "/presentacion/iconos/rubbish-bin-delete-button.png"))); //$NON-NLS-1$
+        btnBorrarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnBorrarOferta = new GridBagConstraints();
         gbc_btnBorrarOferta.fill = GridBagConstraints.BOTH;
         gbc_btnBorrarOferta.insets = new Insets(0, 0, 5, 5);
@@ -183,7 +183,7 @@ public class PestañaOfertas extends JPanel {
         add(btnBorrarOferta, gbc_btnBorrarOferta);
 
         pnlInfo = new JPanel();
-        pnlInfo.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlInfo.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlInfo.setBorder(new TitledBorder(null, MessagesPestanaOfertas.getString("PestañaOfertas.pnlInfo.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlInfo = new GridBagConstraints();
@@ -196,7 +196,7 @@ public class PestañaOfertas extends JPanel {
         pnlInfo.setLayout(new GridLayout(0, 1, 0, 0));
 
         taInfo = new JTextArea();
-        taInfo.setFont(new Font("Segoe UI", Font.BOLD, 13));
+        taInfo.setFont(new Font("Segoe UI", Font.BOLD, 13)); //$NON-NLS-1$
         taInfo.setEditable(false);
         taInfo.setText(
                 MessagesPestanaOfertas.getString("PestañaOfertas.taInfo.text")); //$NON-NLS-1$
@@ -204,7 +204,7 @@ public class PestañaOfertas extends JPanel {
         pnlInfo.add(taInfo);
 
         pnlClientes = new JPanel();
-        pnlClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        pnlClientes.setFont(new Font("Segoe UI", Font.PLAIN, 13)); //$NON-NLS-1$
         pnlClientes.setBorder(new TitledBorder(null, MessagesPestanaOfertas.getString("PestañaOfertas.pnlClientes.borderTitle"), //$NON-NLS-1$
                 TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GridBagConstraints gbc_pnlClientes = new GridBagConstraints();
@@ -221,8 +221,8 @@ public class PestañaOfertas extends JPanel {
 
         lsClientes = new JList();
         lsClientes.setModel(new AbstractListModel() {
-            String[] values = new String[] { "sergio.herrera2@alu.uclm.es",
-                    "manolofergn@gmail.com" };
+            String[] values = new String[] { "sergio.herrera2@alu.uclm.es", //$NON-NLS-1$
+                    "manolofergn@gmail.com" }; //$NON-NLS-1$
 
             @Override
             public int getSize() {
@@ -239,8 +239,8 @@ public class PestañaOfertas extends JPanel {
         btnSeleccionar = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnSeleccionar.text")); //$NON-NLS-1$
         btnSeleccionar.addActionListener(new BtnSeleccionarActionListener());
         btnSeleccionar.setIcon(new ImageIcon(PestañaOfertas.class
-                .getResource("/presentacion/iconos/select-all.png")));
-        btnSeleccionar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/select-all.png"))); //$NON-NLS-1$
+        btnSeleccionar.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnSeleccionar = new GridBagConstraints();
         gbc_btnSeleccionar.fill = GridBagConstraints.BOTH;
         gbc_btnSeleccionar.insets = new Insets(0, 0, 5, 5);
@@ -251,8 +251,8 @@ public class PestañaOfertas extends JPanel {
         btnEnviarOferta = new JButton(MessagesPestanaOfertas.getString("PestañaOfertas.btnEnviarOferta.text")); //$NON-NLS-1$
         btnEnviarOferta.addActionListener(new BtnEnviarOfertaActionListener());
         btnEnviarOferta.setIcon(new ImageIcon(PestañaOfertas.class
-                .getResource("/presentacion/iconos/send-button.png")));
-        btnEnviarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+                .getResource("/presentacion/iconos/send-button.png"))); //$NON-NLS-1$
+        btnEnviarOferta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15)); //$NON-NLS-1$
         GridBagConstraints gbc_btnEnviarOferta = new GridBagConstraints();
         gbc_btnEnviarOferta.insets = new Insets(0, 0, 0, 5);
         gbc_btnEnviarOferta.fill = GridBagConstraints.BOTH;
@@ -265,9 +265,9 @@ public class PestañaOfertas extends JPanel {
     private class BtnNuevaOfertaActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este módulo no ha sido implementado. "
-                            + "En una versión final, este botón añadiría un panel con una oferta o promoción en una de las listas.",
-                    "Aviso", JOptionPane.WARNING_MESSAGE);
+                    MessagesPestanaOfertas.getString("PestañaOfertas.ModuloNoImplementado") //$NON-NLS-1$
+                            + MessagesPestanaOfertas.getString("PestañaOfertas.ModuloMensaje"), //$NON-NLS-1$
+                    MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraAviso"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
         }
     }
 
@@ -275,23 +275,23 @@ public class PestañaOfertas extends JPanel {
         public void actionPerformed(ActionEvent e) {
             if (pnlPromo1.getBackground().equals(new Color(250, 250, 150))) {
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        "¿Estás seguro de que quieres borrar la promoción?",
-                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                        MessagesPestanaOfertas.getString("PestañaOfertas.DialogoConfirmacion"), //$NON-NLS-1$
+                        MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraCuidado"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     pnlPromo1.setBackground(new Color(250, 250, 250));
                     pnlPromo1.setVisible(false);
                 }
             } else if (pnlOferta1.getBackground()
                     .equals(new Color(250, 250, 150))) {
                 if (JOptionPane.showConfirmDialog(new JPanel(),
-                        "¿Estás seguro de que quieres borrar la promoción?",
-                        "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                        MessagesPestanaOfertas.getString("PestañaOfertas.DialogoConfirmacion2"), //$NON-NLS-1$
+                        MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraCuidado2"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                     pnlOferta1.setBackground(new Color(250, 250, 250));
                     pnlOferta1.setVisible(false);
                 }
             } else {
                 JOptionPane.showMessageDialog(new JPanel(),
-                        "Primero tienes que seleccionar una promoción.",
-                        "Cuidado", JOptionPane.WARNING_MESSAGE);
+                        MessagesPestanaOfertas.getString("PestañaOfertas.DialogoAviso"), //$NON-NLS-1$
+                        MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraCuidado"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
             }
 
         }
@@ -300,28 +300,28 @@ public class PestañaOfertas extends JPanel {
     private class BtnEditarOfertaActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este módulo no ha sido implementado. "
-                            + "En una versión final, este botón editaría una oferta o promoción seleccionada (con fondo amarillo).",
-                    "Aviso", JOptionPane.WARNING_MESSAGE);
+                    MessagesPestanaOfertas.getString("PestañaOfertas.ModuloNoImplementado2") //$NON-NLS-1$
+                            + MessagesPestanaOfertas.getString("PestañaOfertas.ModuloMensaje2"), //$NON-NLS-1$
+                    MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraAviso3"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
         }
     }
 
     private class BtnSeleccionarActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Este módulo no ha sido implementado. "
-                            + "En una versión final, este botón permitiría la selección múltiple de los e-mails a la izquierda.",
-                    "Aviso", JOptionPane.WARNING_MESSAGE);
+                    MessagesPestanaOfertas.getString("PestañaOfertas.ModuloNoImplementado3") //$NON-NLS-1$
+                            + MessagesPestanaOfertas.getString("PestañaOfertas.ModuloMensaje3"), //$NON-NLS-1$
+                    MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraAviso4"), JOptionPane.WARNING_MESSAGE); //$NON-NLS-1$
         }
     }
 
     private class BtnEnviarOfertaActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if (JOptionPane.showConfirmDialog(new JPanel(),
-                    "Vas a enviar las ofertas seleccionadas los e-mails marcados. ¿Enviar?",
-                    "Cuidado", JOptionPane.YES_NO_OPTION) == 0) {
+                    MessagesPestanaOfertas.getString("PestañaOfertas.DialogoConfirmacion3"), //$NON-NLS-1$
+                    MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraCuidado2"), JOptionPane.YES_NO_OPTION) == 0) { //$NON-NLS-1$
                 JOptionPane.showMessageDialog(new JPanel(),
-                        "¡Oferta/s enviada/s!.", "Información",
+                        MessagesPestanaOfertas.getString("PestañaOfertas.MensajeInfo"), MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraInformacion"), //$NON-NLS-1$ //$NON-NLS-2$
                         JOptionPane.INFORMATION_MESSAGE);
             }
         }
@@ -331,10 +331,10 @@ public class PestañaOfertas extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             JOptionPane.showMessageDialog(new JPanel(),
-                    "Esta es la pestaña ofertas y promociones, en la que tenemos la posibilidad de añadir ofertas, editarlas y eliminarlas.\n"
-                            + "El panel información nos mostrará la información relacionada con la oferta o promoción seleccionada.\n"
-                            + "Adicionalmente, podemos enviar mediante la selección de e-mails, las ofertas o promociones a los clientes VIP (que son los únicos que aparecerán aquí) que queramos.",
-                    "Ayuda", JOptionPane.INFORMATION_MESSAGE);
+                    MessagesPestanaOfertas.getString("PestañaOfertas.MensajeAyuda1") //$NON-NLS-1$
+                            + MessagesPestanaOfertas.getString("PestañaOfertas.MensajeAyuda2") //$NON-NLS-1$
+                            + MessagesPestanaOfertas.getString("PestañaOfertas.MensajeAyuda3"), //$NON-NLS-1$
+                    MessagesPestanaOfertas.getString("PestañaOfertas.CabeceraAyuda4"), JOptionPane.INFORMATION_MESSAGE); //$NON-NLS-1$
         }
     }
 }
